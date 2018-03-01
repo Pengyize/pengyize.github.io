@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>脚本 | My Block</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写no">
+<meta property="og:type" content="article">
+<meta property="og:title" content="脚本">
+<meta property="og:url" content="http://yoursite.com/2018/03/01/脚本/index.html">
+<meta property="og:site_name" content="My Block">
+<meta property="og:description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写no">
+<meta property="og:image" content="http://yoursite.com/images/demo.sh.png">
+<meta property="og:image" content="http://yoursite.com/images/demo.js.png">
+<meta property="og:image" content="http://yoursite.com/images/path.png">
+<meta property="og:updated_time" content="2018-03-01T12:53:33.879Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="脚本">
+<meta name="twitter:description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写no">
+<meta name="twitter:image" content="http://yoursite.com/images/demo.sh.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css"> -->
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link href='//fonts.useso.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <a href="/" class="logo">My Block</a>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about/index.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        
+        
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/ppoffice/hexo-theme-alex" title="Fork me on GitHub"></a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <nav id="mobile-nav" class="off">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/index.html" class="mobile-nav-link">About</a>
+  
+  <div id="search-form-wrap-mobile">
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+  </div>
+</nav>
+      <div class="outer">
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/01/脚本/">脚本</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/28/配置HEXO博客-linux/">配置HEXO博客-linux</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/28/GitHub和git/">GitHub和git</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/28/命令行基础/">命令行基础</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/28/入门前端的必要软件/">入门前端的必要软件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+        <section id="main"><article id="post-脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/01/脚本/" class="article-date">
+  <time datetime="2018-03-01T12:45:18.000Z" itemprop="datePublished">2018-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      脚本
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>脚本就是计算机用的剧本，像下面我写的两个脚本。<img src="/images/demo.sh.png" alt="demo.sh">-d 表示存在的意思（不知道的用英文查google）<br>$1 表示传入的第一个参数<br>这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令</p>
+<p><img src="/images/demo.js.png" alt="demo.js">这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写node（空格）+ 路径。</p>
+<p>若想直接输入脚本的文件名运行脚本，则需要将脚本的路径添加到PATH中<img src="/images/path.png" alt="脚本路径">像我的脚本放在local目录中，于是把local的绝对路径添加到PATH里，将这句话添加到.bashrc或.zshrc的最后一行，当你运行脚本名时，计算机就会从local目录里找</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/01/脚本/" data-id="cje8ir97100063y1b3g4v5yn8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/28/配置HEXO博客-linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">配置HEXO博客-linux</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="/" class="logo">My Block</a>
+      &copy; 2018 Pengyize<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollLoading.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
