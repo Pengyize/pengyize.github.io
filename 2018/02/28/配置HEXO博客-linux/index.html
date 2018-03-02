@@ -1,95 +1,164 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   
   <title>配置HEXO博客-linux | My Block</title>
-  <meta name="author" content="Pengyize">
-  
-  <meta name="description" content="1. 第一次创建博客a. 终端进入Desktop目录b. github上新建一个空的repo，名字是[你的用户名.github.io]c. 运行npm install -g hexo-cli安装 Hexod. hexo init myBloge. cd myBlogf. npm ig. hexo n">
-  
-  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="配置HEXO博客-linux"/>
-  <meta property="og:site_name" content="My Block"/>
-
+  <meta name="description" content="1. 第一次创建博客a. 终端进入Desktop目录b. github上新建一个空的repo，名字是[你的用户名.github.io]c. 运行npm install -g hexo-cli安装 Hexod. hexo init myBloge. cd myBlogf. npm ig. hexo new 开博大吉，创建了一篇博客h. 复制这篇博客的路径，vi 路径进行编辑i. vi _config">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置HEXO博客-linux">
+<meta property="og:url" content="http://yoursite.com/2018/02/28/配置HEXO博客-linux/index.html">
+<meta property="og:site_name" content="My Block">
+<meta property="og:description" content="1. 第一次创建博客a. 终端进入Desktop目录b. github上新建一个空的repo，名字是[你的用户名.github.io]c. 运行npm install -g hexo-cli安装 Hexod. hexo init myBloge. cd myBlogf. npm ig. hexo new 开博大吉，创建了一篇博客h. 复制这篇博客的路径，vi 路径进行编辑i. vi _config">
+<meta property="og:image" content="http://yoursite.com/images/hexo.png">
+<meta property="og:updated_time" content="2018-03-02T00:40:41.509Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="配置HEXO博客-linux">
+<meta name="twitter:description" content="1. 第一次创建博客a. 终端进入Desktop目录b. github上新建一个空的repo，名字是[你的用户名.github.io]c. 运行npm install -g hexo-cli安装 Hexod. hexo init myBloge. cd myBlogf. npm ig. hexo new 开博大吉，创建了一篇博客h. 复制这篇博客的路径，vi 路径进行编辑i. vi _config">
+<meta name="twitter:image" content="http://yoursite.com/images/hexo.png">
   
-    <meta property="og:image" content=""/>
   
-
-  <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="My Block" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="icon" href="/favicon.png">
   
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-11520870-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'> -->
+  <!-- <link href="//fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css"> -->
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link href='//fonts.useso.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css">
+  
 
 </head>
-
-
 <body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">My Block</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">主页</a></li>
-    
-      <li><a href="/archives">归档</a></li>
-    
-      <li><a href="/links">友链</a></li>
-    
-      <li><a href="https://github.com/reee">GitHub</a></li>
-    
-      <li><a href="https://twitter.com/_zzzh">Twitter</a></li>
-    
-      <li><a href="/about-me">关于我</a></li>
-    
-  </ul>
-  <div class="clearfix"></div>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer" class="outer">
+    <a href="/" class="logo">My Block</a>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about/index.html">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        </div>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        
+        
+          <a id="nav-github-link" class="nav-icon" href="https://github.com/ppoffice/hexo-theme-alex" title="Fork me on GitHub"></a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+      <nav id="mobile-nav" class="off">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about/index.html" class="mobile-nav-link">About</a>
+  
+  <div id="search-form-wrap-mobile">
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+  </div>
 </nav>
-<div class="clearfix"></div></header>
-  <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+      <div class="outer">
+        
+          <aside id="sidebar">
   
-    <div class="gallery">
-  <div class="photoset">
     
-      <img src="">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/03/01/脚本/">脚本</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/28/配置HEXO博客-linux/">配置HEXO博客-linux</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/28/GitHub和git/">GitHub和git</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/28/命令行基础/">命令行基础</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/28/入门前端的必要软件/">入门前端的必要软件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">links</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+        <section id="main"><article id="post-配置HEXO博客-linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/28/配置HEXO博客-linux/" class="article-date">
+  <time datetime="2018-02-28T02:02:26.000Z" itemprop="datePublished">2018-02-28</time>
+</a>
     
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div> 
-        <time datetime="2018-02-28T02:02:26.000Z"><a href="/2018/02/28/配置HEXO博客-linux/">2018-02-28</a></time>
-      
-      
-  
-    <h1 class="title">配置HEXO博客-linux</h1>
+    <h1 class="article-title" itemprop="name">
+      配置HEXO博客-linux
+    </h1>
   
 
-    </header>
-    <div class="entry">
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
         <h6 id="1-第一次创建博客"><a href="#1-第一次创建博客" class="headerlink" title="1. 第一次创建博客"></a>1. 第一次创建博客</h6><p>a. 终端进入Desktop目录<br>b. github上新建一个空的repo，名字是[你的用户名.github.io]<br>c. 运行<code>npm install -g hexo-cli</code>安装 Hexo<br>d. <code>hexo init myBlog</code><br>e. <code>cd myBlog</code><br>f. <code>npm i</code><br>g. <code>hexo new 开博大吉</code>，创建了一篇博客<br>h. 复制这篇博客的路径，<code>vi 路径</code>进行编辑<br>i. <code>vi _config.yml</code>，把 title 改成想要的名字，把author 改成你的名字，把最后一行 type 改成 type: git（git前有空格），在最后一行后新增一行，左边与 type 平齐，加上 repo: 仓库SSH地址（地址前有空格）<br>j.<code>npm install hexo-deployer-git --save</code><br>k. <code>hexo deploy</code><br>l. 若出现Error<br><code>Permission denied (publickey).</code><br><code>fatal: 无法读取远程仓库。</code>，则按<a href="https://stackoverflow.com/questions/19660744/git-push-permission-denied-public-key" target="_blank" rel="noopener">这里</a>的方法解决<br>m. 进入对应的 repo，点setting，将GitHub Pages 功能中的source改成master branch，点save，点击预览链接<br>n. <code>hexo new 名字</code>建立第二篇博客<br>o. <code>vi 路径</code>进行编辑<br>p. <code>hexo g</code><br>q. <code>hexo d</code> 完成第二篇上传～</p>
 <h6 id="2-删除文章"><a href="#2-删除文章" class="headerlink" title="2. 删除文章"></a>2. 删除文章</h6><p>先在本地删除，然后进入博客目录依次<br>a. <code>hexo g</code><br>b. <code>hexo d</code></p>
@@ -98,69 +167,61 @@
 
       
     </div>
-    <footer>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/02/28/配置HEXO博客-linux/" data-id="cje997t850008211bmfn9m3o2" class="article-share-link">Share</a>
       
-        
-        
-        
-  <div class="addthis addthis_toolbox addthis_default_style">
-    
-      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-    
-    
-      <a class="addthis_button_tweet"></a>
-    
-    
-      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    
-    
-      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-    
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
-
       
-      <div class="clearfix"></div>
     </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/01/脚本/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          脚本
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/28/GitHub和git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">GitHub和git</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-</div></div>
-  <!--  <aside id="sidebar" class="alignright">
-  <div class="search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="搜索">
-    <input type="hidden" name="q" value="site:yoursite.com">
-  </form>
-</div>
-
+</section>
+      </div>
+      <footer id="footer">
   
-
-  
-</aside> -->
-    <div class="clearfix"></div>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <a href="/" class="logo">My Block</a>
+      &copy; 2018 Pengyize<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2018 Pengyize
-  
-</div>
-<div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
+</footer>
+    </div>
+    
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollLoading.js"></script>
 
 
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
+<script src="/js/script.js"></script>
 
+  </div>
 </body>
 </html>
