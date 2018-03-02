@@ -1,235 +1,102 @@
-<!DOCTYPE html>
-
-
-  <html class="light page-post">
-
-
+<!DOCTYPE HTML>
+<html>
 <head>
   <meta charset="utf-8">
   
   <title>GitHub和git | My Block</title>
-
+  <meta name="author" content="Pengyize">
+  
+  <meta name="description" content="一. 配置GitHub
+点击New SSH key
+title随便写
+终端运行ssh-keygen -t rsa -b 4096 -C &amp;quot;邮箱&amp;quot;
+运行 cat ~/.ssh/id_rsa.pub，得到一串东西，复制粘贴到key里，点击 Add SSH key
+运行 ssh -T ">
+  
+  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
-    <meta name="keywords" content="forsigner,前端,设计,Hexo主题,前端开发,用户体验,设计,frontend,design,nodejs,JavaScript" />
-  
-
-  <meta name="description" content="一. 配置GitHub 点击New SSH key title随便写 终端运行ssh-keygen -t rsa -b 4096 -C &amp;quot;邮箱&amp;quot; 运行 cat ~/.ssh/id_rsa.pub，得到一串东西，复制粘贴到key里，点击 Add SSH key 运行 ssh -T git@github.com  二. 配置git依次运行git config --global us">
-<meta property="og:type" content="article">
-<meta property="og:title" content="GitHub和git">
-<meta property="og:url" content="http://yoursite.com/2018/02/28/GitHub和git/index.html">
-<meta property="og:site_name" content="My Block">
-<meta property="og:description" content="一. 配置GitHub 点击New SSH key title随便写 终端运行ssh-keygen -t rsa -b 4096 -C &amp;quot;邮箱&amp;quot; 运行 cat ~/.ssh/id_rsa.pub，得到一串东西，复制粘贴到key里，点击 Add SSH key 运行 ssh -T git@github.com  二. 配置git依次运行git config --global us">
-<meta property="og:updated_time" content="2018-02-28T08:59:11.106Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub和git">
-<meta name="twitter:description" content="一. 配置GitHub 点击New SSH key title随便写 终端运行ssh-keygen -t rsa -b 4096 -C &amp;quot;邮箱&amp;quot; 运行 cat ~/.ssh/id_rsa.pub，得到一串东西，复制粘贴到key里，点击 Add SSH key 运行 ssh -T git@github.com  二. 配置git依次运行git config --global us">
+  <meta property="og:title" content="GitHub和git"/>
+  <meta property="og:site_name" content="My Block"/>
 
   
-
-  
-    <link rel="icon" href="/favicon.ico">
+    <meta property="og:image" content=""/>
   
 
-  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
-
-
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="My Block" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
-    <link rel="stylesheet" href="/css/personal-style.css">
-  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11520870-2']);
+  _gaq.push(['_trackPageview']);
 
-  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 
-  
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-  
-  <script type="text/javascript">
-	(function(){
-	    var bp = document.createElement('script');
-	    var curProtocol = window.location.protocol.split(':')[0];
-	    if (curProtocol === 'https') {
-	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-	    }
-	    else {
-	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-	    }
-	    var s = document.getElementsByTagName("script")[0];
-	    s.parentNode.insertBefore(bp, s);
-	})();
-  </script>
-
-
-
-  
-    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  
-
-  
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  
 </head>
 
+
 <body>
-
-
-  
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
-  
-
-  <div class="post-header CENTER">
-   
-  <div class="toolbox">
-    <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
-      <i class="icon-angle-down"></i>
-      <i class="icon-home"></i>
-    </a>
-    <ul class="list-toolbox">
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/archives/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            博客
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            分类
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/tag/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            标签
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/link/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            友链
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/about/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            关于
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/atom.xml"
-            rel="noopener noreferrer"
-            target="_blank"
-            >
-            RSS
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/search/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  </div>
-
-
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">My Block</a></h1>
+  <h2><a href="/"></a></h2>
 </div>
-
-
-  <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-配置GitHub"><span class="toc-text">一. 配置GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-配置git"><span class="toc-text">二. 配置git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-使用git的三种方法"><span class="toc-text">三. 使用git的三种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-在本地使用"><span class="toc-text">1. 在本地使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-将本地仓库上传到github"><span class="toc-text">2. 将本地仓库上传到github</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-在github上创建仓库并下载"><span class="toc-text">3. 在github上创建仓库并下载</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-上传更新"><span class="toc-text">四.上传更新</span></a></li></ol>
-  </div>
-
-
-
-<div class="content content-post CENTER">
-   <article id="post-GitHub和git" class="article article-type-post" itemprop="blogPost">
-  <header class="article-header">
-    <h1 class="post-title">GitHub和git</h1>
-
-    <div class="article-meta">
-      <span>
-        <i class="icon-calendar"></i>
-        <span>2018.02.28</span>
-      </span>
-
-      
-        <span class="article-author">
-          <i class="icon-user"></i>
-          <span>Pengyize</span>
-        </span>
-      
-
-      
-
-
-      
-        <span>
-          <i class="icon-comment"></i>
-          <a href="http://www.forsigner.com/2018/02/28/GitHub和git/#disqus_thread"></a>
-        </span>
-      
-
-      
-      <i class="fa fa-eye"></i> 
-        <span id="busuanzi_container_page_pv">
-           &nbsp热度 <span id="busuanzi_value_page_pv">
-           <i class="fa fa-spinner fa-spin"></i></span>℃
-        </span>
-      
-      
-    </div>
-  </header>
-
-  <div class="article-content">
+<nav id="main-nav" class="alignright">
+  <ul>
     
-      <h3 id="一-配置GitHub"><a href="#一-配置GitHub" class="headerlink" title="一. 配置GitHub"></a>一. 配置GitHub</h3><ol>
+      <li><a href="/">主页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/links">友链</a></li>
+    
+      <li><a href="https://github.com/reee">GitHub</a></li>
+    
+      <li><a href="https://twitter.com/_zzzh">Twitter</a></li>
+    
+      <li><a href="/about-me">关于我</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div> 
+        <time datetime="2018-02-28T01:58:54.000Z"><a href="/2018/02/28/GitHub和git/">2018-02-28</a></time>
+      
+      
+  
+    <h1 class="title">GitHub和git</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="一-配置GitHub"><a href="#一-配置GitHub" class="headerlink" title="一. 配置GitHub"></a>一. 配置GitHub</h3><ol>
 <li><a href="https://github.com/settings/keys" target="_blank" rel="noopener">点击New SSH key</a></li>
 <li>title随便写</li>
 <li>终端运行<code>ssh-keygen -t rsa -b 4096 -C &quot;邮箱&quot;</code></li>
@@ -242,228 +109,70 @@
 <h6 id="3-在github上创建仓库并下载"><a href="#3-在github上创建仓库并下载" class="headerlink" title="3. 在github上创建仓库并下载"></a>3. 在github上创建仓库并下载</h6><p>a. 创建时勾选initialize this … ，Add .gitignore  选node，Add a license 选MIT License<br>b. 进入仓库点右上角绿色clone or download<br>c. 点 use SSH，并复制下面的地址<br>d. 终端进入桌面运行<code>git clone 地址</code>，于是将仓库下到了电脑上<br>e. 进入文件夹<code>git init</code>，初始化本地仓库</p>
 <h3 id="四-上传更新"><a href="#四-上传更新" class="headerlink" title="四.上传更新"></a>四.上传更新</h3><p>1.git add .<br>2.git commi -m “第一次更新”<br>3.git pull（将网上更新的文件拉到电脑上）<br>4.git push（上传）</p>
 
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
     
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
   </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
 
-  
-      <div class="git"></div>
-  
-
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
 </article>
 
-
-   
-  <div class="text-center donation">
-    <div class="inner-donation">
-      <span class="btn-donation">支持一下</span>
-      <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
-        <ul>
-        
-          <li class="item">
-            <span>微信扫一扫</span>
-            <img src="/images/qr-wechat.png" alt="">
-          </li>
-        
-          <li class="item">
-            <span>支付宝扫一扫</span>
-            <img src="/images/qr-alipay.png" alt="">
-          </li>
-        
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-   
-  <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2018/02/28/命令行基础/">
-        <i class="icon icon-angle-left"></i>
-    </a>
-    <a class="show pull-right" href="/2018/02/28/配置HEXO博客-linux/">
-        <i class="icon icon-angle-right"></i>
-    </a>
-  </div>
-
-
-
-
+</div></div>
+  <!--  <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
 </div>
-
-
-  <a id="backTop" class="back-top">
-    <i class="icon-angle-up"></i>
-  </a>
-
-
-
-
-  <div class="modal" id="modal">
-  <span id="cover" class="cover hide"></span>
-  <div id="modal-dialog" class="modal-dialog hide-dialog">
-    <div class="modal-header">
-      <span id="close" class="btn-close">关闭</span>
-    </div>
-    <hr>
-    <div class="modal-body">
-      <ul class="list-toolbox">
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/archives/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/tag/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              标签
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/link/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              友链
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/about/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              关于
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/atom.xml"
-              rel="noopener noreferrer"
-              target="_blank"
-              >
-              RSS
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/search/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              搜索
-            </a>
-          </li>
-        
-      </ul>
-
-    </div>
-  </div>
-</div>
-
-
-
-  
-      <div class="fexo-comments comments-post">
-    
-  <section class="disqus-comments">
-    <div id="disqus_thread">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-  </section>
-
-  <script>
-    var disqus_shortname = 'forsigner';
-    
-    var disqus_url = 'http://yoursite.com/2018/02/28/GitHub和git/';
-    
-    (function(){
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-
-  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
-
-
-
-    
-    
-
-    
-    
-
-    
-
-    
-    
-
-  </div>
 
   
 
-  <script type="text/javascript">
-  function loadScript(url, callback) {
-    var script = document.createElement('script')
-    script.type = 'text/javascript';
+  
+</aside> -->
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2018 Pengyize
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
 
-    if (script.readyState) { //IE
-      script.onreadystatechange = function() {
-        if (script.readyState == 'loaded' ||
-          script.readyState == 'complete') {
-          script.onreadystatechange = null;
-          callback();
-        }
-      };
-    } else { //Others
-      script.onload = function() {
-        callback();
-      };
-    }
 
-    script.src = url;
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
 
-  window.onload = function() {
-    loadScript('/js/bundle.js?235683', function() {
-      // load success
-    });
-  }
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 </body>
