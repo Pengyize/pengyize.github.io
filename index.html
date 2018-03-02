@@ -75,7 +75,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -85,6 +85,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/02/HTTP入门/">HTTP入门</a>
+          </li>
         
           <li>
             <a href="/2018/03/01/脚本/">脚本</a>
@@ -100,10 +104,6 @@
         
           <li>
             <a href="/2018/02/28/命令行基础/">命令行基础</a>
-          </li>
-        
-          <li>
-            <a href="/2018/02/28/入门前端的必要软件/">入门前端的必要软件</a>
           </li>
         
       </ul>
@@ -134,6 +134,53 @@
         
         <section id="main">
   
+    <article id="post-HTTP入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/HTTP入门/" class="article-date">
+  <time datetime="2018-03-02T08:47:09.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/02/HTTP入门/">HTTP入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-HTTP-HyperText-Transfer-Protocol"><a href="#1-HTTP-HyperText-Transfer-Protocol" class="headerlink" title="1. HTTP(HyperText Transfer Protocol)"></a>1. HTTP(HyperText Transfer Protocol)</h3><p>是一种协议，它教客户端如何请求、服务器如何相应。</p>
+<h3 id="2-状态码"><a href="#2-状态码" class="headerlink" title="2. 状态码"></a>2. 状态码</h3><p>是服务器对浏览器说的话：<br>200，通常的成功（GET）<br>204，创建成功（POST）<br>301，网站永久的搬走了<br>302，网站暂时不能访问（备案、被查）<br>304，滚吧，返回和上次一样的话<br>404，你（访问者）错了<br>5xx，服务器错了</p>
+<h3 id="3-请求的格式"><a href="#3-请求的格式" class="headerlink" title="3. 请求的格式"></a>3. 请求的格式</h3><p>1 GET或POST   路径   协议(HTTP)/版本号<br>2 Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>2 key: value<br>2 ….: ….<br>….<br>3（断行）<br>4  要上传的数据</p>
+<h3 id="4-响应的格式"><a href="#4-响应的格式" class="headerlink" title="4.响应的格式"></a>4.响应的格式</h3><p>1 协议(HTTP)/版本号  状态码  状态解释<br>2 key: value<br>2 Content-Length: …<br>2 Content-Type: text/html或application/x-JavaScript<br>3 （断行）<br>4 下载的内容</p>
+<h3 id="5-如何查看响应和请求"><a href="#5-如何查看响应和请求" class="headerlink" title="5. 如何查看响应和请求"></a>5. 如何查看响应和请求</h3><ol>
+<li>打开Network</li>
+<li>刷新网址</li>
+<li>选中第一个响应</li>
+<li>查看Headers里的Response Headers点view source可以看到响应的前两部分，Request Headers点view source可以看到请求</li>
+<li>查看Response你可以看到响应的第四部分</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/02/HTTP入门/" data-id="cje9p4fzl0001jh1buvhzyrch" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-脚本" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/01/脚本/" class="article-date">
@@ -163,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/03/01/脚本/" data-id="cje997t820006211bxrzs6oba" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/01/脚本/" data-id="cje9p4fzv0007jh1b6thm6bef" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/28/配置HEXO博客-linux/" data-id="cje997t850008211bmfn9m3o2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/28/配置HEXO博客-linux/" data-id="cje9p4fzx0009jh1b8vxa5nv8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/28/GitHub和git/" data-id="cje997t7t0001211bk14lifa4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/28/GitHub和git/" data-id="cje9p4fzh0000jh1b4w2zstjt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -358,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/28/命令行基础/" data-id="cje997t7x0003211bj88t9smt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/28/命令行基础/" data-id="cje9p4fzq0004jh1bkh4i4rp2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -421,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/28/入门前端的必要软件/" data-id="cje997t7j0000211bqgg86x5m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/28/入门前端的必要软件/" data-id="cje9p4fzn0002jh1b1l1fjkx0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -460,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/28/计算机存储数据的方式/" data-id="cje997t830007211btv758eue" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/28/计算机存储数据的方式/" data-id="cje9p4fzw0008jh1bd0gc7798" class="article-share-link">Share</a>
       
       
     </footer>
@@ -520,7 +567,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/28/正则表达式/" data-id="cje997t7y0004211b4z9a2hsb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/28/正则表达式/" data-id="cje9p4fzs0005jh1bgvpuv15n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -564,7 +611,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/28/第一节课/" data-id="cje997t7z0005211b6l7ql3rw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/28/第一节课/" data-id="cje9p4fzt0006jh1b645evro7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -601,7 +648,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/27/南京/" data-id="cje997t7w0002211bc5gb5apa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/27/南京/" data-id="cje9p4fzp0003jh1bj41v60vd" class="article-share-link">Share</a>
       
       
     </footer>

@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>南京 | My Block</title>
+  <title>HTTP入门 | My Block</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="开学鸟">
+  <meta name="description" content="1. HTTP(HyperText Transfer Protocol)是一种协议，它教客户端如何请求、服务器如何相应。 2. 状态码是服务器对浏览器说的话：200，通常的成功（GET）204，创建成功（POST）301，网站永久的搬走了302，网站暂时不能访问（备案、被查）304，滚吧，返回和上次一样的话404，你（访问者）错了5xx，服务器错了 3. 请求的格式1 GET或POST   路径">
 <meta property="og:type" content="article">
-<meta property="og:title" content="南京">
-<meta property="og:url" content="http://yoursite.com/2018/02/27/南京/index.html">
+<meta property="og:title" content="HTTP入门">
+<meta property="og:url" content="http://yoursite.com/2018/03/02/HTTP入门/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="开学鸟">
-<meta property="og:updated_time" content="2018-02-28T08:59:11.107Z">
+<meta property="og:description" content="1. HTTP(HyperText Transfer Protocol)是一种协议，它教客户端如何请求、服务器如何相应。 2. 状态码是服务器对浏览器说的话：200，通常的成功（GET）204，创建成功（POST）301，网站永久的搬走了302，网站暂时不能访问（备案、被查）304，滚吧，返回和上次一样的话404，你（访问者）错了5xx，服务器错了 3. 请求的格式1 GET或POST   路径">
+<meta property="og:updated_time" content="2018-03-02T08:47:39.094Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="南京">
-<meta name="twitter:description" content="开学鸟">
+<meta name="twitter:title" content="HTTP入门">
+<meta name="twitter:description" content="1. HTTP(HyperText Transfer Protocol)是一种协议，它教客户端如何请求、服务器如何相应。 2. 状态码是服务器对浏览器说的话：200，通常的成功（GET）204，创建成功（POST）301，网站永久的搬走了302，网站暂时不能访问（备案、被查）304，滚吧，返回和上次一样的话404，你（访问者）错了5xx，服务器错了 3. 请求的格式1 GET或POST   路径">
   
   
     <link rel="icon" href="/favicon.png">
@@ -136,10 +136,10 @@
   
 </aside>
         
-        <section id="main"><article id="post-南京" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-HTTP入门" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/02/27/南京/" class="article-date">
-  <time datetime="2018-02-27T12:02:02.000Z" itemprop="datePublished">2018-02-27</time>
+    <a href="/2018/03/02/HTTP入门/" class="article-date">
+  <time datetime="2018-03-02T08:47:09.000Z" itemprop="datePublished">2018-03-02</time>
 </a>
     
   </div>
@@ -150,7 +150,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      南京
+      HTTP入门
     </h1>
   
 
@@ -158,12 +158,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>开学鸟</p>
+        <h3 id="1-HTTP-HyperText-Transfer-Protocol"><a href="#1-HTTP-HyperText-Transfer-Protocol" class="headerlink" title="1. HTTP(HyperText Transfer Protocol)"></a>1. HTTP(HyperText Transfer Protocol)</h3><p>是一种协议，它教客户端如何请求、服务器如何相应。</p>
+<h3 id="2-状态码"><a href="#2-状态码" class="headerlink" title="2. 状态码"></a>2. 状态码</h3><p>是服务器对浏览器说的话：<br>200，通常的成功（GET）<br>204，创建成功（POST）<br>301，网站永久的搬走了<br>302，网站暂时不能访问（备案、被查）<br>304，滚吧，返回和上次一样的话<br>404，你（访问者）错了<br>5xx，服务器错了</p>
+<h3 id="3-请求的格式"><a href="#3-请求的格式" class="headerlink" title="3. 请求的格式"></a>3. 请求的格式</h3><p>1 GET或POST   路径   协议(HTTP)/版本号<br>2 Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>2 key: value<br>2 ….: ….<br>….<br>3（断行）<br>4  要上传的数据</p>
+<h3 id="4-响应的格式"><a href="#4-响应的格式" class="headerlink" title="4.响应的格式"></a>4.响应的格式</h3><p>1 协议(HTTP)/版本号  状态码  状态解释<br>2 key: value<br>2 Content-Length: …<br>2 Content-Type: text/html或application/x-JavaScript<br>3 （断行）<br>4 下载的内容</p>
+<h3 id="5-如何查看响应和请求"><a href="#5-如何查看响应和请求" class="headerlink" title="5. 如何查看响应和请求"></a>5. 如何查看响应和请求</h3><ol>
+<li>打开Network</li>
+<li>刷新网址</li>
+<li>选中第一个响应</li>
+<li>查看Headers里的Response Headers点view source可以看到响应的前两部分，Request Headers点view source可以看到请求</li>
+<li>查看Response你可以看到响应的第四部分</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/27/南京/" data-id="cje9p4fzp0003jh1bj41v60vd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/03/02/HTTP入门/" data-id="cje9p4fzl0001jh1buvhzyrch" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,15 +182,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/02/28/第一节课/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          第一节课
-        
-      </div>
-    </a>
   
+    <a href="/2018/03/01/脚本/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">脚本</div>
+    </a>
   
 </nav>
 
