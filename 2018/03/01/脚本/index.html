@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写no">
+<meta name="description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令  这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写">
 <meta property="og:type" content="article">
 <meta property="og:title" content="脚本">
 <meta property="og:url" content="http://yoursite.com/2018/03/01/脚本/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写no">
+<meta property="og:description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令  这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写">
 <meta property="og:image" content="http://yoursite.com/images/demo.sh.png">
 <meta property="og:image" content="http://yoursite.com/images/demo.js.png">
-<meta property="og:image" content="http://yoursite.com/images/path.png">
-<meta property="og:updated_time" content="2018-03-01T12:53:33.879Z">
+<meta property="og:image" content="http://yoursite.com/images/demo.sh.png">
+<meta property="og:updated_time" content="2018-03-03T02:37:25.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="脚本">
-<meta name="twitter:description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写no">
+<meta name="twitter:description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令  这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写">
 <meta name="twitter:image" content="http://yoursite.com/images/demo.sh.png">
 
 
@@ -302,9 +302,13 @@
       
 
       
-        <p>脚本就是计算机用的剧本，像下面我写的两个脚本。<img src="/images/demo.sh.png" alt="demo.sh">-d 表示存在的意思（不知道的用英文查google）<br>$1 表示传入的第一个参数<br>这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令</p>
+        <ol>
+<li>脚本就是计算机用的剧本，像下面我写的两个脚本。<img src="/images/demo.sh.png" alt="demo.sh">-d 表示存在的意思（不知道的用英文查google）<br>$1 表示传入的第一个参数<br>这个是bash脚本，因为计算机默认bash脚本，所以运行时直接在终端输入脚本的路径，计算机就可以执行其中的命令</li>
+</ol>
 <p><img src="/images/demo.js.png" alt="demo.js">这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，没有shebang的话，运行脚本的命令就要写node（空格）+ 路径。</p>
-<p>若想直接输入脚本的文件名运行脚本，则需要将脚本的路径添加到PATH中<img src="/images/path.png" alt="脚本路径">像我的脚本放在local目录中，于是把local的绝对路径添加到PATH里，将这句话添加到.bashrc或.zshrc的最后一行，当你运行脚本名时，计算机就会从local目录里找</p>
+<ol>
+<li>若想直接输入脚本的文件名运行脚本，则需要将脚本的路径添加到PATH中<img src="/images/demo.sh.png" alt="demo.sh">像我的脚本放在local目录中，于是把local的绝对路径添加到PATH里，将这句话添加到.bashrc或.zshrc的最后一行，当你直接运行脚本名时，计算机就会自动从local目录里找～</li>
+</ol>
 
       
     </div>
