@@ -228,6 +228,146 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/04/HTTP基础知识科普/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/04/HTTP基础知识科普/" itemprop="url">HTTP基础知识科普</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-04T14:38:58+08:00">
+                2018-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>HTTP协议底层由TCP协议和IP协议构建</p>
+<h3 id="1-TCP"><a href="#1-TCP" class="headerlink" title="1.TCP"></a>1.TCP</h3><ol>
+<li><a href="https://www.nowcoder.com/questionTerminal/63c8b45c91a544bd8febc1f1ff02e3b5?toCommentId=73766" title="null" target="_blank" rel="noopener">TCP 和 UDP 的区别是什么</a><br>简答：TCP 可靠、面向连接、慢一点，但注重安全性，适应于网页、邮件；<br>UDP 不可靠，无连接、较快，安全性低一点，适应于视频、语音。</li>
+<li><p><a href="https://github.com/jawil/blog/issues/14" title="null" target="_blank" rel="noopener">TCP 的三次握手指的是什么</a><br>简答：每次建立连接前，客户端和服务端之前都要先进行三次对话才开始正式传输内容，三次对话大概是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1\. 客户端：我要连接你了，可以吗</span><br><span class="line">2\. 服务端：嗯，我准备好了，连接我吧</span><br><span class="line">3\. 客户端：那我连接你咯。</span><br><span class="line">4\. 开始后面步骤</span><br></pre></td></tr></table></figure>
+<p>上面内容足以应付前端面试中关于 TCP 的考题，如果你想更了解 TCP 可以看 <a href="http://www.ruanyifeng.com/blog/2017/06/tcp-protocol.html" title="null" target="_blank" rel="noopener">此文</a></p>
+</li>
+</ol>
+<h3 id="2-IP"><a href="#2-IP" class="headerlink" title="2.IP"></a>2.IP</h3><ol>
+<li><p>外网IP<br>你的路由器自己会有一个外网IP，像访问的腾讯、阿里的网站就是租用了很多外网IP</p>
+</li>
+<li><p>内网IP<br>而你在家用的手机、电脑用的就是内网IP，路由器也会给自己一个内网IP，<strong>一般是：192.168.1.1</strong></p>
+</li>
+<li><p>内网和外网之间不能互相访问，但是外网和外网之间可以访问，所以你在家上网就是通过路由器的外网和其他外网连接，你访问的网站在外网发送信息到你的路由器上，然后路由器将信息转到内网发送到你电脑上</p>
+</li>
+<li><p><strong>本地 IP：127.0.0.1</strong></p>
+</li>
+<li><p><strong>特别特殊的 IP：0.0.0.0</strong>，它不表示任何设备。</p>
+</li>
+</ol>
+<h3 id="3-端口"><a href="#3-端口" class="headerlink" title="3.端口"></a>3.端口</h3><p>一个端口对应一种服务<br>HTTP服务用80端口<br>HTTPS服务用443端口<br>FTP服务用21端口<br>使用HTTP协议访问一个IP，要同时提供IP和端口号，平常没填是因为浏览器默认帮你加了</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/HTTP入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -299,9 +439,9 @@
       
         
           
-            <h3 id="1-HTTP-HyperText-Transfer-Protocol"><a href="#1-HTTP-HyperText-Transfer-Protocol" class="headerlink" title="1. HTTP(HyperText Transfer Protocol)"></a>1. HTTP(HyperText Transfer Protocol)</h3><p>是一种协议，它教客户端如何请求、服务器如何相应。</p>
+            <h3 id="1-HTTP-HyperText-Transfer-Protocol"><a href="#1-HTTP-HyperText-Transfer-Protocol" class="headerlink" title="1. HTTP(HyperText Transfer Protocol)"></a>1. HTTP(HyperText Transfer Protocol)</h3><p>是一种协议，它教客户端如何请求、服务器如何响应。</p>
 <h3 id="2-状态码"><a href="#2-状态码" class="headerlink" title="2. 状态码"></a>2. 状态码</h3><p>是服务器对浏览器说的话：<br>200，通常的成功（GET）<br>204，创建成功（POST）<br>301，网站永久的搬走了<br>302，网站暂时不能访问（备案、被查）<br>304，滚吧，返回和上次一样的话<br>404，你（访问者）错了<br>5xx，服务器错了</p>
-<h3 id="3-请求的格式"><a href="#3-请求的格式" class="headerlink" title="3. 请求的格式"></a>3. 请求的格式</h3><p>1 GET或POST   路径   协议(HTTP)/版本号<br>2 Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>2 key: value<br>2 ….: ….<br>….<br>3（断行）<br>4  要上传的数据</p>
+<h3 id="3-请求的格式"><a href="#3-请求的格式" class="headerlink" title="3. 请求的格式"></a>3. 请求的格式</h3><p>1 GET或POST   路径(/)   协议(HTTP)/版本号<br>2 Host: <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><br>2 key: value<br>2 ….: ….<br>….<br>3（断行）<br>4  要上传的数据</p>
 <h3 id="4-响应的格式"><a href="#4-响应的格式" class="headerlink" title="4.响应的格式"></a>4.响应的格式</h3><p>1 协议(HTTP)/版本号  状态码  状态解释<br>2 key: value<br>2 Content-Length: …<br>2 Content-Type: text/html或application/x-JavaScript<br>3 （断行）<br>4 下载的内容</p>
 <h3 id="5-如何查看响应和请求"><a href="#5-如何查看响应和请求" class="headerlink" title="5. 如何查看响应和请求"></a>5. 如何查看响应和请求</h3><ol>
 <li>打开Network</li>
@@ -310,7 +450,7 @@
 <li>查看Headers里的Response Headers点view source可以看到响应的前两部分，Request Headers点view source可以看到请求</li>
 <li>查看Response你可以看到响应的第四部分</li>
 </ol>
-<h3 id="6-DNS-Domain-Name-System"><a href="#6-DNS-Domain-Name-System" class="headerlink" title="6. DNS(Domain Name System)"></a>6. DNS(Domain Name System)</h3><p>DNS即是通过域名找IP地址<br>有两个命令：<br><code>nslookup www.baidu.com</code><br><code>ping www.baidu.com</code><br>输入这两个命令都会返回baidu的IP地址<img src="/images/nslookup.png" alt="nslookup">Server是你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近的那几台的IP）。<br>但可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给假IP）</p>
+<h3 id="6-DNS-Domain-Name-System"><a href="#6-DNS-Domain-Name-System" class="headerlink" title="6. DNS(Domain Name System)"></a>6. DNS(Domain Name System)</h3><p>DNS即是通过域名找IP地址<br>有两个命令：<br><code>nslookup www.baidu.com</code><br><code>ping www.baidu.com</code><br>输入这两个命令都会返回baidu的IP地址<img src="/images/nslookup.png" alt="nslookup">Server你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近几台服务器的IP）。<br>可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给你假IP）</p>
 
           
         
@@ -1450,129 +1590,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/南京/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/27/南京/" itemprop="url">南京</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-27T20:02:02+08:00">
-                2018-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>开学鸟</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1616,7 +1640,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
