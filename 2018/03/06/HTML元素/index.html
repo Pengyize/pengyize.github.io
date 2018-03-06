@@ -85,17 +85,17 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/06/HTML元素/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1.和的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a则会在iframe里弹出index里写">
-<meta property="og:image" content="http://yoursite.com/images/checkbox">
-<meta property="og:image" content="http://yoursite.com/images/提交之后">
-<meta property="og:image" content="http://yoursite.com/images/radio">
-<meta property="og:image" content="http://yoursite.com/images/select">
-<meta property="og:image" content="http://yoursite.com/images/textarea">
-<meta property="og:image" content="http://yoursite.com/images/table">
-<meta property="og:updated_time" content="2018-03-06T00:50:14.134Z">
+<meta property="og:image" content="http://yoursite.com/images/checkbox.png">
+<meta property="og:image" content="http://yoursite.com/images/提交之后.png">
+<meta property="og:image" content="http://yoursite.com/images/radio.png">
+<meta property="og:image" content="http://yoursite.com/images/select.png">
+<meta property="og:image" content="http://yoursite.com/images/textarea.png">
+<meta property="og:image" content="http://yoursite.com/images/table.png">
+<meta property="og:updated_time" content="2018-03-06T00:58:51.567Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML元素">
 <meta name="twitter:description" content="1.和的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a则会在iframe里弹出index里写">
-<meta name="twitter:image" content="http://yoursite.com/images/checkbox">
+<meta name="twitter:image" content="http://yoursite.com/images/checkbox.png">
 
 
 
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -201,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -265,7 +265,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:58+08:00">
                 2018-03-06
@@ -324,18 +324,18 @@
 <p><form>里如果没有<code>&lt;input type=&quot;submit&quot;&gt;</code>而有<button>，则</button><button>会默认为submit，若写成这样<code>&lt;button type=&quot;button&quot;&gt;button&lt;/button&gt;</code>则不会成为submit，一个form里必须要有一个submit才能提交</button></form></p>
 <p><strong>2. <input>  checkbox</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;apple&quot; value=&quot;yes&quot;&gt;苹果&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;banana&quot; value=&quot;yes&quot;&gt;香蕉&lt;/label&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/checkbox" alt="&lt;checkbox&gt;"></p>
+<p><img src="/images/checkbox.png" alt="&lt;checkbox&gt;"></p>
 <p>一定要有name才能被提交上去</p>
-<p><img src="/images/提交之后" alt="提交之后"></p>
+<p><img src="/images/提交之后.png" alt="提交之后"></p>
 <p><strong>3.<input> radio</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;男&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;女&lt;/label&gt;</span><br></pre></td></tr></table></figure></p>
 <p>和checkbox不同的是，两个name一样的radio只能选中一个</p>
-<p><img src="/images/radio" alt="&lt;radio&gt;"></p>
+<p><img src="/images/radio.png" alt="&lt;radio&gt;"></p>
 <h2 id="4"><a href="#4" class="headerlink" title="4. "></a>4. <select></select></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;select name=&quot;group&quot; multiple&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;-&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;1&quot;&gt;第一组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;2&quot;&gt;第二组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;3&quot; disabled&gt;第三组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;4&quot; selected&gt;第四组&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/select" alt="&lt;select&gt;">disabled属性意味着不能被选中，selected意思是默认选中的，multiple意思是可以同时选中几项</p>
+<p><img src="/images/select.png" alt="&lt;select&gt;">disabled属性意味着不能被选中，selected意思是默认选中的，multiple意思是可以同时选中几项</p>
 <h2 id="5"><a href="#5" class="headerlink" title="5. "></a>5. <textarea></textarea></h2><p>若想让用户输入一大段文字则用这个元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea style=&quot;resize: none; width: 200px; height: 100px;&quot;  name=&quot;hobbies&quot;&gt;&lt;/textarea&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/textarea" alt="&lt;textarea&gt;"><br>resize若不设置为none，则用户可以随意更改输入框的大小</p>
+<p><img src="/images/textarea.png" alt="&lt;textarea&gt;"><br>resize若不设置为none，则用户可以随意更改输入框的大小</p>
 <h2 id="6"><a href="#6" class="headerlink" title="6. "></a>6. <table></table></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">    &lt;colgroup&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">        &lt;col bgcolor=&quot;red&quot; width=&quot;200&quot;&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">    &lt;/colgroup&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;项目&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;班级&lt;/th&gt;&lt;th&gt;成绩&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;/th&gt;&lt;td&gt;可爱多&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;/th&gt;&lt;td&gt;金钟国&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;平均分&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;th&gt;总分&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/table" alt="&lt;table&gt;"></p>
+<p><img src="/images/table.png" alt="&lt;table&gt;"></p>
 <p><thead>  <tbody> <tfoot>不写浏览器也不会报错，而会自动全部加入到tbody里</tfoot></tbody></thead></p>
 
       
@@ -423,10 +423,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -447,7 +447,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">13</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -513,7 +513,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
