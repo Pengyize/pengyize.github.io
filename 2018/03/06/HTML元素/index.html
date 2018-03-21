@@ -79,22 +79,22 @@
 
 
 
-<meta name="description" content="1. iframe 和 a 的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a则会在ifram">
+<meta name="description" content="1. iframe 和 a 的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a，则新页面会在i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML元素">
 <meta property="og:url" content="http://yoursite.com/2018/03/06/HTML元素/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="1. iframe 和 a 的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a则会在ifram">
+<meta property="og:description" content="1. iframe 和 a 的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a，则新页面会在i">
 <meta property="og:image" content="http://yoursite.com/images/checkbox.png">
 <meta property="og:image" content="http://yoursite.com/images/提交之后.png">
 <meta property="og:image" content="http://yoursite.com/images/radio.png">
 <meta property="og:image" content="http://yoursite.com/images/select.png">
 <meta property="og:image" content="http://yoursite.com/images/textarea.png">
 <meta property="og:image" content="http://yoursite.com/images/table.png">
-<meta property="og:updated_time" content="2018-03-06T01:17:19.249Z">
+<meta property="og:updated_time" content="2018-03-21T05:45:47.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML元素">
-<meta name="twitter:description" content="1. iframe 和 a 的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a则会在ifram">
+<meta name="twitter:description" content="1. iframe 和 a 的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a，则新页面会在i">
 <meta name="twitter:image" content="http://yoursite.com/images/checkbox.png">
 
 
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -265,7 +265,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:58+08:00">
                 2018-03-06
@@ -306,7 +306,8 @@
 
       
         <h2 id="1-iframe-和-a-的target"><a href="#1-iframe-和-a-的target" class="headerlink" title="1. iframe 和 a 的target"></a>1. iframe 和 a 的target</h2><p>iframe标签支持相对路径</p>
-<p><code>&lt;iframe name=&quot;xxx&quot; src=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br><code>&lt;a href=&quot;&quot; target=&quot;xxx&quot;&gt;&lt;/a&gt;</code>点击a<br>则会在iframe里弹出<br>index里写:<br><code>&lt;iframe src=&quot;./index2&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code>则会在左上角出现一个小的嵌套页面显示index2里嵌套的index3里的四个QQ链接<br>index2里写:<br><code>&lt;iframe src=&quot;./index3&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br>index3里写:<br><code>&lt;a href=&quot;http://qq.com&quot; target=_blank&gt;QQ&lt;/a&gt;</code>点击会在一个新的标签页面里打开<br><code>&lt;a href=&quot;http://qq.com&quot; target=_self&gt;QQ&lt;/a&gt;</code>点击会在index3的嵌套页面打开<br><code>&lt;a href=&quot;http://qq.com&quot; target=_parent&gt;QQ&lt;/a&gt;</code>点击会在index2的嵌套页面打开<br><code>&lt;a href=&quot;http://qq.com&quot; target=_top&gt;QQ&lt;/a&gt;</code>点击会在index1里打开</p>
+<p><code>&lt;iframe name=&quot;xxx&quot; src=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br><code>&lt;a href=&quot;&quot; target=&quot;xxx&quot;&gt;&lt;/a&gt;</code>点击a，则新页面会在iframe里出现</p>
+<p>若index.html里写:<br><code>&lt;iframe src=&quot;./index2&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br>index2.html里写:<br><code>&lt;iframe src=&quot;./index3&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br>index3.html里写:<br><code>&lt;a href=&quot;http://qq.com&quot; target=_blank&gt;QQ&lt;/a&gt;</code>（点击会在一个新的标签页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_self&gt;QQ&lt;/a&gt;</code>（点击会在index3的嵌套页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_parent&gt;QQ&lt;/a&gt;</code>（点击会在index2的嵌套页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_top&gt;QQ&lt;/a&gt;</code>（点击会在index里打开）<br>在index的左上角出现一个小的嵌套页面里显示着index2页面里嵌套的index3里的四个QQ链接</p>
 <h2 id="2-a-的href"><a href="#2-a-的href" class="headerlink" title="2. a 的href"></a>2. a 的href</h2><ol>
 <li><p><code>&lt;a href=&quot;//qq.com&quot;&gt;QQ&lt;/a&gt;</code>href里写的是无协议地址，意思是当前用的是http协议就自动继承http协议，用的是file就会用file协议。<br>我们在终端运行<code>sudo npm i -g http-server</code>即可安装一个服务器，进入你写index.html的文件夹里运行<code>http-server</code>即可开启服务器，然后在浏览器浏览终端返回的地址即可用http协议来访问你写的文件</p>
 </li>
@@ -331,6 +332,7 @@
 <p><img src="/images/textarea.png" alt="&lt;textarea&gt;"><br>resize若不设置为none，则用户可以随意更改输入框的大小</p>
 <h2 id="6-table"><a href="#6-table" class="headerlink" title="6. table"></a>6. table</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">    &lt;colgroup&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">        &lt;col bgcolor=&quot;red&quot; width=&quot;200&quot;&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">    &lt;/colgroup&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;项目&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;班级&lt;/th&gt;&lt;th&gt;成绩&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;/th&gt;&lt;td&gt;可爱多&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;/th&gt;&lt;td&gt;金钟国&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;平均分&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;th&gt;总分&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/table.png" alt="&lt;table&gt;"><br>thead  tbody tfoot不写浏览器也不会报错，而会自动全部加入到tbody里</p>
+<h2 id="7-Canvas"><a href="#7-Canvas" class="headerlink" title="7.Canvas"></a>7.Canvas</h2><p>不要用css来调整canvas的宽高，因为若用css，canvas里的东西都会被拉伸，和img一样，可以用js来设置宽高<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function autoSetCanvasSize(canvas) &#123;</span><br><span class="line">    setCanvasSize();</span><br><span class="line">    window.onresize = function () &#123;   //浏览器改变窗口大小时触发onresize事件</span><br><span class="line">        setCanvasSize()</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    function setCanvasSize() &#123;</span><br><span class="line">        var pageWidth = document.documentElement.clientWidth;     //代表浏览器的宽</span><br><span class="line">        var pageHeight = document.documentElement.clientHeight;   //代表浏览器的高</span><br><span class="line">        canvas.width = pageWidth;</span><br><span class="line">        canvas.height = pageHeight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -421,10 +423,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Ensemble
           </li>
         </ul>
       
@@ -444,8 +446,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">articles</span>
                 </a>
               </div>
             
@@ -481,7 +483,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-iframe-和-a-的target"><span class="nav-number">1.</span> <span class="nav-text">1. iframe 和 a 的target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-a-的href"><span class="nav-number">2.</span> <span class="nav-text">2. a 的href</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-form-input"><span class="nav-number">3.</span> <span class="nav-text">3. form input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-select"><span class="nav-number">4.</span> <span class="nav-text">4. select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-textarea"><span class="nav-number">5.</span> <span class="nav-text">5. textarea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-table"><span class="nav-number">6.</span> <span class="nav-text">6. table</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-iframe-和-a-的target"><span class="nav-number">1.</span> <span class="nav-text">1. iframe 和 a 的target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-a-的href"><span class="nav-number">2.</span> <span class="nav-text">2. a 的href</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-form-input"><span class="nav-number">3.</span> <span class="nav-text">3. form input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-select"><span class="nav-number">4.</span> <span class="nav-text">4. select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-textarea"><span class="nav-number">5.</span> <span class="nav-text">5. textarea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-table"><span class="nav-number">6.</span> <span class="nav-text">6. table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Canvas"><span class="nav-number">7.</span> <span class="nav-text">7.Canvas</span></a></li></ol></div>
             
 
           </div>
@@ -519,7 +521,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
