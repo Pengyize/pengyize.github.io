@@ -85,13 +85,13 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/21/内存简介/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。所以用对象时是引用对象的地址，这种关系叫引用  除了对象类型，其他类型的数据是直接存在stack里  8g的内存相当于 8  1024  1024  1024  8 =  6.87E10">
-<meta property="og:image" content="http://yoursite.com/2018/03/21/内存简介/images/面试2">
-<meta property="og:image" content="http://yoursite.com/2018/03/21/内存简介/images/面试3">
-<meta property="og:updated_time" content="2018-03-21T06:11:06.941Z">
+<meta property="og:image" content="http://yoursite.com/images/面试2.png">
+<meta property="og:image" content="http://yoursite.com/images/面试3.png">
+<meta property="og:updated_time" content="2018-03-21T06:14:54.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内存简介">
 <meta name="twitter:description" content="存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。所以用对象时是引用对象的地址，这种关系叫引用  除了对象类型，其他类型的数据是直接存在stack里  8g的内存相当于 8  1024  1024  1024  8 =  6.87E10">
-<meta name="twitter:image" content="http://yoursite.com/2018/03/21/内存简介/images/面试2">
+<meta name="twitter:image" content="http://yoursite.com/images/面试2.png">
 
 
 
@@ -314,11 +314,11 @@
 <h2 id="5-面试题"><a href="#5-面试题" class="headerlink" title="5. 面试题"></a>5. 面试题</h2><p><strong>1.引用自身</strong><br>错误实例：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;self : a&#125;;       //这样a.self会是undefined</span><br><span class="line"></span><br><span class="line">上面这样等于</span><br><span class="line">var a;                    //undefined</span><br><span class="line">a.self = a                //这时a还是是undefined</span><br><span class="line">因为赋值时要先确定右边的</span><br></pre></td></tr></table></figure></p>
 <p>   正确写法：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;;</span><br><span class="line">a.self = a;            //这样a.self就等于它自己</span><br></pre></td></tr></table></figure></p>
 <p><strong>2</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;    //这一行运行的时候最左边的a地址已经确定了是34，于是先a = &#123;n:2&#125;，相当于给了a一个新地址54，再运行a.x=a，相当于把新地址赋给了旧地址34的x属性</span><br></pre></td></tr></table></figure></p>
-<p><img src="./images/面试2" alt="面试2.png"></p>
+<p><img src="/images/面试2.png" alt="面试2.png"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(a.x);        //        undefined，然而a的新地址54并没有x属性</span><br><span class="line">alert(b.x);        //        [object,Object]，b是引用的a的旧地址34</span><br></pre></td></tr></table></figure>
 <p><strong>3. 垃圾、垃圾回收</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line"> 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾</span><br></pre></td></tr></table></figure></p>
 <p>下面是面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;;</span><br><span class="line">document.body.onclick = fn;</span><br><span class="line">fn = null;</span><br></pre></td></tr></table></figure></p>
-<p>请问function是垃圾吗？<br>答案不是，因为⬇️<br><img src="./images/面试3" alt="面试3"></p>
+<p>请问function是垃圾吗？<br>答案不是，因为⬇️<br><img src="/images/面试3.png" alt="面试3"></p>
 <p>想要function变成垃圾可写<br><code>document.body.onclick = null;</code><br>附加：若是把页面关了，就相当于document不存在了，于是这时body、onclick、function都是垃圾，但IE6不会把它们当作垃圾，IE6有bug！这就叫内存泄露，垃圾会占满内存，解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function()&#123;</span><br><span class="line">    document.body.onclick=  null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
