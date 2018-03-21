@@ -79,18 +79,19 @@
 
 
 
-<meta name="description" content="1. HTTP(HyperText Transfer Protocol)http是超文本传输协议，它教客户端如何请求、服务器如何响应。 2. 状态码（背下来）是服务器对浏览器说的话： 200 通常的成功 OK  GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。POST：返回处理对应请求的结果。  204 成功处理请求，没有返回任何内容 No Content  表示服务器接收到的请">
+<meta name="description" content="存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。所以用对象时是引用对象的地址，这种关系叫引用  除了对象类型，其他类型的数据是直接存在stack里  8g的内存相当于 8  1024  1024  1024  8 =  6.87E10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP入门">
-<meta property="og:url" content="http://yoursite.com/2018/03/02/HTTP入门/index.html">
+<meta property="og:title" content="内存简介">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/内存简介/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="1. HTTP(HyperText Transfer Protocol)http是超文本传输协议，它教客户端如何请求、服务器如何响应。 2. 状态码（背下来）是服务器对浏览器说的话： 200 通常的成功 OK  GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。POST：返回处理对应请求的结果。  204 成功处理请求，没有返回任何内容 No Content  表示服务器接收到的请">
-<meta property="og:image" content="http://yoursite.com/images/nslookup.png">
-<meta property="og:updated_time" content="2018-03-21T05:27:27.758Z">
+<meta property="og:description" content="存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。所以用对象时是引用对象的地址，这种关系叫引用  除了对象类型，其他类型的数据是直接存在stack里  8g的内存相当于 8  1024  1024  1024  8 =  6.87E10">
+<meta property="og:image" content="http://yoursite.com/2018/03/21/内存简介/images/面试2">
+<meta property="og:image" content="http://yoursite.com/2018/03/21/内存简介/images/面试3">
+<meta property="og:updated_time" content="2018-03-21T06:11:06.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTTP入门">
-<meta name="twitter:description" content="1. HTTP(HyperText Transfer Protocol)http是超文本传输协议，它教客户端如何请求、服务器如何响应。 2. 状态码（背下来）是服务器对浏览器说的话： 200 通常的成功 OK  GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。POST：返回处理对应请求的结果。  204 成功处理请求，没有返回任何内容 No Content  表示服务器接收到的请">
-<meta name="twitter:image" content="http://yoursite.com/images/nslookup.png">
+<meta name="twitter:title" content="内存简介">
+<meta name="twitter:description" content="存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。所以用对象时是引用对象的地址，这种关系叫引用  除了对象类型，其他类型的数据是直接存在stack里  8g的内存相当于 8  1024  1024  1024  8 =  6.87E10">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/21/内存简介/images/面试2">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/02/HTTP入门/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/21/内存简介/"/>
 
 
 
 
 
-  <title>HTTP入门 | My Block</title>
+  <title>内存简介 | My Block</title>
   
 
 
@@ -233,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/HTTP入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/内存简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pengyize">
@@ -250,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTTP入门</h1>
+          <h1 class="post-title" itemprop="name headline">内存简介</h1>
         
 
         <div class="post-meta">
@@ -262,8 +263,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-02T16:47:09+08:00">
-                2018-03-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:08:37+08:00">
+                2018-03-21
               </time>
             
 
@@ -300,89 +301,25 @@
       
 
       
-        <h3 id="1-HTTP-HyperText-Transfer-Protocol"><a href="#1-HTTP-HyperText-Transfer-Protocol" class="headerlink" title="1. HTTP(HyperText Transfer Protocol)"></a>1. HTTP(HyperText Transfer Protocol)</h3><p>http是超文本传输协议，它教客户端如何请求、服务器如何响应。</p>
-<h3 id="2-状态码（背下来）"><a href="#2-状态码（背下来）" class="headerlink" title="2. 状态码（背下来）"></a>2. 状态码（背下来）</h3><p>是服务器对浏览器说的话：</p>
-<p>200 通常的成功 OK</p>
-<blockquote>
-<p>GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。<br>POST：返回处理对应请求的结果。</p>
-</blockquote>
-<p>204 成功处理请求，没有返回任何内容 No Content</p>
-<blockquote>
-<p>表示服务器接收到的请求已经处理完毕，但是服务器不需要返回响应。比如，客户端是浏览器的话，那么浏览器显示的页面不会发生更新。</p>
-</blockquote>
-<p>206 Partial Content</p>
-<blockquote>
-<p>成功处理了部分GET请求</p>
-</blockquote>
-<p>301 Moved Permanently</p>
-<blockquote>
-<p>请求的网页已永久移动到新位置，永久性重定向</p>
-</blockquote>
-<p>302 Found</p>
-<blockquote>
-<p>网站临时性重定向，暂时不能访问（备案、被查）</p>
-</blockquote>
-<p>303 See Other</p>
-<blockquote>
-<p>该状态码表示由于请求对应的资源存在另一个URI，并指定必须使用GET方法定向获取请求的资源。和302不同的是，302是不会改变上次的请求方法</p>
-</blockquote>
-<p>304 Not Modified</p>
-<blockquote>
-<p>访问不了，并返回和上次一样的话,表示资源未被修改过，还是和上次访问时一样。</p>
-</blockquote>
-<p>307 Temporary Redirect</p>
-<blockquote>
-<p>临时重定向，和302、303类似，不同的是，不会指定客户端要用什么样的方法请求，</p>
-</blockquote>
-<p>400 Bad Request</p>
-<blockquote>
-<p>表示客户端中存在语法错误，导致服务器无法理解该请求。客户端需要修改请求的内容后再次发送请求。</p>
-</blockquote>
-<p>401 Unauthorized</p>
-<blockquote>
-<p>即用户没有必要的凭据。该状态码表示当前请求需要用户验证。</p>
-</blockquote>
-<p>403 Forbidden</p>
-<blockquote>
-<p>服务器已经理解请求，但是拒绝执行它。</p>
-</blockquote>
-<p>404 Not Found</p>
-<blockquote>
-<p>服务器找不到请求的网页。</p>
-</blockquote>
-<p>500 Internal Server Error</p>
-<blockquote>
-<p>服务器遇到错误，无法完成请求。</p>
-</blockquote>
-<p>503 Service Unavailable</p>
-<blockquote>
-<p>由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是暂时的.</p>
-</blockquote>
-<p><strong>背下来</strong></p>
-<h3 id="3-请求的格式（背下来）"><a href="#3-请求的格式（背下来）" class="headerlink" title="3. 请求的格式（背下来）"></a>3. 请求的格式（背下来）</h3><ol>
-<li><p>GET请求<br>GET / HTTP/1.1<br>Host: baidu.com<br>Accept: text/html<br>（断行）</p>
+        <ol>
+<li><p>存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。<br>所以用对象时是引用对象的地址，这种关系叫引用</p>
 </li>
-<li><p>POST请求<br>POST /login HTTP/1.1<br>Host: baidu.com<br>Accept: application/json<br>Content-Type: application/x-www-form-urlencoded<br>Content-Length: …</p>
-<p>username=pyz&amp;password=123</p>
+<li><p>除了对象类型，其他类型的数据是直接存在stack里</p>
+</li>
+<li><p>8g的内存相当于 8 <em> 1024 </em> 1024 <em> 1024 </em> 8 =  6.87E10 (bit)<br>而64位二进制的数相当于 2^64^ = 1.84E19，所以64位二进制能用来表示内存里所有的位置</p>
+</li>
+<li><p>数字是64位的，字符是16位的（ES3）</p>
 </li>
 </ol>
-<p><strong>请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！</strong></p>
-<h3 id="4-响应的格式"><a href="#4-响应的格式" class="headerlink" title="4.响应的格式"></a>4.响应的格式</h3><ol>
-<li><p>GET的响应<br>HTTP/1.1 200 OK<br>Content-Length: …<br>Content-Type: text/html或application/x-JavaScript; charset=utf-8<br>（断行）<br>&lt;!DOCTYPE html&gt;</p>
-<html>…</html>
-</li>
-<li><p>POST<br>若密码错了<br>HTTP/1.1 401 Unauthorized（若成功了就是200 OK）<br>Content-Type: application/json<br>Content-Length: …</p>
-<p>{‘’error”}</p>
-</li>
-</ol>
-<h3 id="5-如何查看响应和请求"><a href="#5-如何查看响应和请求" class="headerlink" title="5. 如何查看响应和请求"></a>5. 如何查看响应和请求</h3><ol>
-<li>打开Network</li>
-<li>刷新网址</li>
-<li>选中第一个响应</li>
-<li>查看Headers里的Response Headers点view source可以看到响应的前两部分，Request Headers点view source可以看到请求</li>
-<li>查看Response你可以看到响应的第四部分</li>
-</ol>
-<h3 id="6-DNS-Domain-Name-System"><a href="#6-DNS-Domain-Name-System" class="headerlink" title="6. DNS(Domain Name System)"></a>6. DNS(Domain Name System)</h3><p>DNS即是通过域名找IP地址<br>有两个命令：<br><code>nslookup www.baidu.com</code><br><code>ping www.baidu.com</code><br>输入这两个命令都会返回baidu的IP地址<img src="/images/nslookup.png" alt="nslookup">Server你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近几台服务器的IP）。<br>可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给你假IP）</p>
+<h2 id="5-面试题"><a href="#5-面试题" class="headerlink" title="5. 面试题"></a>5. 面试题</h2><p><strong>1.引用自身</strong><br>错误实例：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;self : a&#125;;       //这样a.self会是undefined</span><br><span class="line"></span><br><span class="line">上面这样等于</span><br><span class="line">var a;                    //undefined</span><br><span class="line">a.self = a                //这时a还是是undefined</span><br><span class="line">因为赋值时要先确定右边的</span><br></pre></td></tr></table></figure></p>
+<p>   正确写法：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;;</span><br><span class="line">a.self = a;            //这样a.self就等于它自己</span><br></pre></td></tr></table></figure></p>
+<p><strong>2</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;    //这一行运行的时候最左边的a地址已经确定了是34，于是先a = &#123;n:2&#125;，相当于给了a一个新地址54，再运行a.x=a，相当于把新地址赋给了旧地址34的x属性</span><br></pre></td></tr></table></figure></p>
+<p><img src="./images/面试2" alt="面试2.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(a.x);        //        undefined，然而a的新地址54并没有x属性</span><br><span class="line">alert(b.x);        //        [object,Object]，b是引用的a的旧地址34</span><br></pre></td></tr></table></figure>
+<p><strong>3. 垃圾、垃圾回收</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line"> 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾</span><br></pre></td></tr></table></figure></p>
+<p>下面是面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;;</span><br><span class="line">document.body.onclick = fn;</span><br><span class="line">fn = null;</span><br></pre></td></tr></table></figure></p>
+<p>请问function是垃圾吗？<br>答案不是，因为⬇️<br><img src="./images/面试3" alt="面试3"></p>
+<p>想要function变成垃圾可写<br><code>document.body.onclick = null;</code><br>附加：若是把页面关了，就相当于document不存在了，于是这时body、onclick、function都是垃圾，但IE6不会把它们当作垃圾，IE6有bug！这就叫内存泄露，垃圾会占满内存，解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function()&#123;</span><br><span class="line">    document.body.onclick=  null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -407,8 +344,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/01/脚本/" rel="next" title="脚本">
-                <i class="fa fa-chevron-left"></i> 脚本
+              <a href="/2018/03/21/js数据类型的转换/" rel="next" title="js数据类型的转换">
+                <i class="fa fa-chevron-left"></i> js数据类型的转换
               </a>
             
           </div>
@@ -416,10 +353,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/04/HTTP基础和Node.js服务器/" rel="prev" title="HTTP基础和Node.js服务器">
-                HTTP基础和Node.js服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -533,7 +466,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-HTTP-HyperText-Transfer-Protocol"><span class="nav-number">1.</span> <span class="nav-text">1. HTTP(HyperText Transfer Protocol)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-状态码（背下来）"><span class="nav-number">2.</span> <span class="nav-text">2. 状态码（背下来）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-请求的格式（背下来）"><span class="nav-number">3.</span> <span class="nav-text">3. 请求的格式（背下来）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-响应的格式"><span class="nav-number">4.</span> <span class="nav-text">4.响应的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-如何查看响应和请求"><span class="nav-number">5.</span> <span class="nav-text">5. 如何查看响应和请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-DNS-Domain-Name-System"><span class="nav-number">6.</span> <span class="nav-text">6. DNS(Domain Name System)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-面试题"><span class="nav-number">1.</span> <span class="nav-text">5. 面试题</span></a></li></ol></div>
             
 
           </div>
