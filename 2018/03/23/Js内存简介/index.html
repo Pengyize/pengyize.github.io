@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="一. 配置GitHub 点击New SSH key title随便写 终端运行ssh-keygen -t rsa -b 4096 -C &amp;quot;邮箱&amp;quot; 运行 cat ~/.ssh/id_rsa.pub，得到一串东西，复制粘贴到key里，点击 Add SSH key 运行 ssh -T git@github.com  二. 配置git依次运行git config --global us">
+<meta name="description" content="下面介绍浏览器里js的内存 存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。所以用对象时是引用对象的地址，这种关系叫引用  除了对象类型，其他类型的数据是直接存在stack里  8g的内存相当于 8  1024  1024  1024">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub和git">
-<meta property="og:url" content="http://yoursite.com/2018/02/28/GitHub和git/index.html">
+<meta property="og:title" content="Js内存简介">
+<meta property="og:url" content="http://yoursite.com/2018/03/23/Js内存简介/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="一. 配置GitHub 点击New SSH key title随便写 终端运行ssh-keygen -t rsa -b 4096 -C &amp;quot;邮箱&amp;quot; 运行 cat ~/.ssh/id_rsa.pub，得到一串东西，复制粘贴到key里，点击 Add SSH key 运行 ssh -T git@github.com  二. 配置git依次运行git config --global us">
-<meta property="og:updated_time" content="2018-02-28T08:59:11.106Z">
+<meta property="og:description" content="下面介绍浏览器里js的内存 存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。所以用对象时是引用对象的地址，这种关系叫引用  除了对象类型，其他类型的数据是直接存在stack里  8g的内存相当于 8  1024  1024  1024">
+<meta property="og:image" content="http://yoursite.com/images/内存.png">
+<meta property="og:image" content="http://yoursite.com/images/面试2.png">
+<meta property="og:image" content="http://yoursite.com/images/面试3.png">
+<meta property="og:updated_time" content="2018-03-23T04:56:24.100Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GitHub和git">
-<meta name="twitter:description" content="一. 配置GitHub 点击New SSH key title随便写 终端运行ssh-keygen -t rsa -b 4096 -C &amp;quot;邮箱&amp;quot; 运行 cat ~/.ssh/id_rsa.pub，得到一串东西，复制粘贴到key里，点击 Add SSH key 运行 ssh -T git@github.com  二. 配置git依次运行git config --global us">
+<meta name="twitter:title" content="Js内存简介">
+<meta name="twitter:description" content="下面介绍浏览器里js的内存 存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。所以用对象时是引用对象的地址，这种关系叫引用  除了对象类型，其他类型的数据是直接存在stack里  8g的内存相当于 8  1024  1024  1024">
+<meta name="twitter:image" content="http://yoursite.com/images/内存.png">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/28/GitHub和git/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/23/Js内存简介/"/>
 
 
 
 
 
-  <title>GitHub和git | My Block</title>
+  <title>Js内存简介 | My Block</title>
   
 
 
@@ -231,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/GitHub和git/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/Js内存简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pengyize">
@@ -248,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">GitHub和git</h1>
+          <h1 class="post-title" itemprop="name headline">Js内存简介</h1>
         
 
         <div class="post-meta">
@@ -260,8 +264,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:58:54+08:00">
-                2018-02-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:56:14+08:00">
+                2018-03-23
               </time>
             
 
@@ -298,18 +302,26 @@
       
 
       
-        <h3 id="一-配置GitHub"><a href="#一-配置GitHub" class="headerlink" title="一. 配置GitHub"></a>一. 配置GitHub</h3><ol>
-<li><a href="https://github.com/settings/keys" target="_blank" rel="noopener">点击New SSH key</a></li>
-<li>title随便写</li>
-<li>终端运行<code>ssh-keygen -t rsa -b 4096 -C &quot;邮箱&quot;</code></li>
-<li>运行 <code>cat ~/.ssh/id_rsa.pub</code>，得到一串东西，复制粘贴到key里，点击 Add SSH key</li>
-<li>运行 <code>ssh -T git@github.com</code></li>
+        <p><img src="/images/内存.png" alt="内存"></p>
+<h2 id="下面介绍浏览器里js的内存"><a href="#下面介绍浏览器里js的内存" class="headerlink" title="下面介绍浏览器里js的内存"></a>下面介绍浏览器里js的内存</h2><ol>
+<li><p>存对象的时候，将数据存在Heap里，并将数据在Heap中的位置信息存在stack里，由于Heap（堆内存）里存数据不是按顺序存的，所以很方便对象随时添加属性。当把对象赋给另一个对象时，是把这个对象的地址赋给它。<br>所以用对象时是引用对象的地址，这种关系叫引用</p>
+</li>
+<li><p>除了对象类型，其他类型的数据是直接存在stack里</p>
+</li>
+<li><p>8g的内存相当于 8 <em> 1024 </em> 1024 <em> 1024 </em> 8 =  6.87E10 (bit)<br>而64位二进制的数相当于 2^64^ = 1.84E19，所以64位二进制能用来表示内存里所有的位置</p>
+</li>
+<li><p>数字是64位的，字符是16位的（ES3）</p>
+</li>
 </ol>
-<h3 id="二-配置git"><a href="#二-配置git" class="headerlink" title="二. 配置git"></a>二. 配置git</h3><p>依次运行<br><code>git config --global user.name “英文名”</code><br><code>git config --global user.email “邮箱”</code><br><code>git config --global push.default matching</code><br><code>git config --global core.quotepath false</code><br><code>git config --global core.editor &quot;vim&quot;</code></p>
-<h3 id="三-使用git的三种方法"><a href="#三-使用git的三种方法" class="headerlink" title="三. 使用git的三种方法"></a>三. 使用git的三种方法</h3><h6 id="1-在本地使用"><a href="#1-在本地使用" class="headerlink" title="1. 在本地使用"></a>1. 在本地使用</h6><p>a. 在桌面创建git-demo目录<code>mkdir git-demo</code><br>b. <code>cd git-demo</code><br>c. <code>git init</code><br>d. 在git-demo目录里运行<code>touch index.html</code><br>e. 运行 <code>git status -sb</code> 可以看到文件前面有 ??<br>f. 运行<code>git add .</code><br>g. <code>git commit -m &quot;第一次提交&quot;</code><br>h. <code>git pull</code>先把github上的文件拉下来（一般可忽略）<br>i. <code>git push</code>推上去</p>
-<h6 id="2-将本地仓库上传到github"><a href="#2-将本地仓库上传到github" class="headerlink" title="2. 将本地仓库上传到github"></a>2. 将本地仓库上传到github</h6><p>a. 在github上创建一个仓库<br>b. name和电脑上的目录名一样，其他东西不动，创建<br>c. 点击SSH地址！然后复制页面上这行代码运行<code>git remote add origin git@github.com:xxxxxxxxx/git-demo-1.git</code><br>d. 复制第二行 <code>git push -u origin master</code>运行</p>
-<h6 id="3-在github上创建仓库并下载"><a href="#3-在github上创建仓库并下载" class="headerlink" title="3. 在github上创建仓库并下载"></a>3. 在github上创建仓库并下载</h6><p>a. 创建时勾选initialize this … ，Add .gitignore  选node，Add a license 选MIT License<br>b. 进入仓库点右上角绿色clone or download<br>c. 点 use SSH，并复制下面的地址<br>d. 终端进入桌面运行<code>git clone 地址</code>，于是将仓库下到了电脑上<br>e. 进入文件夹<code>git init</code>，初始化本地仓库</p>
-<h3 id="四-上传更新"><a href="#四-上传更新" class="headerlink" title="四.上传更新"></a>四.上传更新</h3><p>1.git add .<br>2.git commi -m “第一次更新”<br>3.git pull（将网上更新的文件拉到电脑上）<br>4.git push（上传）</p>
+<h2 id="5-面试题"><a href="#5-面试题" class="headerlink" title="5. 面试题"></a>5. 面试题</h2><p><strong>1.引用自身</strong><br>错误实例：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;self : a&#125;;       //这样a.self会是undefined</span><br><span class="line"></span><br><span class="line">上面这样等于</span><br><span class="line">var a;                    //undefined</span><br><span class="line">a.self = a                //这时a还是是undefined</span><br><span class="line">因为赋值时要先确定右边的</span><br></pre></td></tr></table></figure></p>
+<p>   正确写法：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;;</span><br><span class="line">a.self = a;            //这样a.self就等于它自己</span><br></pre></td></tr></table></figure></p>
+<p><strong>2</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;    //这一行运行的时候最左边的a地址已经确定了是34，于是先a = &#123;n:2&#125;，相当于给了a一个新地址54，再运行a.x=a，相当于把新地址赋给了旧地址34的x属性</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/面试2.png" alt="面试2.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(a.x);        //        undefined，然而a的新地址54并没有x属性</span><br><span class="line">alert(b.x);        //        [object,Object]，b是引用的a的旧地址34</span><br></pre></td></tr></table></figure>
+<p><strong>3. 垃圾、垃圾回收</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line"> 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾</span><br></pre></td></tr></table></figure></p>
+<p>下面是面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;;</span><br><span class="line">document.body.onclick = fn;</span><br><span class="line">fn = null;</span><br></pre></td></tr></table></figure></p>
+<p>请问function是垃圾吗？<br>答案不是，因为⬇️<br><img src="/images/面试3.png" alt="面试3"></p>
+<p>想要function变成垃圾可写<br><code>document.body.onclick = null;</code><br>附加：若是把页面关了，就相当于document不存在了，于是这时body、onclick、function都是垃圾，但IE6不会把它们当作垃圾，IE6有bug！这就叫内存泄露，垃圾会占满内存，解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function()&#123;</span><br><span class="line">    document.body.onclick=  null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -334,8 +346,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/28/命令行基础/" rel="next" title="命令行基础">
-                <i class="fa fa-chevron-left"></i> 命令行基础
+              <a href="/2018/03/23/JavaScript原型/" rel="next" title="JavaScript原型">
+                <i class="fa fa-chevron-left"></i> JavaScript原型
               </a>
             
           </div>
@@ -343,10 +355,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/28/配置HEXO博客-linux/" rel="prev" title="配置HEXO博客-linux">
-                配置HEXO博客-linux <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,7 +468,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-配置GitHub"><span class="nav-number">1.</span> <span class="nav-text">一. 配置GitHub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-配置git"><span class="nav-number">2.</span> <span class="nav-text">二. 配置git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-使用git的三种方法"><span class="nav-number">3.</span> <span class="nav-text">三. 使用git的三种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-在本地使用"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">1. 在本地使用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-将本地仓库上传到github"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">2. 将本地仓库上传到github</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-在github上创建仓库并下载"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">3. 在github上创建仓库并下载</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-上传更新"><span class="nav-number">4.</span> <span class="nav-text">四.上传更新</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#下面介绍浏览器里js的内存"><span class="nav-number">1.</span> <span class="nav-text">下面介绍浏览器里js的内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-面试题"><span class="nav-number">2.</span> <span class="nav-text">5. 面试题</span></a></li></ol></div>
             
 
           </div>
