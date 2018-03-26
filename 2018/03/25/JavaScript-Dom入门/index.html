@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. JS初级主要就两个作用： 1.找元素2.给元素增加/删除class  2.1234Node.ELEMENT_NODE === 1  //true，元素节点Node.TEXT_NODE === 3     //true，元素中的文本xxx.nodeType === 3     //可用来检验xxx是一个元素节点还是元素中的文本 3.ul的tagName为’UL’（大写！） let brothe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Dom入门">
+<meta property="og:url" content="http://yoursite.com/2018/03/25/JavaScript-Dom入门/index.html">
+<meta property="og:site_name" content="My Block">
+<meta property="og:description" content="1. JS初级主要就两个作用： 1.找元素2.给元素增加/删除class  2.1234Node.ELEMENT_NODE === 1  //true，元素节点Node.TEXT_NODE === 3     //true，元素中的文本xxx.nodeType === 3     //可用来检验xxx是一个元素节点还是元素中的文本 3.ul的tagName为’UL’（大写！） let brothe">
+<meta property="og:updated_time" content="2018-03-25T16:31:05.352Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript Dom入门">
+<meta name="twitter:description" content="1. JS初级主要就两个作用： 1.找元素2.给元素增加/删除class  2.1234Node.ELEMENT_NODE === 1  //true，元素节点Node.TEXT_NODE === 3     //true，元素中的文本xxx.nodeType === 3     //可用来检验xxx是一个元素节点还是元素中的文本 3.ul的tagName为’UL’（大写！） let brothe">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/25/JavaScript-Dom入门/"/>
+
+
+
+
+
+  <title>JavaScript Dom入门 | My Block</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Block</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/JavaScript-Dom入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript Dom入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-25T23:32:07+08:00">
+                2018-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-JS初级主要就两个作用："><a href="#1-JS初级主要就两个作用：" class="headerlink" title="1. JS初级主要就两个作用："></a>1. JS初级主要就两个作用：</h1><blockquote>
+<p>1.找元素<br>2.给元素增加/删除class</p>
+</blockquote>
+<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Node.ELEMENT_NODE === 1  //true，元素节点</span><br><span class="line">Node.TEXT_NODE === 3     //true，元素中的文本</span><br><span class="line"></span><br><span class="line">xxx.nodeType === 3     //可用来检验xxx是一个元素节点还是元素中的文本</span><br></pre></td></tr></table></figure>
+<h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>ul的tagName为’UL’（大写！）</p>
+<p><code>let brother = li.getElementsByTagName(&#39;UL&#39;)[0];</code><br>getElementsByTagName这个API返回的是一个数组，所以要写上[0]</p>
+<h1 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.href     //这样获取href，浏览器会给href加上http协议</span><br><span class="line">a.getAttribute(&apos;href&apos;)    //这样获取的才是href本身</span><br></pre></td></tr></table></figure>
+<h1 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">liTags[i].onmouseenter = function (x) &#123;</span><br><span class="line">      console.log(x.target);           //x.target是我们操作的那个元素，若a里包含了个span，那操作的就是span</span><br><span class="line">      console.log(x.currentTarget);    //x.currentTarget是我们监听的元素，就是liTags[i]这个元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h1><p>用JS完成页面内的跳转<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let aTags = document.querySelectorAll(&apos;nav.menu &gt; ul &gt; li &gt; a&apos;);    //获取所有a标签，返回的是一个数组</span><br><span class="line">for(let i=0;i&lt;aTags.length;i++) &#123;      //因为aTags是数组，所以要用for循环，同时监听到数组里的所有元素</span><br><span class="line">    aTags[i].onclick = function (x) &#123;  //监听a标签被鼠标点击的动作</span><br><span class="line">        x.preventDefault();            //防止默认动作（跳转）</span><br><span class="line">        let a = x.currentTarget;       //当前监听的元素a</span><br><span class="line">        let href = a.getAttribute(&apos;href&apos;);  //获取a的href值</span><br><span class="line">        let element = document.querySelector(href);  //获取带有这个href值的标签 例：&apos;#siteAbout&apos;</span><br><span class="line">        let top = element.offsetTop; //获取这个标签的底端到整个页面顶端的距离（固定值）</span><br><span class="line">        window.scrollTo(0,top);  //跳转window.scrollTo(x,y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="7-console-log调试大法"><a href="#7-console-log调试大法" class="headerlink" title="7. console.log调试大法"></a>7. console.log调试大法</h1><p>出问题了就在每一步console.log，能解决很多问题</p>
+<h1 id="8-setInterval"><a href="#8-setInterval" class="headerlink" title="8. setInterval()"></a>8. setInterval()</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let i=0;</span><br><span class="line">let say = setInterval(() =&gt; &#123;</span><br><span class="line">            if(i === 25)&#123;</span><br><span class="line">                window.clearInterval(say);      //调用setInterval的名字来停止它</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">           console.log(i);    //从1报数到25，一秒一次，到25就停</span><br><span class="line">        &#125;,1000);</span><br></pre></td></tr></table></figure>
+<h1 id="9-Tween-js"><a href="#9-Tween-js" class="headerlink" title="9. Tween.js"></a>9. Tween.js</h1><p><a href="http://easings.net/zh-cn" target="_blank" rel="noopener">缓动动画速查表</a></p>
+<ol>
+<li>在<a href="cdnjs.com">cdn</a>里搜tween，下载并在html中引用</li>
+<li>在<a href="https://github.com/tweenjs/tween.js/" target="_blank" rel="noopener">github-tween</a>中查看使用教程</li>
+</ol>
+<h1 id="10-选择器"><a href="#10-选择器" class="headerlink" title="10. 选择器"></a>10. 选择器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = document.querySelector(&apos;a[href=&quot;&apos; + id + &apos;&quot;]&apos;)</span><br><span class="line">//href外要包一个中括号，地址外要包一个双引号！并且变量id要和其他的用加号隔开</span><br></pre></td></tr></table></figure>
+<h1 id="11-儿子选择器"><a href="#11-儿子选择器" class="headerlink" title="11. 儿子选择器"></a>11. 儿子选择器</h1> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var c = div.children;    //会获得div下的所有子标签</span><br><span class="line">var c = div.childNodes;  //会获得div下的所有子标签加文本标签</span><br></pre></td></tr></table></figure>
+<h1 id="12-获得所有兄弟姐妹"><a href="#12-获得所有兄弟姐妹" class="headerlink" title="12. 获得所有兄弟姐妹"></a>12. 获得所有兄弟姐妹</h1><p>方法一：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var getSiblings = function (elem) &#123;</span><br><span class="line">	var siblings = [];</span><br><span class="line">	var sibling = elem.parentNode.firstChild;</span><br><span class="line">	for (; sibling; sibling = sibling.nextSibling) &#123;</span><br><span class="line">		if (sibling.nodeType !== 1 || sibling === elem) continue;</span><br><span class="line">		siblings.push(sibling);</span><br><span class="line">	&#125;</span><br><span class="line">	return siblings;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>方法二 用getSiblings()：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var elem = document.querySelector(&apos;#some-element&apos;);</span><br><span class="line">var siblings = getSiblings(elem);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/23/Js内存简介/" rel="next" title="Js内存简介">
+                <i class="fa fa-chevron-left"></i> Js内存简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Pengyize</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-JS初级主要就两个作用："><span class="nav-number">1.</span> <span class="nav-text">1. JS初级主要就两个作用：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5"><span class="nav-number">5.</span> <span class="nav-text">5.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6"><span class="nav-number">6.</span> <span class="nav-text">6.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-console-log调试大法"><span class="nav-number">7.</span> <span class="nav-text">7. console.log调试大法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-setInterval"><span class="nav-number">8.</span> <span class="nav-text">8. setInterval()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-Tween-js"><span class="nav-number">9.</span> <span class="nav-text">9. Tween.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-选择器"><span class="nav-number">10.</span> <span class="nav-text">10. 选择器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-儿子选择器"><span class="nav-number">11.</span> <span class="nav-text">11. 儿子选择器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-获得所有兄弟姐妹"><span class="nav-number">12.</span> <span class="nav-text">12. 获得所有兄弟姐妹</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pengyize</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

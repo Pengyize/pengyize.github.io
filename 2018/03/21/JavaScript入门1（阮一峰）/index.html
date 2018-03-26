@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/21/JavaScript入门1（阮一峰）/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1. 语法12341. div1 = document.createElement(&amp;apos;div&amp;apos;)   //要加引号2. div.textContent = &amp;apos;我是div&amp;apos;3. main.appendChild(div1)  //这个不用引号4. key.className = &amp;apos;key&amp;apos; 2. 包装函数当用js创建一个span标签并想同时">
-<meta property="og:updated_time" content="2018-03-21T05:50:22.707Z">
+<meta property="og:updated_time" content="2018-03-26T05:24:45.744Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript入门1（阮一峰）">
 <meta name="twitter:description" content="1. 语法12341. div1 = document.createElement(&amp;apos;div&amp;apos;)   //要加引号2. div.textContent = &amp;apos;我是div&amp;apos;3. main.appendChild(div1)  //这个不用引号4. key.className = &amp;apos;key&amp;apos; 2. 包装函数当用js创建一个span标签并想同时">
@@ -321,7 +321,7 @@
 <p>用person.key和person[key]是不同的，person.key代表person里有一个键名为key的属性，key被当作字符串，会出现undefined。而且数值键名也不能用点，会被当作小数点。<br><code>obj.123    //报错</code><br>只能用person[key]来表示，因为使用方括号运算符时key会被当作变量来处理。</p>
 </blockquote>
 <blockquote>
-<p>bug1: typeof null     //object<br>bug2: typeof function     //function，但function其实应该是object</p>
+<p>bug1: typeof null     //object<br>bug2: typeof function      //function，function也是object的一种，但function有自己的原型</p>
 </blockquote>
 <blockquote>
 <p>{foo:123}，javascript理解为语句（即代码块）<br>({foo:123})，JavaScript理解为对象<br>在eval语句（作用是对字符串求值）中<br>eval(‘{foo: 123}’) // 123<br>eval(‘({foo: 123})’) // {foo: 123}</p>
@@ -461,7 +461,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
