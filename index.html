@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -257,7 +257,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T12:21:19+08:00">
                 2018-03-27
@@ -415,7 +415,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-25T23:32:07+08:00">
                 2018-03-25
@@ -554,7 +554,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:56:14+08:00">
                 2018-03-23
@@ -612,7 +612,7 @@
 <p>   正确写法：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;&#125;;</span><br><span class="line">a.self = a;            //这样a.self就等于它自己</span><br></pre></td></tr></table></figure></p>
 <p><strong>2</strong><br><img src="/images/面试2.png" alt="面试2.png"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;n:1&#125;;</span><br><span class="line">var b = a;</span><br><span class="line">a.x = a = &#123;n:2&#125;   //这一行运行的时候最左的a地址已经确定为最开始的地址，于是先运行a = &#123;n:2&#125;，相当于给了a一个新地址，再运行a.x = a，相当于把新地址赋给了旧地址上对象一个x属性</span><br><span class="line"></span><br><span class="line">alert(a.x);       // undefined，然而有了新地址的a并没有x属性</span><br><span class="line">alert(b.x);       // [object,Object]，b是引用的a的旧地址，所以b有</span><br></pre></td></tr></table></figure>
-<p><strong>3. 垃圾、垃圾回收</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line"> 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾</span><br></pre></td></tr></table></figure></p>
+<p><strong>3. 垃圾、垃圾回收</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function()&#123;&#125;;</span><br><span class="line">var a = null;</span><br><span class="line"></span><br><span class="line"> 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾，会被浏览器回收</span><br></pre></td></tr></table></figure></p>
 <p>下面是面试题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var fn = function()&#123;&#125;;</span><br><span class="line">document.body.onclick = fn;</span><br><span class="line">fn = null;</span><br></pre></td></tr></table></figure></p>
 <p>请问function是垃圾吗？<br>答案不是，因为<code>document.body.onclick = fn;</code>还在引用<br><img src="/images/面试3.png" alt="面试3"></p>
 <p>想要function变成垃圾可写<br><code>document.body.onclick = null;</code><br>附加：若是把页面关了，就相当于document不存在了，于是这时body、onclick、function都是垃圾，浏览器会把它们回收，但IE6不会把它们当作垃圾，IE6有bug！这就叫内存泄露，垃圾会占满内存，造成卡顿，解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function()&#123;</span><br><span class="line">    document.body.onclick=  null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -693,7 +693,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:47:25+08:00">
                 2018-03-23
@@ -735,14 +735,15 @@
       
         
           
-            <h2 id="1-公用属性（就是原型）"><a href="#1-公用属性（就是原型）" class="headerlink" title="1. 公用属性（就是原型）"></a>1. 公用属性（就是原型）</h2><p>每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性（原型）的地址，当用toString()时，就是调用的公用属性（原型）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o1.toString === o2.toString   //true</span><br></pre></td></tr></table></figure></p>
-<p>同时Number对象还有它特有的公用属性（原型），所以它比Object要多一个公用属性库，并且会先访问Number的原型（公用属性库），<strong>这一条链就叫原型链</strong>，像下图<img src="/images/原型链.png" alt="原型链"><br>同理，String、boolean也有自己的原型，但若平常没被引用的话会被当作垃圾回收，所以平常对象的原型是Object.prototype在引用，可得⬇️<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype === o1.__proto__     //true，是把prototype的地址赋给__proto__属性了</span><br></pre></td></tr></table></figure></p>
-<p>所以它们最终指向的Object的公有属性，就是Object.prototype（原型），Number特有的公有属性就是Number.prototype，同理有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number.prototype.__proto__ === Object.prototype //true，是把Object.prototype的地址赋给Number的__proto__属性了</span><br><span class="line"></span><br><span class="line">var n1 = new Number(1);</span><br><span class="line">n1.__proto__ === Number.prototype    //true，是把Number.prototype的地址赋给n1的__proto__属性了</span><br><span class="line">n1.__proto__.__proto__ === Object.prototype  //true</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-proto-和prototype的区别"><a href="#2-proto-和prototype的区别" class="headerlink" title="2. __proto__和prototype的区别"></a>2. __proto__和prototype的区别</h2><p><img src="/images/原型.png" alt="原型.png"><br>打开浏览器就会自动生成Number、String、Boolean、Object这几个对象和它们的原型，并把它们原型的地址放入prototype属性里，在你写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var n = new Number(1);     //就会把Number.prototype里的地址放入n的__proto__属性里</span><br></pre></td></tr></table></figure></p>
+            <h2 id="1-公用属性（就是原型）"><a href="#1-公用属性（就是原型）" class="headerlink" title="1. 公用属性（就是原型）"></a>1. 公用属性（就是原型）</h2><p>每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性的地址(Object.prototype)，当用toString()时，就是调用的公用属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o1.toString === o2.toString   //true</span><br></pre></td></tr></table></figure></p>
+<p>同时Number对象还有它特有公用属性，所以它比Object要多一个公用属性库，并且会先访问Number的原型（公用属性库），<strong>这一条链就叫原型链</strong>，像下图<img src="/images/原型链.png" alt="原型链"><br>同理，String、boolean也有自己的原型，但若平常没被引用的话会被当作垃圾回收，所以平常对象的原型是Object.prototype在引用，可得⬇️<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype === o1.__proto__     //true，是把prototype的地址赋给__proto__属性了</span><br></pre></td></tr></table></figure></p>
+<p>所以它们最终指向的Object的公有属性，就是Object.prototype（原型），Number、String、的特有公有属性也是它们的prototype属性在引用，同理有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number.prototype.__proto__ === Object.prototype //true，是把Object.prototype的地址赋给Number的__proto__属性了</span><br><span class="line"></span><br><span class="line">var n1 = new Number(1);</span><br><span class="line">n1.__proto__ === Number.prototype    //true，是把Number.prototype的地址赋给n1的__proto__属性了</span><br><span class="line">n1.__proto__.__proto__ === Object.prototype  //true</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-proto-和prototype的区别"><a href="#2-proto-和prototype的区别" class="headerlink" title="2. __proto__和prototype的区别"></a>2. __proto__和prototype的区别</h2><p><img src="/images/原型.png" alt="原型.png"><br>打开浏览器就相当于生成了一个window，里面存了Number、String、Boolean、Object这几个对象，对象里的prototype属性里存了它们原型的地址，在你写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var n = new Number(1);     //就会把Number.prototype里的地址放入n的__proto__属性里</span><br></pre></td></tr></table></figure></p>
 <p>这样用n就能调用Number的原型了</p>
-<p>总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数();</span><br><span class="line">对象.__proto__ === 函数.prototype    //true</span><br></pre></td></tr></table></figure></p>
-<p>__proto__是对象的属性，prototype是函数的属性<br><strong>面试题</strong>：<code>&#39;1&#39;.__proto__</code>是什么？<br>答：’1’会临时转化为String对象，’1’.__proto__指向String.prototype</p>
-<p>所有对象都有__proto__属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.\_\_proto\_\_ === null;</span><br><span class="line"></span><br><span class="line">1.toString()     //语法错误，JS把.当作小数点了</span><br><span class="line">1..toString()    //&apos;1&apos;，第一个.当作小数点，第二个为点操作符</span><br></pre></td></tr></table></figure></p>
+<p>总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数();		//函数可以是Number/String/Boolean/Object</span><br><span class="line">对象.__proto__ === 函数.prototype    //true</span><br></pre></td></tr></table></figure></p>
+<p>__proto__是对象的属性，prototype是函数的属性</p>
+<p><strong>面试题</strong>：<code>&#39;1&#39;.__proto__</code>是什么？<br>答：’1’会临时转化为String对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;1&apos;.__proto__ === String.prototype    //true</span><br></pre></td></tr></table></figure></p>
+<p>所有对象都有__proto__属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.__proto__ === null;</span><br><span class="line"></span><br><span class="line">1.toString()     //语法错误，不加引号JS会把.当作小数点</span><br><span class="line">1..toString()    //&apos;1&apos;，第一个.当作小数点，第二个为点操作符</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -820,7 +821,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:44:48+08:00">
                 2018-03-23
@@ -956,7 +957,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:12:42+08:00">
                 2018-03-21
@@ -1088,7 +1089,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:12:09+08:00">
                 2018-03-21
@@ -1213,7 +1214,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:06:01+08:00">
                 2018-03-21
@@ -1345,7 +1346,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T13:50:03+08:00">
                 2018-03-21
@@ -1514,7 +1515,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:51:15+08:00">
                 2018-03-12
@@ -1655,7 +1656,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">26</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -1705,7 +1706,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="1. 公用属性（就是原型）每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性（原型）的地址，当用toString()时，就是调用的公用属性（原型）1o1.toString === o2.toString   //true 同时Number对象还有它特有的公用属性（原型），所以">
+<meta name="description" content="1. 公用属性（就是原型）每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性的地址(Object.prototype)，当用toString()时，就是调用的公用属性1o1.toString === o2.toString   //true 同时Number对象还有它特有公用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript原型">
 <meta property="og:url" content="http://yoursite.com/2018/03/23/JavaScript原型/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="1. 公用属性（就是原型）每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性（原型）的地址，当用toString()时，就是调用的公用属性（原型）1o1.toString === o2.toString   //true 同时Number对象还有它特有的公用属性（原型），所以">
+<meta property="og:description" content="1. 公用属性（就是原型）每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性的地址(Object.prototype)，当用toString()时，就是调用的公用属性1o1.toString === o2.toString   //true 同时Number对象还有它特有公用">
 <meta property="og:image" content="http://yoursite.com/images/原型链.png">
 <meta property="og:image" content="http://yoursite.com/images/原型.png">
-<meta property="og:updated_time" content="2018-03-23T04:49:04.678Z">
+<meta property="og:updated_time" content="2018-03-27T05:59:21.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript原型">
-<meta name="twitter:description" content="1. 公用属性（就是原型）每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性（原型）的地址，当用toString()时，就是调用的公用属性（原型）1o1.toString === o2.toString   //true 同时Number对象还有它特有的公用属性（原型），所以">
+<meta name="twitter:description" content="1. 公用属性（就是原型）每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性的地址(Object.prototype)，当用toString()时，就是调用的公用属性1o1.toString === o2.toString   //true 同时Number对象还有它特有公用">
 <meta name="twitter:image" content="http://yoursite.com/images/原型链.png">
 
 
@@ -187,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -261,7 +261,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:47:25+08:00">
                 2018-03-23
@@ -301,14 +301,15 @@
       
 
       
-        <h2 id="1-公用属性（就是原型）"><a href="#1-公用属性（就是原型）" class="headerlink" title="1. 公用属性（就是原型）"></a>1. 公用属性（就是原型）</h2><p>每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性（原型）的地址，当用toString()时，就是调用的公用属性（原型）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o1.toString === o2.toString   //true</span><br></pre></td></tr></table></figure></p>
-<p>同时Number对象还有它特有的公用属性（原型），所以它比Object要多一个公用属性库，并且会先访问Number的原型（公用属性库），<strong>这一条链就叫原型链</strong>，像下图<img src="/images/原型链.png" alt="原型链"><br>同理，String、boolean也有自己的原型，但若平常没被引用的话会被当作垃圾回收，所以平常对象的原型是Object.prototype在引用，可得⬇️<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype === o1.__proto__     //true，是把prototype的地址赋给__proto__属性了</span><br></pre></td></tr></table></figure></p>
-<p>所以它们最终指向的Object的公有属性，就是Object.prototype（原型），Number特有的公有属性就是Number.prototype，同理有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number.prototype.__proto__ === Object.prototype //true，是把Object.prototype的地址赋给Number的__proto__属性了</span><br><span class="line"></span><br><span class="line">var n1 = new Number(1);</span><br><span class="line">n1.__proto__ === Number.prototype    //true，是把Number.prototype的地址赋给n1的__proto__属性了</span><br><span class="line">n1.__proto__.__proto__ === Object.prototype  //true</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-proto-和prototype的区别"><a href="#2-proto-和prototype的区别" class="headerlink" title="2. __proto__和prototype的区别"></a>2. __proto__和prototype的区别</h2><p><img src="/images/原型.png" alt="原型.png"><br>打开浏览器就会自动生成Number、String、Boolean、Object这几个对象和它们的原型，并把它们原型的地址放入prototype属性里，在你写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var n = new Number(1);     //就会把Number.prototype里的地址放入n的__proto__属性里</span><br></pre></td></tr></table></figure></p>
+        <h2 id="1-公用属性（就是原型）"><a href="#1-公用属性（就是原型）" class="headerlink" title="1. 公用属性（就是原型）"></a>1. 公用属性（就是原型）</h2><p>每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性的地址(Object.prototype)，当用toString()时，就是调用的公用属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o1.toString === o2.toString   //true</span><br></pre></td></tr></table></figure></p>
+<p>同时Number对象还有它特有公用属性，所以它比Object要多一个公用属性库，并且会先访问Number的原型（公用属性库），<strong>这一条链就叫原型链</strong>，像下图<img src="/images/原型链.png" alt="原型链"><br>同理，String、boolean也有自己的原型，但若平常没被引用的话会被当作垃圾回收，所以平常对象的原型是Object.prototype在引用，可得⬇️<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype === o1.__proto__     //true，是把prototype的地址赋给__proto__属性了</span><br></pre></td></tr></table></figure></p>
+<p>所以它们最终指向的Object的公有属性，就是Object.prototype（原型），Number、String、的特有公有属性也是它们的prototype属性在引用，同理有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number.prototype.__proto__ === Object.prototype //true，是把Object.prototype的地址赋给Number的__proto__属性了</span><br><span class="line"></span><br><span class="line">var n1 = new Number(1);</span><br><span class="line">n1.__proto__ === Number.prototype    //true，是把Number.prototype的地址赋给n1的__proto__属性了</span><br><span class="line">n1.__proto__.__proto__ === Object.prototype  //true</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-proto-和prototype的区别"><a href="#2-proto-和prototype的区别" class="headerlink" title="2. __proto__和prototype的区别"></a>2. __proto__和prototype的区别</h2><p><img src="/images/原型.png" alt="原型.png"><br>打开浏览器就相当于生成了一个window，里面存了Number、String、Boolean、Object这几个对象，对象里的prototype属性里存了它们原型的地址，在你写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var n = new Number(1);     //就会把Number.prototype里的地址放入n的__proto__属性里</span><br></pre></td></tr></table></figure></p>
 <p>这样用n就能调用Number的原型了</p>
-<p>总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数();</span><br><span class="line">对象.__proto__ === 函数.prototype    //true</span><br></pre></td></tr></table></figure></p>
-<p>__proto__是对象的属性，prototype是函数的属性<br><strong>面试题</strong>：<code>&#39;1&#39;.__proto__</code>是什么？<br>答：’1’会临时转化为String对象，’1’.__proto__指向String.prototype</p>
-<p>所有对象都有__proto__属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.\_\_proto\_\_ === null;</span><br><span class="line"></span><br><span class="line">1.toString()     //语法错误，JS把.当作小数点了</span><br><span class="line">1..toString()    //&apos;1&apos;，第一个.当作小数点，第二个为点操作符</span><br></pre></td></tr></table></figure></p>
+<p>总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数();		//函数可以是Number/String/Boolean/Object</span><br><span class="line">对象.__proto__ === 函数.prototype    //true</span><br></pre></td></tr></table></figure></p>
+<p>__proto__是对象的属性，prototype是函数的属性</p>
+<p><strong>面试题</strong>：<code>&#39;1&#39;.__proto__</code>是什么？<br>答：’1’会临时转化为String对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;1&apos;.__proto__ === String.prototype    //true</span><br></pre></td></tr></table></figure></p>
+<p>所有对象都有__proto__属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.__proto__ === null;</span><br><span class="line"></span><br><span class="line">1.toString()     //语法错误，不加引号JS会把.当作小数点</span><br><span class="line">1..toString()    //&apos;1&apos;，第一个.当作小数点，第二个为点操作符</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -399,10 +400,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -423,7 +424,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">26</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -489,7 +490,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
