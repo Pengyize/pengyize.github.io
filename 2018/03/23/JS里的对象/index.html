@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/23/JS里的对象/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1. 全局变量:一种是 ECMAScript 规定的（global） global.parseInt global.parseFloat global.Number global.String global.Boolean global.Object  2. 全局变量:另一种是浏览器自己的全局变量(window) window.alert window.prompt window.comfirm">
-<meta property="og:updated_time" content="2018-03-23T04:45:43.062Z">
+<meta property="og:updated_time" content="2018-03-26T06:18:19.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS里的对象">
 <meta name="twitter:description" content="1. 全局变量:一种是 ECMAScript 规定的（global） global.parseInt global.parseFloat global.Number global.String global.Boolean global.Object  2. 全局变量:另一种是浏览器自己的全局变量(window) window.alert window.prompt window.comfirm">
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -258,7 +258,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:44:48+08:00">
                 2018-03-23
@@ -312,10 +312,10 @@
 <li>window.comfirm</li>
 <li>window.console.log</li>
 </ul>
-<h2 id="3-Number"><a href="#3-Number" class="headerlink" title="3. Number"></a>3. Number</h2><p>JavaScript的作者Brendan Eich被公司要求JS要像Java，所以他模仿java写了<br><code>var n = new Number(1);</code>这样n是一个对象，有自己的属性，但太麻烦，于是他又写了一种<br><code>var n =1;</code>n是基本类型<br>但他用了一个方法，使这样声明的也可以用Number对象的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var n=1;</span><br><span class="line">n.toString();       //n用toString时，本质是下面这两行，实质n是没有属性的</span><br><span class="line"></span><br><span class="line">var temp = new Number(n);    //声明了一个临时变量temp，并将n作为Number对象赋给它</span><br><span class="line">temp.toString();             //用temp来执行toString，执行完后temp就被抹杀了</span><br><span class="line"></span><br><span class="line">n.xxx = 2;      //可以的</span><br><span class="line">n.xxx           //但undefined，因为xxx是存在temp的，上一句的temp执行完后就被抹杀，所以xxx也被抹杀了</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-String"><a href="#4-String" class="headerlink" title="4. String"></a>4. String</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;asd&apos;;      //     原理和Number一样</span><br><span class="line"></span><br><span class="line">var s2 = new String(s);</span><br><span class="line">s2[0]    //    &apos;a&apos;，因为String()对象有hash的属性</span><br><span class="line"></span><br><span class="line">s[0]     //    &apos;a&apos;，s也能调用这个属性，但s实质没有属性，这个原理和上面Number一样</span><br><span class="line"></span><br><span class="line">s.charCodeAt(0)    //    97，a的unicode码</span><br><span class="line">s.charCodeAt(0).toString(16)  //&apos;61&apos;，a的unicode码的十六进制</span><br><span class="line"></span><br><span class="line">&apos; asd &apos;.trim();      //  &apos;asd&apos;，去掉字符串两边的空格</span><br><span class="line"></span><br><span class="line">var s1 = &apos;Hello&apos;;</span><br><span class="line">s.concat(s1);      //    asdHello，连接两个字符串</span><br><span class="line"></span><br><span class="line">s1.slice(0,1);      //   &apos;H&apos;，slice是切片，切下0到1之前的内容</span><br><span class="line">s1.slice(1);        //   &apos;ello&apos;，返回1和后面的所有内容</span><br><span class="line"></span><br><span class="line">s1.replace(&apos;e&apos;,&apos;o&apos;)    // &apos;Hollo&apos;，替换</span><br><span class="line"></span><br><span class="line">s1.length    //    5</span><br><span class="line"></span><br><span class="line">s1.indexOf(&apos;o&apos;)       //    4，定位，若没找到会返回-1</span><br><span class="line">if(s1.indexOf(&apos;h&apos;) !== -1) &#123;  // 可用来执行某些操作</span><br><span class="line">  // do stuff with the string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">s1.toLowerCase();      //    全变成小写</span><br><span class="line">s1.toUpperCase();      //    全变成大写</span><br></pre></td></tr></table></figure>
-<h2 id="5-Boolean"><a href="#5-Boolean" class="headerlink" title="5. Boolean"></a>5. Boolean</h2><p>6个falsy值，0、NaN、null、undefined、false、””，除了这6个，其他值都是true<br><strong>所有对象都是true</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var b = false;</span><br><span class="line">var b1 = new Boolean(false);</span><br><span class="line">if(b)&#123;console.log(&apos;true&apos;)&#125;;</span><br><span class="line">if(b1)&#123;console.log(&apos;true&apos;)&#125;;      // true</span><br><span class="line">//只会输出b1，因为所有对象都是true！！</span><br></pre></td></tr></table></figure></p>
-<h2 id="6-Object"><a href="#6-Object" class="headerlink" title="6. Object"></a>6. Object</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;&#125;;      //常用方法</span><br><span class="line">var o2 = new Object();</span><br><span class="line"></span><br><span class="line">o1 === o2  //false，因为比较的是地址，而地址不同</span><br></pre></td></tr></table></figure>
+<h2 id="3-上面两种全局变量都是stack（栈内存）里的重要变量"><a href="#3-上面两种全局变量都是stack（栈内存）里的重要变量" class="headerlink" title="3. 上面两种全局变量都是stack（栈内存）里的重要变量"></a>3. 上面两种全局变量都是stack（栈内存）里的重要变量</h2><h2 id="4-Number"><a href="#4-Number" class="headerlink" title="4. Number"></a>4. Number</h2><p>JavaScript的作者Brendan Eich被公司要求JS要像Java，所以他模仿java写了<br><code>var n = new Number(1);</code>这样n是一个对象，有自己的属性，但太麻烦，于是他又写了一种<br><code>var n =1;</code>n是基本类型<br>但他用了一个方法，使这样声明的也可以用Number对象的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var n=1;</span><br><span class="line">n.toString();       //n用toString时，本质是下面这两行，实质n是没有属性的</span><br><span class="line"></span><br><span class="line">var temp = new Number(n);    //声明了一个临时变量temp，并将n作为Number对象赋给它</span><br><span class="line">temp.toString();             //用temp来执行toString，执行完后temp就被抹杀了</span><br><span class="line"></span><br><span class="line">n.xxx = 2;      //可以的</span><br><span class="line">n.xxx           //但undefined，因为xxx是存在temp的，上一句的temp执行完后就被抹杀，所以xxx也被抹杀了</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-String"><a href="#5-String" class="headerlink" title="5. String"></a>5. String</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;asd&apos;;      //     原理和Number一样</span><br><span class="line"></span><br><span class="line">var s2 = new String(s);</span><br><span class="line">s2[0]    //    &apos;a&apos;，因为String()对象有hash的属性</span><br><span class="line"></span><br><span class="line">s[0]     //    &apos;a&apos;，s也能调用这个属性，但s实质没有属性，这个原理和上面Number一样</span><br><span class="line"></span><br><span class="line">s.charCodeAt(0)    //    97，a的unicode码</span><br><span class="line">s.charCodeAt(0).toString(16)  //&apos;61&apos;，a的unicode码的十六进制</span><br><span class="line"></span><br><span class="line">&apos; asd &apos;.trim();      //  &apos;asd&apos;，去掉字符串两边的空格</span><br><span class="line"></span><br><span class="line">var s1 = &apos;Hello&apos;;</span><br><span class="line">s.concat(s1);      //    asdHello，连接两个字符串</span><br><span class="line"></span><br><span class="line">s1.slice(0,1);      //   &apos;H&apos;，slice是切片，切下0到1之前的内容</span><br><span class="line">s1.slice(1);        //   &apos;ello&apos;，返回1和后面的所有内容</span><br><span class="line"></span><br><span class="line">s1.replace(&apos;e&apos;,&apos;o&apos;)    // &apos;Hollo&apos;，替换</span><br><span class="line"></span><br><span class="line">s1.length    //    5</span><br><span class="line"></span><br><span class="line">s1.indexOf(&apos;o&apos;)       //    4，定位，若没找到会返回-1</span><br><span class="line">if(s1.indexOf(&apos;h&apos;) !== -1) &#123;  // 可用来执行某些操作</span><br><span class="line">  // do stuff with the string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">s1.toLowerCase();      //    全变成小写</span><br><span class="line">s1.toUpperCase();      //    全变成大写</span><br></pre></td></tr></table></figure>
+<h2 id="6-Boolean"><a href="#6-Boolean" class="headerlink" title="6. Boolean"></a>6. Boolean</h2><p>6个falsy值，0、NaN、null、undefined、false、””，除了这6个，其他值都是true<br><strong>所有对象都是true</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var b = false;</span><br><span class="line">var b1 = new Boolean(false);</span><br><span class="line">if(b)&#123;console.log(&apos;true&apos;)&#125;;</span><br><span class="line">if(b1)&#123;console.log(&apos;true&apos;)&#125;;      // true</span><br><span class="line">//只会输出b1，因为所有对象都是true！！</span><br></pre></td></tr></table></figure></p>
+<h2 id="7-Object"><a href="#7-Object" class="headerlink" title="7. Object"></a>7. Object</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;&#125;;      //常用方法</span><br><span class="line">var o2 = new Object();</span><br><span class="line"></span><br><span class="line">o1 === o2  //false，因为比较的是地址，而地址不同</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -405,10 +405,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -428,8 +428,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -465,7 +465,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-全局变量-一种是-ECMAScript-规定的（global）"><span class="nav-number">1.</span> <span class="nav-text">1. 全局变量:一种是 ECMAScript 规定的（global）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-全局变量-另一种是浏览器自己的全局变量-window"><span class="nav-number">2.</span> <span class="nav-text">2. 全局变量:另一种是浏览器自己的全局变量(window)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Number"><span class="nav-number">3.</span> <span class="nav-text">3. Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-String"><span class="nav-number">4.</span> <span class="nav-text">4. String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Boolean"><span class="nav-number">5.</span> <span class="nav-text">5. Boolean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Object"><span class="nav-number">6.</span> <span class="nav-text">6. Object</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-全局变量-一种是-ECMAScript-规定的（global）"><span class="nav-number">1.</span> <span class="nav-text">1. 全局变量:一种是 ECMAScript 规定的（global）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-全局变量-另一种是浏览器自己的全局变量-window"><span class="nav-number">2.</span> <span class="nav-text">2. 全局变量:另一种是浏览器自己的全局变量(window)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-上面两种全局变量都是stack（栈内存）里的重要变量"><span class="nav-number">3.</span> <span class="nav-text">3. 上面两种全局变量都是stack（栈内存）里的重要变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Number"><span class="nav-number">4.</span> <span class="nav-text">4. Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-String"><span class="nav-number">5.</span> <span class="nav-text">5. String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Boolean"><span class="nav-number">6.</span> <span class="nav-text">6. Boolean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Object"><span class="nav-number">7.</span> <span class="nav-text">7. Object</span></a></li></ol></div>
             
 
           </div>
@@ -495,7 +495,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
