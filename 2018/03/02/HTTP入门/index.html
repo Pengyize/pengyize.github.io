@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1. HTTP(HyperText Transfer Protocol)http是超文本传输协议，它教客户端如何请求、服务器如何响应。 2. 状态码（背下来）是服务器对浏览器说的话： 200 通常的成功 OK  GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。POST：返回处理对应请求的结果。  204 成功处理请求，没有返回任何内容 No Content  表示服务器接收到的请">
 <meta property="og:image" content="http://yoursite.com/images/nslookup.png">
-<meta property="og:updated_time" content="2018-03-21T05:27:27.758Z">
+<meta property="og:updated_time" content="2018-03-27T11:23:33.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP入门">
 <meta name="twitter:description" content="1. HTTP(HyperText Transfer Protocol)http是超文本传输协议，它教客户端如何请求、服务器如何响应。 2. 状态码（背下来）是服务器对浏览器说的话： 200 通常的成功 OK  GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。POST：返回处理对应请求的结果。  204 成功处理请求，没有返回任何内容 No Content  表示服务器接收到的请">
@@ -382,7 +382,7 @@
 <li>查看Headers里的Response Headers点view source可以看到响应的前两部分，Request Headers点view source可以看到请求</li>
 <li>查看Response你可以看到响应的第四部分</li>
 </ol>
-<h3 id="6-DNS-Domain-Name-System"><a href="#6-DNS-Domain-Name-System" class="headerlink" title="6. DNS(Domain Name System)"></a>6. DNS(Domain Name System)</h3><p>DNS即是通过域名找IP地址<br>有两个命令：<br><code>nslookup www.baidu.com</code><br><code>ping www.baidu.com</code><br>输入这两个命令都会返回baidu的IP地址<img src="/images/nslookup.png" alt="nslookup">Server你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近几台服务器的IP）。<br>可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给你假IP）</p>
+<h3 id="6-DNS-Domain-Name-System"><a href="#6-DNS-Domain-Name-System" class="headerlink" title="6. DNS(Domain Name System)"></a>6. DNS(Domain Name System)</h3><p>DNS即是通过域名找IP地址<br>有两个命令：<br><code>nslookup www.baidu.com</code><br><code>ping www.baidu.com</code><br>输入这两个命令都会返回baidu的IP地址<img src="/images/nslookup.png" alt="nslookup">Server你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近几台服务器的IP）。<br>可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给你假IP）<br>修改hosts文件，mac终端：<code>vi ~/etc/hosts</code><br>在里面添加一行<br>123.123.123 baidu.com<br>保存退出，再ping baidu.com，返回的就会是123.123.123了，这样就绕过了DNS</p>
 
       
     </div>
@@ -496,7 +496,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>

@@ -228,6 +228,137 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/GitHub和git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/28/GitHub和git/" itemprop="url">GitHub和git</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:58:54+08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一-配置GitHub"><a href="#一-配置GitHub" class="headerlink" title="一. 配置GitHub"></a>一. 配置GitHub</h3><ol>
+<li><a href="https://github.com/settings/keys" target="_blank" rel="noopener">点击New SSH key</a></li>
+<li>title随便写</li>
+<li>终端运行<code>ssh-keygen -t rsa -b 4096 -C &quot;邮箱&quot;</code></li>
+<li>运行 <code>cat ~/.ssh/id_rsa.pub</code>，得到一串东西，复制粘贴到key里，点击 Add SSH key</li>
+<li>运行 <code>ssh -T git@github.com</code></li>
+</ol>
+<h3 id="二-配置git"><a href="#二-配置git" class="headerlink" title="二. 配置git"></a>二. 配置git</h3><p>依次运行<br><code>git config --global user.name “英文名”</code><br><code>git config --global user.email “邮箱”</code><br><code>git config --global push.default matching</code><br><code>git config --global core.quotepath false</code><br><code>git config --global core.editor &quot;vim&quot;</code></p>
+<h3 id="三-使用git的三种方法"><a href="#三-使用git的三种方法" class="headerlink" title="三. 使用git的三种方法"></a>三. 使用git的三种方法</h3><h6 id="1-在本地使用"><a href="#1-在本地使用" class="headerlink" title="1. 在本地使用"></a>1. 在本地使用</h6><p>a. 在桌面创建git-demo目录<code>mkdir git-demo</code><br>b. <code>cd git-demo</code><br>c. <code>git init</code><br>d. 在git-demo目录里运行<code>touch index.html</code><br>e. 运行 <code>git status -sb</code> 可以看到文件前面有 ??<br>f. 运行<code>git add .</code><br>g. <code>git commit -m &quot;第一次提交&quot;</code><br>h. <code>git pull</code>先把github上的文件拉下来（一般可忽略）<br>i. <code>git push</code>推上去</p>
+<h6 id="2-将本地仓库上传到github"><a href="#2-将本地仓库上传到github" class="headerlink" title="2. 将本地仓库上传到github"></a>2. 将本地仓库上传到github</h6><p>a. 在github上创建一个仓库<br>b. name和电脑上的目录名一样，其他东西不动，创建<br>c. 点击SSH地址！然后复制页面上这行代码运行<code>git remote add origin git@github.com:xxxxxxxxx/git-demo-1.git</code><br>d. 复制第二行 <code>git push -u origin master</code>运行</p>
+<h6 id="3-在github上创建仓库并下载"><a href="#3-在github上创建仓库并下载" class="headerlink" title="3. 在github上创建仓库并下载"></a>3. 在github上创建仓库并下载</h6><p>a. 创建时勾选initialize this … ，Add .gitignore  选node，Add a license 选MIT License<br>b. 进入仓库点右上角绿色clone or download<br>c. 点 use SSH，并复制下面的地址<br>d. 终端进入桌面运行<code>git clone 地址</code>，于是将仓库下到了电脑上<br>e. 进入文件夹<code>git init</code>，初始化本地仓库</p>
+<h3 id="四-上传更新"><a href="#四-上传更新" class="headerlink" title="四.上传更新"></a>四.上传更新</h3><p>1.git add .<br>2.git commi -m “第一次更新”<br>3.git pull（将网上更新的文件拉到电脑上）<br>4.git push（上传）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/命令行基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -365,7 +496,7 @@
 </tr>
 </tbody>
 </table>
-<p>还可以把很多常见命令的缩写放进.bashrc里，比如 </p>
+<p>还可以把很多常见命令的缩写放进.bashrc或.zshrc里，比如 </p>
 <blockquote>
 <p> alias la=’ls -a’<br> alias ll=’ls -l’<br> alias gst=’git status -sb’<br> alias ga=’git add’<br> alias ga.=’git add .’<br> alias gc=’git commit’<br> alias gc.=’git commit .’</p>
 </blockquote>
@@ -490,7 +621,7 @@
         
           
             <h1 id="1-安装Linux"><a href="#1-安装Linux" class="headerlink" title="1. 安装Linux"></a>1. 安装Linux</h1><p><a href="https://www.deepin.org/docs/deepintoeveryone/%E5%90%84%E7%A7%8D%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85deepin%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%96%B9%E6%B3%95/windows%E4%B8%8B%E7%9B%B4%E6%8E%A5%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener">Windows直接安装深度Linux</a></p>
-<h1 id="2-FQ"><a href="#2-FQ" class="headerlink" title="2. FQ"></a>2. FQ</h1><p>a.Linux命令行：<code>sudo apt-get install python-pip; sudo pip install shadowsocks;</code><br>b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（服务器自己买）</p>
+<h1 id="2-FQ"><a href="#2-FQ" class="headerlink" title="2. FQ"></a>2. FQ</h1><p>a.Linux命令行：<code>sudo apt-get install python-pip; sudo pip install shadowsocks;</code><br>macOS：<br><code>brew install shadowsocks-libev</code>（如果没有brew，需先<a href="https://brew.sh/" target="_blank" rel="noopener">安装</a>）<br>b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（服务器自己买）</p>
 <blockquote>
 <p>{<br>      “server”:”服务器IP”,<br>     “server_port”:端口,<br>     “local_address”: “127.0.0.1”,<br>     “local_port”:1080,<br>     “password”:”密码”,<br>     “timeout”:300,<br>     “method”:”aes-256-cfb”,<br>     “fast_open”: false<br> }</p>
 </blockquote>
@@ -502,8 +633,8 @@
 <blockquote>
 <p>alias pc=’proxychains4 -f ~/.proxychains.conf’</p>
 </blockquote>
-<p>f.命令行： <code>source ~/.bashrc</code><br>g.命令行：<code>sslocal -c ~/.ssconf.json</code> 开启代理，若出现undefined……_cleanup，则运行<br><code>sed -i &#39;s/_cleanup/_reset/g&#39; xxxxxxxxxxxxxxxxxxxxxx/openssl.py</code>（把 xxxxxxxxxxxxxxxxxxxxxx/openssl.py 改成运行结果里openssl.py 文件的路径）</p>
-<p>h.命令行：<code>pc curl -L http://google.com</code> 检测FQ是否成功<br>i.火狐添加代理<a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">插件</a>，导入<a href="https://jscode.me/uploads/default/original/1X/15be26176393443bf33fc8a86e8b283079acaf00.zip" target="_blank" rel="noopener">配置</a>，选自动切换，点应用选项</p>
+<p>f.命令行： <code>source ~/.bashrc</code><br>g.命令行：<code>sslocal -c ~/.ssconf.json</code><br>(macos)<code>ss-local -c ~/.ssconf.json</code>开启代理，若出现undefined……_cleanup，则运行<br><code>sed -i &#39;s/_cleanup/_reset/g&#39; xxxxxxxxxxxxxxxxxxxxxx/openssl.py</code>（把 xxxxxxxxxxxxxxxxxxxxxx/openssl.py 改成运行结果里openssl.py 文件的路径）</p>
+<p>h.命令行：<code>pc curl -L http://google.com</code>（若没有curl需先安装<code>sudo apt-get install curl</code>，sudo是管理员命令要输密码）检测FQ是否成功<br>i.火狐添加代理<a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">插件</a>，导入<a href="https://jscode.me/uploads/default/original/1X/15be26176393443bf33fc8a86e8b283079acaf00.zip" target="_blank" rel="noopener">配置</a>，选自动切换，点应用选项</p>
 <h1 id="3-命令行小工具-z和fzf"><a href="#3-命令行小工具-z和fzf" class="headerlink" title="3. 命令行小工具 z和fzf"></a>3. 命令行小工具 z和fzf</h1><p><a href="https://github.com/rupa/z" target="_blank" rel="noopener">z</a>：</p>
 <p>a.命令行进入Desktop，<code>curl -L https://raw.githubusercontent.com/rupa/z/master/z.sh &gt; z.sh</code><br>b.命令行 <code>vi ~/.bashrc</code>，在第一行添加</p>
 <blockquote>
@@ -514,7 +645,7 @@
 <p>unalias z<br>j() {<br>     if [[ -z “$<em>“ ]]; then<br>         cd “$(_z -l 2&gt;&amp;1 | fzf +s | sed ‘s/^[0-9,.]</em> <em>//‘)”<br>     else<br>         _last_z_args=”$@”<br>         _z “$@”<br>     fi<br> }<br>jj{<br>cd “$(_z -l 2&gt;&amp;1 | sed ‘s/^[0-9,.]</em> *//‘ | fzf -q $_last_z_args)”<br>}</p>
 </blockquote>
 <p><a href="https://github.com/junegunn/fzf#installation" target="_blank" rel="noopener">fzf</a></p>
-<h1 id="4-Linux下安装node"><a href="#4-Linux下安装node" class="headerlink" title="4. Linux下安装node"></a>4. Linux下安装node</h1><p>a.安装git，命令行sudo su进入root，apt-get install git，输入git检查是否安装成功<br>b.命令行配置git     <code>git config --global user.name &quot;pyz&quot;</code>， <code>git config --global user.email &quot;.......@qq.com&quot;</code><br>c.命令行 <code>git clone git://github.com/nodejs/node</code><br>d.命令行 <code>cd node/</code><br>e.命令行 <code>./configure</code><br>f.命令行 <code>make install</code><br>g.命令行 <code>node -v</code></p>
+<h1 id="4-Linux下安装node（mac自己谷歌）"><a href="#4-Linux下安装node（mac自己谷歌）" class="headerlink" title="4. Linux下安装node（mac自己谷歌）"></a>4. Linux下安装node（mac自己谷歌）</h1><p>a.安装git，命令行sudo su进入root，apt-get install git，输入git检查是否安装成功<br>b.命令行配置git     <code>git config --global user.name &quot;pyz&quot;</code><br> <code>git config --global user.email &quot;.......@qq.com&quot;</code><br>c.命令行 <code>git clone git://github.com/nodejs/node</code><br>d.命令行 <code>cd node/</code><br>e.命令行 <code>./configure</code><br>f.命令行 <code>make install</code><br>g.命令行 <code>node -v</code></p>
 <h1 id="5-命令行安装yarn"><a href="#5-命令行安装yarn" class="headerlink" title="5. 命令行安装yarn"></a>5. 命令行安装yarn</h1><p><a href="https://yarnpkg.com/en/docs/install" target="_blank" rel="noopener">官网</a></p>
 <h1 id="6-在root下安装nrm"><a href="#6-在root下安装nrm" class="headerlink" title="6. 在root下安装nrm"></a>6. 在root下安装nrm</h1><p><a href="https://github.com/Pana/nrm" target="_blank" rel="noopener">官网</a></p>
 
@@ -1114,7 +1245,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>

@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1. 安装LinuxWindows直接安装深度Linux 2. FQa.Linux命令行：sudo apt-get install python-pip; sudo pip install shadowsocks;b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（服务器自己买）  {      “server”:”服务器IP”,     “server_port”">
+<meta name="description" content="1. 安装LinuxWindows直接安装深度Linux 2. FQa.Linux命令行：sudo apt-get install python-pip; sudo pip install shadowsocks;macOS：brew install shadowsocks-libev（如果没有brew，需先安装）b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="入门前端的必要软件">
 <meta property="og:url" content="http://yoursite.com/2018/02/28/入门前端的必要软件/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="1. 安装LinuxWindows直接安装深度Linux 2. FQa.Linux命令行：sudo apt-get install python-pip; sudo pip install shadowsocks;b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（服务器自己买）  {      “server”:”服务器IP”,     “server_port”">
-<meta property="og:updated_time" content="2018-03-21T05:22:06.770Z">
+<meta property="og:description" content="1. 安装LinuxWindows直接安装深度Linux 2. FQa.Linux命令行：sudo apt-get install python-pip; sudo pip install shadowsocks;macOS：brew install shadowsocks-libev（如果没有brew，需先安装）b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（">
+<meta property="og:updated_time" content="2018-03-27T10:54:23.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="入门前端的必要软件">
-<meta name="twitter:description" content="1. 安装LinuxWindows直接安装深度Linux 2. FQa.Linux命令行：sudo apt-get install python-pip; sudo pip install shadowsocks;b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（服务器自己买）  {      “server”:”服务器IP”,     “server_port”">
+<meta name="twitter:description" content="1. 安装LinuxWindows直接安装深度Linux 2. FQa.Linux命令行：sudo apt-get install python-pip; sudo pip install shadowsocks;macOS：brew install shadowsocks-libev（如果没有brew，需先安装）b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（">
 
 
 
@@ -299,7 +299,7 @@
 
       
         <h1 id="1-安装Linux"><a href="#1-安装Linux" class="headerlink" title="1. 安装Linux"></a>1. 安装Linux</h1><p><a href="https://www.deepin.org/docs/deepintoeveryone/%E5%90%84%E7%A7%8D%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85deepin%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%96%B9%E6%B3%95/windows%E4%B8%8B%E7%9B%B4%E6%8E%A5%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener">Windows直接安装深度Linux</a></p>
-<h1 id="2-FQ"><a href="#2-FQ" class="headerlink" title="2. FQ"></a>2. FQ</h1><p>a.Linux命令行：<code>sudo apt-get install python-pip; sudo pip install shadowsocks;</code><br>b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（服务器自己买）</p>
+<h1 id="2-FQ"><a href="#2-FQ" class="headerlink" title="2. FQ"></a>2. FQ</h1><p>a.Linux命令行：<code>sudo apt-get install python-pip; sudo pip install shadowsocks;</code><br>macOS：<br><code>brew install shadowsocks-libev</code>（如果没有brew，需先<a href="https://brew.sh/" target="_blank" rel="noopener">安装</a>）<br>b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（服务器自己买）</p>
 <blockquote>
 <p>{<br>      “server”:”服务器IP”,<br>     “server_port”:端口,<br>     “local_address”: “127.0.0.1”,<br>     “local_port”:1080,<br>     “password”:”密码”,<br>     “timeout”:300,<br>     “method”:”aes-256-cfb”,<br>     “fast_open”: false<br> }</p>
 </blockquote>
@@ -311,8 +311,8 @@
 <blockquote>
 <p>alias pc=’proxychains4 -f ~/.proxychains.conf’</p>
 </blockquote>
-<p>f.命令行： <code>source ~/.bashrc</code><br>g.命令行：<code>sslocal -c ~/.ssconf.json</code> 开启代理，若出现undefined……_cleanup，则运行<br><code>sed -i &#39;s/_cleanup/_reset/g&#39; xxxxxxxxxxxxxxxxxxxxxx/openssl.py</code>（把 xxxxxxxxxxxxxxxxxxxxxx/openssl.py 改成运行结果里openssl.py 文件的路径）</p>
-<p>h.命令行：<code>pc curl -L http://google.com</code> 检测FQ是否成功<br>i.火狐添加代理<a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">插件</a>，导入<a href="https://jscode.me/uploads/default/original/1X/15be26176393443bf33fc8a86e8b283079acaf00.zip" target="_blank" rel="noopener">配置</a>，选自动切换，点应用选项</p>
+<p>f.命令行： <code>source ~/.bashrc</code><br>g.命令行：<code>sslocal -c ~/.ssconf.json</code><br>(macos)<code>ss-local -c ~/.ssconf.json</code>开启代理，若出现undefined……_cleanup，则运行<br><code>sed -i &#39;s/_cleanup/_reset/g&#39; xxxxxxxxxxxxxxxxxxxxxx/openssl.py</code>（把 xxxxxxxxxxxxxxxxxxxxxx/openssl.py 改成运行结果里openssl.py 文件的路径）</p>
+<p>h.命令行：<code>pc curl -L http://google.com</code>（若没有curl需先安装<code>sudo apt-get install curl</code>，sudo是管理员命令要输密码）检测FQ是否成功<br>i.火狐添加代理<a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">插件</a>，导入<a href="https://jscode.me/uploads/default/original/1X/15be26176393443bf33fc8a86e8b283079acaf00.zip" target="_blank" rel="noopener">配置</a>，选自动切换，点应用选项</p>
 <h1 id="3-命令行小工具-z和fzf"><a href="#3-命令行小工具-z和fzf" class="headerlink" title="3. 命令行小工具 z和fzf"></a>3. 命令行小工具 z和fzf</h1><p><a href="https://github.com/rupa/z" target="_blank" rel="noopener">z</a>：</p>
 <p>a.命令行进入Desktop，<code>curl -L https://raw.githubusercontent.com/rupa/z/master/z.sh &gt; z.sh</code><br>b.命令行 <code>vi ~/.bashrc</code>，在第一行添加</p>
 <blockquote>
@@ -323,7 +323,7 @@
 <p>unalias z<br>j() {<br>     if [[ -z “$<em>“ ]]; then<br>         cd “$(_z -l 2&gt;&amp;1 | fzf +s | sed ‘s/^[0-9,.]</em> <em>//‘)”<br>     else<br>         _last_z_args=”$@”<br>         _z “$@”<br>     fi<br> }<br>jj{<br>cd “$(_z -l 2&gt;&amp;1 | sed ‘s/^[0-9,.]</em> *//‘ | fzf -q $_last_z_args)”<br>}</p>
 </blockquote>
 <p><a href="https://github.com/junegunn/fzf#installation" target="_blank" rel="noopener">fzf</a></p>
-<h1 id="4-Linux下安装node"><a href="#4-Linux下安装node" class="headerlink" title="4. Linux下安装node"></a>4. Linux下安装node</h1><p>a.安装git，命令行sudo su进入root，apt-get install git，输入git检查是否安装成功<br>b.命令行配置git     <code>git config --global user.name &quot;pyz&quot;</code>， <code>git config --global user.email &quot;.......@qq.com&quot;</code><br>c.命令行 <code>git clone git://github.com/nodejs/node</code><br>d.命令行 <code>cd node/</code><br>e.命令行 <code>./configure</code><br>f.命令行 <code>make install</code><br>g.命令行 <code>node -v</code></p>
+<h1 id="4-Linux下安装node（mac自己谷歌）"><a href="#4-Linux下安装node（mac自己谷歌）" class="headerlink" title="4. Linux下安装node（mac自己谷歌）"></a>4. Linux下安装node（mac自己谷歌）</h1><p>a.安装git，命令行sudo su进入root，apt-get install git，输入git检查是否安装成功<br>b.命令行配置git     <code>git config --global user.name &quot;pyz&quot;</code><br> <code>git config --global user.email &quot;.......@qq.com&quot;</code><br>c.命令行 <code>git clone git://github.com/nodejs/node</code><br>d.命令行 <code>cd node/</code><br>e.命令行 <code>./configure</code><br>f.命令行 <code>make install</code><br>g.命令行 <code>node -v</code></p>
 <h1 id="5-命令行安装yarn"><a href="#5-命令行安装yarn" class="headerlink" title="5. 命令行安装yarn"></a>5. 命令行安装yarn</h1><p><a href="https://yarnpkg.com/en/docs/install" target="_blank" rel="noopener">官网</a></p>
 <h1 id="6-在root下安装nrm"><a href="#6-在root下安装nrm" class="headerlink" title="6. 在root下安装nrm"></a>6. 在root下安装nrm</h1><p><a href="https://github.com/Pana/nrm" target="_blank" rel="noopener">官网</a></p>
 
@@ -439,7 +439,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -476,7 +476,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装Linux"><span class="nav-number">1.</span> <span class="nav-text">1. 安装Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-FQ"><span class="nav-number">2.</span> <span class="nav-text">2. FQ</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-命令行小工具-z和fzf"><span class="nav-number">3.</span> <span class="nav-text">3. 命令行小工具 z和fzf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Linux下安装node"><span class="nav-number">4.</span> <span class="nav-text">4. Linux下安装node</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-命令行安装yarn"><span class="nav-number">5.</span> <span class="nav-text">5. 命令行安装yarn</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-在root下安装nrm"><span class="nav-number">6.</span> <span class="nav-text">6. 在root下安装nrm</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-安装Linux"><span class="nav-number">1.</span> <span class="nav-text">1. 安装Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-FQ"><span class="nav-number">2.</span> <span class="nav-text">2. FQ</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-命令行小工具-z和fzf"><span class="nav-number">3.</span> <span class="nav-text">3. 命令行小工具 z和fzf</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Linux下安装node（mac自己谷歌）"><span class="nav-number">4.</span> <span class="nav-text">4. Linux下安装node（mac自己谷歌）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-命令行安装yarn"><span class="nav-number">5.</span> <span class="nav-text">5. 命令行安装yarn</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-在root下安装nrm"><span class="nav-number">6.</span> <span class="nav-text">6. 在root下安装nrm</span></a></li></ol></div>
             
 
           </div>

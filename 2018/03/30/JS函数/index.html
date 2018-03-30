@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 函数的声明方式   1234567891011121314151617181920212223242526272829303132331.function a(a,b)&amp;#123;     return a+b; &amp;#125; 2. var a = function(a,b)&amp;#123;    //匿名函数，函数表达式     return a+b; &amp;#125; a(1,2)    //3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS函数">
+<meta property="og:url" content="http://yoursite.com/2018/03/30/JS函数/index.html">
+<meta property="og:site_name" content="My Block">
+<meta property="og:description" content="1. 函数的声明方式   1234567891011121314151617181920212223242526272829303132331.function a(a,b)&amp;#123;     return a+b; &amp;#125; 2. var a = function(a,b)&amp;#123;    //匿名函数，函数表达式     return a+b; &amp;#125; a(1,2)    //3">
+<meta property="og:updated_time" content="2018-03-30T05:27:30.524Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS函数">
+<meta name="twitter:description" content="1. 函数的声明方式   1234567891011121314151617181920212223242526272829303132331.function a(a,b)&amp;#123;     return a+b; &amp;#125; 2. var a = function(a,b)&amp;#123;    //匿名函数，函数表达式     return a+b; &amp;#125; a(1,2)    //3">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/30/JS函数/"/>
+
+
+
+
+
+  <title>JS函数 | My Block</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Block</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/30/JS函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS函数</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-30T13:27:06+08:00">
+                2018-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-函数的声明方式"><a href="#1-函数的声明方式" class="headerlink" title="1. 函数的声明方式"></a>1. 函数的声明方式</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">1.function a(a,b)&#123;</span><br><span class="line">     return a+b;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> 2. var a = function(a,b)&#123;    //匿名函数，函数表达式</span><br><span class="line">     return a+b;</span><br><span class="line"> &#125;</span><br><span class="line"> a(1,2)    //3</span><br><span class="line"></span><br><span class="line"> 3.var b = new Function(</span><br><span class="line">     &apos;a&apos;, //构造函数，    基本没人用</span><br><span class="line">     &apos;b&apos;,</span><br><span class="line">     &apos;return a+b&apos;</span><br><span class="line"> )；</span><br><span class="line"> b(1,2)    //3</span><br><span class="line"></span><br><span class="line"> var b = Function(&apos;a&apos;,&apos;b&apos;,&apos;return a+b&apos;)</span><br><span class="line"> b(1,2)    //3，加new和不加new没区别</span><br><span class="line"></span><br><span class="line"> var b = Function(&apos;return &quot;hello world&quot;&apos;);  </span><br><span class="line"> //若只有一个参数，则就是函数体</span><br><span class="line"></span><br><span class="line"> 4.var e = (a,b) =&gt; &#123;</span><br><span class="line">     var m = a*2; </span><br><span class="line">     var n = b*2; </span><br><span class="line">     return m+n;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> //若只有一句话，并且不返回对象，可以同时去掉return和&#123;&#125;</span><br><span class="line">  var e = (a,b) =&gt; a+b</span><br><span class="line"></span><br><span class="line"> //若只有一个参数，可以省略()</span><br><span class="line">  var e = n =&gt; n*n</span><br></pre></td></tr></table></figure>
+<h1 id="2-若重复声明函数，由于函数名的提升，前一次声明在任何时候都是无效的，这一点要特别注意。如下"><a href="#2-若重复声明函数，由于函数名的提升，前一次声明在任何时候都是无效的，这一点要特别注意。如下" class="headerlink" title="2. 若重复声明函数，由于函数名的提升，前一次声明在任何时候都是无效的，这一点要特别注意。如下"></a>2. 若重复声明函数，<strong>由于函数名的提升</strong>，前一次声明在任何时候都是无效的，这一点要特别注意。如下</h1><pre><code>function f() {
+  console.log(1);
+}
+f() // 2
+
+function f() {
+  console.log(2);
+}
+f() // 2
+</code></pre><p>   函数的变量提升：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f();    //不会报错，因为下面的变量提升了</span><br><span class="line"></span><br><span class="line">    function f() &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f();</span><br><span class="line">var f = function ()&#123;&#125;;</span><br><span class="line">// 报错，TypeError: undefined is not a function</span><br><span class="line">// 因为上面这两行等同于下面</span><br><span class="line">var f;</span><br><span class="line">f();</span><br><span class="line">f = function () &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>   所以如果同时采用function命令和赋值语句声明同一个函数，最后总是采用赋值语句的定义。<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var f = function () &#123;</span><br><span class="line">     console.log(&apos;1&apos;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   function f() &#123;</span><br><span class="line">     console.log(&apos;2&apos;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   f() // 1，相当于下面</span><br><span class="line">    </span><br><span class="line">   var f;</span><br><span class="line">   function f() &#123;</span><br><span class="line">     console.log(&apos;2&apos;);</span><br><span class="line">   &#125;</span><br><span class="line">   f = function () &#123;</span><br><span class="line">      console.log(&apos;1&apos;);</span><br><span class="line">   &#125;</span><br><span class="line">   f();    //1</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-注意：不要在if语句和try语句里使用函数声明"><a href="#3-注意：不要在if语句和try语句里使用函数声明" class="headerlink" title="3. 注意：不要在if语句和try语句里使用函数声明"></a>3. 注意：不要在if语句和try语句里使用函数声明</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if (false) &#123;</span><br><span class="line">  function f() &#123;&#125;    //即使是false，f函数也会被声    明，因为函数名的提升</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // 不报错，因为函数名提升，所以不要在if    语句里使用函数声明</span><br><span class="line"></span><br><span class="line">//但可以使用函数表达式</span><br><span class="line">if (false) &#123;</span><br><span class="line">  var f = function () &#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // undefined</span><br></pre></td></tr></table></figure>
+<h1 id="4-函数的属性"><a href="#4-函数的属性" class="headerlink" title="4. 函数的属性"></a>4. 函数的属性</h1><p>name<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;&#125;</span><br><span class="line">f1.name    // &quot;f1&quot;，name属性</span><br><span class="line"></span><br><span class="line">var f2 = function()&#123;&#125;;</span><br><span class="line">f2.name    //f2</span><br><span class="line"></span><br><span class="line">var f3 = function f4()&#123;&#125;;</span><br><span class="line">f3.name    //f4</span><br><span class="line"></span><br><span class="line">var f5 = new Function(&apos;x&apos;,&apos;y&apos;,&apos;return x+y&apos;);</span><br><span class="line">f5.name    //&apos;anonymous&apos;，匿名的</span><br></pre></td></tr></table></figure></p>
+<p>   length<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function f(a, b) &#123;&#125;</span><br><span class="line">f.length // 2，函数的参数个数</span><br></pre></td></tr></table></figure></p>
+<p>   toString<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   function f()&#123;</span><br><span class="line">       console.log(&apos;可以的&apos;);</span><br><span class="line">   &#125;</span><br><span class="line">   f.toString();    // &quot;function f()&#123;</span><br><span class="line">                    //    console.log(&apos;可以的&apos;);                     //  &#125;&quot;</span><br><span class="line">   //利用这一点可以变相实现多行字符串</span><br><span class="line">   function f() &#123;/*</span><br><span class="line">     这是一个</span><br><span class="line">     多行注释</span><br><span class="line">   */&#125;</span><br><span class="line"></span><br><span class="line">   f.toString()</span><br><span class="line">   // &quot;function f()&#123;/*</span><br><span class="line">   //   这是一个</span><br><span class="line">   //   多行注释    </span><br><span class="line">// */&#125;&quot;</span><br></pre></td></tr></table></figure></p>
+<p>   <a href="http://javascript.ruanyifeng.com/grammar/function.html#toc10" target="_blank" rel="noopener">变相实现多行字符串</a></p>
+<h1 id="5-局部变量"><a href="#5-局部变量" class="headerlink" title="5. 局部变量"></a>5. 局部变量</h1><p>在函数内部声明的变量是局部变量，在函数以外声明的全是全局变量，在其他区块中声明的一律也是全局变量。</p>
+<h1 id="6-函数内部也有变量提升！"><a href="#6-函数内部也有变量提升！" class="headerlink" title="6. 函数内部也有变量提升！"></a>6. 函数内部也有变量提升！</h1><h1 id="7-函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。"><a href="#7-函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。" class="headerlink" title="7. 函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。"></a>7. 函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">var x = function () &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function f() &#123;</span><br><span class="line">  var a = 2;</span><br><span class="line">  x();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f() // 1</span><br></pre></td></tr></table></figure>
+<h1 id="8-传递方式"><a href="#8-传递方式" class="headerlink" title="8. 传递方式"></a>8. 传递方式</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; p: 1 &#125;;</span><br><span class="line"></span><br><span class="line">function f(o) &#123;</span><br><span class="line">  o.p = 2;</span><br><span class="line">&#125;</span><br><span class="line">f(obj);</span><br><span class="line"></span><br><span class="line">obj.p // 2</span><br></pre></td></tr></table></figure>
+<p>   如果函数内部修改的，不是参数对象的某个属性，而是替换掉整个参数，这时不会影响到原始值。<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = [1, 2, 3];</span><br><span class="line"></span><br><span class="line">function f(o) &#123;</span><br><span class="line">  o = [2, 3, 4];</span><br><span class="line">&#125;</span><br><span class="line">f(obj);</span><br><span class="line"></span><br><span class="line">obj // [1, 2, 3]</span><br></pre></td></tr></table></figure></p>
+<p>   <strong>这是因为，o的值实际是参数obj的地址，重新对o赋值导致o指向另一个地址，保存在原地址上的值不受影响。复合类型是传地址</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var p = 2;</span><br><span class="line"></span><br><span class="line">function f(p) &#123;</span><br><span class="line">  p = 3;</span><br><span class="line">&#125;</span><br><span class="line">f(p);</span><br><span class="line"></span><br><span class="line">p // 2</span><br></pre></td></tr></table></figure></p>
+<p>原始类型的值，传入函数只是值的拷贝，所以怎么修改都不会影响到原始值</p>
+<h1 id="9-arguments对象"><a href="#9-arguments对象" class="headerlink" title="9. arguments对象"></a>9. arguments对象</h1><p>可以通过argument对象获得参数<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function f(a, a) &#123;</span><br><span class="line">  console.log(arguments[0]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(1) // 1</span><br></pre></td></tr></table></figure></p>
+<p>   正常模式下，arguments对象还可以在运行时修改参数。严格模式下不行<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var f = function(a, b) &#123;</span><br><span class="line">  arguments[0] = 3;</span><br><span class="line">  arguments[1] = 2;</span><br><span class="line">  return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(1, 1) // 5</span><br><span class="line"></span><br><span class="line">arguments.length //可以知道传入多少个参数</span><br></pre></td></tr></table></figure></p>
+<p>   arguments不是数组，但可以<a href="http://javascript.ruanyifeng.com/grammar/function.html#toc20" target="_blank" rel="noopener">转换为数组</a></p>
+<h1 id="10-返回值"><a href="#10-返回值" class="headerlink" title="10. 返回值"></a>10. 返回值</h1><p>函数即使没有return，JS会自动加上return undefined；</p>
+<h1 id="11-function的不一致性"><a href="#11-function的不一致性" class="headerlink" title="11. function的不一致性"></a>11. function的不一致性</h1>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function y()&#123;&#125;;</span><br><span class="line">y;    //f y()&#123;&#125;</span><br><span class="line"> </span><br><span class="line">var x = function i()&#123;&#125;;</span><br><span class="line">i;    //Error: i is not defined，i只能作用在它自己的函数里</span><br></pre></td></tr></table></figure>
+<h1 id="12-函数的调用"><a href="#12-函数的调用" class="headerlink" title="12. 函数的调用"></a>12. 函数的调用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f(1,2);</span><br><span class="line">f.call(undefined,1,2);  //这两种调用方式等价</span><br></pre></td></tr></table></figure>
+<h1 id="13-this和arguments"><a href="#13-this和arguments" class="headerlink" title="13. this和arguments"></a>13. this和arguments</h1><p>this是call()的第一个参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f = function()&#123;</span><br><span class="line">    console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">f.call(undefined);    //在正常模式下打印出window对象</span><br><span class="line"></span><br><span class="line">f = function()&#123;</span><br><span class="line">    &apos;use strict&apos;</span><br><span class="line">    console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">f.call(undefined);    //严格模式打印出undefined</span><br></pre></td></tr></table></figure></p>
+<p>arguments是伪数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = function()&#123;</span><br><span class="line">    console.log(arguments);</span><br><span class="line">&#125;</span><br><span class="line">f.call(undefined,1,2,3);    //[1,2,3,......]</span><br></pre></td></tr></table></figure></p>
+<p>arguments有数组的一些特性，但没有在Array的原型链中，所以arguments没有数组的方法，如push<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arguments.__proto__ === Array.prototype //false</span><br></pre></td></tr></table></figure></p>
+<h1 id="14-函数的作用域"><a href="#14-函数的作用域" class="headerlink" title="14. 函数的作用域"></a>14. 函数的作用域</h1><p><strong>看到面试题先把代码改了，做变量提升！再做题</strong></p>
+<h2 id="面试题1："><a href="#面试题1：" class="headerlink" title="面试题1："></a>面试题1：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">function f1() &#123;</span><br><span class="line">    console.log(a)</span><br><span class="line">    var a = 2;</span><br><span class="line">    f4.call();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f4() &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f1.call();    //??</span><br></pre></td></tr></table></figure>
+<p>答案：1</p>
+<h2 id="面试题2"><a href="#面试题2" class="headerlink" title="面试题2:"></a>面试题2:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line">function f1() &#123;</span><br><span class="line">    console.log(a)</span><br><span class="line">    var a = 2;</span><br><span class="line">    f4.call();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f4() &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a=2;</span><br><span class="line">f1.call();    //？</span><br></pre></td></tr></table></figure>
+<p>答案：2</p>
+<h2 id="面试题3"><a href="#面试题3" class="headerlink" title="面试题3:"></a>面试题3:</h2><p>html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li&gt;1&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;2&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;3&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;4&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;5&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;6&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<p>JS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var liTags = document.querySelectorAll(&apos;li&apos;);</span><br><span class="line">for(var i=0;i&lt;liTags.length;i++)&#123;</span><br><span class="line">    liTags[i].onclick = function () &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//请问点3时，输出什么</span><br></pre></td></tr></table></figure></p>
+<p>答案：6<br>先JS变量提升<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var liTags;</span><br><span class="line">var i;</span><br><span class="line">liTags = document.querySelectorAll(&apos;li&apos;);</span><br><span class="line">for(i=0;i&lt;liTags.length;i++)&#123;</span><br><span class="line">    liTags[i].onclick = function () &#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>因为点3时，for循环已执行完了，i变成6，所以输出的是6</p>
+<h2 id="面试题4"><a href="#面试题4" class="headerlink" title="面试题4"></a>面试题4</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var x = function () &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function y(f) &#123;</span><br><span class="line">  var a = 2;</span><br><span class="line">  f();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">y(x)    // ?</span><br></pre></td></tr></table></figure>
+<p>答案:<code>a is not defined</code><br>因为函数x在外部，不会引用y的内部变量</p>
+<h1 id="15-闭包"><a href="#15-闭包" class="headerlink" title="15. 闭包"></a>15. 闭包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;</span><br><span class="line"></span><br><span class="line">function f4() &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>若一个函数使用了它作用域外的变量，那 (这个函数+变量) 就是闭包。<br>函数外部无法访问函数内部的变量，但使用闭包就可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;</span><br><span class="line">  var n = 999;</span><br><span class="line">  function f2() &#123;</span><br><span class="line">    console.log(n);</span><br><span class="line">  &#125;</span><br><span class="line">  return f2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var result = f1();</span><br><span class="line">result(); // 999，闭包就是f2</span><br></pre></td></tr></table></figure></p>
+<p>本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。<br>闭包的第二个作用就是让它读取的这些变量始终保持在内存中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function createIncrementor(start) &#123;</span><br><span class="line">  return function () &#123;</span><br><span class="line">    return start++;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var inc = createIncrementor(5);</span><br><span class="line"></span><br><span class="line">inc() // 5</span><br><span class="line">inc() // 6</span><br><span class="line">inc() // 7</span><br></pre></td></tr></table></figure></p>
+<p>闭包的另一个用处，是封装对象的私有属性和私有方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function Person(name) &#123;</span><br><span class="line">  var _age;</span><br><span class="line">  function setAge(n) &#123;</span><br><span class="line">    _age = n;</span><br><span class="line">  &#125;</span><br><span class="line">  function getAge() &#123;</span><br><span class="line">    return _age;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return &#123;</span><br><span class="line">    name: name,</span><br><span class="line">    getAge: getAge,</span><br><span class="line">    setAge: setAge</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var p1 = Person(&apos;张三&apos;);</span><br><span class="line">p1.setAge(25);</span><br><span class="line">p1.getAge() // 25</span><br></pre></td></tr></table></figure></p>
+<h1 id="16-同名参数"><a href="#16-同名参数" class="headerlink" title="16. 同名参数"></a>16. 同名参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function f(a, a) &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(1, 2) // 2，以后面那个为准</span><br><span class="line"></span><br><span class="line">function f(a, a) &#123;</span><br><span class="line">  console.log(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(1) // undefined，以后面那个为准，若要取第一个，可以用arguments对象</span><br></pre></td></tr></table></figure>
+<h1 id="17-立即调用的函数表达式（IIFE）"><a href="#17-立即调用的函数表达式（IIFE）" class="headerlink" title="17 .立即调用的函数表达式（IIFE）"></a>17 .立即调用的函数表达式（IIFE）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function()&#123; /* code */ &#125;();</span><br><span class="line">// SyntaxError: Unexpected token (</span><br></pre></td></tr></table></figure>
+<p>因为JS把function在行首的，一律解释成语句，而语句后不应该出现()，最简单的处理，就是将其放在一个圆括号里面。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(function()&#123; /* code */ &#125;());</span><br><span class="line">// 或者</span><br><span class="line">(function()&#123; /* code */ &#125;)();</span><br><span class="line">//注意，上面两种写法最后的分号都是必须的。</span><br></pre></td></tr></table></figure></p>
+<p>推而广之，任何以表达式来处理函数定义的方法，都是可以的</p>
+<h1 id="18-eval"><a href="#18-eval" class="headerlink" title="18. eval"></a>18. eval</h1><p>eval命令的作用是，将字符串当作语句执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval(&apos;var a = 1;&apos;);</span><br><span class="line">a // 1</span><br></pre></td></tr></table></figure></p>
+<p>JavaScript 规定，如果使用严格模式，eval内部声明的变量，不会影响到外部作用域。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(function f() &#123;</span><br><span class="line">  &apos;use strict&apos;;</span><br><span class="line">  eval(&apos;var foo = 123&apos;);</span><br><span class="line">  console.log(foo);  // ReferenceError: foo is not defined</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p>
+<p>即使在严格模式下，eval依然可以读写当前作用域的变量。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(function f() &#123;</span><br><span class="line">  &apos;use strict&apos;;</span><br><span class="line">  var foo = 1;</span><br><span class="line">  eval(&apos;foo = 2&apos;);</span><br><span class="line">  console.log(foo);  // 2</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/27/JS标准库和数组/" rel="next" title="JS标准库和数组">
+                <i class="fa fa-chevron-left"></i> JS标准库和数组
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Pengyize</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-函数的声明方式"><span class="nav-number">1.</span> <span class="nav-text">1. 函数的声明方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-若重复声明函数，由于函数名的提升，前一次声明在任何时候都是无效的，这一点要特别注意。如下"><span class="nav-number">2.</span> <span class="nav-text">2. 若重复声明函数，由于函数名的提升，前一次声明在任何时候都是无效的，这一点要特别注意。如下</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-注意：不要在if语句和try语句里使用函数声明"><span class="nav-number">3.</span> <span class="nav-text">3. 注意：不要在if语句和try语句里使用函数声明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-函数的属性"><span class="nav-number">4.</span> <span class="nav-text">4. 函数的属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-局部变量"><span class="nav-number">5.</span> <span class="nav-text">5. 局部变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-函数内部也有变量提升！"><span class="nav-number">6.</span> <span class="nav-text">6. 函数内部也有变量提升！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。"><span class="nav-number">7.</span> <span class="nav-text">7. 函数的作用域，就是其声明时所在的作用域，与其运行时所在的作用域无关。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-传递方式"><span class="nav-number">8.</span> <span class="nav-text">8. 传递方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-arguments对象"><span class="nav-number">9.</span> <span class="nav-text">9. arguments对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-返回值"><span class="nav-number">10.</span> <span class="nav-text">10. 返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-function的不一致性"><span class="nav-number">11.</span> <span class="nav-text">11. function的不一致性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-函数的调用"><span class="nav-number">12.</span> <span class="nav-text">12. 函数的调用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-this和arguments"><span class="nav-number">13.</span> <span class="nav-text">13. this和arguments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-函数的作用域"><span class="nav-number">14.</span> <span class="nav-text">14. 函数的作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题1："><span class="nav-number">14.1.</span> <span class="nav-text">面试题1：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题2"><span class="nav-number">14.2.</span> <span class="nav-text">面试题2:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题3"><span class="nav-number">14.3.</span> <span class="nav-text">面试题3:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题4"><span class="nav-number">14.4.</span> <span class="nav-text">面试题4</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-闭包"><span class="nav-number">15.</span> <span class="nav-text">15. 闭包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-同名参数"><span class="nav-number">16.</span> <span class="nav-text">16. 同名参数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-立即调用的函数表达式（IIFE）"><span class="nav-number">17.</span> <span class="nav-text">17 .立即调用的函数表达式（IIFE）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-eval"><span class="nav-number">18.</span> <span class="nav-text">18. eval</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pengyize</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
