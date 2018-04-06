@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/images/select.png">
 <meta property="og:image" content="http://yoursite.com/images/textarea.png">
 <meta property="og:image" content="http://yoursite.com/images/table.png">
-<meta property="og:updated_time" content="2018-03-21T05:45:47.875Z">
+<meta property="og:updated_time" content="2018-04-04T08:23:01.939Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML元素">
 <meta name="twitter:description" content="1. iframe 和 a 的targetiframe标签支持相对路径 &amp;lt;iframe name=&amp;quot;xxx&amp;quot; src=&amp;quot;&amp;quot; frameborder=&amp;quot;0&amp;quot;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;a href=&amp;quot;&amp;quot; target=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;/a&amp;gt;点击a，则新页面会在i">
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -201,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -265,7 +265,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:58+08:00">
                 2018-03-06
@@ -311,19 +311,19 @@
 <h2 id="2-a-的href"><a href="#2-a-的href" class="headerlink" title="2. a 的href"></a>2. a 的href</h2><ol>
 <li><p><code>&lt;a href=&quot;//qq.com&quot;&gt;QQ&lt;/a&gt;</code>href里写的是无协议地址，意思是当前用的是http协议就自动继承http协议，用的是file就会用file协议。<br>我们在终端运行<code>sudo npm i -g http-server</code>即可安装一个服务器，进入你写index.html的文件夹里运行<code>http-server</code>即可开启服务器，然后在浏览器浏览终端返回的地址即可用http协议来访问你写的文件</p>
 </li>
-<li><p><code>&lt;a href=&quot;?name=pyz&quot;&gt;qq&lt;/a&gt;</code>点击之后会在当前页面发起?name=pyz的请求<br><code>&lt;a href=&quot;#sss&quot;&gt;qq&lt;/a&gt;</code>点击之后不会发起请求，因为锚点仅仅是在当前页面内的跳转<br><strong>`<a href="/..">link</a> 标签被点击后会浏览器会发起GET / HTTP/1.1的请求，因为/是根，无法再..</strong></p>
+<li><p>href<br>a. <code>&lt;a href=&quot;?name=pyz&quot;&gt;qq&lt;/a&gt;</code>点击之后会在当前页面发起?name=pyz的请求<br>b. <code>&lt;a href=&quot;#sss&quot;&gt;qq&lt;/a&gt;</code>点击之后不会发起请求，因为锚点仅仅是在当前页面内的跳转<br>c. <code>&lt;a href=&quot;/..&quot;&gt;link&lt;/a&gt;</code><strong>标签被点击后浏览器会发起GET / HTTP/1.1的请求，路径还是/，因为/已经是根目录，无法再往前退</strong></p>
 </li>
 <li>伪协议<br><code>&lt;a href=&quot;javascript:;&quot;&gt;qq&lt;/a&gt;</code>点击之后a不会做任何事情<br><code>&lt;a href=&quot;javascript:alert(1)&quot;;&gt;qq&lt;/a&gt;</code>点击之后会弹出1</li>
 </ol>
-<h2 id="3-form-input"><a href="#3-form-input" class="headerlink" title="3. form input"></a>3. form input</h2><p><strong>1. form 和 a 的区别：</strong><br>a提交时是GET请求<br>form可以发送POST请求<br>form里必须要有一个submit才能被提交<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;users&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot;value=&quot;username&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;password&quot;value=&quot;password&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
-<p>即form是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;users?name=pyz&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;label&gt;用户名&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/label&gt;</span><br><span class="line">    &lt;label&gt;密码&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>input要提交的话一定要有name值！</strong><br>label可以直接包在input外面<br>form里的target和a是一模一样的。<br>form里如果没有<code>&lt;input type=&quot;submit&quot;&gt;</code>而有<button>，则button会默认为submit，若写成这样<code>&lt;button type=&quot;button&quot;&gt;button&lt;/button&gt;</code>则不会成为submit，一个form里必须要有一个submit才能提交</button></p>
-<p><strong> 2. input的checkbox属性</strong></p>
+<h2 id="3-lt-form"><a href="#3-lt-form" class="headerlink" title="3.\&lt;form>"></a>3.\&lt;form></h2><p><strong>1. \&lt;form>和\&lt;a>的区别：</strong><br>\&lt;a>提交时是GET请求<br>\&lt;form>可以用method=’post’发送POST请求<br>\&lt;form>里必须要有一个submit按钮才能被提交<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;users&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot;value=&quot;username&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;password&quot;value=&quot;password&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>即\&lt;form>是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;users?name=pyz&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;label&gt;用户名&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/label&gt;</span><br><span class="line">    &lt;label&gt;密码&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. \&lt;input>要提交的话一定要有name值</strong><br>\&lt;label>直接包在input外面用<br>\&lt;form>里的target和\&lt;a>是一模一样的。<br>\&lt;form>里如果没有<code>&lt;input type=&quot;submit&quot;&gt;</code>而有\&lt;button>，则\&lt;button>会默认为submit，若写成这样<code>&lt;button type=&quot;button&quot;&gt;button&lt;/button&gt;</code>则不会成为submit，一个form里必须要有一个submit按钮才能提交</p>
+<h2 id="4-lt-input"><a href="#4-lt-input" class="headerlink" title="4. &lt;\input>"></a>4. &lt;\input></h2><p><strong> 1. checkbox</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;apple&quot; value=&quot;yes&quot;&gt;苹果&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;banana&quot; value=&quot;yes&quot;&gt;香蕉&lt;/label&gt;</span><br></pre></td></tr></table></figure>
 <p><img src="/images/checkbox.png" alt="&lt;checkbox&gt;"></p>
 <p>一定要有name才能被提交上去</p>
 <p><img src="/images/提交之后.png" alt="提交之后"></p>
-<p><strong> 3. input radio</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;男&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;女&lt;/label&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong> 2. radio</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;男&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;女&lt;/label&gt;</span><br></pre></td></tr></table></figure></p>
 <p>和checkbox不同的是，两个name一样的radio只能选中一个</p>
 <p><img src="/images/radio.png" alt="&lt;radio&gt;"></p>
 <h2 id="4-select"><a href="#4-select" class="headerlink" title="4. select"></a>4. select</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;select name=&quot;group&quot; multiple&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;-&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;1&quot;&gt;第一组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;2&quot;&gt;第二组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;3&quot; disabled&gt;第三组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;4&quot; selected&gt;第四组&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
@@ -423,10 +423,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -446,8 +446,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -483,7 +483,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-iframe-和-a-的target"><span class="nav-number">1.</span> <span class="nav-text">1. iframe 和 a 的target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-a-的href"><span class="nav-number">2.</span> <span class="nav-text">2. a 的href</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-form-input"><span class="nav-number">3.</span> <span class="nav-text">3. form input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-select"><span class="nav-number">4.</span> <span class="nav-text">4. select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-textarea"><span class="nav-number">5.</span> <span class="nav-text">5. textarea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-table"><span class="nav-number">6.</span> <span class="nav-text">6. table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Canvas"><span class="nav-number">7.</span> <span class="nav-text">7.Canvas</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-iframe-和-a-的target"><span class="nav-number">1.</span> <span class="nav-text">1. iframe 和 a 的target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-a-的href"><span class="nav-number">2.</span> <span class="nav-text">2. a 的href</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-lt-form"><span class="nav-number">3.</span> <span class="nav-text">3.\&lt;form&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-lt-input"><span class="nav-number">4.</span> <span class="nav-text">4. &lt;\input&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-select"><span class="nav-number">5.</span> <span class="nav-text">4. select</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-textarea"><span class="nav-number">6.</span> <span class="nav-text">5. textarea</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-table"><span class="nav-number">7.</span> <span class="nav-text">6. table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Canvas"><span class="nav-number">8.</span> <span class="nav-text">7.Canvas</span></a></li></ol></div>
             
 
           </div>
@@ -513,7 +513,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

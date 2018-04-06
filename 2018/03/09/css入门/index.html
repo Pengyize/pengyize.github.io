@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1. CSS简介css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。css文档 2. 编写CSS的第一步给你要写的css标签加上borderborder:1px solid red;让你知道它在哪、它的大小、形状 3. 使几个元素在同一排当你想要一个列表排在同一排时，给那几个元素全加上style=float:le">
+<meta name="description" content="1. CSS简介css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。css文档 2. 编写CSS的第一步给你要写的css标签加上borderborder:1px solid red;让你知道它在哪、它的大小、形状 3. 使导航栏在同一行当你想要一个列表排在同一行时，给所有li加上cssfloat:left;，然后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css入门">
 <meta property="og:url" content="http://yoursite.com/2018/03/09/css入门/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="1. CSS简介css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。css文档 2. 编写CSS的第一步给你要写的css标签加上borderborder:1px solid red;让你知道它在哪、它的大小、形状 3. 使几个元素在同一排当你想要一个列表排在同一排时，给那几个元素全加上style=float:le">
-<meta property="og:updated_time" content="2018-04-03T07:02:38.213Z">
+<meta property="og:description" content="1. CSS简介css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。css文档 2. 编写CSS的第一步给你要写的css标签加上borderborder:1px solid red;让你知道它在哪、它的大小、形状 3. 使导航栏在同一行当你想要一个列表排在同一行时，给所有li加上cssfloat:left;，然后">
+<meta property="og:updated_time" content="2018-04-05T09:54:49.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css入门">
-<meta name="twitter:description" content="1. CSS简介css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。css文档 2. 编写CSS的第一步给你要写的css标签加上borderborder:1px solid red;让你知道它在哪、它的大小、形状 3. 使几个元素在同一排当你想要一个列表排在同一排时，给那几个元素全加上style=float:le">
+<meta name="twitter:description" content="1. CSS简介css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。css文档 2. 编写CSS的第一步给你要写的css标签加上borderborder:1px solid red;让你知道它在哪、它的大小、形状 3. 使导航栏在同一行当你想要一个列表排在同一行时，给所有li加上cssfloat:left;，然后">
 
 
 
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -258,7 +258,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-09T22:22:28+08:00">
                 2018-03-09
@@ -300,7 +300,8 @@
       
         <h2 id="1-CSS简介"><a href="#1-CSS简介" class="headerlink" title="1. CSS简介"></a>1. CSS简介</h2><p>css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。<a href="https://www.w3.org/Style/CSS/specs.en.html" target="_blank" rel="noopener">css文档</a></p>
 <h2 id="2-编写CSS的第一步"><a href="#2-编写CSS的第一步" class="headerlink" title="2. 编写CSS的第一步"></a>2. 编写CSS的第一步</h2><p>给你要写的css标签加上border<br><code>border:1px solid red;</code><br>让你知道它在哪、它的大小、形状</p>
-<h2 id="3-使几个元素在同一排"><a href="#3-使几个元素在同一排" class="headerlink" title="3. 使几个元素在同一排"></a>3. 使几个元素在同一排</h2><p>当你想要一个列表排在同一排时，给那几个元素全加上<code>style=float:left;</code>，然后给他们的父元素加上<code>class:clearfix</code>,下面是clearfix的css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  display: block;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="3-使导航栏在同一行"><a href="#3-使导航栏在同一行" class="headerlink" title="3. 使导航栏在同一行"></a>3. 使导航栏在同一行</h2><p>当你想要一个列表排在同一行时，给所有li加上css<code>float:left;</code>，然后必须要给ul加上class:<code>clearfix</code>,下面是clearfix的css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  display: block;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>但若ul是<code>display:fiex</code>，则要把clearfix去掉，因为clearfix的::after会占用一行里最后一小块空间</p>
 <h2 id="4-高度"><a href="#4-高度" class="headerlink" title="4. 高度"></a>4. 高度</h2><p>div（块级元素）：高度是由内部文档流元素高度的总和决定的。文档流：文档内元素的流动方向，内联元素是从左往右，块级元素是从上往下<br> span（内联元素）：高度是由其中文字高度决定的，内联元素设置width和height是无效的，上下的margin和padding也无效，要将它们设为display:inline-block才有效。</p>
 <h2 id="5-小提醒"><a href="#5-小提醒" class="headerlink" title="5. 小提醒"></a>5. 小提醒</h2><p>尽量不写height和width，这两个属性会引出很多bug，要宽高的时候可以用padding，但img最好先写width，因为可以先占位，因为引用图片时浏览器不知道图片大小，所有等图片下载完成，它后面的元素又要重新排位置，若先写好width，则不用重排，知道height也可以先写好height。<br>另外span元素设置padding的时候要将它设为display:inline-block，因为内联元素不能设置宽高，inline-block具有inline的同行特性，也具有block的高度特性。<br>对于display:inline(内联元素)的元素，设置width/height/上下margin和padding都是无效的</p>
 <h2 id="6-居中"><a href="#6-居中" class="headerlink" title="6. 居中"></a>6. 居中</h2><ol>
@@ -322,7 +323,11 @@
 <p> 若不是内联元素想让它居中，则加display:inline-block，加了之后一般还要加下面这句，不然可能会有bug（下面可能会空出一行）</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align: top;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>让导航栏在同一行里均匀分布<br>给ul加css</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ul&#123;</span><br><span class="line">  display:flex;  </span><br><span class="line">  justyfy-content:space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<p>不用给li加<code>float:left</code><br>也不用给ul加<code>clearfix</code></p>
 <h2 id="7-用css做三角形"><a href="#7-用css做三角形" class="headerlink" title="7. 用css做三角形"></a>7. 用css做三角形</h2><ol>
 <li><p>等腰三角形：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  border:50px solid transparent;</span><br><span class="line">  width:0;</span><br><span class="line">  height:0;</span><br><span class="line">  border-bottom-color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -428,10 +433,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -451,8 +456,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -488,7 +493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-CSS简介"><span class="nav-number">1.</span> <span class="nav-text">1. CSS简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-编写CSS的第一步"><span class="nav-number">2.</span> <span class="nav-text">2. 编写CSS的第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使几个元素在同一排"><span class="nav-number">3.</span> <span class="nav-text">3. 使几个元素在同一排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-高度"><span class="nav-number">4.</span> <span class="nav-text">4. 高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-小提醒"><span class="nav-number">5.</span> <span class="nav-text">5. 小提醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-居中"><span class="nav-number">6.</span> <span class="nav-text">6. 居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-用css做三角形"><span class="nav-number">7.</span> <span class="nav-text">7. 用css做三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-怎样脱离文档流"><span class="nav-number">8.</span> <span class="nav-text">8. 怎样脱离文档流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-使用-before和-after时"><span class="nav-number">9.</span> <span class="nav-text">9. 使用::before和::after时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-图片的轮播"><span class="nav-number">10.</span> <span class="nav-text">10. 图片的轮播</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-CSS简介"><span class="nav-number">1.</span> <span class="nav-text">1. CSS简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-编写CSS的第一步"><span class="nav-number">2.</span> <span class="nav-text">2. 编写CSS的第一步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使导航栏在同一行"><span class="nav-number">3.</span> <span class="nav-text">3. 使导航栏在同一行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-高度"><span class="nav-number">4.</span> <span class="nav-text">4. 高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-小提醒"><span class="nav-number">5.</span> <span class="nav-text">5. 小提醒</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-居中"><span class="nav-number">6.</span> <span class="nav-text">6. 居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-用css做三角形"><span class="nav-number">7.</span> <span class="nav-text">7. 用css做三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-怎样脱离文档流"><span class="nav-number">8.</span> <span class="nav-text">8. 怎样脱离文档流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-使用-before和-after时"><span class="nav-number">9.</span> <span class="nav-text">9. 使用::before和::after时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-图片的轮播"><span class="nav-number">10.</span> <span class="nav-text">10. 图片的轮播</span></a></li></ol></div>
             
 
           </div>
@@ -518,7 +523,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

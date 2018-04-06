@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -214,6 +214,128 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/01/脚本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/01/脚本/" itemprop="url">脚本</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-01T20:45:18+08:00">
+                2018-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>脚本就是计算机用的剧本，像下面我写的两个脚本。<img src="/images/demo.sh.png" alt="demo.sh">-d 表示存在的意思（不知道的用英文查google）<br>$1 表示传入的第一个参数<br>这个是bash脚本，因为计算机默认bash脚本，所以运行时在终端输入脚本的路径<br><code>~/local/demo.sh</code>就可以直接运行脚本执行里面的命令</p>
+<p><img src="/images/demo.js.png" alt="demo.js">这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，于是可以直接运行<br><code>~/local/demo.js</code><br>如果没有shebang，就要写<br><code>node ~/local/demo.js</code></p>
+<p>若想直接输入脚本名运行脚本，可以将脚本的路径添加到PATH中<img src="/images/demo.sh.png" alt="demo.sh">我的脚本放在local目录中，于是把这句话添加到.bashrc或.zshrc的最后一行，当你运行脚本名时直接在终端输入<br><code>demo.js</code><br>计算机就会自动从local目录里找到这个脚本运行</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +379,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T10:02:26+08:00">
                 2018-02-28
@@ -380,7 +502,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:58:54+08:00">
                 2018-02-28
@@ -430,8 +552,8 @@
 <li>运行 <code>ssh -T git@github.com</code></li>
 </ol>
 <h3 id="二-配置git"><a href="#二-配置git" class="headerlink" title="二. 配置git"></a>二. 配置git</h3><p>依次运行<br><code>git config --global user.name “英文名”</code><br><code>git config --global user.email “邮箱”</code><br><code>git config --global push.default matching</code><br><code>git config --global core.quotepath false</code><br><code>git config --global core.editor &quot;vim&quot;</code></p>
-<h3 id="三-使用git的三种方法"><a href="#三-使用git的三种方法" class="headerlink" title="三. 使用git的三种方法"></a>三. 使用git的三种方法</h3><h6 id="1-在本地使用"><a href="#1-在本地使用" class="headerlink" title="1. 在本地使用"></a>1. 在本地使用</h6><p>a. 在桌面创建git-demo目录<code>mkdir git-demo</code><br>b. <code>cd git-demo</code><br>c. <code>git init</code><br>d. 在git-demo目录里运行<code>touch index.html</code><br>e. 运行 <code>git status -sb</code> 可以看到文件前面有 ??<br>f. 运行<code>git add .</code><br>g. <code>git commit -m &quot;第一次提交&quot;</code><br>h. <code>git pull</code>先把github上的文件拉下来（一般可忽略）<br>i. <code>git push</code>推上去</p>
-<h6 id="2-将本地仓库上传到github"><a href="#2-将本地仓库上传到github" class="headerlink" title="2. 将本地仓库上传到github"></a>2. 将本地仓库上传到github</h6><p>a. 在github上创建一个仓库<br>b. name和电脑上的目录名一样，其他东西不动，创建<br>c. 点击SSH地址！然后复制页面上这行代码运行<code>git remote add origin git@github.com:xxxxxxxxx/git-demo-1.git</code><br>d. 复制第二行 <code>git push -u origin master</code>运行</p>
+<h3 id="三-使用git的三种方法"><a href="#三-使用git的三种方法" class="headerlink" title="三. 使用git的三种方法"></a>三. 使用git的三种方法</h3><h6 id="1-建立本地仓库"><a href="#1-建立本地仓库" class="headerlink" title="1. 建立本地仓库"></a>1. 建立本地仓库</h6><p>a. 在桌面创建git-demo目录<code>mkdir git-demo</code><br>b. <code>cd git-demo</code><br>c. <code>git init</code><br>d. 在git-demo目录里运行<code>touch index.html</code><br>e. 运行 <code>git status -sb</code> 可以看到文件前面有 ??<br>f. 运行<code>git add .</code><br>g. <code>git commit -m &quot;第一次提交&quot;</code><br>h. <code>git pull</code>先把github上的文件拉下来（一般可忽略）<br>i. <code>git push</code>推上去</p>
+<h6 id="2-将本地仓库上传到github"><a href="#2-将本地仓库上传到github" class="headerlink" title="2. 将本地仓库上传到github"></a>2. 将本地仓库上传到github</h6><p>a. 先确保有本地仓库，再在github上创建一个仓库<br>b. name和电脑上的目录名一样，其他东西不动，创建<br>c. 点击SSH地址！然后复制页面上这行代码运行<code>git remote add origin git@github.com:xxxxxxxxx/git-demo-1.git</code><br>d. 复制第二行 <code>git push -u origin master</code>运行</p>
 <h6 id="3-在github上创建仓库并下载"><a href="#3-在github上创建仓库并下载" class="headerlink" title="3. 在github上创建仓库并下载"></a>3. 在github上创建仓库并下载</h6><p>a. 创建时勾选initialize this … ，Add .gitignore  选node，Add a license 选MIT License<br>b. 进入仓库点右上角绿色clone or download<br>c. 点 use SSH，并复制下面的地址<br>d. 终端进入桌面运行<code>git clone 地址</code>，于是将仓库下到了电脑上<br>e. 进入文件夹<code>git init</code>，初始化本地仓库</p>
 <h3 id="四-上传更新"><a href="#四-上传更新" class="headerlink" title="四.上传更新"></a>四.上传更新</h3><p>1.git add .<br>2.git commi -m “第一次更新”<br>3.git pull（将网上更新的文件拉到电脑上）<br>4.git push（上传）</p>
 
@@ -511,7 +633,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:57:17+08:00">
                 2018-02-28
@@ -701,7 +823,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:54:51+08:00">
                 2018-02-28
@@ -848,7 +970,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:53:20+08:00">
                 2018-02-28
@@ -970,7 +1092,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:51:46+08:00">
                 2018-02-28
@@ -1113,7 +1235,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:49:02+08:00">
                 2018-02-28
@@ -1240,7 +1362,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-27T20:02:02+08:00">
                 2018-02-27
@@ -1368,8 +1490,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -1419,7 +1541,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
