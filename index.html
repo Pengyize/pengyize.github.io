@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -214,6 +214,303 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/07/面向对象编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/07/面向对象编程/" itemprop="url">面向对象编程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T12:55:51+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-This关键字"><a href="#1-This关键字" class="headerlink" title="1. This关键字"></a>1. This关键字</h1><p>这三个方法都可以绑定this值</p>
+<h3 id="1-call"><a href="#1-call" class="headerlink" title="1. call()"></a>1. call()</h3><ul>
+<li><p><strong>this</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">var f = function () &#123;</span><br><span class="line">  return this;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">f() === window // true</span><br><span class="line">f.call(obj) === obj // true</span><br></pre></td></tr></table></figure>
+<p>call方法的参数，应该是一个对象。<br>如果参数为空、null和undefined，正常模式下默认传入全局对象（window），严格模式下为undefined。<br>call方法可以改变this的指向，指定this指向对象obj。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var f = function () &#123;</span><br><span class="line">  return this;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">f.call(5)    //Number &#123;[[PrimitiveValue]]: 5&#125;</span><br></pre></td></tr></table></figure>
+<p>若call方法的参数是一个原始值，那么这个原始值会转成对应的对象</p>
+</li>
+<li><p><strong>arguments</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function add(a, b) &#123;</span><br><span class="line">  console.log(arguments[0]);</span><br><span class="line">  console.log(arguments[1]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add.call(this, 1, 2) // 1，2，第一个参数传给this，后面的都存入arguments对象</span><br></pre></td></tr></table></figure>
+<p>arguments是伪数组</p>
+<h3 id="2-apply"><a href="#2-apply" class="headerlink" title="2. apply()"></a>2. apply()</h3><p>apply方法的第一个参数用法和call一样，不同的是第二个参数必须是一个数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function f(x, y)&#123;</span><br><span class="line">  console.log(x + y);</span><br><span class="line">&#125;</span><br><span class="line">f.apply(null, [1, 1]) // 2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>所以利用这一点<br>（1）找出数组最大元素<br>JavaScript 不提供找出数组最大元素的函数。结合使用apply方法和Math.max方法，就可以返回数组的最大元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = [10, 2, 4, 15, 9];</span><br><span class="line">Math.max.apply(null, a) // 15</span><br></pre></td></tr></table></figure></p>
+<p> (2)将数组的空元素变为undefined<br>通过apply方法，利用Array构造函数将数组的空元素变成undefined。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Array.apply(null, [&apos;a&apos;, ,&apos;b&apos;])  </span><br><span class="line">// [ &apos;a&apos;, undefined, &apos;b&apos; ]</span><br></pre></td></tr></table></figure></p>
+<p>数组的forEach方法会跳过空元素，但是不会跳过undefined。</p>
+<h3 id="3-bind"><a href="#3-bind" class="headerlink" title="3. bind()"></a>3. bind()</h3><p>bind可以绑定this值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date();</span><br><span class="line">d.getTime() // 1481869925657</span><br><span class="line"></span><br><span class="line">var print = d.getTime;</span><br><span class="line">print() // Uncaught TypeError: this is not a Date object.</span><br></pre></td></tr></table></figure></p>
+<p>这样会报错，可以像下面这样,将getTime内部的this绑定为d对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var print = d.getTime.bind(d);</span><br><span class="line">print() // 1481869925657</span><br></pre></td></tr></table></figure></p>
+<p>下面这样也是，将inc方法内部的this绑定到counter<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var counter = &#123;</span><br><span class="line">   count: 0,</span><br><span class="line">   inc: function () &#123;</span><br><span class="line">     this.count++;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var func = counter.inc.bind(counter);</span><br><span class="line">func();</span><br><span class="line">counter.count // 1</span><br></pre></td></tr></table></figure></p>
+<p>还可以绑定其他对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var counter = &#123;</span><br><span class="line">   count: 0,</span><br><span class="line">   inc: function () &#123;</span><br><span class="line">      this.count++;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var obj = &#123;</span><br><span class="line">   count: 100</span><br><span class="line">&#125;;</span><br><span class="line">var func = counter.inc.bind(obj);</span><br><span class="line">func();</span><br><span class="line">obj.count // 101</span><br></pre></td></tr></table></figure></p>
+<p>bind还可以绑定原函数的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var add = function (x, y) &#123;</span><br><span class="line">   return x * this.m + y * this.n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = &#123;</span><br><span class="line">  m: 2,</span><br><span class="line">  n: 2</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var newAdd = add.bind(obj, 5);  //5相当于绑定了add函数里的x</span><br><span class="line">newAdd(5) // 20，这个5相当于add函数里y</span><br></pre></td></tr></table></figure></p>
+<p>若bind第一个对象为null，等于将this绑定到全局对象（window）<br><strong>bind的注意事项：</strong><br>（1）每一次返回一个新函数<br>bind方法每运行一次，就返回一个新函数，所以监听事件的时候，要谨慎使用。<a href="http://javascript.ruanyifeng.com/oop/this.html#toc7" target="_blank" rel="noopener">更多</a></p>
+<p>未完待续…</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/07/到页面加载显示完成，这个过程中都发生了什么？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/07/到页面加载显示完成，这个过程中都发生了什么？/" itemprop="url">到页面加载显示完成，这个过程中都发生了什么？</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T10:29:48+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-浏览器查找域名对应的-IP-地址："><a href="#1-浏览器查找域名对应的-IP-地址：" class="headerlink" title="1. 浏览器查找域名对应的 IP 地址："></a>1. 浏览器查找域名对应的 IP 地址：</h1><p>通过DNS查询到相应的IP地址，相当于你的路由问电信公司，于是电信公司返回对应的IP地址。<br><strong>补充说明：</strong></p>
+<ul>
+<li>你若修改了hosts文件，可自己指定域名的IP，绕过DNS。</li>
+<li>URL和域名是两个概念：例如，xiedaimala.com是这个网站的域名，根据这个域名找到写代码啦的服务器，xiedaimala.com/courses 是URL，根据这个URL定位到写代码啦的课程表。</li>
+<li>IP 地址与域名不是一一对应的关系：可以把多个提供相同服务的服务器 IP 设置为同一个域名，但在同一时刻一个域名只能解析出一个 IP地址；同时，一个 IP 地址可以绑定多个域名，数量不限；</li>
+</ul>
+<h1 id="2-浏览器和服务器建立连接——三次握手（采用TCP协议）"><a href="#2-浏览器和服务器建立连接——三次握手（采用TCP协议）" class="headerlink" title="2. 浏览器和服务器建立连接——三次握手（采用TCP协议）"></a>2. 浏览器和服务器建立连接——三次握手（采用TCP协议）</h1><ul>
+<li>浏览器说：服务器我要连接你了，可以吗</li>
+<li>服务器说：好的，连接吧</li>
+<li>浏览器说：好的，那我连接了<br>连接成功！</li>
+</ul>
+<h1 id="3-网页的请求与显示"><a href="#3-网页的请求与显示" class="headerlink" title="3. 网页的请求与显示"></a>3. 网页的请求与显示</h1><ol>
+<li>浏览器根据 URL 内容生成 HTTP 请求，请求中包含请求的方式、请求文件的位置、接受文件的格式等等；</li>
+<li>服务器接到请求后，会根据 HTTP 请求中的内容来决定如何获取相应的 HTML 文件；</li>
+<li>服务器将得到的 HTML 文件发送给浏览器；</li>
+<li>在浏览器还没有完全接收 HTML 文件时便开始渲染、显示网页；</li>
+<li>在执行 HTML 中代码时，根据需要，浏览器会继续请求图片、CSS、JavsScript等文件，过程同请求 HTML ；</li>
+</ol>
+<h1 id="4-断开连接——四次握手"><a href="#4-断开连接——四次握手" class="headerlink" title="4. 断开连接——四次握手"></a>4. 断开连接——四次握手</h1><ul>
+<li><p>主机向服务器发送一个断开连接的请求（不早了，我该走了）；</p>
+</li>
+<li><p>服务器接到请求后发送确认收到请求的信号（知道了）；</p>
+</li>
+<li><p>服务器向主机发送断开通知（我也该走了）；</p>
+</li>
+<li><p>主机接到断开通知后断开连接并反馈一个确认信号（嗯，好的），服务器收到确认信号后断开连接；</p>
+</li>
+</ul>
+<p><strong>补充说明：</strong></p>
+<ul>
+<li>为什么服务器在接到断开请求时不立即同意断开：当服务器收到断开连接的请求时，可能仍然有数据未发送完毕，所以服务器先发送确认信号，等所有数据发送完毕后再同意断开。</li>
+<li>第四次握手后，主机发送确认信号后并没有立即断开连接，而是等待了 2 个报文传送周期，原因是：如果第四次握手的确认信息丢失，服务器将会重新发送第三次握手的断开连接的信号，而服务器发觉丢包与重新发送的断开连接到达主机的时间正好为 2 个报文传输周期。</li>
+</ul>
+<p>未完待续…</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +554,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-06T16:06:56+08:00">
                 2018-04-06
@@ -309,7 +606,7 @@
 <li><code>cd ~/Desktop/scss-demo</code></li>
 <li><code>mkdir scss css</code></li>
 <li><code>touch scss/style.scss</code></li>
-<li><code>node-sass -wr scss -o css</code>（开始监听style.scss）<br>在目录里打开style.scss开始编辑，node-scss就会自动给css目录添加style.css并实时更新css文件。<br>在 scss 文件里添加<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@function px( $px )&#123;</span><br><span class="line">  @return $px/$designWidth*10 + rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$designWidth : 640; // 640 是设计稿的宽度，你要根据设计稿的宽度填写。如果设计师的设计稿宽度不统一，就杀死设计师，换个新的。</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  width: px(320);</span><br><span class="line">  height: px(160);</span><br><span class="line">  margin: px(40) px(40);</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  float: left;</span><br><span class="line">  font-size: 1.2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><code>node-sass -wr scss -o css</code>（开始监听style.scss）<br>在目录里打开style.scss开始编辑，node-scss就会自动给css目录添加style.css并实时更新css文件。<br>在 scss 文件里添加<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@function px( $px )&#123;</span><br><span class="line">  @return $px/$designWidth*10 + rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$designWidth : 640; // 640 是设计稿的宽度，你要根据设计稿的宽度填写。</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  width: px(320);</span><br><span class="line">  height: px(160);</span><br><span class="line">  margin: px(40) px(40);</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  float: left;</span><br><span class="line">  font-size: 1.2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>在终端：<code>cat ~/desktop/scss-demo/css/style.css</code>，可看到变化，scss将px变成了rem放入了css中</p>
@@ -390,7 +687,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-03T23:57:23+08:00">
                 2018-04-03
@@ -515,7 +812,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-30T13:27:06+08:00">
                 2018-03-30
@@ -693,7 +990,7 @@ f() // 2
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T12:21:19+08:00">
                 2018-03-27
@@ -859,7 +1156,7 @@ f() // 2
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-25T23:32:07+08:00">
                 2018-03-25
@@ -1044,7 +1341,7 @@ f() // 2
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:56:14+08:00">
                 2018-03-23
@@ -1183,7 +1480,7 @@ f() // 2
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:47:25+08:00">
                 2018-03-23
@@ -1311,7 +1608,7 @@ f() // 2
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:44:48+08:00">
                 2018-03-23
@@ -1405,268 +1702,11 @@ f() // 2
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/JavaScript入门2（阮一峰）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/21/JavaScript入门2（阮一峰）/" itemprop="url">JavaScript入门2（阮一峰）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:12:42+08:00">
-                2018-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1. 数组"></a>1. 数组</h2><p>数组本身是对象，是一种特殊的对象</p>
-<h4 id="1-length"><a href="#1-length" class="headerlink" title="1.length"></a>1.length</h4><p>数组不能用点结构读取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2];</span><br><span class="line">a[0] === 1        //true</span><br><span class="line">a.0               //  SyntaxError: Unexpected number</span><br><span class="line">a.length === 2    //  true，数组默认有length值</span><br><span class="line"></span><br><span class="line">a[9] = 10;</span><br><span class="line">a.length === 10   //  true，JavaScript还是会认为长度是10，会把中间的值都当作empty</span><br></pre></td></tr></table></figure></p>
-<p>JavaScript用32位整数保存数组的长度，所以数组最多只能存2^32^-1个数，数组length的值是可以设置的，a.length = 0可以用来清空数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">a.length = 0;</span><br><span class="line">a   // []</span><br></pre></td></tr></table></figure></p>
-<p>length的长度是可以设置的，若length大于原来的值，则多出来的叫空位，读取空位会返回undefined，用in运算符会返回false。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = [1,2,3];</span><br><span class="line">a.length = 10</span><br><span class="line">a[5]    // undefined</span><br><span class="line"></span><br><span class="line">2 in a  // true，in检测的是key，而不是value和length</span><br><span class="line">3 in a  // false，in检测的是key，而不是值</span><br></pre></td></tr></table></figure></p>
-<p>将数组的键分别设为字符串和小数，结果都不影响length的值，所以length只和数字键有关。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var a = [];</span><br><span class="line"></span><br><span class="line">a[&apos;p&apos;] = &apos;abc&apos;;</span><br><span class="line">a.length === 0     //true</span><br><span class="line">a[2.1] = &apos;abc&apos;;</span><br><span class="line">a.length === 0     //true</span><br></pre></td></tr></table></figure></p>
-<p>如果数组的键名是添加超出范围的数值，该键名会自动转为字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a[-1] = &apos;a&apos;;</span><br><span class="line">a[Math.pow(2, 32)] = &apos;b&apos;;</span><br><span class="line"></span><br><span class="line">a.length === 0    //true</span><br><span class="line">a[-1] === &quot;a&quot;    //true</span><br><span class="line">a[4294967296] === &quot;b&quot;  //true</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-in"><a href="#2-in" class="headerlink" title="2. in"></a>2. in</h4><p>in检测的是键名，而不是值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [ &apos;a&apos;, &apos;b&apos;, &apos;c&apos; ];</span><br><span class="line">2 in arr  // true</span><br><span class="line">&apos;2&apos; in arr // true</span><br><span class="line">4 in arr // false ，不存在就是false</span><br><span class="line"></span><br><span class="line">arr[100] = &apos;a&apos;;</span><br><span class="line">100 in arr // true</span><br><span class="line">99 in arr // false，空位也会被认为是false</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-遍历数组"><a href="#3-遍历数组" class="headerlink" title="3. 遍历数组"></a>3. 遍历数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var colors = [&apos;red&apos;, &apos;green&apos;, &apos;blue&apos;];</span><br><span class="line">colors.forEach(function (color) &#123;    //function里的参数就是每一项的值</span><br><span class="line">  console.log(color);</span><br><span class="line">&#125;);        //red green blue</span><br></pre></td></tr></table></figure>
-<p>用length遍历数组时，会把空位输出为undefined，但使用数组的forEach方法、for…in结构、以及Object.keys方法进行遍历，空位都会被跳过，只有当数组的值是undefined时，它们才会输出undefined，所以用length遍历数组时要小心空位<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var a = [ ,2,3];</span><br><span class="line"></span><br><span class="line">for(var i=0;i&lt;a.length;i++)&#123;</span><br><span class="line">    console.log(a[i]);            //undefined   2   3</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.forEach(function (x, i) &#123;       //x是value，i是key</span><br><span class="line">    console.log(i + &apos;:&apos; + x);     // 1:2   2:3</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">a = [undefined,2,3];</span><br><span class="line"></span><br><span class="line">a.forEach(function (x, i) &#123;</span><br><span class="line">    console.log(i + &apos;:&apos; + x);     // 0:undefined   1:2   2:3</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h4 id="4-delete"><a href="#4-delete" class="headerlink" title="4. delete"></a>4. delete</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3];</span><br><span class="line">delete a[1];</span><br><span class="line"></span><br><span class="line">a[1] // undefined</span><br><span class="line">a.length // 3</span><br></pre></td></tr></table></figure>
-<p>delete不会影响length，所以用length遍历数组的时候要小心</p>
-<h4 id="5-类似数组的对象"><a href="#5-类似数组的对象" class="headerlink" title="5.类似数组的对象"></a>5.类似数组的对象</h4><p>可以把类似数组对象转为真正的数组（目前看不懂），详情见<a href="http://javascript.ruanyifeng.com/grammar/array.html" target="_blank" rel="noopener">阮一峰-数组-类似数组的对象</a></p>
-<h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof [1,2,3];      //      &apos;object&apos;  注意返回字符串</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/JS深拷贝和浅拷贝/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/21/JS深拷贝和浅拷贝/" itemprop="url">JS深拷贝和浅拷贝</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:12:09+08:00">
-                2018-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;        //        a === 1</span><br><span class="line">b = a;            //        b === 1</span><br><span class="line">b = 2;            //        b === 2,a === 1</span><br></pre></td></tr></table></figure>
-<p>这就是深拷贝，意思是拷贝之后，改变其中一个值的同时并不改变另一个值。</p>
-<p>除了object以外的数据类型，赋值都是深拷贝</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line">    name: &apos; pyz&apos;</span><br><span class="line">&#125;</span><br><span class="line">b=a;</span><br><span class="line">b.name = &apos;jpj&apos;        //        这时a和b都改成了jpj</span><br></pre></td></tr></table></figure>
-<p>这就是浅拷贝，赋值时只能把地址赋过去，并没把heap内存里的东西赋给b。</p>
-<p>未完待续……</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1712,8 +1752,8 @@ f() // 2
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -1763,7 +1803,7 @@ f() // 2
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
