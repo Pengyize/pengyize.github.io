@@ -228,6 +228,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/JS里的对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/23/JS里的对象/" itemprop="url">JS里的对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:44:48+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-全局变量-一种是-ECMAScript-规定的（global）"><a href="#1-全局变量-一种是-ECMAScript-规定的（global）" class="headerlink" title="1. 全局变量:一种是 ECMAScript 规定的（global）"></a>1. 全局变量:一种是 ECMAScript 规定的（global）</h2><ul>
+<li>global.parseInt</li>
+<li>global.parseFloat</li>
+<li>global.Number</li>
+<li>global.String</li>
+<li>global.Boolean</li>
+<li>global.Object</li>
+</ul>
+<h2 id="2-全局变量-另一种是浏览器自己的全局变量-window"><a href="#2-全局变量-另一种是浏览器自己的全局变量-window" class="headerlink" title="2. 全局变量:另一种是浏览器自己的全局变量(window)"></a>2. 全局变量:另一种是浏览器自己的全局变量(window)</h2><ul>
+<li>window.alert</li>
+<li>window.prompt</li>
+<li>window.comfirm</li>
+<li>window.console.log</li>
+</ul>
+<h2 id="3-上面两种全局变量都是stack（栈内存）里的重要变量"><a href="#3-上面两种全局变量都是stack（栈内存）里的重要变量" class="headerlink" title="3. 上面两种全局变量都是stack（栈内存）里的重要变量"></a>3. 上面两种全局变量都是stack（栈内存）里的重要变量</h2><h2 id="4-Number"><a href="#4-Number" class="headerlink" title="4. Number"></a>4. Number</h2><p>JavaScript的作者Brendan Eich被公司要求JS要像Java，所以他模仿java写了<br><code>var n = new Number(1);</code>这样n是一个对象，有自己的属性，但太麻烦，于是他又写了一种<br><code>var n =1;</code>n是基本类型<br>但他用了一个方法，使这样声明的也可以用Number对象的属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var n=1;</span><br><span class="line">n.toString();       //n用toString时，本质是下面这两行，实质n是没有属性的</span><br><span class="line"></span><br><span class="line">var temp = new Number(n);    //声明了一个临时变量temp，并将n作为Number对象赋给它</span><br><span class="line">temp.toString();             //用temp来执行toString，执行完后temp就被抹杀了</span><br><span class="line"></span><br><span class="line">n.xxx = 2;      //可以的</span><br><span class="line">n.xxx           //但undefined，因为xxx是存在temp的，上一句的temp执行完后就被抹杀，所以xxx也被抹杀了</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-String"><a href="#5-String" class="headerlink" title="5. String"></a>5. String</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;asd&apos;;      //     原理和Number一样</span><br><span class="line"></span><br><span class="line">var s2 = new String(s);</span><br><span class="line">s2[0]    //    &apos;a&apos;，因为String()对象有hash的属性</span><br><span class="line"></span><br><span class="line">s[0]     //    &apos;a&apos;，s也能调用这个属性，但s实质没有属性，这个原理和上面Number一样</span><br><span class="line"></span><br><span class="line">s.charCodeAt(0)    //    97，a的unicode码</span><br><span class="line">s.charCodeAt(0).toString(16)  //&apos;61&apos;，a的unicode码的十六进制</span><br><span class="line"></span><br><span class="line">&apos; asd &apos;.trim();      //  &apos;asd&apos;，去掉字符串两边的空格</span><br><span class="line"></span><br><span class="line">var s1 = &apos;Hello&apos;;</span><br><span class="line">s.concat(s1);      //    asdHello，连接两个字符串</span><br><span class="line"></span><br><span class="line">s1.slice(0,1);      //   &apos;H&apos;，slice是切片，切下0到1之前的内容</span><br><span class="line">s1.slice(1);        //   &apos;ello&apos;，返回1和后面的所有内容</span><br><span class="line"></span><br><span class="line">s1.replace(&apos;e&apos;,&apos;o&apos;)    // &apos;Hollo&apos;，替换</span><br><span class="line"></span><br><span class="line">s1.length    //    5</span><br><span class="line"></span><br><span class="line">s1.indexOf(&apos;o&apos;)       //    4，定位，若没找到会返回-1</span><br><span class="line">if(s1.indexOf(&apos;h&apos;) !== -1) &#123;  // 可用来执行某些操作</span><br><span class="line">  // do stuff with the string</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">s1.toLowerCase();      //    全变成小写</span><br><span class="line">s1.toUpperCase();      //    全变成大写</span><br></pre></td></tr></table></figure>
+<h2 id="6-Boolean"><a href="#6-Boolean" class="headerlink" title="6. Boolean"></a>6. Boolean</h2><p>6个falsy值，0、NaN、null、undefined、false、””，除了这6个，其他值都是true<br><strong>所有对象都是true</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var b = false;</span><br><span class="line">var b1 = new Boolean(false);</span><br><span class="line">if(b)&#123;console.log(&apos;true&apos;)&#125;;</span><br><span class="line">if(b1)&#123;console.log(&apos;true&apos;)&#125;;      // true</span><br><span class="line">//只会输出b1，因为所有对象都是true！！</span><br></pre></td></tr></table></figure></p>
+<h2 id="7-Object"><a href="#7-Object" class="headerlink" title="7. Object"></a>7. Object</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var o1 = &#123;&#125;;      //常用方法</span><br><span class="line">var o2 = new Object();</span><br><span class="line"></span><br><span class="line">o1 === o2  //false，因为比较的是地址，而地址不同</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/JavaScript入门2（阮一峰）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1485,149 +1621,6 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/HTML简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/06/HTML简介/" itemprop="url">HTML简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:09+08:00">
-                2018-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>html没有块级元素和内联元素的区别，意思就是html只管内容，不管样式，所有样式都由css决定</p>
-<h3 id="1-W3C简介"><a href="#1-W3C简介" class="headerlink" title="1.W3C简介"></a>1.W3C简介</h3><p>万维网联盟（W3C）由<a href="https://zh.wikipedia.org/wiki/%E6%8F%90%E5%A7%86%C2%B7%E6%9F%8F%E5%85%A7%E8%8C%B2-%E6%9D%8E" title="蒂姆·伯纳斯-李" target="_blank" rel="noopener">李爵士</a>于1994年10月离开<a href="https://zh.wikipedia.org/wiki/%E6%AD%90%E6%B4%B2%E6%A0%B8%E5%AD%90%E7%A0%94%E7%A9%B6%E7%B5%84%E7%B9%94" title="欧洲核子研究中心" target="_blank" rel="noopener">欧洲核子研究中心</a>（CERN）后成立，该组织通过W3C制定的新标准来促进业界成员间的兼容性和协议。联盟试图让所有的供应商实施一套由联盟选择的核心原则和组件。</p>
-<h3 id="2-MDN简介"><a href="#2-MDN简介" class="headerlink" title="2.MDN简介"></a>2.MDN简介</h3><p><strong>MDN Web Docs</strong>（旧称Mozilla Developer Network、Mozilla Developer Center，简称MDN）是一个汇集众多<a href="https://zh.wikipedia.org/wiki/Mozilla%E5%9F%BA%E9%87%91%E6%9C%83" title="Mozilla基金会" target="_blank" rel="noopener">Mozilla基金会</a>产品和网络技术开发文档的免费网站。<br>MDN网站上有目前较全的前端基础教学，如HTML、CSS、JS等<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">HTML元素表</a></p>
-<h3 id="3-空标签"><a href="#3-空标签" class="headerlink" title="3.空标签"></a>3.空标签</h3><p>空标签就是不用加闭标签的标签，也可以叫闭元素。如：</p>
-<ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/area" title="HTML &lt;area&gt; 元素 在图片上定义一个热点区域" target="_blank" rel="noopener"><code>&lt;area&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/base" title="HTML &lt;base&gt; 元素 指定用于一个文档中包含的所有相对URL的基本URL。一份中只能有一个&lt;base&gt;元素。" target="_blank" rel="noopener"><code>&lt;base&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/br" title="HTML 元素 换行 &lt;br&gt; 在文本中产生一个换行（回车键）。这对于写诗或写一个地址来说显得很有用。它可以将行明显地分开。" target="_blank" rel="noopener"><code>&lt;br&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/col" title="HTML &lt;col&gt; 元素 定义表格中的列，并用于定义所有公共单元格上的公共语义。它通常位于&lt;colgroup&gt;元素内。" target="_blank" rel="noopener"><code>&lt;col&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/colgroup" title="HTML 中的 表格列组（Column Group &lt;colgroup&gt;） 标签用来定义表中的一组列表。" target="_blank" rel="noopener"><code>&lt;colgroup&gt;</code></a> when the <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/colgroup#attr-span" target="_blank" rel="noopener">span</a> is present</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/command" title="command元素用来表示一个用户可以调用的命令." target="_blank" rel="noopener"><code>&lt;command&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/embed" title="HTML &lt;embed&gt; 元素 用于表示一个外部应用或交互式内容的集合点，换句话说，就是一个插件。" target="_blank" rel="noopener"><code>&lt;embed&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/hr" title="HTML &lt;hr&gt; 元素表示段落级元素之间的主题转换（例如，一个故事中的场景的改变，或一个章节的主题的改变）。在HTML的早期版本中，它是一个水平线。现在它仍能在可视化浏览器中表现为水平线，但目前被定义为语义上的，而不是表现层面上。" target="_blank" rel="noopener"><code>&lt;hr&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img" title="HTML Image 元素（ &lt;img&gt; ）代表文档中的一个图像。" target="_blank" rel="noopener"><code>&lt;img&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input" title="HTML &lt;input&gt; 元素用于为基于Web的表单创建交互式控件，以便接受来自用户的数据。" target="_blank" rel="noopener"><code>&lt;input&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/keygen" title="HTML &lt;keygen&gt; 元素是为了方便生成密钥材料和提交作为 HTML form 的一部分的公钥.这种机制被用于设计基于 Web 的证书管理系统。按照预想，&lt;keygen&gt; 元素将用于 HTML 表单与其他的所需信息一起构造一个证书请求，该处理的结果将是一个带有签名的证书。" target="_blank" rel="noopener"><code>&lt;keygen&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/link" title="HTML 中&lt;link&gt;元素指定了外部资源与当前文档的关系. 这个元素的使用方法包括为导航定义关系框架.这个元素经常用来链接css文件。" target="_blank" rel="noopener"><code>&lt;link&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta" title="HTML &lt;meta&gt; 元素表示那些不能由其它HTML元相关元素 (&lt;base&gt;, &lt;link&gt;, &lt;script&gt;, &lt;style&gt; 或 &lt;title&gt;) 之一表示的任何元数据信息." target="_blank" rel="noopener"><code>&lt;meta&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/param" title="HTML &lt;param&gt; 元素(或 HTML Parameter 元素) 定义了 &lt;object&gt;的参数" target="_blank" rel="noopener"><code>&lt;param&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/source" title="The HTML &lt;source&gt; element specifies multiple media resources for either the &lt;picture&gt;, the &lt;audio&gt; or the &lt;video&gt; element. It is an empty element. It is commonly used to serve the same media content in multiple formats supported by different browsers." target="_blank" rel="noopener"><code>&lt;source&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/track" title="HTML &lt;track&gt; 元素 被当作媒体元素—&lt;audio&gt; 和 &lt;video&gt;的子元素来使用。它允许指定计时字幕（或者基于事件的数据），例如自动处理字幕。" target="_blank" rel="noopener"><code>&lt;track&gt;</code></a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/wbr" title="HTML &lt;wbr&gt; 元素  — 一个文本中的位置，其中浏览器可以选择来换行，虽然它的换行规则可能不会在这里换行。" target="_blank" rel="noopener"><code>&lt;wbr&gt;</code></a></li>
-</ul>
-<h3 id="4-可替换标签"><a href="#4-可替换标签" class="headerlink" title="4.可替换标签"></a>4.可替换标签</h3><p>宽高由自己决定的元素，如：<br><code>&lt;img&gt;</code><br><code>&lt;video&gt;</code><br><code>&lt;input&gt;</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1678,7 +1671,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
