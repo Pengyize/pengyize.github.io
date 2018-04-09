@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -214,6 +214,153 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/HTML元素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/06/HTML元素/" itemprop="url">HTML元素</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:58+08:00">
+                2018-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-iframe-和-a-的target"><a href="#1-iframe-和-a-的target" class="headerlink" title="1. iframe 和 a 的target"></a>1. iframe 和 a 的target</h2><p>iframe标签支持相对路径</p>
+<p><code>&lt;iframe name=&quot;xxx&quot; src=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br><code>&lt;a href=&quot;&quot; target=&quot;xxx&quot;&gt;&lt;/a&gt;</code>点击a，则新页面会在iframe里出现</p>
+<p>若index.html里写:<br><code>&lt;iframe src=&quot;./index2&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br>index2.html里写:<br><code>&lt;iframe src=&quot;./index3&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br>index3.html里写:<br><code>&lt;a href=&quot;http://qq.com&quot; target=_blank&gt;QQ&lt;/a&gt;</code>（点击会在一个新的标签页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_self&gt;QQ&lt;/a&gt;</code>（点击会在index3的嵌套页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_parent&gt;QQ&lt;/a&gt;</code>（点击会在index2的嵌套页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_top&gt;QQ&lt;/a&gt;</code>（点击会在index里打开）<br>在index的左上角出现一个小的嵌套页面里显示着index2页面里嵌套的index3里的四个QQ链接</p>
+<h2 id="2-a-的href"><a href="#2-a-的href" class="headerlink" title="2. a 的href"></a>2. a 的href</h2><ol>
+<li><p><code>&lt;a href=&quot;//qq.com&quot;&gt;QQ&lt;/a&gt;</code>href里写的是无协议地址，意思是当前用的是http协议就自动继承http协议，用的是file就会用file协议。<br>我们在终端运行<code>sudo npm i -g http-server</code>即可安装一个服务器，进入你写index.html的文件夹里运行<code>http-server</code>即可开启服务器，然后在浏览器浏览终端返回的地址即可用http协议来访问你写的文件</p>
+</li>
+<li><p>href<br>a. <code>&lt;a href=&quot;?name=pyz&quot;&gt;qq&lt;/a&gt;</code>点击之后会在当前页面发起?name=pyz的请求<br>b. <code>&lt;a href=&quot;#sss&quot;&gt;qq&lt;/a&gt;</code>点击之后不会发起请求，因为锚点仅仅是在当前页面内的跳转<br>c. <code>&lt;a href=&quot;/..&quot;&gt;link&lt;/a&gt;</code><strong>标签被点击后浏览器会发起GET / HTTP/1.1的请求，路径还是/，因为/已经是根目录，无法再往前退</strong></p>
+</li>
+<li>伪协议<br><code>&lt;a href=&quot;javascript:;&quot;&gt;qq&lt;/a&gt;</code>点击之后a不会做任何事情<br><code>&lt;a href=&quot;javascript:alert(1)&quot;;&gt;qq&lt;/a&gt;</code>点击之后会弹出1</li>
+</ol>
+<h2 id="3-lt-form"><a href="#3-lt-form" class="headerlink" title="3.\&lt;form>"></a>3.\&lt;form></h2><p><strong>1. \&lt;form>和\&lt;a>的区别：</strong><br>\&lt;a>提交时是GET请求<br>\&lt;form>可以用method=’post’发送POST请求<br>\&lt;form>里必须要有一个submit按钮才能被提交<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;users&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot;value=&quot;username&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;password&quot;value=&quot;password&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>即\&lt;form>是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;users?name=pyz&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;label&gt;用户名&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/label&gt;</span><br><span class="line">    &lt;label&gt;密码&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>2. \&lt;input>要提交的话一定要有name值</strong><br>\&lt;label>直接包在input外面用<br>\&lt;form>里的target和\&lt;a>是一模一样的。<br>\&lt;form>里如果没有<code>&lt;input type=&quot;submit&quot;&gt;</code>而有\&lt;button>，则\&lt;button>会默认为submit，若写成这样<code>&lt;button type=&quot;button&quot;&gt;button&lt;/button&gt;</code>则不会成为submit，一个form里必须要有一个submit按钮才能提交</p>
+<h2 id="4-lt-input"><a href="#4-lt-input" class="headerlink" title="4. &lt;\input>"></a>4. &lt;\input></h2><p><strong> 1. checkbox</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;apple&quot; value=&quot;yes&quot;&gt;苹果&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;banana&quot; value=&quot;yes&quot;&gt;香蕉&lt;/label&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/checkbox.png" alt="&lt;checkbox&gt;"></p>
+<p>一定要有name才能被提交上去</p>
+<p><img src="/images/提交之后.png" alt="提交之后"></p>
+<p><strong> 2. radio</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;男&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;女&lt;/label&gt;</span><br></pre></td></tr></table></figure></p>
+<p>和checkbox不同的是，两个name一样的radio只能选中一个</p>
+<p><img src="/images/radio.png" alt="&lt;radio&gt;"></p>
+<h2 id="4-select"><a href="#4-select" class="headerlink" title="4. select"></a>4. select</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;select name=&quot;group&quot; multiple&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;-&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;1&quot;&gt;第一组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;2&quot;&gt;第二组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;3&quot; disabled&gt;第三组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;4&quot; selected&gt;第四组&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/select.png" alt="&lt;select&gt;">disabled属性意味着不能被选中，selected意思是默认选中的，multiple意思是可以同时选中几项</p>
+<h2 id="5-textarea"><a href="#5-textarea" class="headerlink" title="5. textarea"></a>5. textarea</h2><p>若想让用户输入一大段文字则用这个元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea style=&quot;resize: none; width: 200px; height: 100px;&quot;  name=&quot;hobbies&quot;&gt;&lt;/textarea&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/textarea.png" alt="&lt;textarea&gt;"><br>resize若不设置为none，则用户可以随意更改输入框的大小</p>
+<h2 id="6-table"><a href="#6-table" class="headerlink" title="6. table"></a>6. table</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">    &lt;colgroup&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">        &lt;col bgcolor=&quot;red&quot; width=&quot;200&quot;&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">    &lt;/colgroup&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;项目&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;班级&lt;/th&gt;&lt;th&gt;成绩&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;/th&gt;&lt;td&gt;可爱多&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;/th&gt;&lt;td&gt;金钟国&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;平均分&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;th&gt;总分&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/table.png" alt="&lt;table&gt;"><br>thead  tbody tfoot不写浏览器也不会报错，而会自动全部加入到tbody里</p>
+<h2 id="7-Canvas"><a href="#7-Canvas" class="headerlink" title="7.Canvas"></a>7.Canvas</h2><p>不要用css来调整canvas的宽高，因为若用css，canvas里的东西都会被拉伸，和img一样，可以用js来设置宽高<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function autoSetCanvasSize(canvas) &#123;</span><br><span class="line">    setCanvasSize();</span><br><span class="line">    window.onresize = function () &#123;   //浏览器改变窗口大小时触发onresize事件</span><br><span class="line">        setCanvasSize()</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    function setCanvasSize() &#123;</span><br><span class="line">        var pageWidth = document.documentElement.clientWidth;     //代表浏览器的宽</span><br><span class="line">        var pageHeight = document.documentElement.clientHeight;   //代表浏览器的高</span><br><span class="line">        canvas.width = pageWidth;</span><br><span class="line">        canvas.height = pageHeight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +404,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:09+08:00">
                 2018-03-06
@@ -400,7 +547,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-04T14:38:58+08:00">
                 2018-03-04
@@ -545,7 +692,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-02T16:47:09+08:00">
                 2018-03-02
@@ -747,7 +894,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-01T20:45:18+08:00">
                 2018-03-01
@@ -869,7 +1016,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T10:02:26+08:00">
                 2018-02-28
@@ -992,7 +1139,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:58:54+08:00">
                 2018-02-28
@@ -1123,7 +1270,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:57:17+08:00">
                 2018-02-28
@@ -1313,7 +1460,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:54:51+08:00">
                 2018-02-28
@@ -1460,7 +1607,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:53:20+08:00">
                 2018-02-28
@@ -1505,149 +1652,6 @@
             <h4 id="1-如何存储字符"><a href="#1-如何存储字符" class="headerlink" title="1. 如何存储字符"></a>1. 如何存储字符</h4><p>对应ASCII码表，计算机只能存储二进制：<br>a的编号97 ——&gt; 0110 0001（2）——&gt; 61（16）<br>1的编号49 ——&gt; 0011 0001（2）——&gt; 31（16）</p>
 <h4 id="2-存储字符方式"><a href="#2-存储字符方式" class="headerlink" title="2. 存储字符方式"></a>2. 存储字符方式</h4><p>UTF-8是一种编码方式，将Unicode编码存入计算机:<br>00000000 00000000 00000000 01111111（2）(7位及以内)<br>UTF-8:0XXXXXXX<br>00000000 00000000 00000111 11111111（2）(11位及以内)<br>UTF-8:110XXXXX 10XXXXXX<br>00000000 00000000 11111111 11111111（2）(16位及以内)<br>UTF-8:1110XXXX 10XXXXXX 10XXXXXX（2）<br>00000000 00011111 11111111 11111111（2）（21位及以内）<br>UTF-8:11110XXX 10XXXXXX 10XXXXXX 10XXXXXX</p>
 <h4 id="3-ASCII码"><a href="#3-ASCII码" class="headerlink" title="3. ASCII码"></a>3. ASCII码</h4><p>A:65<br>a:97<br>0:48</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/正则表达式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/28/正则表达式/" itemprop="url">正则表达式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:51:46+08:00">
-                2018-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://regexr.com/" target="_blank" rel="noopener">RegExr</a></p>
-<p><code>/.+yize/g</code>                       某yize</p>
-<p><code>/peng.+/g</code>                      peng某</p>
-<p><code>/./g</code>                                匹配所有字符</p>
-<p><code>/../g</code>                               把字符两个两个的匹配    </p>
-<p><code>/\w/g</code>                    匹配所有0-9，a-z，A-Z</p>
-<p><code>/\W/g</code>                    匹配除0-9，a-z，A-Z以外的字符</p>
-<p><code>/\d/g</code>                    匹配数字</p>
-<p><code>/\d\.\d/g</code>                        匹配有一位小数的数字 例：1.1</p>
-<p><code>/\D/g</code>                    匹配除数字以外的字符</p>
-<p><code>/\s/g</code>                        匹配空格、TAB、断行</p>
-<p><code>/\S/g</code>                        匹配除上面之外的字符</p>
-<p><code>/[abc]/g</code>                        匹配a、b、c（一个一个地匹配）</p>
-<p><code>/abc/g</code>                        匹配abc三个连在一起</p>
-<p><code>/[a-k]/g</code>                           匹配a到k（一个一个匹配）</p>
-<p><code>/[\u4e00-\u9fa5]/g</code>            匹配每个中文字（一个一个匹配）</p>
-<p><code>/[yY][oO]+/g</code>                    匹配yo、yoooo、yOOOOO、Yo、Yooo、<br>                                        YO或YOOOO，+号表示出现一次或多次</p>
-<p><code>/[yY][oO]+[!~\.]*/g</code>            匹配yo!、yo.、yo<del>、yooo</del>~~、Yoo!!，*<br>                                        号代表出现0次或多次</p>
-<p><code>/[yY][oO]+p?[!~\.]*/g</code>    匹配yop!，?号匹配0个或1个    </p>
-<p><code>/yo{2,4}/g</code>                       只能匹配yo后的2～4个o</p>
-<p><code>/yo{2,4}\b/g</code>                    截断了大于4个o的yo</p>
-<p><code>/yo{5}/g</code>                          匹配yooooo</p>
-<p><code>/yo{2,}/g</code>                         匹配yo后o大于等于2的</p>
-<p><code>1(?:37|39|82|83)\d{4}(\d{4})</code>   括号里加?:表示仅匹配，不捕获</p>
 
           
         
@@ -1733,8 +1737,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -1784,7 +1788,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

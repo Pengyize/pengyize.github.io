@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -214,6 +214,134 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/JavaScript原型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/23/JavaScript原型/" itemprop="url">JavaScript原型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:47:25+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-公用属性（就是原型）"><a href="#1-公用属性（就是原型）" class="headerlink" title="1. 公用属性（就是原型）"></a>1. 公用属性（就是原型）</h2><p>每个对象都有toString()、valueof()等方法，但他们并其实没有单独的方法，而是JS在每个对象里都存了一个隐藏属性：__proto__，这个属性指向了存放公用属性的地址(Object.prototype)，当用toString()时，就是调用的公用属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o1.toString === o2.toString   //true</span><br></pre></td></tr></table></figure></p>
+<p>同时Number对象还有它特有公用属性，所以它比Object要多一个公用属性库，并且会先访问Number的原型（公用属性库），<strong>这一条链就叫原型链</strong>，像下图<img src="/images/原型链.png" alt="原型链"><br>同理，String、boolean也有自己的原型，但若平常没被引用的话会被当作垃圾回收，所以平常对象的原型是Object.prototype在引用，可得⬇️<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype === o1.__proto__     //true，是把prototype的地址赋给__proto__属性了</span><br></pre></td></tr></table></figure></p>
+<p>所以它们最终指向的Object的公有属性，就是Object.prototype（原型），Number、String的特有公有属性也是它们的prototype属性在引用，同理有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number.prototype.__proto__ === Object.prototype //true，是把Object.prototype的地址赋给Number的__proto__属性了</span><br><span class="line"></span><br><span class="line">var n1 = new Number(1);</span><br><span class="line">n1.__proto__ === Number.prototype    //true，是把Number.prototype的地址赋给n1的__proto__属性了</span><br><span class="line">n1.__proto__.__proto__ === Object.prototype  //true</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-proto-和prototype的区别"><a href="#2-proto-和prototype的区别" class="headerlink" title="2. __proto__和prototype的区别"></a>2. __proto__和prototype的区别</h2><p><img src="/images/原型.png" alt="原型.png"><br>打开浏览器就相当于生成了一个window，里面存了Number、String、Boolean、Object这几个对象，对象里的prototype属性里存了它们原型的地址，在你写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var n = new Number(1);     //就会把Number.prototype里的地址放入n的__proto__属性里</span><br></pre></td></tr></table></figure></p>
+<p>这样用n就能调用Number的原型了</p>
+<p>总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var 对象 = new 函数();		//函数可以是Number/String/Boolean/Object</span><br><span class="line">对象.__proto__ === 函数.prototype    //true</span><br></pre></td></tr></table></figure></p>
+<p>__proto__是对象的属性，prototype是函数的属性</p>
+<p><strong>面试题</strong>：<code>&#39;1&#39;.__proto__</code>是什么？<br>答：’1’会临时转化为String对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;1&apos;.__proto__ === String.prototype    //true</span><br></pre></td></tr></table></figure></p>
+<p>所有对象都有__proto__属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object.prototype.__proto__ === null;</span><br><span class="line"></span><br><span class="line">1.toString()     //语法错误，不加引号JS会把.当作小数点</span><br><span class="line">1..toString()    //&apos;1&apos;，第一个.当作小数点，第二个为点操作符</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +385,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T12:44:48+08:00">
                 2018-03-23
@@ -393,7 +521,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:12:42+08:00">
                 2018-03-21
@@ -525,7 +653,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:12:09+08:00">
                 2018-03-21
@@ -650,7 +778,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:06:01+08:00">
                 2018-03-21
@@ -782,7 +910,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T13:50:03+08:00">
                 2018-03-21
@@ -951,7 +1079,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:51:15+08:00">
                 2018-03-12
@@ -1083,7 +1211,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:50:24+08:00">
                 2018-03-12
@@ -1212,7 +1340,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:49:40+08:00">
                 2018-03-12
@@ -1352,7 +1480,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-09T22:22:28+08:00">
                 2018-03-09
@@ -1474,153 +1602,6 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/HTML元素/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/06/HTML元素/" itemprop="url">HTML元素</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:58+08:00">
-                2018-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-iframe-和-a-的target"><a href="#1-iframe-和-a-的target" class="headerlink" title="1. iframe 和 a 的target"></a>1. iframe 和 a 的target</h2><p>iframe标签支持相对路径</p>
-<p><code>&lt;iframe name=&quot;xxx&quot; src=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br><code>&lt;a href=&quot;&quot; target=&quot;xxx&quot;&gt;&lt;/a&gt;</code>点击a，则新页面会在iframe里出现</p>
-<p>若index.html里写:<br><code>&lt;iframe src=&quot;./index2&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br>index2.html里写:<br><code>&lt;iframe src=&quot;./index3&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code><br>index3.html里写:<br><code>&lt;a href=&quot;http://qq.com&quot; target=_blank&gt;QQ&lt;/a&gt;</code>（点击会在一个新的标签页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_self&gt;QQ&lt;/a&gt;</code>（点击会在index3的嵌套页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_parent&gt;QQ&lt;/a&gt;</code>（点击会在index2的嵌套页面里打开）<br><code>&lt;a href=&quot;http://qq.com&quot; target=_top&gt;QQ&lt;/a&gt;</code>（点击会在index里打开）<br>在index的左上角出现一个小的嵌套页面里显示着index2页面里嵌套的index3里的四个QQ链接</p>
-<h2 id="2-a-的href"><a href="#2-a-的href" class="headerlink" title="2. a 的href"></a>2. a 的href</h2><ol>
-<li><p><code>&lt;a href=&quot;//qq.com&quot;&gt;QQ&lt;/a&gt;</code>href里写的是无协议地址，意思是当前用的是http协议就自动继承http协议，用的是file就会用file协议。<br>我们在终端运行<code>sudo npm i -g http-server</code>即可安装一个服务器，进入你写index.html的文件夹里运行<code>http-server</code>即可开启服务器，然后在浏览器浏览终端返回的地址即可用http协议来访问你写的文件</p>
-</li>
-<li><p>href<br>a. <code>&lt;a href=&quot;?name=pyz&quot;&gt;qq&lt;/a&gt;</code>点击之后会在当前页面发起?name=pyz的请求<br>b. <code>&lt;a href=&quot;#sss&quot;&gt;qq&lt;/a&gt;</code>点击之后不会发起请求，因为锚点仅仅是在当前页面内的跳转<br>c. <code>&lt;a href=&quot;/..&quot;&gt;link&lt;/a&gt;</code><strong>标签被点击后浏览器会发起GET / HTTP/1.1的请求，路径还是/，因为/已经是根目录，无法再往前退</strong></p>
-</li>
-<li>伪协议<br><code>&lt;a href=&quot;javascript:;&quot;&gt;qq&lt;/a&gt;</code>点击之后a不会做任何事情<br><code>&lt;a href=&quot;javascript:alert(1)&quot;;&gt;qq&lt;/a&gt;</code>点击之后会弹出1</li>
-</ol>
-<h2 id="3-lt-form"><a href="#3-lt-form" class="headerlink" title="3.\&lt;form>"></a>3.\&lt;form></h2><p><strong>1. \&lt;form>和\&lt;a>的区别：</strong><br>\&lt;a>提交时是GET请求<br>\&lt;form>可以用method=’post’发送POST请求<br>\&lt;form>里必须要有一个submit按钮才能被提交<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;users&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot;value=&quot;username&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;password&quot;value=&quot;password&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
-<p>即\&lt;form>是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;users?name=pyz&quot; method=&quot;post&quot;&gt;</span><br><span class="line">    &lt;label&gt;用户名&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/label&gt;</span><br><span class="line">    &lt;label&gt;密码&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
-<p><strong>2. \&lt;input>要提交的话一定要有name值</strong><br>\&lt;label>直接包在input外面用<br>\&lt;form>里的target和\&lt;a>是一模一样的。<br>\&lt;form>里如果没有<code>&lt;input type=&quot;submit&quot;&gt;</code>而有\&lt;button>，则\&lt;button>会默认为submit，若写成这样<code>&lt;button type=&quot;button&quot;&gt;button&lt;/button&gt;</code>则不会成为submit，一个form里必须要有一个submit按钮才能提交</p>
-<h2 id="4-lt-input"><a href="#4-lt-input" class="headerlink" title="4. &lt;\input>"></a>4. &lt;\input></h2><p><strong> 1. checkbox</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;apple&quot; value=&quot;yes&quot;&gt;苹果&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; name=&quot;banana&quot; value=&quot;yes&quot;&gt;香蕉&lt;/label&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/checkbox.png" alt="&lt;checkbox&gt;"></p>
-<p>一定要有name才能被提交上去</p>
-<p><img src="/images/提交之后.png" alt="提交之后"></p>
-<p><strong> 2. radio</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;男&lt;/label&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;radio&quot; name=&quot;sexual&quot;&gt;女&lt;/label&gt;</span><br></pre></td></tr></table></figure></p>
-<p>和checkbox不同的是，两个name一样的radio只能选中一个</p>
-<p><img src="/images/radio.png" alt="&lt;radio&gt;"></p>
-<h2 id="4-select"><a href="#4-select" class="headerlink" title="4. select"></a>4. select</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;select name=&quot;group&quot; multiple&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;-&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;1&quot;&gt;第一组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;2&quot;&gt;第二组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;3&quot; disabled&gt;第三组&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;4&quot; selected&gt;第四组&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/select.png" alt="&lt;select&gt;">disabled属性意味着不能被选中，selected意思是默认选中的，multiple意思是可以同时选中几项</p>
-<h2 id="5-textarea"><a href="#5-textarea" class="headerlink" title="5. textarea"></a>5. textarea</h2><p>若想让用户输入一大段文字则用这个元素<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea style=&quot;resize: none; width: 200px; height: 100px;&quot;  name=&quot;hobbies&quot;&gt;&lt;/textarea&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/textarea.png" alt="&lt;textarea&gt;"><br>resize若不设置为none，则用户可以随意更改输入框的大小</p>
-<h2 id="6-table"><a href="#6-table" class="headerlink" title="6. table"></a>6. table</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">    &lt;colgroup&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">        &lt;col bgcolor=&quot;red&quot; width=&quot;200&quot;&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">        &lt;col width=&quot;100&quot;&gt;</span><br><span class="line">    &lt;/colgroup&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;项目&lt;/th&gt;&lt;th&gt;姓名&lt;/th&gt;&lt;th&gt;班级&lt;/th&gt;&lt;th&gt;成绩&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;/th&gt;&lt;td&gt;可爱多&lt;/td&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;&lt;/th&gt;&lt;td&gt;金钟国&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;平均分&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;17&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;th&gt;总分&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;34&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/table.png" alt="&lt;table&gt;"><br>thead  tbody tfoot不写浏览器也不会报错，而会自动全部加入到tbody里</p>
-<h2 id="7-Canvas"><a href="#7-Canvas" class="headerlink" title="7.Canvas"></a>7.Canvas</h2><p>不要用css来调整canvas的宽高，因为若用css，canvas里的东西都会被拉伸，和img一样，可以用js来设置宽高<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function autoSetCanvasSize(canvas) &#123;</span><br><span class="line">    setCanvasSize();</span><br><span class="line">    window.onresize = function () &#123;   //浏览器改变窗口大小时触发onresize事件</span><br><span class="line">        setCanvasSize()</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    function setCanvasSize() &#123;</span><br><span class="line">        var pageWidth = document.documentElement.clientWidth;     //代表浏览器的宽</span><br><span class="line">        var pageHeight = document.documentElement.clientHeight;   //代表浏览器的高</span><br><span class="line">        canvas.width = pageWidth;</span><br><span class="line">        canvas.height = pageHeight;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1671,8 +1652,8 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -1722,7 +1703,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
