@@ -228,6 +228,153 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/入门前端的必要软件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/28/入门前端的必要软件/" itemprop="url">入门前端的必要软件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:54:51+08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-安装Linux"><a href="#1-安装Linux" class="headerlink" title="1. 安装Linux"></a>1. 安装Linux</h1><p><a href="https://www.deepin.org/docs/deepintoeveryone/%E5%90%84%E7%A7%8D%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%AE%89%E8%A3%85deepin%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%96%B9%E6%B3%95/windows%E4%B8%8B%E7%9B%B4%E6%8E%A5%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener">Windows直接安装深度Linux</a></p>
+<h1 id="2-FQ"><a href="#2-FQ" class="headerlink" title="2. FQ"></a>2. FQ</h1><p>a.Linux命令行：<code>sudo apt-get install python-pip; sudo pip install shadowsocks;</code><br>macOS：<br><code>brew install shadowsocks-libev</code>（如果没有brew，需先<a href="https://brew.sh/" target="_blank" rel="noopener">安装</a>）<br>b.用命令行在主目录下touch创建 .ssconf.json文件，并配置以下内容（服务器自己买）</p>
+<blockquote>
+<p>{<br>      “server”:”服务器IP”,<br>     “server_port”:端口,<br>     “local_address”: “127.0.0.1”,<br>     “local_port”:1080,<br>     “password”:”密码”,<br>     “timeout”:300,<br>     “method”:”aes-256-cfb”,<br>     “fast_open”: false<br> }</p>
+</blockquote>
+<p>c.让命令行也走代理 <a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">下载</a>，解压到主目录<br>d.命令行在主目录下用touch创建.proxychains.conf文件，并配置</p>
+<blockquote>
+<p>strict_chain<br> quiet_mode<br> proxy_dns<br> remote_dns_subnet 224<br> tcp_read_time_out 15000<br> tcp_connect_time_out 8000<br> [ProxyList]<br> socks5     127.0.0.1 1080</p>
+</blockquote>
+<p>e.在主目录的.bashrc文件（没有就touch一个）里添加</p>
+<blockquote>
+<p>alias pc=’proxychains4 -f ~/.proxychains.conf’</p>
+</blockquote>
+<p>f.命令行： <code>source ~/.bashrc</code><br>g.命令行：<code>sslocal -c ~/.ssconf.json</code><br>(macos)<code>ss-local -c ~/.ssconf.json</code>开启代理，若出现undefined……_cleanup，则运行<br><code>sed -i &#39;s/_cleanup/_reset/g&#39; xxxxxxxxxxxxxxxxxxxxxx/openssl.py</code>（把 xxxxxxxxxxxxxxxxxxxxxx/openssl.py 改成运行结果里openssl.py 文件的路径）</p>
+<p>h.命令行：<code>pc curl -L http://google.com</code>（若没有curl需先安装<code>sudo apt-get install curl</code>，sudo是管理员命令要输密码）检测FQ是否成功<br>i.火狐添加代理<a href="https://addons.mozilla.org/en-US/firefox/addon/switchyomega/" target="_blank" rel="noopener">插件</a>，导入<a href="https://jscode.me/uploads/default/original/1X/15be26176393443bf33fc8a86e8b283079acaf00.zip" target="_blank" rel="noopener">配置</a>，选自动切换，点应用选项</p>
+<h1 id="3-命令行小工具-z和fzf"><a href="#3-命令行小工具-z和fzf" class="headerlink" title="3. 命令行小工具 z和fzf"></a>3. 命令行小工具 z和fzf</h1><p><a href="https://github.com/rupa/z" target="_blank" rel="noopener">z</a>：</p>
+<p>a.命令行进入Desktop，<code>curl -L https://raw.githubusercontent.com/rupa/z/master/z.sh &gt; z.sh</code><br>b.命令行 <code>vi ~/.bashrc</code>，在第一行添加</p>
+<blockquote>
+<p>source ~/Desktop/z.sh</p>
+</blockquote>
+<p>c.命令行：<code>source ~/.bashrc</code><br>d.这时已安装好，开始配置<br>e.命令行：<code>vi ~/.bashrc</code>，在alias下空一行添加</p>
+<blockquote>
+<p>unalias z<br>j() {<br>     if [[ -z “$<em>“ ]]; then<br>         cd “$(_z -l 2&gt;&amp;1 | fzf +s | sed ‘s/^[0-9,.]</em> <em>//‘)”<br>     else<br>         _last_z_args=”$@”<br>         _z “$@”<br>     fi<br> }<br>jj{<br>cd “$(_z -l 2&gt;&amp;1 | sed ‘s/^[0-9,.]</em> *//‘ | fzf -q $_last_z_args)”<br>}</p>
+</blockquote>
+<p><a href="https://github.com/junegunn/fzf#installation" target="_blank" rel="noopener">fzf</a></p>
+<h1 id="4-Linux下安装node（mac自己谷歌）"><a href="#4-Linux下安装node（mac自己谷歌）" class="headerlink" title="4. Linux下安装node（mac自己谷歌）"></a>4. Linux下安装node（mac自己谷歌）</h1><p>a.安装git，命令行sudo su进入root，apt-get install git，输入git检查是否安装成功<br>b.命令行配置git     <code>git config --global user.name &quot;pyz&quot;</code><br> <code>git config --global user.email &quot;.......@qq.com&quot;</code><br>c.命令行 <code>git clone git://github.com/nodejs/node</code><br>d.命令行 <code>cd node/</code><br>e.命令行 <code>./configure</code><br>f.命令行 <code>make install</code><br>g.命令行 <code>node -v</code></p>
+<h1 id="5-命令行安装yarn"><a href="#5-命令行安装yarn" class="headerlink" title="5. 命令行安装yarn"></a>5. 命令行安装yarn</h1><p><a href="https://yarnpkg.com/en/docs/install" target="_blank" rel="noopener">官网</a></p>
+<h1 id="6-在root下安装nrm"><a href="#6-在root下安装nrm" class="headerlink" title="6. 在root下安装nrm"></a>6. 在root下安装nrm</h1><p><a href="https://github.com/Pana/nrm" target="_blank" rel="noopener">官网</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/计算机存储数据的方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -777,7 +924,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>

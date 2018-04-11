@@ -228,6 +228,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/JavaScript-Dom入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/25/JavaScript-Dom入门/" itemprop="url">JavaScript Dom入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-25T23:32:07+08:00">
+                2018-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>DOM 目前的通用版本是DOM3</p>
+<h1 id="1-JS初级主要就两个作用："><a href="#1-JS初级主要就两个作用：" class="headerlink" title="1. JS初级主要就两个作用："></a>1. JS初级主要就两个作用：</h1><blockquote>
+<p>1.找元素<br>2.给元素增加/删除class</p>
+</blockquote>
+<h1 id="2-节点API"><a href="#2-节点API" class="headerlink" title="2. 节点API"></a>2. 节点API</h1><ul>
+<li><p><strong>1. nodeType</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Node.ELEMENT_NODE === 1  //true，元素节点</span><br><span class="line">Node.TEXT_NODE === 3     //true，文本节点</span><br><span class="line">Node.COMMENT_NODE === 8 //true，注释节点    </span><br><span class="line">Node.DOCUMENT_TYPE_NODE === 10 //true，例：&lt;!DOCTYPE html&gt;</span><br><span class="line">Node.DOCUMENT_FRAGMENT_NODE === 11 </span><br><span class="line">//重点！</span><br><span class="line"></span><br><span class="line">xxx.nodeType === 3       //可用来检验xxx是一个元素节点还是元素中的文本</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>2. tagName</strong><br>ul的tagName为’UL’（大写！）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let brother = li.getElementsByTagName(&apos;UL&apos;)[0];</span><br></pre></td></tr></table></figure>
+<p>  getElementsByTagName这个API搜索的是li元素的后代，并按顺序返回所有的ul，返回的是一个数组，要写上[0]</p>
+</li>
+<li><p><strong>3. getAttribute</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.href     //这样获取href，浏览器会给href加上http协议</span><br><span class="line">a.getAttribute(&apos;href&apos;)  //这样获取的才是href本身</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>4. target和currentTarget</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">liTags[i].onmouseenter = function (x) &#123;</span><br><span class="line">      console.log(x.target);       //x.target是我们操作的那个元素，若a里包含了个span，那操作的就是span</span><br><span class="line">      console.log(x.currentTarget) //x.currentTarget是我们监听的元素，就是liTags[i]这个元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>5. 选择器</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = document.querySelector(&apos;a[href=&quot;&apos; + id + &apos;&quot;]&apos;)</span><br><span class="line">//href外要包一个中括号，地址外要包一个双引号！并且变量id要和其他的用加号隔开</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>6. 儿子children</strong></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var c = div.children;    //会获得div下的所有子标签</span><br><span class="line">var c = div.childNodes;  //会获得div下的所有子标签加文本标签</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>7. Siblings</strong><br>获取所有兄弟方法一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var getSiblings = function (elem) &#123;</span><br><span class="line">var siblings = [];</span><br><span class="line">var sibling = elem.parentNode.firstChild;</span><br><span class="line">for (; sibling; sibling = sibling.nextSibling) &#123;</span><br><span class="line">	if (sibling.nodeType !== 1 || sibling === elem) continue;</span><br><span class="line">	    siblings.push(sibling);</span><br><span class="line">	&#125;</span><br><span class="line">	return siblings;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>获取所有兄弟方法二 用getSiblings()：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var elem = document.querySelector(&apos;#some-element&apos;);</span><br><span class="line">var siblings = getSiblings(elem);</span><br></pre></td></tr></table></figure></p>
+<p>注意：nextSibling如果有换行，会把换行当作下一个兄弟</p>
+<ul>
+<li><p><strong>8. nodeName()</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.body.nodeName    //&apos;BODY&apos;，body的节点名字，(除了svg，其他节点名字返回都是大写）</span><br><span class="line">document.documentElement.nodeName    //&apos;HTML&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>9. cloneNode()</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div2 = div1.cloneNode();  //会把div1本身复制给div2</span><br><span class="line">var div2 = div1.cloneNode(true);  //会把div1及它的所有子节点一起复制给div2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>10. isSameNode()和isEqualNode()</strong><br>isEqualNode检测内容是否相同<br>isSameNode检测两个元素是否是同一个节点</p>
+</li>
+<li><strong>11. removeChild()</strong><br>在页面里移除child节点，但是child在内存还是存在的</li>
+<li><strong>12. replaceChild()</strong><br>替换儿子，被替换的只是在页面里不见了，还是存在内存里的</li>
+<li><strong>13. normalize()</strong><br>将代码正常化 </li>
+<li><p><strong>14. innerText()和textContent()</strong></p>
+<p>  innerText是IE的私有实现,但也被除FF之外的浏览器所实现,textContent 则是w3c的标准API,现在IE9也实现了。</p>
+<p>   <strong>区别1：</strong>textContent会获取所有元素的内容，包括script和style标签里面的内容，innerText不会<br>   <strong>区别2：</strong>innerText不会返回隐藏元素的文本(像display:none)，但textContent会<br>  <strong>区别3：</strong>innerText会受CSS的影响，触发重排，而textContent不会，所以textContent快<br>但用这两个API赋值的时候，都会覆盖掉元素里原有的内容</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> div1.textContent = &apos;hello&apos;;  //这样div1里的东西都会被hello覆盖掉</span><br><span class="line">div1.appendChild(document.createTextNode(&apos;hello&apos;));  //这样就不会覆盖掉div1里的东西</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="3-Document-API"><a href="#3-Document-API" class="headerlink" title="3. Document API"></a>3. Document API</h1><ul>
+<li><p><strong>1.document.children</strong><br>[html]，document是html的爸爸</p>
+</li>
+<li><p><strong>2.document.documentElement</strong><br>就是html</p>
+</li>
+<li><p><strong>3.document.write</strong><br>尽量不用，若用在延时性和异步性的方法里，会把整个页面的内容覆盖掉</p>
+</li>
+<li><p><strong>4.querySelector()和querySelectorAll()</strong><br>querySelectorAll返回的是一个伪数组</p>
+</li>
+</ul>
+<h1 id="4-用JS完成页面内的跳转"><a href="#4-用JS完成页面内的跳转" class="headerlink" title="4. 用JS完成页面内的跳转"></a>4. 用JS完成页面内的跳转</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let aTags = document.querySelectorAll(&apos;nav.menu &gt; ul &gt; li &gt; a&apos;);   //获取所有a标签，返回的是一个数组</span><br><span class="line">for(let i=0;i&lt;aTags.length;i++) &#123;     //因为aTags是数组，所以要用for循环，同时监听到数组里的所有元素</span><br><span class="line">    aTags[i].onclick = function (x) &#123; //监听a标签被鼠标点击的动作</span><br><span class="line">        x.preventDefault();           //防止默认动作（跳转）</span><br><span class="line">        let a = x.currentTarget;      //当前监听的元素a</span><br><span class="line">        let href = a.getAttribute(&apos;href&apos;);  //获取a的href值</span><br><span class="line">        let element = document.querySelector(href);  //获取带有这个href值的标签 例：&apos;#siteAbout&apos;</span><br><span class="line">        let top = element.offsetTop; //获取这个标签的底端到整个页面顶端的距离（固定值）</span><br><span class="line">        window.scrollTo(0,top);  //跳转window.scrollTo(x,y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="5-console-log调试大法"><a href="#5-console-log调试大法" class="headerlink" title="5. console.log调试大法"></a>5. console.log调试大法</h1><p>出问题了就在每一步console.log，能解决很多问题</p>
+<h1 id="6-setInterval"><a href="#6-setInterval" class="headerlink" title="6. setInterval()"></a>6. setInterval()</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let i=0;</span><br><span class="line">let say = setInterval(() =&gt; &#123;</span><br><span class="line">            if(i === 25)&#123;</span><br><span class="line">                window.clearInterval(say);      //调用setInterval的名字来停止它</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">           console.log(i);    //从1报数到25，一秒一次，到25就停</span><br><span class="line">        &#125;,1000);</span><br></pre></td></tr></table></figure>
+<h1 id="7-Tween-js"><a href="#7-Tween-js" class="headerlink" title="7. Tween.js"></a>7. Tween.js</h1><p><a href="http://easings.net/zh-cn" target="_blank" rel="noopener">缓动动画速查表</a></p>
+<ol>
+<li>在<a href="cdnjs.com">cdn</a>里搜tween，并在html中引用</li>
+<li>在<a href="https://github.com/tweenjs/tween.js/" target="_blank" rel="noopener">github-tween</a>中查看使用教程</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/Js内存简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1437,146 +1622,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/算法简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/12/算法简介/" itemprop="url">算法简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:49:40+08:00">
-                2018-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-常见算法"><a href="#1-常见算法" class="headerlink" title="1. 常见算法"></a>1. 常见算法</h2><pre><code>1. 冒泡排序（体育委员摸头杀）
-2. 选择排序（体育老师点人法）
-3. 插入排序（起扑克牌法）
-4. 基数排序（hash）
-5. 快排（二分）
-6. 归并排序
-7. 堆排序
-8.计数排序（hash）
-9.桶排序（hash）
-</code></pre><h2 id="2-算法特征"><a href="#2-算法特征" class="headerlink" title="2. 算法特征"></a>2. 算法特征</h2><pre><code>1.有0个或多个输入（0个是因为有的算法定了初始条件）
-2.可行性
-3.确定性
-4.有穷性
-5.有1个或多个输出
-</code></pre><h2 id="3-我的错误"><a href="#3-我的错误" class="headerlink" title="3. 我的错误"></a>3. 我的错误</h2><pre><code>1.a={
-    &apos;0&apos;=0,
-    &apos;1&apos;=1,
-    &apos;length&apos;=2
-}
-let i=0;
-print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个选项，应该写成a[i]
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1627,7 +1672,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>

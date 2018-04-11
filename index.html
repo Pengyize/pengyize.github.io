@@ -228,6 +228,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/AJAX入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/11/AJAX入门/" itemprop="url">AJAX入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-11T21:41:44+08:00">
+                2018-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-历史"><a href="#1-历史" class="headerlink" title="1. 历史"></a>1. 历史</h1><h3 id="1-如何发请求"><a href="#1-如何发请求" class="headerlink" title="1. 如何发请求"></a>1. 如何发请求</h3><ul>
+<li>form可以发送GET和POST请求，会刷新页面或新开页面</li>
+<li>a可以发送GET请求，会刷新页面或新开页面</li>
+<li>img可以发送GET请求，只能以图片形式展示</li>
+<li>link可以发送GET请求，只能以css或favicon形式展示</li>
+<li>script可以发送GET请求，只能以脚本形式运行<h3 id="2-进化"><a href="#2-进化" class="headerlink" title="2. 进化"></a>2. 进化</h3>IE5在JS中引入ActiveX对象(API)，使JS可以直接发送请求，其他浏览器跟进，取名XMLHttpRequest，被纳入W3C规范。现在进化成AJAX</li>
+</ul>
+<h1 id="2-AJAX"><a href="#2-AJAX" class="headerlink" title="2. AJAX"></a>2. AJAX</h1><p>Jesse James Garrett将这个技术取名为AJAX：异步的JavaScript和XML。</p>
+<ol>
+<li>使用XMLHttpRequest发请求</li>
+<li>服务器返回XML格式的<strong>字符串</strong>，只能返回字符串</li>
+<li>JS解析XML，并更新局部页面</li>
+</ol>
+<p><strong>API：</strong><code>readyState === 4    //表示整个请求过程已完毕</code></p>
+<h1 id="3-用的是JSON"><a href="#3-用的是JSON" class="headerlink" title="3. 用的是JSON"></a>3. 用的是JSON</h1><h3 id="1-JSON是抄袭了JavaScript的一门语言"><a href="#1-JSON是抄袭了JavaScript的一门语言" class="headerlink" title="1. JSON是抄袭了JavaScript的一门语言"></a>1. JSON是抄袭了JavaScript的一门语言</h3><p><strong>区别：</strong></p>
+<ol>
+<li>JSON没有抄袭function和undefined</li>
+<li>JSON的字符串首尾必须用双引号”pyz” </li>
+<li>JSON有6种数据类型</li>
+</ol>
+<ul>
+<li>null</li>
+<li>number</li>
+<li>string（必须用双引号）</li>
+<li>true</li>
+<li>false</li>
+<li>array（[“a”,”b”]）</li>
+<li>object（{“name”:”pyz”}）</li>
+</ul>
+<ol>
+<li>JSON没有symbol，没有函数，没有undefined，也没有原型。<h3 id="2-API"><a href="#2-API" class="headerlink" title="2. API"></a>2. API</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1. let request = new XMLHttpRequest();</span><br><span class="line">2. request.open(&apos;GET&apos;,&apos;/xxx&apos;)  //初始化request</span><br><span class="line">3. request.send()  //发送请求</span><br><span class="line">4. request.onreadystatechange  //监听请求状态的变化</span><br><span class="line">5. request.readyState === 4  //说明响应完成</span><br><span class="line">6. request.status  //响应返回的HTTP状态码</span><br><span class="line">7. var string = request.responseText  //响应的内容</span><br><span class="line">1. var value = JSON.parse(request.responseText)  //把符合JSON语法的字符串转换成JS，解析响应返回的内容</span><br><span class="line">2. value.node   //若value是对象，这就是对象里内容</span><br><span class="line">3. value.node.name  //对象里的name的值</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="4-同源策略"><a href="#4-同源策略" class="headerlink" title="4. 同源策略"></a>4. 同源策略</h1><ol>
+<li>form、img、script等上面提到的请求方式，是可以对别的域名发送请求的。<br>但用AJAX不能对别的域名放送请求，只有协议、域名、端口号<strong>一摸一样</strong>才允许发送AJAX（多个www是不同的域名）<br>因为AJAX是可以获取响应内容的，如果没有同源策略的限制，别的网站可以通过AJAX获取另一个网站的所有信息。</li>
+<li><p>AJAX可以通过<strong>CORS</strong>发送请求到别的网站<br><strong>跨域资源共享：Cross-Origin Resource Sharing</strong><br>在需要访问的服务器里添加一句</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(&apos;Access-Control-Allow-Origin&apos;, &apos;http://pyz.com:8888&apos;)</span><br></pre></td></tr></table></figure>
+<p> <code>http://pyz.com:8888</code>是我的协议+域名+端口号，这样我就可以访问他的服务器了，即使我们域名不同</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(&apos;Access-Control-Allow-Origin&apos;, &apos;*&apos;)  //这样这个服务器就可以接受所有网站的AJAX请求</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="5-面试题"><a href="#5-面试题" class="headerlink" title="5. 面试题"></a>5. 面试题</h1><p><strong>请使用原生JS发送AJAX</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let request = new XMLHttpRequest();</span><br><span class="line">request.open(&apos;GET&apos;,&apos;/xxx&apos;);</span><br><span class="line">request.send();</span><br><span class="line">request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">  if(request.readyState === 4)&#123;</span><br><span class="line">    if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300)&#123;</span><br><span class="line">      var string = request.responseText;</span><br><span class="line">      var value = JSON.parse(string);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/（重要）JSONP入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -301,17 +462,18 @@
           
             <h1 id="1-必考面试，什么是JSONP"><a href="#1-必考面试，什么是JSONP" class="headerlink" title="1. 必考面试，什么是JSONP"></a>1. 必考面试，什么是JSONP</h1><p>请求方：frank.com的前端程序员（浏览器）<br>响应方：jack.com的后端程序员（服务器）</p>
 <ol>
-<li><p>请求方创建script，它的src指向响应方，同时传查询参数(?callback=…)，如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script.src = &apos;http://jack.com:8002/pay?callback= + functionName;</span><br></pre></td></tr></table></figure>
+<li>请求方用JS创建一个script标签，它的src指向响应方，同时传查询参数(?callback=…)，如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script.src = &apos;http://jack.com:8002/pay?callback=&apos; + functionName;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>响应方通过查询参数callback构造<br>  <code>functionName.call(undefined,&#39;数据&#39;)</code><br> 这样的响应</p>
-</li>
+</ol>
+<p>并用<code>document.body.appendChild(script)</code>将它添加进页面中</p>
+<ol>
+<li>响应方通过查询参数callback构造<br>  <code>functionName.call(undefined,&#39;数据&#39;)</code><br> 这样的响应</li>
 <li>浏览器接到响应就会执行 <code>functionName.call(undefined,&#39;数据&#39;)</code></li>
 <li>那么请求方就知道了他想要的数据，’success’ or ‘fail’</li>
 </ol>
 <p>以上就是JSONP</p>
 <p><code>functionName.call(undefined,&#39;数据&#39;)</code><br>‘数据’叫做JSON，’数据’左边的叫JSON的左padding，右边的括号叫右padding，合起来叫JSONP</p>
-<h1 id="2-必考面试题：JSONP为什么不支持POST请求"><a href="#2-必考面试题：JSONP为什么不支持POST请求" class="headerlink" title="2. 必考面试题：JSONP为什么不支持POST请求"></a>2. 必考面试题：JSONP为什么不支持POST请求</h1><p>答：因为JSONP是通过动态创建script的方式进行的，而script只能用get方法不能用post。</p>
+<h1 id="2-必考面试题：JSONP为什么不支持POST请求"><a href="#2-必考面试题：JSONP为什么不支持POST请求" class="headerlink" title="2. 必考面试题：JSONP为什么不支持POST请求"></a>2. 必考面试题：JSONP为什么不支持POST请求</h1><p>答：因为JSONP是通过动态创建script的方法进行的，而script只能发送get请求不能发送post请求。</p>
 <h1 id="3-jquery的写法"><a href="#3-jquery的写法" class="headerlink" title="3. jquery的写法"></a>3. jquery的写法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">        url:&quot;http://jack.com:8002/pay&quot;,</span><br><span class="line">        dataType: &quot;jsonp&quot;,</span><br><span class="line">        success:function (response) &#123;</span><br><span class="line">            if(response === &apos;success&apos;)&#123;</span><br><span class="line">                amount.innerText = amount.innerText-1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
           
         
@@ -1558,191 +1720,6 @@ f() // 2
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/JavaScript-Dom入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/25/JavaScript-Dom入门/" itemprop="url">JavaScript Dom入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-25T23:32:07+08:00">
-                2018-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>DOM 目前的通用版本是DOM3</p>
-<h1 id="1-JS初级主要就两个作用："><a href="#1-JS初级主要就两个作用：" class="headerlink" title="1. JS初级主要就两个作用："></a>1. JS初级主要就两个作用：</h1><blockquote>
-<p>1.找元素<br>2.给元素增加/删除class</p>
-</blockquote>
-<h1 id="2-节点API"><a href="#2-节点API" class="headerlink" title="2. 节点API"></a>2. 节点API</h1><ul>
-<li><p><strong>1. nodeType</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Node.ELEMENT_NODE === 1  //true，元素节点</span><br><span class="line">Node.TEXT_NODE === 3     //true，文本节点</span><br><span class="line">Node.COMMENT_NODE === 8 //true，注释节点    </span><br><span class="line">Node.DOCUMENT_TYPE_NODE === 10 //true，例：&lt;!DOCTYPE html&gt;</span><br><span class="line">Node.DOCUMENT_FRAGMENT_NODE === 11 </span><br><span class="line">//重点！</span><br><span class="line"></span><br><span class="line">xxx.nodeType === 3       //可用来检验xxx是一个元素节点还是元素中的文本</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>2. tagName</strong><br>ul的tagName为’UL’（大写！）</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let brother = li.getElementsByTagName(&apos;UL&apos;)[0];</span><br></pre></td></tr></table></figure>
-<p>  getElementsByTagName这个API搜索的是li元素的后代，并按顺序返回所有的ul，返回的是一个数组，要写上[0]</p>
-</li>
-<li><p><strong>3. getAttribute</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.href     //这样获取href，浏览器会给href加上http协议</span><br><span class="line">a.getAttribute(&apos;href&apos;)  //这样获取的才是href本身</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>4. target和currentTarget</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">liTags[i].onmouseenter = function (x) &#123;</span><br><span class="line">      console.log(x.target);       //x.target是我们操作的那个元素，若a里包含了个span，那操作的就是span</span><br><span class="line">      console.log(x.currentTarget) //x.currentTarget是我们监听的元素，就是liTags[i]这个元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>5. 选择器</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = document.querySelector(&apos;a[href=&quot;&apos; + id + &apos;&quot;]&apos;)</span><br><span class="line">//href外要包一个中括号，地址外要包一个双引号！并且变量id要和其他的用加号隔开</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>6. 儿子children</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var c = div.children;    //会获得div下的所有子标签</span><br><span class="line">var c = div.childNodes;  //会获得div下的所有子标签加文本标签</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>7. Siblings</strong><br>获取所有兄弟方法一：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var getSiblings = function (elem) &#123;</span><br><span class="line">var siblings = [];</span><br><span class="line">var sibling = elem.parentNode.firstChild;</span><br><span class="line">for (; sibling; sibling = sibling.nextSibling) &#123;</span><br><span class="line">	if (sibling.nodeType !== 1 || sibling === elem) continue;</span><br><span class="line">	    siblings.push(sibling);</span><br><span class="line">	&#125;</span><br><span class="line">	return siblings;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>获取所有兄弟方法二 用getSiblings()：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var elem = document.querySelector(&apos;#some-element&apos;);</span><br><span class="line">var siblings = getSiblings(elem);</span><br></pre></td></tr></table></figure></p>
-<p>注意：nextSibling如果有换行，会把换行当作下一个兄弟</p>
-<ul>
-<li><p><strong>8. nodeName()</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.body.nodeName    //&apos;BODY&apos;，body的节点名字，(除了svg，其他节点名字返回都是大写）</span><br><span class="line">document.documentElement.nodeName    //&apos;HTML&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>9. cloneNode()</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div2 = div1.cloneNode();  //会把div1本身复制给div2</span><br><span class="line">var div2 = div1.cloneNode(true);  //会把div1及它的所有子节点一起复制给div2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>10. isSameNode()和isEqualNode()</strong><br>isEqualNode检测内容是否相同<br>isSameNode检测两个元素是否是同一个节点</p>
-</li>
-<li><strong>11. removeChild()</strong><br>在页面里移除child节点，但是child在内存还是存在的</li>
-<li><strong>12. replaceChild()</strong><br>替换儿子，被替换的只是在页面里不见了，还是存在内存里的</li>
-<li><strong>13. normalize()</strong><br>将代码正常化 </li>
-<li><p><strong>14. innerText()和textContent()</strong></p>
-<p>  innerText是IE的私有实现,但也被除FF之外的浏览器所实现,textContent 则是w3c的标准API,现在IE9也实现了。</p>
-<p>   <strong>区别1：</strong>textContent会获取所有元素的内容，包括script和style标签里面的内容，innerText不会<br>   <strong>区别2：</strong>innerText不会返回隐藏元素的文本(像display:none)，但textContent会<br>  <strong>区别3：</strong>innerText会受CSS的影响，触发重排，而textContent不会，所以textContent快<br>但用这两个API赋值的时候，都会覆盖掉元素里原有的内容</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> div1.textContent = &apos;hello&apos;;  //这样div1里的东西都会被hello覆盖掉</span><br><span class="line">div1.appendChild(document.createTextNode(&apos;hello&apos;));  //这样就不会覆盖掉div1里的东西</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="3-Document-API"><a href="#3-Document-API" class="headerlink" title="3. Document API"></a>3. Document API</h1><ul>
-<li><p><strong>1.document.children</strong><br>[html]，document是html的爸爸</p>
-</li>
-<li><p><strong>2.document.documentElement</strong><br>就是html</p>
-</li>
-<li><p><strong>3.document.write</strong><br>尽量不用，若用在延时性和异步性的方法里，会把整个页面的内容覆盖掉</p>
-</li>
-<li><p><strong>4.querySelector()和querySelectorAll()</strong><br>querySelectorAll返回的是一个伪数组</p>
-</li>
-</ul>
-<h1 id="4-用JS完成页面内的跳转"><a href="#4-用JS完成页面内的跳转" class="headerlink" title="4. 用JS完成页面内的跳转"></a>4. 用JS完成页面内的跳转</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let aTags = document.querySelectorAll(&apos;nav.menu &gt; ul &gt; li &gt; a&apos;);   //获取所有a标签，返回的是一个数组</span><br><span class="line">for(let i=0;i&lt;aTags.length;i++) &#123;     //因为aTags是数组，所以要用for循环，同时监听到数组里的所有元素</span><br><span class="line">    aTags[i].onclick = function (x) &#123; //监听a标签被鼠标点击的动作</span><br><span class="line">        x.preventDefault();           //防止默认动作（跳转）</span><br><span class="line">        let a = x.currentTarget;      //当前监听的元素a</span><br><span class="line">        let href = a.getAttribute(&apos;href&apos;);  //获取a的href值</span><br><span class="line">        let element = document.querySelector(href);  //获取带有这个href值的标签 例：&apos;#siteAbout&apos;</span><br><span class="line">        let top = element.offsetTop; //获取这个标签的底端到整个页面顶端的距离（固定值）</span><br><span class="line">        window.scrollTo(0,top);  //跳转window.scrollTo(x,y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="5-console-log调试大法"><a href="#5-console-log调试大法" class="headerlink" title="5. console.log调试大法"></a>5. console.log调试大法</h1><p>出问题了就在每一步console.log，能解决很多问题</p>
-<h1 id="6-setInterval"><a href="#6-setInterval" class="headerlink" title="6. setInterval()"></a>6. setInterval()</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let i=0;</span><br><span class="line">let say = setInterval(() =&gt; &#123;</span><br><span class="line">            if(i === 25)&#123;</span><br><span class="line">                window.clearInterval(say);      //调用setInterval的名字来停止它</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">           console.log(i);    //从1报数到25，一秒一次，到25就停</span><br><span class="line">        &#125;,1000);</span><br></pre></td></tr></table></figure>
-<h1 id="7-Tween-js"><a href="#7-Tween-js" class="headerlink" title="7. Tween.js"></a>7. Tween.js</h1><p><a href="http://easings.net/zh-cn" target="_blank" rel="noopener">缓动动画速查表</a></p>
-<ol>
-<li>在<a href="cdnjs.com">cdn</a>里搜tween，并在html中引用</li>
-<li>在<a href="https://github.com/tweenjs/tween.js/" target="_blank" rel="noopener">github-tween</a>中查看使用教程</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1793,7 +1770,7 @@ f() // 2
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>

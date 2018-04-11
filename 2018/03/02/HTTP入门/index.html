@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1. HTTP(HyperText Transfer Protocol)http是超文本传输协议，它教客户端如何请求、服务器如何响应。 2. 状态码（背下来）是服务器对浏览器说的话： 200 通常的成功 OK  GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。POST：返回处理对应请求的结果。  204 成功处理请求，没有返回任何内容 No Content  表示服务器接收到的请">
 <meta property="og:image" content="http://yoursite.com/images/nslookup.png">
-<meta property="og:updated_time" content="2018-03-27T11:23:33.865Z">
+<meta property="og:updated_time" content="2018-04-11T08:32:12.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP入门">
 <meta name="twitter:description" content="1. HTTP(HyperText Transfer Protocol)http是超文本传输协议，它教客户端如何请求、服务器如何响应。 2. 状态码（背下来）是服务器对浏览器说的话： 200 通常的成功 OK  GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。POST：返回处理对应请求的结果。  204 成功处理请求，没有返回任何内容 No Content  表示服务器接收到的请">
@@ -363,13 +363,12 @@
 <li><p>GET请求<br>GET / HTTP/1.1<br>Host: baidu.com<br>Accept: text/html<br>（断行）</p>
 </li>
 <li><p>POST请求<br>POST /login HTTP/1.1<br>Host: baidu.com<br>Accept: application/json<br>Content-Type: application/x-www-form-urlencoded<br>Content-Length: …</p>
-<p>username=pyz&amp;password=123</p>
+<p>username=pyz&amp;password=123（第四部分服务器返回的是字符串）</p>
 </li>
 </ol>
 <p><strong>请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！</strong></p>
 <h3 id="4-响应的格式"><a href="#4-响应的格式" class="headerlink" title="4.响应的格式"></a>4.响应的格式</h3><ol>
-<li><p>GET的响应<br>HTTP/1.1 200 OK<br>Content-Length: …<br>Content-Type: text/html或application/x-JavaScript; charset=utf-8<br>（断行）<br>&lt;!DOCTYPE html&gt;</p>
-<html>…</html>
+<li><p>GET的响应<br>HTTP/1.1 200 OK<br>Content-Length: …<br>Content-Type: text/html或application/x-JavaScript; charset=utf-8<br>（断行）      =&gt; 这是第三部分<br>&lt;!DOCTYPE html&gt;<br><html>…</html>（第四部分服务器返回的是字符串）</p>
 </li>
 <li><p>POST<br>若密码错了<br>HTTP/1.1 401 Unauthorized（若成功了就是200 OK）<br>Content-Type: application/json<br>Content-Length: …</p>
 <p>{‘’error”}</p>
@@ -496,7 +495,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>

@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1. 必考面试，什么是JSONP请求方：frank.com的前端程序员（浏览器）响应方：jack.com的后端程序员（服务器）  请求方创建script，它的src指向响应方，同时传查询参数(?callback=…)，如下 1script.src = &amp;apos;http://jack.com:8002/pay?callback= + functionName;  响应方通过查询参数callbac">
+<meta name="description" content="1. 必考面试，什么是JSONP请求方：frank.com的前端程序员（浏览器）响应方：jack.com的后端程序员（服务器）  请求方用JS创建一个script标签，它的src指向响应方，同时传查询参数(?callback=…)，如下1script.src = &amp;apos;http://jack.com:8002/pay?callback=&amp;apos; + functionName;   并用d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="（重要）JSONP入门">
 <meta property="og:url" content="http://yoursite.com/2018/04/10/（重要）JSONP入门/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="1. 必考面试，什么是JSONP请求方：frank.com的前端程序员（浏览器）响应方：jack.com的后端程序员（服务器）  请求方创建script，它的src指向响应方，同时传查询参数(?callback=…)，如下 1script.src = &amp;apos;http://jack.com:8002/pay?callback= + functionName;  响应方通过查询参数callbac">
-<meta property="og:updated_time" content="2018-04-10T08:15:21.846Z">
+<meta property="og:description" content="1. 必考面试，什么是JSONP请求方：frank.com的前端程序员（浏览器）响应方：jack.com的后端程序员（服务器）  请求方用JS创建一个script标签，它的src指向响应方，同时传查询参数(?callback=…)，如下1script.src = &amp;apos;http://jack.com:8002/pay?callback=&amp;apos; + functionName;   并用d">
+<meta property="og:updated_time" content="2018-04-11T12:45:22.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="（重要）JSONP入门">
-<meta name="twitter:description" content="1. 必考面试，什么是JSONP请求方：frank.com的前端程序员（浏览器）响应方：jack.com的后端程序员（服务器）  请求方创建script，它的src指向响应方，同时传查询参数(?callback=…)，如下 1script.src = &amp;apos;http://jack.com:8002/pay?callback= + functionName;  响应方通过查询参数callbac">
+<meta name="twitter:description" content="1. 必考面试，什么是JSONP请求方：frank.com的前端程序员（浏览器）响应方：jack.com的后端程序员（服务器）  请求方用JS创建一个script标签，它的src指向响应方，同时传查询参数(?callback=…)，如下1script.src = &amp;apos;http://jack.com:8002/pay?callback=&amp;apos; + functionName;   并用d">
 
 
 
@@ -300,17 +300,18 @@
       
         <h1 id="1-必考面试，什么是JSONP"><a href="#1-必考面试，什么是JSONP" class="headerlink" title="1. 必考面试，什么是JSONP"></a>1. 必考面试，什么是JSONP</h1><p>请求方：frank.com的前端程序员（浏览器）<br>响应方：jack.com的后端程序员（服务器）</p>
 <ol>
-<li><p>请求方创建script，它的src指向响应方，同时传查询参数(?callback=…)，如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script.src = &apos;http://jack.com:8002/pay?callback= + functionName;</span><br></pre></td></tr></table></figure>
+<li>请求方用JS创建一个script标签，它的src指向响应方，同时传查询参数(?callback=…)，如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script.src = &apos;http://jack.com:8002/pay?callback=&apos; + functionName;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>响应方通过查询参数callback构造<br>  <code>functionName.call(undefined,&#39;数据&#39;)</code><br> 这样的响应</p>
-</li>
+</ol>
+<p>并用<code>document.body.appendChild(script)</code>将它添加进页面中</p>
+<ol>
+<li>响应方通过查询参数callback构造<br>  <code>functionName.call(undefined,&#39;数据&#39;)</code><br> 这样的响应</li>
 <li>浏览器接到响应就会执行 <code>functionName.call(undefined,&#39;数据&#39;)</code></li>
 <li>那么请求方就知道了他想要的数据，’success’ or ‘fail’</li>
 </ol>
 <p>以上就是JSONP</p>
 <p><code>functionName.call(undefined,&#39;数据&#39;)</code><br>‘数据’叫做JSON，’数据’左边的叫JSON的左padding，右边的括号叫右padding，合起来叫JSONP</p>
-<h1 id="2-必考面试题：JSONP为什么不支持POST请求"><a href="#2-必考面试题：JSONP为什么不支持POST请求" class="headerlink" title="2. 必考面试题：JSONP为什么不支持POST请求"></a>2. 必考面试题：JSONP为什么不支持POST请求</h1><p>答：因为JSONP是通过动态创建script的方式进行的，而script只能用get方法不能用post。</p>
+<h1 id="2-必考面试题：JSONP为什么不支持POST请求"><a href="#2-必考面试题：JSONP为什么不支持POST请求" class="headerlink" title="2. 必考面试题：JSONP为什么不支持POST请求"></a>2. 必考面试题：JSONP为什么不支持POST请求</h1><p>答：因为JSONP是通过动态创建script的方法进行的，而script只能发送get请求不能发送post请求。</p>
 <h1 id="3-jquery的写法"><a href="#3-jquery的写法" class="headerlink" title="3. jquery的写法"></a>3. jquery的写法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">        url:&quot;http://jack.com:8002/pay&quot;,</span><br><span class="line">        dataType: &quot;jsonp&quot;,</span><br><span class="line">        success:function (response) &#123;</span><br><span class="line">            if(response === &apos;success&apos;)&#123;</span><br><span class="line">                amount.innerText = amount.innerText-1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -344,6 +345,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/11/AJAX入门/" rel="prev" title="AJAX入门">
+                AJAX入门 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -420,7 +425,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
