@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/03/25/JavaScript-Dom入门/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="DOM 目前的通用版本是DOM3 1. JS初级主要就两个作用： 1.找元素2.给元素增加/删除class  2. 节点API 1. nodeType   12345678Node.ELEMENT_NODE === 1  //true，元素节点Node.TEXT_NODE === 3     //true，文本节点Node.COMMENT_NODE === 8 //true，注释节点    Nod">
-<meta property="og:updated_time" content="2018-03-30T18:06:45.232Z">
+<meta property="og:updated_time" content="2018-04-13T11:07:36.619Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript Dom入门">
 <meta name="twitter:description" content="DOM 目前的通用版本是DOM3 1. JS初级主要就两个作用： 1.找元素2.给元素增加/删除class  2. 节点API 1. nodeType   12345678Node.ELEMENT_NODE === 1  //true，元素节点Node.TEXT_NODE === 3     //true，文本节点Node.COMMENT_NODE === 8 //true，注释节点    Nod">
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -258,7 +258,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-25T23:32:07+08:00">
                 2018-03-25
@@ -333,7 +333,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.body.nodeName    //&apos;BODY&apos;，body的节点名字，(除了svg，其他节点名字返回都是大写）</span><br><span class="line">document.documentElement.nodeName    //&apos;HTML&apos;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>9. cloneNode()</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div2 = div1.cloneNode();  //会把div1本身复制给div2</span><br><span class="line">var div2 = div1.cloneNode(true);  //会把div1及它的所有子节点一起复制给div2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div2 = div1.cloneNode();  //会把div1本身复制给div2</span><br><span class="line">var div2 = div1.cloneNode(true);  //会把div1及它的所有子节点一起复制给div2，这句等于var div2=div1;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>10. isSameNode()和isEqualNode()</strong><br>isEqualNode检测内容是否相同<br>isSameNode检测两个元素是否是同一个节点</p>
 </li>
@@ -454,10 +454,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -477,8 +477,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -544,7 +544,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

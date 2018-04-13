@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -214,6 +214,196 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/命令行基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/28/命令行基础/" itemprop="url">命令行基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:57:17+08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一-常用命令"><a href="#一-常用命令" class="headerlink" title="一. 常用命令"></a>一. 常用命令</h3><table>
+<thead>
+<tr>
+<th>缩写</th>
+<th style="text-align:left">全写</th>
+<th style="text-align:left">命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mkdir</td>
+<td style="text-align:left">make directory</td>
+<td style="text-align:left">创建目录</td>
+</tr>
+<tr>
+<td>touch</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">创建文件</td>
+</tr>
+<tr>
+<td>echo</td>
+<td style="text-align:left">echo “hi” &gt; 1.txt</td>
+<td style="text-align:left">创建文件1.txt</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left">echo “hi” &gt;! 1.txt</td>
+<td style="text-align:left">覆盖1.txt</td>
+</tr>
+<tr>
+<td>rm</td>
+<td style="text-align:left">remove</td>
+<td style="text-align:left">删除</td>
+</tr>
+<tr>
+<td>mv</td>
+<td style="text-align:left">move</td>
+<td style="text-align:left">重命名</td>
+</tr>
+<tr>
+<td>cp</td>
+<td style="text-align:left">copy</td>
+<td style="text-align:left">复制</td>
+</tr>
+<tr>
+<td>ls</td>
+<td style="text-align:left">list</td>
+<td style="text-align:left">显示当前目录下所有文件</td>
+</tr>
+<tr>
+<td>ls -a</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">显示隐藏文件</td>
+</tr>
+<tr>
+<td>cd</td>
+<td style="text-align:left">change directory</td>
+<td style="text-align:left">改变目录</td>
+</tr>
+<tr>
+<td>ln -s</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">建立软链接</td>
+</tr>
+</tbody>
+</table>
+<p>还可以把很多常见命令的缩写放进.bashrc或.zshrc里，比如 </p>
+<blockquote>
+<p> alias la=’ls -a’<br> alias ll=’ls -l’<br> alias gst=’git status -sb’<br> alias ga=’git add’<br> alias ga.=’git add .’<br> alias gc=’git commit’<br> alias gc.=’git commit .’</p>
+</blockquote>
+<p>保存退出，然后运行 <code>source ~/.bashrc</code><br>这样一来，你的 Git 操作就会简单很多</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +447,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:54:51+08:00">
                 2018-02-28
@@ -404,7 +594,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:53:20+08:00">
                 2018-02-28
@@ -526,7 +716,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:51:46+08:00">
                 2018-02-28
@@ -669,7 +859,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:49:02+08:00">
                 2018-02-28
@@ -796,7 +986,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-27T20:02:02+08:00">
                 2018-02-27
@@ -924,8 +1114,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -975,7 +1165,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

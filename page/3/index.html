@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -214,6 +214,135 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/几种常见算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/几种常见算法/" itemprop="url">几种常见算法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:50:24+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-冒泡排序Bubble-Sort（体育委员摸头杀）"><a href="#1-冒泡排序Bubble-Sort（体育委员摸头杀）" class="headerlink" title="1. 冒泡排序Bubble Sort（体育委员摸头杀）"></a>1. 冒泡排序Bubble Sort（体育委员摸头杀）</h2><p><strong>时间复杂度：O(n^2^)</strong><br> 有个数组a=[5,4,1,3,2,6]，从小到大排序，总共进行a.length-1轮，首先将a[0]和a[1]比较，谁大就把谁放在后面，交换完后再将a[1]和a[2]比较，谁大就把谁放在后面，交换完后再将a[2]和a[3]比较…..一直到a[4]和a[5]比较，进行完第一轮后，最大的那个就已经放在最后一位了，接下来再重新从a[0]开始……直到进行到a[3]和a[4]比较（a[5]上一轮已经确定了最大的，不用再动了），直到a[2],a[3],a[4],a[5]都确定了，最后再比较一次a[0],a[1]，排完a[0],a[1]的顺序，a数组的顺序就排好了~<br><a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点BUB是冒泡排序的动画演示</a></p>
+<h2 id="2-选择排序Selection-Sort（体育老师点人法）"><a href="#2-选择排序Selection-Sort（体育老师点人法）" class="headerlink" title="2. 选择排序Selection Sort（体育老师点人法）"></a>2. 选择排序Selection Sort（体育老师点人法）</h2><p><strong>时间复杂度：O(n^2^)</strong><br>选出最小的和第一位交换位置，第一位就被确定了，接下来找倒数第二小的和第二位换位置，接着再找倒数第三小的和第三位换位置……一直找到最后一位<br><a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点SEL是冒泡排序的动画演示</a></p>
+<h2 id="3-插入排序Insertion-Sort（起扑克牌法）"><a href="#3-插入排序Insertion-Sort（起扑克牌法）" class="headerlink" title="3. 插入排序Insertion Sort（起扑克牌法）"></a>3. 插入排序Insertion Sort（起扑克牌法）</h2><p><strong>时间复杂度：O(n^2^)</strong><br>从数组的第二个开始，和第一个比较并排顺序，接着拿第三个和第二个比，若比第二个大则直接不动，若比第二个小则和第一个比，若比二小比一大则插在它们中间，若比第一个小则放在第一个，接着再拿第四个分别和三、二、一<br>比…….直到最后。<br><strong>这就像打扑克牌时你摸牌的方法</strong><br><a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点INS是冒泡排序的动画演示</a></p>
+<h2 id="4-随机快排"><a href="#4-随机快排" class="headerlink" title="4. 随机快排"></a>4. 随机快排</h2><p><strong>优点：</strong><br>效率高,时间复杂度：O(n*log2n)<br><strong>缺点：</strong><br>有时候比计数排序慢<br><strong>简介：</strong><br>随机选一个数，例：36，#将这个数和第一个数交换位置，于是36到了第一位，接着将36和其他所有数依次比较大小，把所有比36小的放左边，比36大的放右边，比完其他所有数后把36同比它小的数里的最右边的那个交换位置，这样36就定位了。<br>接着以同样的方式随机选择一个36左边的数，然后回到上面#的位置继续进行，在36的左边再次快排，这样左边排序时完全不用管右边，大大提高了效率，把左边排完再排右边。<br>演示：<a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点R-Q是随机快排</a></p>
+<h2 id="5-计数排序（Hash）"><a href="#5-计数排序（Hash）" class="headerlink" title="5. 计数排序（Hash）"></a>5. 计数排序（Hash）</h2><p><strong>优点：</strong><br>效率高，时间复杂度：O(n+max)<br><strong>缺点：</strong><br>1.需要一个hash来作为工具<br>2.无法对小数和负数进行排序，只能排正整数<br>3.可能需要很多桶，不像桶排序可控制桶数量<br><strong>用途：</strong><br>数字相差不大的时候可以用计数排序，如年龄排序<br><strong>简介：</strong><br>和基数排序差不多，比快排更快，需要一个额外数组(Hash)辅助，例：a=[3,2,4,5,1,3,34]<br>a[0]=3于是将Hash数组中的hash[3]=1<br>a[1]=2于是将hash[2]=1<br>a[2]=4于是将hash[4]=1<br>a[3]=5于是将hash[5]=1<br>a[4]=1于是将hash[1]=1<br>a[5]=3于是将hash[3]=hash[3]+1=2<br>a[6]=34于是将hash[34]=1<br>这样hash=[ ,1,1,2,1,1, , , , ,……, , , , ,1]<br>最后将hash中的数据按顺序取出来存放在另外一个数组里则排序完成。</p>
+<h2 id="6-桶排序（Hash）"><a href="#6-桶排序（Hash）" class="headerlink" title="6. 桶排序（Hash）"></a>6. 桶排序（Hash）</h2><p><strong>优点：</strong><br>和计数排序不同的是一个桶里可放多个数字，效率高，计数排序的改良版，时间复杂度：O(N+C)<br><strong>缺点：</strong><br>需要hash工具，和计数排序不同的是每个桶里都是无序的，还要再排一次序<br><strong>用途：</strong><br>高考总分排序，每100分放在一个桶里，数字很分散的时候不好用，可用基数排序（比如从几十到几千）<br><strong>简介：</strong><br>a=[0,2,1,56,32,67,32]，存入hash里<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">hash = &#123;</span><br><span class="line">  &apos;0&apos;:[0,2,1],</span><br><span class="line">  &apos;1&apos;:[],</span><br><span class="line">  &apos;2&apos;:[],</span><br><span class="line">  &apos;3&apos;:[32,32],</span><br><span class="line">  &apos;4&apos;:[],</span><br><span class="line">  &apos;5&apos;:[56],</span><br><span class="line">  &apos;6&apos;:[67],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>还要把每个桶里的数字排序一下，再依次拿出来</p>
+<h2 id="7-基数排序Radix-Sort（Hash）"><a href="#7-基数排序Radix-Sort（Hash）" class="headerlink" title="7. 基数排序Radix Sort（Hash）"></a>7. 基数排序Radix Sort（Hash）</h2><p><strong>优点：</strong><br>效率高<br>桶数量是确定的，时间复杂度：O(nlog(r)m)<br><strong>缺点：</strong><br>需要一个hash当工具，要多次排序<br><strong>简介：</strong><br>和桶排序类似，数字很分散的时候，可以用基数排序，首先用个位排，<strong>每次出桶的时候要按照进桶的顺序出！</strong>再到百位，再到千位，具体看下面演示</p>
+<p>演示：<a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点RAD是基数排序</a></p>
+<h2 id="8-堆排序"><a href="#8-堆排序" class="headerlink" title="8. 堆排序"></a>8. 堆排序</h2><p><strong>时间复杂度：nlogn</strong><br>用数组表示一个堆，每次都做最大堆排序，每做完一次就把最大的数和最后一位交换位置，并定下来，于是每做一次最大堆排序就能确定一个最大的数并把它放到最后一位，一直重复到排完所有的数，这样一个从小到大的数组就排出来了<br>演示：<a href="https://www.cs.usfca.edu/~galles/visualization/HeapSort.html" target="_blank" rel="noopener">堆排序</a></p>
+<h2 id="9-归并排序"><a href="#9-归并排序" class="headerlink" title="9. 归并排序"></a>9. 归并排序</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +386,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:49:40+08:00">
                 2018-03-12
@@ -397,7 +526,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-09T22:22:28+08:00">
                 2018-03-09
@@ -561,7 +690,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:58+08:00">
                 2018-03-06
@@ -708,7 +837,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:09+08:00">
                 2018-03-06
@@ -851,7 +980,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-04T14:38:58+08:00">
                 2018-03-04
@@ -996,7 +1125,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-02T16:47:09+08:00">
                 2018-03-02
@@ -1197,7 +1326,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-01T20:45:18+08:00">
                 2018-03-01
@@ -1319,7 +1448,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T10:02:26+08:00">
                 2018-02-28
@@ -1442,7 +1571,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:58:54+08:00">
                 2018-02-28
@@ -1531,196 +1660,6 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/命令行基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/28/命令行基础/" itemprop="url">命令行基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:57:17+08:00">
-                2018-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="一-常用命令"><a href="#一-常用命令" class="headerlink" title="一. 常用命令"></a>一. 常用命令</h3><table>
-<thead>
-<tr>
-<th>缩写</th>
-<th style="text-align:left">全写</th>
-<th style="text-align:left">命令</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mkdir</td>
-<td style="text-align:left">make directory</td>
-<td style="text-align:left">创建目录</td>
-</tr>
-<tr>
-<td>touch</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">创建文件</td>
-</tr>
-<tr>
-<td>echo</td>
-<td style="text-align:left">echo “hi” &gt; 1.txt</td>
-<td style="text-align:left">创建文件1.txt</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:left">echo “hi” &gt;! 1.txt</td>
-<td style="text-align:left">覆盖1.txt</td>
-</tr>
-<tr>
-<td>rm</td>
-<td style="text-align:left">remove</td>
-<td style="text-align:left">删除</td>
-</tr>
-<tr>
-<td>mv</td>
-<td style="text-align:left">move</td>
-<td style="text-align:left">重命名</td>
-</tr>
-<tr>
-<td>cp</td>
-<td style="text-align:left">copy</td>
-<td style="text-align:left">复制</td>
-</tr>
-<tr>
-<td>ls</td>
-<td style="text-align:left">list</td>
-<td style="text-align:left">显示当前目录下所有文件</td>
-</tr>
-<tr>
-<td>ls -a</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">显示隐藏文件</td>
-</tr>
-<tr>
-<td>cd</td>
-<td style="text-align:left">change directory</td>
-<td style="text-align:left">改变目录</td>
-</tr>
-<tr>
-<td>ln -s</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">建立软链接</td>
-</tr>
-</tbody>
-</table>
-<p>还可以把很多常见命令的缩写放进.bashrc或.zshrc里，比如 </p>
-<blockquote>
-<p> alias la=’ls -a’<br> alias ll=’ls -l’<br> alias gst=’git status -sb’<br> alias ga=’git add’<br> alias ga.=’git add .’<br> alias gc=’git commit’<br> alias gc.=’git commit .’</p>
-</blockquote>
-<p>保存退出，然后运行 <code>source ~/.bashrc</code><br>这样一来，你的 Git 操作就会简单很多</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1771,8 +1710,8 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -1822,7 +1761,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

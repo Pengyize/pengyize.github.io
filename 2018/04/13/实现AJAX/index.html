@@ -79,20 +79,16 @@
 
 
 
-<meta name="description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时在终端输入脚本的路径~/local/demo.sh就可以直接运行脚本执行里面的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，于是可以直接运行~">
+<meta name="description" content="1. 原生JS实现AJAX第一步：let request = new XMLHttpRequest(); 1. 设置请求用AJAX设置请求的第一部分：1request.open(&amp;apos;get&amp;apos;,&amp;apos;/xxx&amp;apos;)  //设置get的请求方式，再设置路径为/xxx 设置第二部分：123request.setRequestHeader(&amp;apos;Accept&amp;apos">
 <meta property="og:type" content="article">
-<meta property="og:title" content="脚本">
-<meta property="og:url" content="http://yoursite.com/2018/03/01/脚本/index.html">
+<meta property="og:title" content="实现AJAX">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/实现AJAX/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时在终端输入脚本的路径~/local/demo.sh就可以直接运行脚本执行里面的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，于是可以直接运行~">
-<meta property="og:image" content="http://yoursite.com/images/demo.sh.png">
-<meta property="og:image" content="http://yoursite.com/images/demo.js.png">
-<meta property="og:image" content="http://yoursite.com/images/demo.sh.png">
-<meta property="og:updated_time" content="2018-04-04T06:55:03.828Z">
+<meta property="og:description" content="1. 原生JS实现AJAX第一步：let request = new XMLHttpRequest(); 1. 设置请求用AJAX设置请求的第一部分：1request.open(&amp;apos;get&amp;apos;,&amp;apos;/xxx&amp;apos;)  //设置get的请求方式，再设置路径为/xxx 设置第二部分：123request.setRequestHeader(&amp;apos;Accept&amp;apos">
+<meta property="og:updated_time" content="2018-04-13T09:58:40.176Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="脚本">
-<meta name="twitter:description" content="脚本就是计算机用的剧本，像下面我写的两个脚本。-d 表示存在的意思（不知道的用英文查google）$1 表示传入的第一个参数这个是bash脚本，因为计算机默认bash脚本，所以运行时在终端输入脚本的路径~/local/demo.sh就可以直接运行脚本执行里面的命令 这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，于是可以直接运行~">
-<meta name="twitter:image" content="http://yoursite.com/images/demo.sh.png">
+<meta name="twitter:title" content="实现AJAX">
+<meta name="twitter:description" content="1. 原生JS实现AJAX第一步：let request = new XMLHttpRequest(); 1. 设置请求用AJAX设置请求的第一部分：1request.open(&amp;apos;get&amp;apos;,&amp;apos;/xxx&amp;apos;)  //设置get的请求方式，再设置路径为/xxx 设置第二部分：123request.setRequestHeader(&amp;apos;Accept&amp;apos">
 
 
 
@@ -122,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/01/脚本/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/实现AJAX/"/>
 
 
 
 
 
-  <title>脚本 | My Block</title>
+  <title>实现AJAX | My Block</title>
   
 
 
@@ -235,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/01/脚本/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/实现AJAX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pengyize">
@@ -252,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">脚本</h1>
+          <h1 class="post-title" itemprop="name headline">实现AJAX</h1>
         
 
         <div class="post-meta">
@@ -264,8 +260,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-01T20:45:18+08:00">
-                2018-03-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T17:58:04+08:00">
+                2018-04-13
               </time>
             
 
@@ -302,9 +298,15 @@
       
 
       
-        <p>脚本就是计算机用的剧本，像下面我写的两个脚本。<img src="/images/demo.sh.png" alt="demo.sh">-d 表示存在的意思（不知道的用英文查google）<br>$1 表示传入的第一个参数<br>这个是bash脚本，因为计算机默认bash脚本，所以运行时在终端输入脚本的路径<br><code>~/local/demo.sh</code>就可以直接运行脚本执行里面的命令</p>
-<p><img src="/images/demo.js.png" alt="demo.js">这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，于是可以直接运行<br><code>~/local/demo.js</code><br>如果没有shebang，就要写<br><code>node ~/local/demo.js</code></p>
-<p>若想直接输入脚本名运行脚本，可以将脚本的路径添加到PATH中<img src="/images/demo.sh.png" alt="demo.sh">我的脚本放在local目录中，于是把这句话添加到.bashrc或.zshrc的最后一行，当你运行脚本名时直接在终端输入<br><code>demo.js</code><br>计算机就会自动从local目录里找到这个脚本运行</p>
+        <h1 id="1-原生JS实现AJAX"><a href="#1-原生JS实现AJAX" class="headerlink" title="1. 原生JS实现AJAX"></a>1. 原生JS实现AJAX</h1><p>第一步：<code>let request = new XMLHttpRequest();</code></p>
+<h3 id="1-设置请求"><a href="#1-设置请求" class="headerlink" title="1. 设置请求"></a>1. 设置请求</h3><p>用AJAX设置请求的第一部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.open(&apos;get&apos;,&apos;/xxx&apos;)  //设置get的请求方式，再设置路径为/xxx</span><br></pre></td></tr></table></figure></p>
+<p>设置第二部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">request.setRequestHeader(&apos;Accept&apos;,&apos;text/html&apos;)</span><br><span class="line">```  </span><br><span class="line">设置第四部分：</span><br></pre></td></tr></table></figure></p>
+<p>request.send(‘请求体’)  //请求一般没有第四部分，可以直接send空字符串<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 2. 获取响应</span><br><span class="line">获取HTTP状态码</span><br></pre></td></tr></table></figure></p>
+<p>request.status  //200<br>request.statusText  //OK<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">获取响应第二部分</span><br></pre></td></tr></table></figure></p>
+<p>request.getAllResponseHeaders()  //获取第二部分所有<br>request.getResponseHeader(‘Content-Type’)  //获取Content-Type<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">获取第四部分</span><br></pre></td></tr></table></figure></p>
+<p>requeset.responseText<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 2. jQuery实现AJAX</span><br><span class="line">1. 封装ajax</span><br></pre></td></tr></table></figure></p>
+<p>jQuery.ajax=function({url,method,body,headers}){<br>  return new Promise(function(resolve,reject)){<br>    let request = new XMLHttpRequest()<br>    request.open(method,url)  //配置request<br>    for(let key in headers){<br>      let value = headers[key];<br>      request.setRequestHeader(key,value);<br>    }<br>    request.onreadystatechange = ()=&gt;{<br>      if(request.state === 4){<br>        if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300){<br>          resolve.call(undefined,request.responseText)<br>        }else if{request.status &gt;= 400}{<br>          reject.call(undefined,request)<br>        }<br>      }<br>    }<br>    request.send();<br>  })<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回一个promise对象，传入的两个参数resolve、reject，分别代表成功时执行的内容和失败时执行的内容，下面的then就是使用promise。</span><br><span class="line"></span><br><span class="line">2. 使用ajax</span><br></pre></td></tr></table></figure></p>
+<p>$.ajax({<br>  url: ‘/xxx’,<br>  method: ‘get’,<br>  headers:{<br>    ‘content-type’:’application/x-www-form-urlencoded’,<br>    ‘pyz’:21<br>  }<br>}).then(<br>  (responseText) =&gt;{<br>    console.log(responseText);<br>    return responseText;  //上面的返回的是成功就执行这个，失败就执行下面那个<br>  },<br>  (request)=&gt;{<br>    console.log(‘error’); return ‘error’  //失败就执行这个<br>  }<br>).then(<br>  (上面的then成功返回的responseText)=&gt;{<br>    console.log(上面的then成功返回的responseText)  //上一个then成功就执行这个<br>  },<br>  (request) =&gt; {console.log(‘error2’)}  //上一个then失败就执行这个<br>)  //then可以无限用，第一个参数表示调用成功成功后执行的东西，第二个表示失败后执行的东西<br><code>`</code></p>
 
       
     </div>
@@ -329,8 +331,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/28/配置HEXO博客-linux/" rel="next" title="配置HEXO博客-linux">
-                <i class="fa fa-chevron-left"></i> 配置HEXO博客-linux
+              <a href="/2018/04/11/AJAX入门/" rel="next" title="AJAX入门">
+                <i class="fa fa-chevron-left"></i> AJAX入门
               </a>
             
           </div>
@@ -338,10 +340,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/02/HTTP入门/" rel="prev" title="HTTP入门">
-                HTTP入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -393,8 +391,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -436,6 +443,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-原生JS实现AJAX"><span class="nav-number">1.</span> <span class="nav-text">1. 原生JS实现AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-设置请求"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 设置请求</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
