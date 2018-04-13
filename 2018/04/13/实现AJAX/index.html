@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/13/实现AJAX/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1. 原生JS实现AJAX第一步：let request = new XMLHttpRequest(); 1. 设置请求用AJAX设置请求的第一部分：1request.open(&amp;apos;get&amp;apos;,&amp;apos;/xxx&amp;apos;)  //设置get的请求方式，再设置路径为/xxx 设置第二部分：123request.setRequestHeader(&amp;apos;Accept&amp;apos">
-<meta property="og:updated_time" content="2018-04-13T09:58:40.176Z">
+<meta property="og:updated_time" content="2018-04-13T12:58:39.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实现AJAX">
 <meta name="twitter:description" content="1. 原生JS实现AJAX第一步：let request = new XMLHttpRequest(); 1. 设置请求用AJAX设置请求的第一部分：1request.open(&amp;apos;get&amp;apos;,&amp;apos;/xxx&amp;apos;)  //设置get的请求方式，再设置路径为/xxx 设置第二部分：123request.setRequestHeader(&amp;apos;Accept&amp;apos">
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -258,7 +258,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T17:58:04+08:00">
                 2018-04-13
@@ -305,7 +305,7 @@
 <p>request.status  //200<br>request.statusText  //OK<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">获取响应第二部分</span><br></pre></td></tr></table></figure></p>
 <p>request.getAllResponseHeaders()  //获取第二部分所有<br>request.getResponseHeader(‘Content-Type’)  //获取Content-Type<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">获取第四部分</span><br></pre></td></tr></table></figure></p>
 <p>requeset.responseText<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 2. jQuery实现AJAX</span><br><span class="line">1. 封装ajax</span><br></pre></td></tr></table></figure></p>
-<p>jQuery.ajax=function({url,method,body,headers}){<br>  return new Promise(function(resolve,reject)){<br>    let request = new XMLHttpRequest()<br>    request.open(method,url)  //配置request<br>    for(let key in headers){<br>      let value = headers[key];<br>      request.setRequestHeader(key,value);<br>    }<br>    request.onreadystatechange = ()=&gt;{<br>      if(request.state === 4){<br>        if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300){<br>          resolve.call(undefined,request.responseText)<br>        }else if{request.status &gt;= 400}{<br>          reject.call(undefined,request)<br>        }<br>      }<br>    }<br>    request.send();<br>  })<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回一个promise对象，传入的两个参数resolve、reject，分别代表成功时执行的内容和失败时执行的内容，下面的then就是使用promise。</span><br><span class="line"></span><br><span class="line">2. 使用ajax</span><br></pre></td></tr></table></figure></p>
+<p>jQuery.ajax=function({url,method,body,headers}){<br>  return new Promise(function(resolve,reject)){<br>    let request = new XMLHttpRequest()<br>    request.open(method,url)  //配置request<br>    for(let key in headers){<br>      let value = headers[key];<br>      request.setRequestHeader(key,value);<br>    }<br>    request.onreadystatechange = ()=&gt;{<br>      if(request.state === 4){<br>        if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300){<br>          resolve.call(undefined,request.responseText)<br>        }else if{request.status &gt;= 400}{<br>          reject.call(undefined,request)<br>        }<br>      }<br>    }<br>    request.send(body);  //body是第四部分<br>  })<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回一个promise对象，传入的两个参数resolve、reject，分别代表成功时执行的内容和失败时执行的内容，下面的then就是使用promise。</span><br><span class="line"></span><br><span class="line">2. 使用ajax</span><br></pre></td></tr></table></figure></p>
 <p>$.ajax({<br>  url: ‘/xxx’,<br>  method: ‘get’,<br>  headers:{<br>    ‘content-type’:’application/x-www-form-urlencoded’,<br>    ‘pyz’:21<br>  }<br>}).then(<br>  (responseText) =&gt;{<br>    console.log(responseText);<br>    return responseText;  //上面的返回的是成功就执行这个，失败就执行下面那个<br>  },<br>  (request)=&gt;{<br>    console.log(‘error’); return ‘error’  //失败就执行这个<br>  }<br>).then(<br>  (上面的then成功返回的responseText)=&gt;{<br>    console.log(上面的then成功返回的responseText)  //上一个then成功就执行这个<br>  },<br>  (request) =&gt; {console.log(‘error2’)}  //上一个then失败就执行这个<br>)  //then可以无限用，第一个参数表示调用成功成功后执行的东西，第二个表示失败后执行的东西<br><code>`</code></p>
 
       
@@ -340,6 +340,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/13/ES6入门/" rel="prev" title="ES6入门">
+                ES6入门 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -393,10 +397,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -416,8 +420,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -483,7 +487,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 

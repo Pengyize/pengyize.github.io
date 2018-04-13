@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1. 引用jquery下载页面，下载为js文件，在html中引用即可 2. 基础jQuery的原型为jQuery.prototype12var div = document.getElementById(&amp;apos;x&amp;apos;)  //dom对象var $div = $(&amp;apos;#x&amp;apos;)  //jquery对象 div和$div的联系：$div[0] === div$div ==">
+<meta name="description" content="1. let语法，用法和var一样1. 作用域不同若用let来声明变量，只在let命令所在的代码块内有效。而var只有在function内用才能有块级作用域效果，除了function，在其他地方用var全声明的是全局变量12345678910111213141516//例1&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery入门">
-<meta property="og:url" content="http://yoursite.com/2018/04/03/jQuery入门/index.html">
+<meta property="og:title" content="ES6入门">
+<meta property="og:url" content="http://yoursite.com/2018/04/13/ES6入门/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="1. 引用jquery下载页面，下载为js文件，在html中引用即可 2. 基础jQuery的原型为jQuery.prototype12var div = document.getElementById(&amp;apos;x&amp;apos;)  //dom对象var $div = $(&amp;apos;#x&amp;apos;)  //jquery对象 div和$div的联系：$div[0] === div$div ==">
-<meta property="og:updated_time" content="2018-04-08T14:59:09.920Z">
+<meta property="og:description" content="1. let语法，用法和var一样1. 作用域不同若用let来声明变量，只在let命令所在的代码块内有效。而var只有在function内用才能有块级作用域效果，除了function，在其他地方用var全声明的是全局变量12345678910111213141516//例1&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is">
+<meta property="og:updated_time" content="2018-04-13T13:10:32.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery入门">
-<meta name="twitter:description" content="1. 引用jquery下载页面，下载为js文件，在html中引用即可 2. 基础jQuery的原型为jQuery.prototype12var div = document.getElementById(&amp;apos;x&amp;apos;)  //dom对象var $div = $(&amp;apos;#x&amp;apos;)  //jquery对象 div和$div的联系：$div[0] === div$div ==">
+<meta name="twitter:title" content="ES6入门">
+<meta name="twitter:description" content="1. let语法，用法和var一样1. 作用域不同若用let来声明变量，只在let命令所在的代码块内有效。而var只有在function内用才能有块级作用域效果，除了function，在其他地方用var全声明的是全局变量12345678910111213141516//例1&amp;#123;  let a = 10;  var b = 1;&amp;#125;a // ReferenceError: a is">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/03/jQuery入门/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/13/ES6入门/"/>
 
 
 
 
 
-  <title>jQuery入门 | My Block</title>
+  <title>ES6入门 | My Block</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/03/jQuery入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/ES6入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pengyize">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jQuery入门</h1>
+          <h1 class="post-title" itemprop="name headline">ES6入门</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-03T23:57:23+08:00">
-                2018-04-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T21:10:20+08:00">
+                2018-04-13
               </time>
             
 
@@ -298,12 +298,9 @@
       
 
       
-        <h1 id="1-引用"><a href="#1-引用" class="headerlink" title="1. 引用"></a>1. 引用</h1><p><a href="https://jquery.com/download/" target="_blank" rel="noopener">jquery下载页面</a>，下载为js文件，在html中引用即可</p>
-<h1 id="2-基础"><a href="#2-基础" class="headerlink" title="2. 基础"></a>2. 基础</h1><p>jQuery的原型为jQuery.prototype<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div = document.getElementById(&apos;x&apos;)  //dom对象</span><br><span class="line">var $div = $(&apos;#x&apos;)  //jquery对象</span><br></pre></td></tr></table></figure></p>
-<p>div和$div的联系：<code>$div[0] === div</code><br><code>$div === $(div)</code><br>区别：div是id为x的元素<br>&amp;div是对象</p>
-<h1 id="3-API"><a href="#3-API" class="headerlink" title="3. API"></a>3. API</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$nodes.addClass(&apos;red&apos;);</span><br><span class="line">$nodes.addClass(function(index,currentClass)&#123;</span><br><span class="line">      return &apos;sd-&apos;+index;    //这样nodes里每一项会依次添加sd-0 sd-1 sd-2 sd-3 ......的class</span><br><span class="line">    &#125;);  </span><br><span class="line">var classes = [&apos;red&apos;,&apos;blue&apos;,&apos;black&apos;];</span><br><span class="line">$nodes.addClass(function(index,currentClass)&#123;</span><br><span class="line">      return classes[index];    //前三项就会添加red、blue、black的class</span><br><span class="line">    &#125;);  </span><br><span class="line"></span><br><span class="line">$nodes.removeClass(&apos;red&apos;);</span><br><span class="line"></span><br><span class="line">$(x).on(&apos;click&apos;, function()&#123;    //建一个button并给它id为x</span><br><span class="line">    $nodes.toggleClass(&apos;red&apos;);  //每点一次button，nodes就增加或删除&apos;red&apos;class</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="4-jQuery对象和DOM对象的转换"><a href="#4-jQuery对象和DOM对象的转换" class="headerlink" title="4. jQuery对象和DOM对象的转换"></a>4. jQuery对象和DOM对象的转换</h1><p>jquery转dom<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var div = $div[0]  //这样jquery就转换成了DOM对象，或div = $div.get(0)</span><br></pre></td></tr></table></figure></p>
-<p>dom转jquery<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var $div = $(div);  //这样dom对象div，就转换成了jquery对象</span><br></pre></td></tr></table></figure></p>
+        <h1 id="1-let语法，用法和var一样"><a href="#1-let语法，用法和var一样" class="headerlink" title="1. let语法，用法和var一样"></a>1. let语法，用法和var一样</h1><h3 id="1-作用域不同"><a href="#1-作用域不同" class="headerlink" title="1. 作用域不同"></a>1. 作用域不同</h3><p>若用let来声明变量，只在let命令所在的代码块内有效。而var只有在function内用才能有块级作用域效果，除了function，在其他地方用var全声明的是全局变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//例1</span><br><span class="line">&#123;</span><br><span class="line">  let a = 10;</span><br><span class="line">  var b = 1;</span><br><span class="line">&#125;</span><br><span class="line">a // ReferenceError: a is not defined.</span><br><span class="line">b // 1</span><br><span class="line"></span><br><span class="line">//例2</span><br><span class="line">for (let i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">  let i = &apos;abc&apos;;  //这个i和上面的数字i不互相影响</span><br><span class="line">  console.log(i);</span><br><span class="line">&#125;</span><br><span class="line">// abc</span><br><span class="line">// abc</span><br><span class="line">// abc</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-let不会变量提升！"><a href="#2-let不会变量提升！" class="headerlink" title="2. let不会变量提升！"></a>2. let不会变量提升！</h3><h1 id="2-解构赋值"><a href="#2-解构赋值" class="headerlink" title="2. 解构赋值"></a>2. 解构赋值</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let method = options.method;</span><br><span class="line">let body = options.body;</span><br><span class="line">let successFn = options.successFn </span><br><span class="line"></span><br><span class="line">//下面是es6，下面这一行相当于上面三行</span><br><span class="line">let &#123;method,body,successFn&#125; = options;</span><br></pre></td></tr></table></figure>
+<p>若是用在函数里：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function(options)&#123;</span><br><span class="line">  let &#123;method,body,successFn&#125; = options;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//上面这样可以简化为下面</span><br><span class="line"></span><br><span class="line">function(&#123;method,body,successFn&#125;)&#123;</span><br><span class="line">  //直接把这个当参数，省略options</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -328,8 +325,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/30/JS函数/" rel="next" title="JS函数">
-                <i class="fa fa-chevron-left"></i> JS函数
+              <a href="/2018/04/13/实现AJAX/" rel="next" title="实现AJAX">
+                <i class="fa fa-chevron-left"></i> 实现AJAX
               </a>
             
           </div>
@@ -337,10 +334,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/06/SASS入门/" rel="prev" title="SASS入门">
-                SASS入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -454,7 +447,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-引用"><span class="nav-number">1.</span> <span class="nav-text">1. 引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-基础"><span class="nav-number">2.</span> <span class="nav-text">2. 基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-API"><span class="nav-number">3.</span> <span class="nav-text">3. API</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-jQuery对象和DOM对象的转换"><span class="nav-number">4.</span> <span class="nav-text">4. jQuery对象和DOM对象的转换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-let语法，用法和var一样"><span class="nav-number">1.</span> <span class="nav-text">1. let语法，用法和var一样</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-作用域不同"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 作用域不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-let不会变量提升！"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. let不会变量提升！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-解构赋值"><span class="nav-number">2.</span> <span class="nav-text">2. 解构赋值</span></a></li></ol></div>
             
 
           </div>

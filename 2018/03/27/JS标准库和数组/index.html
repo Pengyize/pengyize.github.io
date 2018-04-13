@@ -87,7 +87,7 @@
 <meta property="og:description" content="1. String12String(s);    //&amp;apos;s&amp;apos;，不加new 就直接输出字符串new String(s)    //String&amp;#123;&amp;apos;s&amp;apos;&amp;#125;，加new就输出一个对象 2. Number12345Number(sss)    //报错，Error: sss is not definedNumber(&amp;apos;sss&amp;apos;)">
 <meta property="og:image" content="http://yoursite.com/images/数据类型.png">
 <meta property="og:image" content="http://yoursite.com/images/数组.png">
-<meta property="og:updated_time" content="2018-04-06T13:02:03.964Z">
+<meta property="og:updated_time" content="2018-04-13T12:02:57.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS标准库和数组">
 <meta name="twitter:description" content="1. String12String(s);    //&amp;apos;s&amp;apos;，不加new 就直接输出字符串new String(s)    //String&amp;#123;&amp;apos;s&amp;apos;&amp;#125;，加new就输出一个对象 2. Number12345Number(sss)    //报错，Error: sss is not definedNumber(&amp;apos;sss&amp;apos;)">
@@ -187,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -261,7 +261,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T12:21:19+08:00">
                 2018-03-27
@@ -343,10 +343,10 @@
 <p>只要掌握reduce就行了</p>
 <ol>
 <li><p>splice</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.splice(start)</span><br><span class="line">array.splice(start, deleteCount) </span><br><span class="line">array.splice(开始的位置, 删除的个数, 插入的对象1,插入的对象2, ...)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.splice(start)  //start第一个位置是0</span><br><span class="line">array.splice(start, deleteCount) //若不写删除的个数，则会把包括start位置的数据和后面的所有数据都删除，并返回它们</span><br><span class="line">array.splice(开始的位置, 删除的个数, 插入的数据1, 插入的数据2, 3...)</span><br></pre></td></tr></table></figure>
+<p> <strong>splice会改变数组本身的数据！！</strong></p>
 </li>
-<li><p>slice</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.slice()  //保留完整数组</span><br><span class="line">array.slice(4)  //保留4到最后的数组</span><br><span class="line">array.slice(4,8)  //保留4到8以前的数组</span><br></pre></td></tr></table></figure></li>
+<li>slice<br><strong>slice不会改变数组本身数据！！</strong> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">array.slice()  //或array.slice(0)，返回完整数组</span><br><span class="line">array.slice(4)  //返回位置4到最后的数据</span><br><span class="line">array.slice(4,8)  //返回位置4到8以前的数据（不包括8）</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -438,10 +438,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -461,8 +461,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -528,7 +528,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
