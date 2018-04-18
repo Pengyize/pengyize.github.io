@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/07/到页面加载显示完成，这个过程中都发生了什么？/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1. 浏览器查找域名对应的 IP 地址：通过DNS查询到相应的IP地址，相当于你的路由问电信公司，于是电信公司返回对应的IP地址。补充说明：  你若修改了hosts文件，可自己指定域名的IP，绕过DNS。 URL和域名是两个概念：例如，xiedaimala.com是这个网站的域名，根据这个域名找到写代码啦的服务器，xiedaimala.com/courses 是URL，根据这个URL定位到写代码啦">
-<meta property="og:updated_time" content="2018-04-07T04:54:19.734Z">
+<meta property="og:updated_time" content="2018-04-17T08:18:19.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="到页面加载显示完成，这个过程中都发生了什么？">
 <meta name="twitter:description" content="1. 浏览器查找域名对应的 IP 地址：通过DNS查询到相应的IP地址，相当于你的路由问电信公司，于是电信公司返回对应的IP地址。补充说明：  你若修改了hosts文件，可自己指定域名的IP，绕过DNS。 URL和域名是两个概念：例如，xiedaimala.com是这个网站的域名，根据这个域名找到写代码啦的服务器，xiedaimala.com/courses 是URL，根据这个URL定位到写代码啦">
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Accueil
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -258,7 +258,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T10:29:48+08:00">
                 2018-04-07
@@ -310,11 +310,13 @@
 <li>浏览器说：好的，那我连接了<br>连接成功！</li>
 </ul>
 <h1 id="3-网页的请求与显示"><a href="#3-网页的请求与显示" class="headerlink" title="3. 网页的请求与显示"></a>3. 网页的请求与显示</h1><ol>
-<li>浏览器根据 URL 内容生成 HTTP 请求，请求中包含请求的方式、请求文件的位置、接受文件的格式等等；</li>
-<li>服务器接到请求后，会根据 HTTP 请求中的内容来决定如何获取相应的 HTML 文件；</li>
-<li>服务器将得到的 HTML 文件发送给浏览器；</li>
-<li>在浏览器还没有完全接收 HTML 文件时便开始渲染、显示网页；</li>
-<li>在执行 HTML 中代码时，根据需要，浏览器会继续请求图片、CSS、JavsScript等文件，过程同请求 HTML ；</li>
+<li>浏览器向服务器发送请求的第一部分</li>
+<li>浏览器向服务器发送请求头（第二部分），若是post请求还会发送请求体（第四部分）</li>
+<li>服务器应答，发送响应的第一部分</li>
+<li>服务器发送响应的响应头信息</li>
+<li>服务器发送以Content-type描述的格式的数据</li>
+<li>在浏览器还没有完全接收 HTML 文件时便开始渲染、显示网页</li>
+<li>在执行 HTML 中代码时，根据需要，浏览器会继续请求图片、CSS、JavsScript等文件，过程同请求 HTML </li>
 </ol>
 <h1 id="4-断开连接——四次握手"><a href="#4-断开连接——四次握手" class="headerlink" title="4. 断开连接——四次握手"></a>4. 断开连接——四次握手</h1><ul>
 <li><p>主机向服务器发送一个断开连接的请求（不早了，我该走了）；</p>
@@ -422,10 +424,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Ensemble
           </li>
         </ul>
       
@@ -445,8 +447,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">articles</span>
                 </a>
               </div>
             
@@ -512,7 +514,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -520,7 +522,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 

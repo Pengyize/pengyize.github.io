@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/11/AJAX入门/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1. 历史1. 如何发请求 form可以发送GET和POST请求，会刷新页面或新开页面 a可以发送GET请求，会刷新页面或新开页面 img可以发送GET请求，只能以图片形式展示 link可以发送GET请求，只能以css或favicon形式展示 script可以发送GET请求，只能以脚本形式运行2. 进化IE5在JS中引入ActiveX对象(API)，使JS可以直接发送请求，其他浏览器跟进，取名XM">
-<meta property="og:updated_time" content="2018-04-12T15:43:41.543Z">
+<meta property="og:updated_time" content="2018-04-17T05:56:13.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AJAX入门">
 <meta name="twitter:description" content="1. 历史1. 如何发请求 form可以发送GET和POST请求，会刷新页面或新开页面 a可以发送GET请求，会刷新页面或新开页面 img可以发送GET请求，只能以图片形式展示 link可以发送GET请求，只能以css或favicon形式展示 script可以发送GET请求，只能以脚本形式运行2. 进化IE5在JS中引入ActiveX对象(API)，使JS可以直接发送请求，其他浏览器跟进，取名XM">
@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Accueil
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -258,7 +258,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-11T21:41:44+08:00">
                 2018-04-11
@@ -314,7 +314,7 @@
 <p><strong>API：</strong><code>readyState === 4    //表示整个请求过程已完毕</code></p>
 <h1 id="3-用的是JSON"><a href="#3-用的是JSON" class="headerlink" title="3. 用的是JSON"></a>3. 用的是JSON</h1><h3 id="1-JSON是抄袭了JavaScript的一门语言"><a href="#1-JSON是抄袭了JavaScript的一门语言" class="headerlink" title="1. JSON是抄袭了JavaScript的一门语言"></a>1. JSON是抄袭了JavaScript的一门语言</h3><p><strong>区别：</strong></p>
 <ol>
-<li>JSON没有抄袭function和undefined</li>
+<li>JSON没有抄袭function和undefined和symbol</li>
 <li>JSON的字符串首尾必须用双引号”pyz” </li>
 <li>JSON有6种数据类型</li>
 </ol>
@@ -322,13 +322,12 @@
 <li>null</li>
 <li>number</li>
 <li>string（必须用双引号）</li>
-<li>true</li>
-<li>false</li>
+<li>boolean(true false)</li>
 <li>array（[“a”,”b”]）</li>
 <li>object（{“name”:”pyz”}）</li>
 </ul>
 <ol>
-<li>JSON没有symbol，没有函数，没有undefined，也没有原型。<h3 id="2-API"><a href="#2-API" class="headerlink" title="2. API"></a>2. API</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. let request = new XMLHttpRequest();</span><br><span class="line">2. request.open(&apos;GET&apos;,&apos;/xxx&apos;)  //初始化request</span><br><span class="line">3. request.send()  //发送请求</span><br><span class="line">4. request.onreadystatechange  //监听请求状态的变化</span><br><span class="line">5. request.readyState === 1  //request.open()已经完成</span><br><span class="line">6. request.readyState === 2  //request.send()已经完成</span><br><span class="line">7. request.readyState === 3  //request.responseText正在下载</span><br><span class="line">5. request.readyState === 4  //响应完成</span><br><span class="line">6. request.status  //HTTP状态码</span><br><span class="line">7. var string = request.responseText  //响应的内容</span><br><span class="line">8. var value = JSON.parse(request.responseText)  //把符合JSON语法的字符串转换成JS，解析响应返回的内容</span><br><span class="line">9. value.node   //若value是对象，这就是对象里内容</span><br><span class="line">10. value.node.name  //对象里的name的值</span><br></pre></td></tr></table></figure>
+<li>JSON没有原型<h3 id="2-API"><a href="#2-API" class="headerlink" title="2. API"></a>2. API</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. let request = new XMLHttpRequest();</span><br><span class="line">2. request.open(&apos;GET&apos;,&apos;/xxx&apos;)  //初始化request</span><br><span class="line">3. request.send()  //发送请求</span><br><span class="line">4. request.onreadystatechange  //监听请求状态的变化</span><br><span class="line">5. request.readyState === 1  //request.open()已经完成</span><br><span class="line">6. request.readyState === 2  //request.send()已经完成</span><br><span class="line">7. request.readyState === 3  //request.responseText正在下载</span><br><span class="line">5. request.readyState === 4  //响应完成</span><br><span class="line">6. request.status  //HTTP状态码</span><br><span class="line">7. var string = request.responseText  //响应的内容</span><br><span class="line">8. var value = JSON.parse(request.responseText)  //把符合JSON语法的字符串转换成JS，解析响应返回的内容</span><br><span class="line">9. value.node   //若value是对象，这就是对象里内容</span><br><span class="line">10. value.node.name  //对象里的name的值</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h1 id="4-同源策略"><a href="#4-同源策略" class="headerlink" title="4. 同源策略"></a>4. 同源策略</h1><ol>
@@ -430,10 +429,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Ensemble
           </li>
         </ul>
       
@@ -453,8 +452,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">articles</span>
                 </a>
               </div>
             
@@ -520,7 +519,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -528,7 +527,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 

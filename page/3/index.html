@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Accueil
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -214,6 +214,175 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/JavaScript入门1（阮一峰）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/JavaScript入门1（阮一峰）/" itemprop="url">JavaScript入门1（阮一峰）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T13:50:03+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. div1 = document.createElement(&apos;div&apos;)   //要加引号</span><br><span class="line">2. div.textContent = &apos;我是div&apos;</span><br><span class="line">3. main.appendChild(div1)  //这个不用引号</span><br><span class="line">4. key.className = &apos;key&apos;</span><br></pre></td></tr></table></figure>
+<h1 id="2-包装函数"><a href="#2-包装函数" class="headerlink" title="2. 包装函数"></a>2. 包装函数</h1><p>当用js创建一个span标签并想同时给它添加className和textContent时，可以用一个函数来一起实现，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function createSpan(textContent) &#123;</span><br><span class="line">    var span = tag(&apos;span&apos;,&#123;className:&apos;text&apos;,textContent:textContent&#125;);</span><br><span class="line">    return span;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var span  = createSpan(&apos;sb&apos;); // 这样可以直接创建className为text、textContent为sb的span标签</span><br></pre></td></tr></table></figure></p>
+<h1 id="3-用canvas的时候获取用户页面宽高的API"><a href="#3-用canvas的时候获取用户页面宽高的API" class="headerlink" title="3. 用canvas的时候获取用户页面宽高的API"></a>3. 用canvas的时候获取用户页面宽高的API</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var pageWidth = document.documentElement.clientWidth;</span><br><span class="line">var pageHeight = document.documentElement.clientHeight;</span><br><span class="line"></span><br><span class="line">canvas.width = pageWidth</span><br><span class="line">canvas.height = pageHeight</span><br></pre></td></tr></table></figure>
+<h1 id="4-数据类型（背下来）"><a href="#4-数据类型（背下来）" class="headerlink" title="4. 数据类型（背下来）"></a>4. 数据类型（背下来）</h1><h5 id="1-数值-number"><a href="#1-数值-number" class="headerlink" title="1. 数值(number)"></a>1. 数值(number)</h5><blockquote>
+<p>var a = 011        // a === 9，<strong>0开头代表8进制！</strong><br>var b = 0b11         // b === 3，0b开头代表2进制<br>var c = 0x11         // c === 17，0x代表16进制</p>
+</blockquote>
+<h5 id="2-字符串-string"><a href="#2-字符串-string" class="headerlink" title="2. 字符串(string)"></a>2. 字符串(string)</h5><blockquote>
+<p>JavaScript 认为’𝌆’的长度为2，而不是1。<br>对于码点在U+10000到U+10FFFF之间的字符，JavaScript 总是认为它们是两个字符（length属性为2）。所以处理的时候，必须把这一点考虑在内，也就是说，JavaScript 返回的字符串长度可能是不正确的。</p>
+</blockquote>
+<h5 id="3-布尔值-boolean"><a href="#3-布尔值-boolean" class="headerlink" title="3. 布尔值(boolean)"></a>3. 布尔值(boolean)</h5><h5 id="4-symbol"><a href="#4-symbol" class="headerlink" title="4. symbol"></a>4. symbol</h5><blockquote>
+<p>用来生成一个全局唯一的值</p>
+</blockquote>
+<h5 id="5-undefined-6-null"><a href="#5-undefined-6-null" class="headerlink" title="5. undefined   6. null"></a>5. undefined   6. null</h5><blockquote>
+<p>null和undefined都表示没有值，一般来说<br>1.若一个变量没有赋值，例：var a;，则a的值就是undefined<br>2.若创建一个对象，现在还不想赋值，则可以var obj = null;<br>3.若一个number、string不想赋值，则可以参照第一条</p>
+</blockquote>
+<h5 id="7-对象-object"><a href="#7-对象-object" class="headerlink" title="7. 对象(object)"></a>7. 对象(object)</h5><p>前面六种是简单类型或基本类型，对象是合成类型<br>对象可以分成：<br>           &gt; 狭义的对象<br>           &gt; 数组<br>           &gt; 函数   </p>
+<blockquote>
+<p>当你在遍历对象的时候<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; var person = &#123;name:&apos;pyz&apos;,age:18&#125;</span><br><span class="line">&gt;for(var key in person)&#123;</span><br><span class="line">&gt;   console.log(person[key]); &gt;//console.log(person.key);</span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>用person.key和person[key]是不同的，person.key代表person里有一个键名为key的属性，key被当作字符串，会出现undefined。而且数值键名也不能用点，会被当作小数点。<br><code>obj.123    //报错</code><br>只能用person[key]来表示，因为使用方括号运算符时key会被当作变量来处理。</p>
+</blockquote>
+<blockquote>
+<p>bug1: typeof null     //object<br>bug2: typeof function      //function，function也是object的一种，但function有自己的原型</p>
+</blockquote>
+<blockquote>
+<p>{foo:123}，javascript理解为语句（即代码块）<br>({foo:123})，JavaScript理解为对象<br>在eval语句（作用是对字符串求值）中<br>eval(‘{foo: 123}’) // 123<br>eval(‘({foo: 123})’) // {foo: 123}</p>
+</blockquote>
+<blockquote>
+<p>一般遍历对象自身属性时结合使用hasOwnProperty方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;var person = &#123; name: &apos;老彭&apos; &#125;;</span><br><span class="line">&gt;for (var key in person) &#123;</span><br><span class="line">&gt;  if (person.hasOwnProperty(key)) &#123;</span><br><span class="line">&gt;    console.log(key);</span><br><span class="line">&gt;  &#125;</span><br><span class="line">&gt;&#125;</span><br><span class="line">&gt;// name</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>查看一个对象本身的所有属性，也可以使用Object.keys方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;var obj = &#123;</span><br><span class="line">&gt;  key1: 1,</span><br><span class="line">&gt;  key2: 2</span><br><span class="line">&gt;&#125;;</span><br><span class="line">&gt;</span><br><span class="line">&gt;Object.keys(obj);</span><br><span class="line">&gt;// [&apos;key1&apos;, &apos;key2&apos;]</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="5-数值"><a href="#5-数值" class="headerlink" title="5. 数值"></a>5. 数值</h1><ol>
+<li><p>JavaScript里不要直接比较小数，因为浮点数不是精确的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">0.1 + 0.2 === 0.3</span><br><span class="line">// false</span><br><span class="line"></span><br><span class="line">0.3 / 0.1</span><br><span class="line">// 2.9999999999999996</span><br><span class="line"></span><br><span class="line">(0.3 - 0.2) === (0.2 - 0.1)</span><br><span class="line">// false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JavaScript 对15位的十进制整数都可以精确处理，大于15位就不行了</p>
+</li>
+<li><p>以下两种情况，JavaScript 会自动将数值转为科学计数法表示<br>（1）小数点前的数字多于21位。<br>（2）小数点后的零多于5个。</p>
+</li>
+<li><p>JavaScript 对整数提供四种进制的表示方法：十进制、十六进制、八进制、二进制。默认情况下，JavaScript 内部会自动将八进制、十六进制、二进制转为十进制。</p>
+<blockquote>
+<p>十进制：没有前导0的数值。<br>八进制：有前缀0o或0O的数值，或者有前导0、且只用到0-7的八个阿拉伯数字的数值。<br>十六进制：有前缀0x或0X的数值。<br>二进制：有前缀0b或0B的数值。</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="6-字符串"><a href="#6-字符串" class="headerlink" title="6. 字符串"></a>6. 字符串</h1><p>若字符串要换行的话，可以这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&apos;a\</span><br><span class="line">b\</span><br><span class="line">c&apos;</span><br><span class="line">//‘abc’</span><br></pre></td></tr></table></figure></p>
+<p><strong>重点是\后只能加回车，不能有任何空格</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +426,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:51:15+08:00">
                 2018-03-12
@@ -389,7 +558,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:50:24+08:00">
                 2018-03-12
@@ -431,8 +600,8 @@
       
         
           
-            <h2 id="1-冒泡排序Bubble-Sort（体育委员摸头杀）"><a href="#1-冒泡排序Bubble-Sort（体育委员摸头杀）" class="headerlink" title="1. 冒泡排序Bubble Sort（体育委员摸头杀）"></a>1. 冒泡排序Bubble Sort（体育委员摸头杀）</h2><p><strong>时间复杂度：O(n^2^)</strong><br> 有个数组a=[5,4,1,3,2,6]，从小到大排序，总共进行a.length-1轮，首先将a[0]和a[1]比较，谁大就把谁放在后面，交换完后再将a[1]和a[2]比较，谁大就把谁放在后面，交换完后再将a[2]和a[3]比较…..一直到a[4]和a[5]比较，进行完第一轮后，最大的那个就已经放在最后一位了，接下来再重新从a[0]开始……直到进行到a[3]和a[4]比较（a[5]上一轮已经确定了最大的，不用再动了），直到a[2],a[3],a[4],a[5]都确定了，最后再比较一次a[0],a[1]，排完a[0],a[1]的顺序，a数组的顺序就排好了~<br><a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点BUB是冒泡排序的动画演示</a></p>
-<h2 id="2-选择排序Selection-Sort（体育老师点人法）"><a href="#2-选择排序Selection-Sort（体育老师点人法）" class="headerlink" title="2. 选择排序Selection Sort（体育老师点人法）"></a>2. 选择排序Selection Sort（体育老师点人法）</h2><p><strong>时间复杂度：O(n^2^)</strong><br>选出最小的和第一位交换位置，第一位就被确定了，接下来找倒数第二小的和第二位换位置，接着再找倒数第三小的和第三位换位置……一直找到最后一位<br><a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点SEL是冒泡排序的动画演示</a></p>
+            <h2 id="1-冒泡排序Bubble-Sort（体育委员摸头杀）"><a href="#1-冒泡排序Bubble-Sort（体育委员摸头杀）" class="headerlink" title="1. 冒泡排序Bubble Sort（体育委员摸头杀）"></a>1. 冒泡排序Bubble Sort（体育委员摸头杀）</h2><p><strong>时间复杂度：O(n^2^)</strong><br> 有个数组a=[5,4,1,3,2,6]，从小到大排序，总共进行a.length-1轮，首先将a[0]和a[1]比较，谁大就把谁放在后面，交换完后再将a[1]和a[2]比较，谁大就把谁放在后面，交换完后再将a[2]和a[3]比较…..一直到a[4]和a[5]比较，进行完第一轮后，最大的那个就已经放在最后一位了，接下来再重新从a[0]开始……直到进行到a[3]和a[4]比较（a[5]上一轮已经确定了最大的，不用再动了），直到a[2],a[3],a[4],a[5]都确定了，最后再比较一次a[0],a[1]，排完a[0],a[1]的顺序，a数组的顺序就排好了~<br><a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点BUB是冒泡排序的动画演示</a><br><img src="/images/冒泡排序-min.jpg" alt="冒泡排序"></p>
+<h2 id="2-选择排序Selection-Sort（体育老师点人法）"><a href="#2-选择排序Selection-Sort（体育老师点人法）" class="headerlink" title="2. 选择排序Selection Sort（体育老师点人法）"></a>2. 选择排序Selection Sort（体育老师点人法）</h2><p><strong>时间复杂度：O(n^2^)</strong><br>选出最小的和第一位交换位置，第一位就被确定了，接下来找倒数第二小的和第二位换位置，接着再找倒数第三小的和第三位换位置……一直找到最后一位<br><a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点SEL是冒泡排序的动画演示</a><br><img src="/images/选择排序-min.jpg" alt="选择排序"></p>
 <h2 id="3-插入排序Insertion-Sort（起扑克牌法）"><a href="#3-插入排序Insertion-Sort（起扑克牌法）" class="headerlink" title="3. 插入排序Insertion Sort（起扑克牌法）"></a>3. 插入排序Insertion Sort（起扑克牌法）</h2><p><strong>时间复杂度：O(n^2^)</strong><br>从数组的第二个开始，和第一个比较并排顺序，接着拿第三个和第二个比，若比第二个大则直接不动，若比第二个小则和第一个比，若比二小比一大则插在它们中间，若比第一个小则放在第一个，接着再拿第四个分别和三、二、一<br>比…….直到最后。<br><strong>这就像打扑克牌时你摸牌的方法</strong><br><a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点INS是冒泡排序的动画演示</a></p>
 <h2 id="4-随机快排"><a href="#4-随机快排" class="headerlink" title="4. 随机快排"></a>4. 随机快排</h2><p><strong>优点：</strong><br>效率高,时间复杂度：O(n*log2n)<br><strong>缺点：</strong><br>有时候比计数排序慢<br><strong>简介：</strong><br>随机选一个数，例：36，#将这个数和第一个数交换位置，于是36到了第一位，接着将36和其他所有数依次比较大小，把所有比36小的放左边，比36大的放右边，比完其他所有数后把36同比它小的数里的最右边的那个交换位置，这样36就定位了。<br>接着以同样的方式随机选择一个36左边的数，然后回到上面#的位置继续进行，在36的左边再次快排，这样左边排序时完全不用管右边，大大提高了效率，把左边排完再排右边。<br>演示：<a href="https://visualgo.net/bn/sorting" target="_blank" rel="noopener">点R-Q是随机快排</a></p>
 <h2 id="5-计数排序（Hash）"><a href="#5-计数排序（Hash）" class="headerlink" title="5. 计数排序（Hash）"></a>5. 计数排序（Hash）</h2><p><strong>优点：</strong><br>效率高，时间复杂度：O(n+max)<br><strong>缺点：</strong><br>1.需要一个hash来作为工具<br>2.无法对小数和负数进行排序，只能排正整数<br>3.可能需要很多桶，不像桶排序可控制桶数量<br><strong>用途：</strong><br>数字相差不大的时候可以用计数排序，如年龄排序<br><strong>简介：</strong><br>和基数排序差不多，比快排更快，需要一个额外数组(Hash)辅助，例：a=[3,2,4,5,1,3,34]<br>a[0]=3于是将Hash数组中的hash[3]=1<br>a[1]=2于是将hash[2]=1<br>a[2]=4于是将hash[4]=1<br>a[3]=5于是将hash[5]=1<br>a[4]=1于是将hash[1]=1<br>a[5]=3于是将hash[3]=hash[3]+1=2<br>a[6]=34于是将hash[34]=1<br>这样hash=[ ,1,1,2,1,1, , , , ,……, , , , ,1]<br>最后将hash中的数据按顺序取出来存放在另外一个数组里则排序完成。</p>
@@ -518,7 +687,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:49:40+08:00">
                 2018-03-12
@@ -658,7 +827,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-09T22:22:28+08:00">
                 2018-03-09
@@ -822,7 +991,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:58+08:00">
                 2018-03-06
@@ -969,7 +1138,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:09+08:00">
                 2018-03-06
@@ -1112,7 +1281,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-04T14:38:58+08:00">
                 2018-03-04
@@ -1257,7 +1426,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-02T16:47:09+08:00">
                 2018-03-02
@@ -1458,7 +1627,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-01T20:45:18+08:00">
                 2018-03-01
@@ -1503,129 +1672,6 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
             <p>脚本就是计算机用的剧本，像下面我写的两个脚本。<img src="/images/demo.sh.png" alt="demo.sh">-d 表示存在的意思（不知道的用英文查google）<br>$1 表示传入的第一个参数<br>这个是bash脚本，因为计算机默认bash脚本，所以运行时在终端输入脚本的路径<br><code>~/local/demo.sh</code>就可以直接运行脚本执行里面的命令</p>
 <p><img src="/images/demo.js.png" alt="demo.js">这个是node.js脚本，第一行叫做shebang，加了shebang后，计算机就知道这个文件要按node脚本运行，于是可以直接运行<br><code>~/local/demo.js</code><br>如果没有shebang，就要写<br><code>node ~/local/demo.js</code></p>
 <p>若想直接输入脚本名运行脚本，可以将脚本的路径添加到PATH中<img src="/images/demo.sh.png" alt="demo.sh">我的脚本放在local目录中，于是把这句话添加到.bashrc或.zshrc的最后一行，当你运行脚本名时直接在终端输入<br><code>demo.js</code><br>计算机就会自动从local目录里找到这个脚本运行</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/配置HEXO博客-linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/28/配置HEXO博客-linux/" itemprop="url">配置HEXO博客-linux</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T10:02:26+08:00">
-                2018-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-第一次创建博客"><a href="#1-第一次创建博客" class="headerlink" title="1. 第一次创建博客"></a>1. 第一次创建博客</h3><p>a. 终端进入Desktop目录<br>b. github上新建一个空的repo，名字是[你的用户名.github.io]<br>c. 运行<code>npm install -g hexo-cli</code>安装 Hexo<br>d. <code>hexo init myBlog</code><br>e. <code>cd myBlog</code><br>f. <code>npm i</code><br>g. <code>hexo new 开博大吉</code>，创建了一篇博客<br>h. 复制这篇博客的路径，<code>vi 路径</code>进行编辑<br>i. <code>vi _config.yml</code>，把 title 改成想要的名字，把author 改成你的名字，把最后一行 type 改成 type: git（git前有空格），在最后一行后新增一行，左边与 type 平齐，加上 repo: 仓库SSH地址（地址前有空格）<br>j.<code>npm install hexo-deployer-git --save</code><br>k. <code>hexo deploy</code><br>l.若出现错误Permission denied，则将第i步的repo地址改为HTTPS地址<br>m. 若还出现Error<br><code>Permission denied (publickey).</code><br><code>fatal: 无法读取远程仓库。</code>，则按<a href="https://stackoverflow.com/questions/19660744/git-push-permission-denied-public-key" target="_blank" rel="noopener">这里</a>的方法解决<br>n. 进入对应的 repo，点setting，将GitHub Pages 功能中的source改成master branch，点save，点击预览链接<br>o. <code>hexo new 名字</code>建立第二篇博客<br>p. <code>vi 路径</code>进行编辑<br>q. <code>hexo g</code><br>r. <code>hexo d</code> 完成第二篇上传～</p>
-<h3 id="2-删除文章"><a href="#2-删除文章" class="headerlink" title="2. 删除文章"></a>2. 删除文章</h3><p>先在本地删除，然后进入博客目录依次<br>a. <code>hexo g</code><br>b. <code>hexo d</code></p>
-<h3 id="3-下载已有的博客"><a href="#3-下载已有的博客" class="headerlink" title="3. 下载已有的博客"></a>3. 下载已有的博客</h3><p>a. 终端进入Desktop<br>b. 复制源代码仓库的SSH地址，<code>git clone 源代码地址</code><br>c.运行<code>npm install -g hexo-cli</code>安装 Hexo<br>d.进入下载的目录 <code>npm install hexo --save</code><br>e. 就可以按照上面1.o的方法创建新博客了</p>
-<h3 id="4-第一次建立博客后创建源代码仓库"><a href="#4-第一次建立博客后创建源代码仓库" class="headerlink" title="4.第一次建立博客后创建源代码仓库"></a>4.第一次建立博客后创建源代码仓库</h3><p>1.创建名叫 blog-generator 的空仓库<br>2.按图中在终端进入你的博客目录中执行！用SSH地址！ <img src="/images/hexo.png" alt=""><br>3.以后每次 hexo deploy 完之后，博客就会更新；然后你还要要 add / commit /push 一下，以防万一。</p>
 
           
         
@@ -1711,8 +1757,8 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">articles</span>
                 </a>
               </div>
             
@@ -1762,7 +1808,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -1770,7 +1816,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
