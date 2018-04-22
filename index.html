@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -214,6 +214,132 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/22/Cookie入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/22/Cookie入门/" itemprop="url">Cookie入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-22T00:01:54+08:00">
+                2018-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-看一遍注册登陆的代码"><a href="#1-看一遍注册登陆的代码" class="headerlink" title="1. 看一遍注册登陆的代码"></a>1. 看一遍注册登陆的代码</h1><p><a href="https://github.com/Pengyize/homework/tree/master/sign-up" target="_blank" rel="noopener">github</a></p>
+<h1 id="2-以注册登陆为例"><a href="#2-以注册登陆为例" class="headerlink" title="2. 以注册登陆为例"></a>2. 以注册登陆为例</h1><ol>
+<li>你注册账号时，浏览器发送post请求将你的用户名、密码发送给服务器，服务器会把你的用户名、密码存入数据库，即注册成功。</li>
+<li>在你登陆的时候，浏览器同样发送post请求，服务器会把你的账号密码和数据库里的匹配，若匹配成功，服务器会发送一个响应头给浏览器，例如：<br><code>Set-Cookie: sign_in_email=xxx@xxx.com</code><br>这里面记录着你的登陆信息，浏览器会把这个cookie保存下来</li>
+<li>当你短时间内再访问这个网页时，浏览器会带着这个cookie发送GET请求，服务器接收到请求后发现cookie里的信息和数据库里可以匹配上，于是服务器会帮你登陆之后再把html响应给你，这样你就相当于直接得到一个已经登陆上的网页</li>
+<li>浏览器在一段时间后会自动删除cookie，若发送请求时没有cookie，或cookie里的信息和服务器的数据库不匹配，则不会登陆</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +383,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-18T09:32:07+08:00">
                 2018-04-18
@@ -299,8 +425,8 @@
       
         
           
-            <h1 id="1-关于new"><a href="#1-关于new" class="headerlink" title="1. 关于new"></a>1. 关于new</h1><p>function fn(){<br>    console.log(this)<br>}<br>new fn()  //会执行fn</p>
-<p>答：this有<code>__proto__</code>属性，<code>__proto__</code>指向这个this的原型<br>原型里有两个属性<code>{contructor: fn()}</code>和<code>__proto__</code>(指向Object.prototype)</p>
+            <h1 id="1-关于new"><a href="#1-关于new" class="headerlink" title="1. 关于new"></a>1. 关于new</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fn()&#123;</span><br><span class="line">    console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">new fn()  //会执行fn</span><br></pre></td></tr></table></figure>
+<p>答：this就是fn，它有<code>__proto__</code>属性，<code>__proto__</code>指向这个fn的原型<br>fn的原型里有两个属性<code>{contructor: fn()}</code>和<code>__proto__</code>(指向Object.prototype)</p>
 <h1 id="2-MVC"><a href="#2-MVC" class="headerlink" title="2. MVC"></a>2. MVC</h1><ol>
 <li><p>MVC是Model View Controller<br>View：是这个js模块对应在html中的部分，就是展示给用户看的那一部分</p>
 <p> Model：可以从服务器获得数据，把数据传给Controller。还要将Controller监听到的用户提交的数据上传到服务器。</p>
@@ -391,7 +517,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T21:10:20+08:00">
                 2018-04-13
@@ -513,7 +639,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T17:58:04+08:00">
                 2018-04-13
@@ -641,7 +767,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-11T21:41:44+08:00">
                 2018-04-11
@@ -801,7 +927,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-10T16:14:42+08:00">
                 2018-04-10
@@ -934,7 +1060,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T14:38:54+08:00">
                 2018-04-09
@@ -1078,7 +1204,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T13:46:23+08:00">
                 2018-04-07
@@ -1246,7 +1372,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T12:55:51+08:00">
                 2018-04-07
@@ -1390,7 +1516,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T10:29:48+08:00">
                 2018-04-07
@@ -1503,140 +1629,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/06/SASS入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/06/SASS入门/" itemprop="url">SASS入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posté le</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-06T16:06:56+08:00">
-                2018-04-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-Sass和SCSS的区别"><a href="#1-Sass和SCSS的区别" class="headerlink" title="1. Sass和SCSS的区别"></a>1. Sass和SCSS的区别</h1><p>SCSS是Sass推出的一个全新的语法，更加贴近css，所以一般都是用SCSS。<br>请注意 Sass 从来没有大写过，无论你指的是语法或者这个语言。同时， SCSS 一直是大写的！</p>
-<h1 id="2-安装（mac）"><a href="#2-安装（mac）" class="headerlink" title="2. 安装（mac）"></a>2. 安装（mac）</h1><p>我安装的是node-sass<br>在命令行里进入~目录，输入：</p>
-<ul>
-<li><code>npm config set registry https://registry.npm.taobao.org/</code></li>
-<li><code>echo &#39;export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;&#39;&gt;&gt; ~/.bashrc</code>(若是用的zshrc则改为~/.zshrc)</li>
-<li><code>source ~/.bashrc</code>(同上)</li>
-<li><code>sudo cnpm i -g node-sass</code>（需要先安装cnpm）</li>
-<li><code>mkdir ~/Desktop/scss-demo</code></li>
-<li><code>cd ~/Desktop/scss-demo</code></li>
-<li><code>mkdir scss css</code></li>
-<li><code>touch scss/style.scss</code></li>
-<li><code>node-sass -wr scss -o css</code>（开始监听style.scss）</li>
-</ul>
-<h1 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h1><p>终端进入含css和scss文件的目录，执行<br><code>node-sass -wr scss -o css</code>（开始监听style.scss）<br>在目录里打开style.scss文件开始编辑，node-scss就会自动给css目录添加style.css并实时更新css文件。<br>在 scss 文件里添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@function px( $px )&#123;</span><br><span class="line">  @return $px/$designWidth*10 + rem;  //js里获取innerWidth的时候除以了10，这里就要乘以10</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$designWidth : 640; // 640是设计稿的宽度，设计师给的。这样好像就不能动态的随着屏幕大小变化而变了</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  width: px(320);</span><br><span class="line">  height: px(160);</span><br><span class="line">  margin: px(40) px(40);</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  float: left;</span><br><span class="line">  font-size: 1.2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在终端：<code>cat ~/desktop/scss-demo/css/style.css</code>，可看到变化，SCSS将px变成了rem放入了css中。<br><strong>若不使用SCSS的话，我们每次将px转化为rem都要自己去算，使用SCSS可以帮我们算</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1687,8 +1679,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
-                  <span class="site-state-item-name">articles</span>
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -1738,7 +1730,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -1746,7 +1738,7 @@
 
 
 
-  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
