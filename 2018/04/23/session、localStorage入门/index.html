@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="1. Sass和SCSS的区别SCSS是Sass推出的一个全新的语法，更加贴近css，所以一般都是用SCSS。请注意 Sass 从来没有大写过，无论你指的是语法或者这个语言。同时， SCSS 一直是大写的！ 2. 安装（mac）我安装的是node-sass在命令行里进入~目录，输入：  npm config set registry https://registry.npm.taobao.org/">
+<meta name="description" content="1. 由于用户可以随意更改cookie因为登陆信息暴露给了用户，所以cookie不安全，用session解决这个问题。session是依赖于cookie的，服务器将发给浏览器的响应头Set-Cookie里的信息替换为一个随机数sessionID，并把cookie里的信息存在服务器内存的session表里。浏览器访问服务器时，服务器通过sessionID来查找cookie对应的信息，而暴露给用户的只">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SASS入门">
-<meta property="og:url" content="http://yoursite.com/2018/04/06/SASS入门/index.html">
+<meta property="og:title" content="session、localStorage入门">
+<meta property="og:url" content="http://yoursite.com/2018/04/23/session、localStorage入门/index.html">
 <meta property="og:site_name" content="My Block">
-<meta property="og:description" content="1. Sass和SCSS的区别SCSS是Sass推出的一个全新的语法，更加贴近css，所以一般都是用SCSS。请注意 Sass 从来没有大写过，无论你指的是语法或者这个语言。同时， SCSS 一直是大写的！ 2. 安装（mac）我安装的是node-sass在命令行里进入~目录，输入：  npm config set registry https://registry.npm.taobao.org/">
-<meta property="og:updated_time" content="2018-04-08T13:08:22.993Z">
+<meta property="og:description" content="1. 由于用户可以随意更改cookie因为登陆信息暴露给了用户，所以cookie不安全，用session解决这个问题。session是依赖于cookie的，服务器将发给浏览器的响应头Set-Cookie里的信息替换为一个随机数sessionID，并把cookie里的信息存在服务器内存的session表里。浏览器访问服务器时，服务器通过sessionID来查找cookie对应的信息，而暴露给用户的只">
+<meta property="og:updated_time" content="2018-04-22T16:37:22.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SASS入门">
-<meta name="twitter:description" content="1. Sass和SCSS的区别SCSS是Sass推出的一个全新的语法，更加贴近css，所以一般都是用SCSS。请注意 Sass 从来没有大写过，无论你指的是语法或者这个语言。同时， SCSS 一直是大写的！ 2. 安装（mac）我安装的是node-sass在命令行里进入~目录，输入：  npm config set registry https://registry.npm.taobao.org/">
+<meta name="twitter:title" content="session、localStorage入门">
+<meta name="twitter:description" content="1. 由于用户可以随意更改cookie因为登陆信息暴露给了用户，所以cookie不安全，用session解决这个问题。session是依赖于cookie的，服务器将发给浏览器的响应头Set-Cookie里的信息替换为一个随机数sessionID，并把cookie里的信息存在服务器内存的session表里。浏览器访问服务器时，服务器通过sessionID来查找cookie对应的信息，而暴露给用户的只">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/06/SASS入门/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/23/session、localStorage入门/"/>
 
 
 
 
 
-  <title>SASS入门 | My Block</title>
+  <title>session、localStorage入门 | My Block</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/06/SASS入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/session、localStorage入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Pengyize">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SASS入门</h1>
+          <h1 class="post-title" itemprop="name headline">session、localStorage入门</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-06T16:06:56+08:00">
-                2018-04-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T00:37:08+08:00">
+                2018-04-23
               </time>
             
 
@@ -298,21 +298,26 @@
       
 
       
-        <h1 id="1-Sass和SCSS的区别"><a href="#1-Sass和SCSS的区别" class="headerlink" title="1. Sass和SCSS的区别"></a>1. Sass和SCSS的区别</h1><p>SCSS是Sass推出的一个全新的语法，更加贴近css，所以一般都是用SCSS。<br>请注意 Sass 从来没有大写过，无论你指的是语法或者这个语言。同时， SCSS 一直是大写的！</p>
-<h1 id="2-安装（mac）"><a href="#2-安装（mac）" class="headerlink" title="2. 安装（mac）"></a>2. 安装（mac）</h1><p>我安装的是node-sass<br>在命令行里进入~目录，输入：</p>
-<ul>
-<li><code>npm config set registry https://registry.npm.taobao.org/</code></li>
-<li><code>echo &#39;export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;&#39;&gt;&gt; ~/.bashrc</code>(若是用的zshrc则改为~/.zshrc)</li>
-<li><code>source ~/.bashrc</code>(同上)</li>
-<li><code>sudo cnpm i -g node-sass</code>（需要先安装cnpm）</li>
-<li><code>mkdir ~/Desktop/scss-demo</code></li>
-<li><code>cd ~/Desktop/scss-demo</code></li>
-<li><code>mkdir scss css</code></li>
-<li><code>touch scss/style.scss</code></li>
-<li><code>node-sass -wr scss -o css</code>（开始监听style.scss）</li>
+        <h1 id="1-由于用户可以随意更改cookie"><a href="#1-由于用户可以随意更改cookie" class="headerlink" title="1. 由于用户可以随意更改cookie"></a>1. 由于用户可以随意更改cookie</h1><p>因为登陆信息暴露给了用户，所以cookie不安全，用session解决这个问题。<br>session是依赖于cookie的，服务器将发给浏览器的响应头<code>Set-Cookie</code>里的信息替换为一个随机数sessionID，并把cookie里的信息存在服务器内存的session表里。<br>浏览器访问服务器时，服务器通过sessionID来查找cookie对应的信息，而暴露给用户的只有一个sessionID，很安全。</p>
+<h1 id="2-localStorage"><a href="#2-localStorage" class="headerlink" title="2. localStorage"></a>2. localStorage</h1><ol>
+<li><ul>
+<li>与cookie不同，请求的时候浏览器不会带上localStorage<ul>
+<li>而且每个域名localStorage最大存储量5Mb左右，cookie只有4k左右</li>
+<li>而且localStorage理论上不会过期，除非清理缓存</li>
+<li>所以持续化存东西的时候用localStorage</li>
 </ul>
-<h1 id="3-使用"><a href="#3-使用" class="headerlink" title="3. 使用"></a>3. 使用</h1><p>终端进入含css和scss文件的目录，执行<br><code>node-sass -wr scss -o css</code>（开始监听style.scss）<br>在目录里打开style.scss文件开始编辑，node-scss就会自动给css目录添加style.css并实时更新css文件。<br>在 scss 文件里添加以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@function px( $px )&#123;</span><br><span class="line">  @return $px/$designWidth*10 + rem;  //js里获取innerWidth的时候除以了10，这里就要乘以10</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$designWidth : 640; // 640是设计稿的宽度，设计师给的。这样好像就不能动态的随着屏幕大小变化而变了</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  width: px(320);</span><br><span class="line">  height: px(160);</span><br><span class="line">  margin: px(40) px(40);</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  float: left;</span><br><span class="line">  font-size: 1.2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在终端：<code>cat ~/desktop/scss-demo/css/style.css</code>，可看到变化，SCSS将px变成了rem放入了css中。<br><strong>若不使用SCSS的话，我们每次将px转化为rem都要自己去算，使用SCSS可以帮我们算</strong></p>
+</li>
+</ul>
+</li>
+<li>session是服务器上的hash，localStorage是浏览器上的hash，localStorage里存的东西保存在本地。</li>
+<li>只有相同域名的网页才能互相读取localStorage。</li>
+<li><p><strong>API:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(&apos;a&apos;,1);</span><br><span class="line">localStorage.getItem(&apos;a&apos;);    //1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用来记录有没有提示过用户等信息，不能用来记录密码之类的</p>
+</li>
+</ol>
+<h1 id="3-sessionStorage"><a href="#3-sessionStorage" class="headerlink" title="3.  sessionStorage"></a>3.  sessionStorage</h1><p>sessionStorage和session没有关系，sessionStorage和localStorage的1、2、3是一样的，区别是关掉浏览器后就会被清除</p>
 
       
     </div>
@@ -337,8 +342,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/03/jQuery入门/" rel="next" title="jQuery入门">
-                <i class="fa fa-chevron-left"></i> jQuery入门
+              <a href="/2018/04/22/Cookie入门/" rel="next" title="Cookie入门">
+                <i class="fa fa-chevron-left"></i> Cookie入门
               </a>
             
           </div>
@@ -347,8 +352,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/07/到页面加载显示完成，这个过程中都发生了什么？/" rel="prev" title="到页面加载显示完成，这个过程中都发生了什么？">
-                到页面加载显示完成，这个过程中都发生了什么？ <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/23/Cache-Control（缓存）入门/" rel="prev" title="Cache-Control（缓存）入门">
+                Cache-Control（缓存）入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -463,7 +468,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Sass和SCSS的区别"><span class="nav-number">1.</span> <span class="nav-text">1. Sass和SCSS的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-安装（mac）"><span class="nav-number">2.</span> <span class="nav-text">2. 安装（mac）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-使用"><span class="nav-number">3.</span> <span class="nav-text">3. 使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-由于用户可以随意更改cookie"><span class="nav-number">1.</span> <span class="nav-text">1. 由于用户可以随意更改cookie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-localStorage"><span class="nav-number">2.</span> <span class="nav-text">2. localStorage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-sessionStorage"><span class="nav-number">3.</span> <span class="nav-text">3.  sessionStorage</span></a></li></ol></div>
             
 
           </div>
