@@ -85,7 +85,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/22/Cookie入门/index.html">
 <meta property="og:site_name" content="My Block">
 <meta property="og:description" content="1. 看一遍注册登陆的代码 github Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间 大小大概在 4kb 以内  2. 以注册登陆为例 你注册账号时，服务器把你的用户名、密码存入数据库。 登陆的时候，浏览器发送post请求，服务器把你的账号密码和数据库里的匹配，若匹配成功，则发送一个响应头给浏览器，如：Set-Cookie: sign_in_email">
-<meta property="og:updated_time" content="2018-04-22T16:36:35.091Z">
+<meta property="og:updated_time" content="2018-04-23T04:41:43.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cookie入门">
 <meta name="twitter:description" content="1. 看一遍注册登陆的代码 github Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间 大小大概在 4kb 以内  2. 以注册登陆为例 你注册账号时，服务器把你的用户名、密码存入数据库。 登陆的时候，浏览器发送post请求，服务器把你的账号密码和数据库里的匹配，若匹配成功，则发送一个响应头给浏览器，如：Set-Cookie: sign_in_email">
@@ -310,7 +310,14 @@
 <li>cookie默认在关闭页面后被清除，而后台可以 设置cookie的过期时间</li>
 </ol>
 <h1 id="3-前端永远不要读写cookie"><a href="#3-前端永远不要读写cookie" class="headerlink" title="3. 前端永远不要读写cookie"></a>3. 前端永远不要读写cookie</h1><p>前端用localStorage</p>
-<h1 id="4-设置cookie"><a href="#4-设置cookie" class="headerlink" title="4. 设置cookie"></a>4. 设置cookie</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cookie.setMaxAge(0);//不记录cookie</span><br><span class="line">cookie.setMaxAge(-1);//会话级cookie，关闭浏览器失效</span><br><span class="line">cookie.setMaxAge(60*60);//过期时间为1小时</span><br></pre></td></tr></table></figure>
+<h1 id="4-设置cookie过期时间"><a href="#4-设置cookie过期时间" class="headerlink" title="4. 设置cookie过期时间"></a>4. 设置cookie过期时间</h1><ol>
+<li><p>setMaxAge</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cookie.setMaxAge(0);//不记录cookie</span><br><span class="line">cookie.setMaxAge(-1);//会话级cookie，关闭浏览器失效</span><br><span class="line">cookie.setMaxAge(60*60);//过期时间为1小时</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>过时了的expires</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: name=Nicholas; expires=Sat, 02 May 2009 23:38:25 GMT</span><br><span class="line">//星期六 5月2号 2009年 23:38:25时过期</span><br></pre></td></tr></table></figure></li>
+</ol>
+
       
     </div>
     
@@ -423,7 +430,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
@@ -460,7 +467,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-看一遍注册登陆的代码"><span class="nav-number">1.</span> <span class="nav-text">1. 看一遍注册登陆的代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-以注册登陆为例"><span class="nav-number">2.</span> <span class="nav-text">2. 以注册登陆为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-前端永远不要读写cookie"><span class="nav-number">3.</span> <span class="nav-text">3. 前端永远不要读写cookie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置cookie"><span class="nav-number">4.</span> <span class="nav-text">4. 设置cookie</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-看一遍注册登陆的代码"><span class="nav-number">1.</span> <span class="nav-text">1. 看一遍注册登陆的代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-以注册登陆为例"><span class="nav-number">2.</span> <span class="nav-text">2. 以注册登陆为例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-前端永远不要读写cookie"><span class="nav-number">3.</span> <span class="nav-text">3. 前端永远不要读写cookie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-设置cookie过期时间"><span class="nav-number">4.</span> <span class="nav-text">4. 设置cookie过期时间</span></a></li></ol></div>
             
 
           </div>

@@ -228,6 +228,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/正则表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/28/正则表达式/" itemprop="url">正则表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:51:46+08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://regexr.com/" target="_blank" rel="noopener">RegExr</a></p>
+<p><code>/.+yize/g</code>                       某yize</p>
+<p><code>/peng.+/g</code>                      peng某</p>
+<p><code>/./g</code>                                匹配所有字符</p>
+<p><code>/../g</code>                               把字符两个两个的匹配    </p>
+<p><code>/\w/g</code>                    匹配所有0-9，a-z，A-Z</p>
+<p><code>/\W/g</code>                    匹配除0-9，a-z，A-Z以外的字符</p>
+<p><code>/\d/g</code>                    匹配数字</p>
+<p><code>/\d\.\d/g</code>                        匹配有一位小数的数字 例：1.1</p>
+<p><code>/\D/g</code>                    匹配除数字以外的字符</p>
+<p><code>/\s/g</code>                        匹配空格、TAB、断行</p>
+<p><code>/\S/g</code>                        匹配除上面之外的字符</p>
+<p><code>/[abc]/g</code>                        匹配a、b、c（一个一个地匹配）</p>
+<p><code>/abc/g</code>                        匹配abc三个连在一起</p>
+<p><code>/[a-k]/g</code>                           匹配a到k（一个一个匹配）</p>
+<p><code>/[\u4e00-\u9fa5]/g</code>            匹配每个中文字（一个一个匹配）</p>
+<p><code>/[yY][oO]+/g</code>                    匹配yo、yoooo、yOOOOO、Yo、Yooo、<br>                                        YO或YOOOO，+号表示出现一次或多次</p>
+<p><code>/[yY][oO]+[!~\.]*/g</code>            匹配yo!、yo.、yo<del>、yooo</del>~~、Yoo!!，*<br>                                        号代表出现0次或多次</p>
+<p><code>/[yY][oO]+p?[!~\.]*/g</code>    匹配yop!，?号匹配0个或1个    </p>
+<p><code>/yo{2,4}/g</code>                       只能匹配yo后的2～4个o</p>
+<p><code>/yo{2,4}\b/g</code>                    截断了大于4个o的yo</p>
+<p><code>/yo{5}/g</code>                          匹配yooooo</p>
+<p><code>/yo{2,}/g</code>                         匹配yo后o大于等于2的</p>
+<p><code>1(?:37|39|82|83)\d{4}(\d{4})</code>   括号里加?:表示仅匹配，不捕获</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/第一节课/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -512,7 +655,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
