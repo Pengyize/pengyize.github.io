@@ -228,6 +228,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/css入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/09/css入门/" itemprop="url">css入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-09T22:22:28+08:00">
+                2018-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-CSS简介"><a href="#1-CSS简介" class="headerlink" title="1. CSS简介"></a>1. CSS简介</h2><p>css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。<a href="https://www.w3.org/Style/CSS/specs.en.html" target="_blank" rel="noopener">css文档</a></p>
+<h2 id="2-编写CSS的第一步"><a href="#2-编写CSS的第一步" class="headerlink" title="2. 编写CSS的第一步"></a>2. 编写CSS的第一步</h2><p>给你要写的css标签加上border<br><code>border:1px solid red;</code><br>让你知道它在哪、它的大小、形状</p>
+<h2 id="3-使导航栏横着在同一行"><a href="#3-使导航栏横着在同一行" class="headerlink" title="3. 使导航栏横着在同一行"></a>3. 使导航栏横着在同一行</h2><p>方法一：给所有li加上css<code>float:left;</code>，然后给ul加上class:<code>clearfix</code>,下面是clearfix的css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  display: block;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法二：给ul加上<code>display:flex</code><br>若想让li在同一行里平均分布，见下面6.5</p>
+<h2 id="4-高度"><a href="#4-高度" class="headerlink" title="4. 高度"></a>4. 高度</h2><p>div（块级元素）：高度是由内部文档流元素高度的总和决定的。文档流：文档内元素的流动方向，内联元素是从左往右，块级元素是从上往下<br> span（内联元素）：高度是由其中文字高度决定的，内联元素设置width和height是无效的，上下的margin和padding也无效，要将它们设为display:inline-block才有效。</p>
+<h2 id="5-小提醒"><a href="#5-小提醒" class="headerlink" title="5. 小提醒"></a>5. 小提醒</h2><p>尽量不写height和width，这两个属性会引出很多bug，要宽高的时候可以用padding，但img最好先写width，因为可以先占位，因为引用图片时浏览器不知道图片大小，所有等图片下载完成，它后面的元素又要重新排位置，若先写好width，则不用重排，知道height也可以先写好height。<br>另外span元素设置padding的时候要将它设为display:inline-block，因为内联元素不能设置宽高，inline-block具有inline的同行特性，也具有block的高度特性。<br>对于display:inline(内联元素)的元素，设置width/height/上下margin和padding都是无效的</p>
+<h2 id="6-居中"><a href="#6-居中" class="headerlink" title="6. 居中"></a>6. 居中</h2><ol>
+<li><p>让一个背景图居中，并且让它自适应屏幕</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: url(&quot;wallhaven-w-min.jpg&quot;) no-repeat center center ;</span><br><span class="line">background-size: cover;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让一个div水平居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">margin-left:auto;</span><br><span class="line">margin-right:auto;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让一个div在父级元素中<strong>绝对居中</strong>（上下左右）<br>方法一：<br>给父级元素加:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position:relative;   //若父级元素是body可以不用</span><br><span class="line">加</span><br></pre></td></tr></table></figure>
+<p>再给div加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line"> position: absolute;</span><br><span class="line"> top: 0;</span><br><span class="line"> left: 0;</span><br><span class="line"> bottom: 0;</span><br><span class="line"> right: 0;</span><br><span class="line"> margin: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法二：<br>给它的父元素加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">display: flex;               //让它变成一个弹性盒</span><br><span class="line">justify-content: center;     //水平居中</span><br><span class="line">align-items: center;         //垂直居中</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让内联元素居中，给它们的父元素加上</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-align:center;</span><br></pre></td></tr></table></figure>
+<p> 若不是内联元素想让它居中，则加display:inline-block，加了之后一般还要加下面这句，不然可能会有bug（下面可能会空出一行）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align: top;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让导航栏在同一行里均匀分布<br>给ul加css</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ul&#123;</span><br><span class="line">  display:flex;  </span><br><span class="line">  justyfy-content:space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>去掉li的<code>float:left</code><br>去掉ul的<code>clearfix</code></p>
+<h2 id="7-用css做三角形"><a href="#7-用css做三角形" class="headerlink" title="7. 用css做三角形"></a>7. 用css做三角形</h2><ol>
+<li><p>等腰三角形：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  border:50px solid transparent;</span><br><span class="line">  width:0;</span><br><span class="line">  height:0;</span><br><span class="line">  border-bottom-color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>直角三角形：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  border:50px solid transparent;</span><br><span class="line">  width:0;</span><br><span class="line">  height:0;</span><br><span class="line">  border-top-width:0;</span><br><span class="line">  border-left-color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="8-怎样脱离文档流"><a href="#8-怎样脱离文档流" class="headerlink" title="8. 怎样脱离文档流"></a>8. 怎样脱离文档流</h2><ol>
+<li>相对于窗口定位：<br><code>position:fixed</code></li>
+<li>相对于父级元素定位：<br>在父级元素加上：<code>position:relative</code><br>给自己加上：<code>position:absolute</code>（绝对定位后元素会变成display:block）</li>
+</ol>
+<h2 id="9-使用-before和-after时"><a href="#9-使用-before和-after时" class="headerlink" title="9. 使用::before和::after时"></a>9. 使用::before和::after时</h2><p>要加上这两行的代码，才会显示内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">content: &quot;&quot;;</span><br><span class="line">display:block;    //如果是绝对定位就不用加，因为绝对定位后元素会变成display:block;</span><br></pre></td></tr></table></figure></p>
+<h2 id="10-图片的轮播"><a href="#10-图片的轮播" class="headerlink" title="10. 图片的轮播"></a>10. 图片的轮播</h2><p>\&lt;html><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;window&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;images&quot; id=images&gt;</span><br><span class="line">        &lt;img1&gt;</span><br><span class="line">        &lt;img2&gt;</span><br><span class="line">        &lt;img3&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>\&lt;css><br><strong>要给window的div和每个img都定好宽高！并给window加上overflow:hidden</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.images&#123;</span><br><span class="line">    display: flex;    //给image的div加上这个图片才能横这放！</span><br><span class="line">&#125;</span><br><span class="line">.images &gt; img&#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/HTML元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1564,128 +1728,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/计算机存储数据的方式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/28/计算机存储数据的方式/" itemprop="url">计算机存储数据的方式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-28T09:53:20+08:00">
-                2018-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-如何存储字符"><a href="#1-如何存储字符" class="headerlink" title="1. 如何存储字符"></a>1. 如何存储字符</h4><p>对应ASCII码表，计算机只能存储二进制：<br>a的编号97 ——&gt; 0110 0001（2）——&gt; 61（16）<br>1的编号49 ——&gt; 0011 0001（2）——&gt; 31（16）</p>
-<h4 id="2-存储字符方式"><a href="#2-存储字符方式" class="headerlink" title="2. 存储字符方式"></a>2. 存储字符方式</h4><p>UTF-8是一种编码方式，将Unicode编码存入计算机:<br>00000000 00000000 00000000 01111111（2）(7位及以内)<br>UTF-8:0XXXXXXX<br>00000000 00000000 00000111 11111111（2）(11位及以内)<br>UTF-8:110XXXXX 10XXXXXX<br>00000000 00000000 11111111 11111111（2）(16位及以内)<br>UTF-8:1110XXXX 10XXXXXX 10XXXXXX（2）<br>00000000 00011111 11111111 11111111（2）（21位及以内）<br>UTF-8:11110XXX 10XXXXXX 10XXXXXX 10XXXXXX</p>
-<h4 id="3-ASCII码"><a href="#3-ASCII码" class="headerlink" title="3. ASCII码"></a>3. ASCII码</h4><p>A:65<br>a:97<br>0:48</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1736,7 +1778,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
