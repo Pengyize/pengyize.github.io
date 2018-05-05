@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 盒模型包括：实际内容(content)、填充(padding)、边框(border)  padding就是内容到border的距离 margin是border到父元素border的距离   border-boxborder-box: 实际宽度 == width == 100 == 内容区 + padding + border  content-boxcontent-box: 实际宽度 ==">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML、CSS面试">
+<meta property="og:url" content="http://yoursite.com/2018/05/05/HTML、CSS面试/index.html">
+<meta property="og:site_name" content="My Block">
+<meta property="og:description" content="1. 盒模型包括：实际内容(content)、填充(padding)、边框(border)  padding就是内容到border的距离 margin是border到父元素border的距离   border-boxborder-box: 实际宽度 == width == 100 == 内容区 + padding + border  content-boxcontent-box: 实际宽度 ==">
+<meta property="og:image" content="http://yoursite.com/images/border-box.png">
+<meta property="og:image" content="http://yoursite.com/images/content-box.png">
+<meta property="og:updated_time" content="2018-05-05T13:49:59.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML、CSS面试">
+<meta name="twitter:description" content="1. 盒模型包括：实际内容(content)、填充(padding)、边框(border)  padding就是内容到border的距离 margin是border到父元素border的距离   border-boxborder-box: 实际宽度 == width == 100 == 内容区 + padding + border  content-boxcontent-box: 实际宽度 ==">
+<meta name="twitter:image" content="http://yoursite.com/images/border-box.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/05/HTML、CSS面试/"/>
+
+
+
+
+
+  <title>HTML、CSS面试 | My Block</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Block</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Accueil
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/HTML、CSS面试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML、CSS面试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T21:48:34+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-盒模型"><a href="#1-盒模型" class="headerlink" title="1. 盒模型"></a>1. 盒模型</h1><p>包括：实际内容(content)、填充(padding)、边框(border)</p>
+<ul>
+<li>padding就是内容到border的距离</li>
+<li>margin是border到父元素border的距离</li>
+</ul>
+<ol>
+<li><p>border-box<img src="/images/border-box.png" alt="border-box.png">border-box: 实际宽度 == width == 100 == 内容区 + padding + border</p>
+</li>
+<li><p>content-box<img src="/images/content-box.png" alt="content-box.png">content-box: 实际宽度 == width + padding + border</p>
+</li>
+</ol>
+<h1 id="2-如何理解HTML语义化"><a href="#2-如何理解HTML语义化" class="headerlink" title="2. 如何理解HTML语义化"></a>2. 如何理解HTML语义化</h1><ol>
+<li>举例<br>比如说，标题就用h1~h6，段落就用p，边栏用aside，主要内容用main</li>
+<li>用处<br>在没有CSS的情况下，页面也能呈现出很好地内容、代码结构<h1 id="3-meta-viewport"><a href="#3-meta-viewport" class="headerlink" title="3. meta:viewport"></a>3. meta:viewport</h1>背下来<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>控制页面在移动端不会缩小显示</p>
+<h1 id="4-复习canvas项目"><a href="#4-复习canvas项目" class="headerlink" title="4. 复习canvas项目"></a>4. 复习canvas项目</h1><p>自己再做一遍<a href="https://www.jianshu.com/p/2925414721c1" target="_blank" rel="noopener">canvas</a></p>
+<h1 id="5-css-Reset和normalize-css区别"><a href="#5-css-Reset和normalize-css区别" class="headerlink" title="5. css Reset和normalize.css区别"></a>5. css Reset和normalize.css区别</h1><ul>
+<li>css reset的想法是清除所有默认样式</li>
+<li>后来normalize.css取代了css reset，normalize自己制定相应的默认样式，用了normalize.css之后，所有浏览器上默认样式都基本一致</li>
+</ul>
+<h1 id="6-css居中"><a href="#6-css居中" class="headerlink" title="6. css居中"></a>6. css居中</h1><h3 id="1-垂直居中"><a href="#1-垂直居中" class="headerlink" title="1. 垂直居中"></a>1. 垂直居中</h3><ol>
+<li><p>若父元素没有写height，则直接在父元素写</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">padding: 10px 0;</span><br></pre></td></tr></table></figure>
+<p> 子元素就可以居中，所以尽量避免父亲高度确定</p>
+</li>
+<li><p>让一个元素在父级元素中<strong>绝对居中</strong><br>方法一：<br>给父级元素加:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position:relative;   //若父级元素是body可以不用</span><br><span class="line">加</span><br></pre></td></tr></table></figure>
+<p>再给自己加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line"> position: absolute;</span><br><span class="line"> top: 0;</span><br><span class="line"> left: 0;</span><br><span class="line"> bottom: 0;</span><br><span class="line"> right: 0;</span><br><span class="line"> margin: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方法二：（若不兼容IE，工作中只要用这一种方法即可，最简单，Chrome，移动端都可以用）<br>给父元素加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">display: flex;               //让它变成一个弹性盒</span><br><span class="line">justify-content: center;     //水平居中</span><br><span class="line">align-items: center;         //垂直居中</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>table自带居中（兼容IE）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent&#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  height: 600px;</span><br><span class="line">&#125;</span><br><span class="line">.child&#123;</span><br><span class="line">  border: 1px solid green;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;table class=&quot;parent&quot;&gt;</span><br><span class="line">  &lt;tr&gt;</span><br><span class="line">    &lt;td class=&quot;child&quot;&gt;</span><br><span class="line">      文字</span><br><span class="line">    &lt;/td&gt;</span><br><span class="line">  &lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p> 文字会居中</p>
+</li>
+<li><p>用div假扮table（兼容IE）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">div.table&#123;</span><br><span class="line">  display: table;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  height: 600px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div.tr&#123;</span><br><span class="line">  display: table-row;</span><br><span class="line">  border: 1px solid green;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div.td&#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  border: 1px solid blue;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;table&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;tr&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;td&quot;&gt;</span><br><span class="line">        文字</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用100%高度的before和after</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">.parent&#123;</span><br><span class="line">  border: 3px solid red;</span><br><span class="line">  height: 600px;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  border: 3px solid black;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: 300px;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.parent:before&#123;</span><br><span class="line">  content:&apos;&apos;;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  height: 100%;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.parent:after&#123;</span><br><span class="line">  content:&apos;&apos;;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  height: 100%;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绝对定位加上margin-top: -自身height的50%</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.parent&#123;</span><br><span class="line">  height: 600px;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.child&#123;</span><br><span class="line">  border: 1px solid green;</span><br><span class="line">  width: 300px;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 50%;</span><br><span class="line">  left: 50%;</span><br><span class="line">  margin-left: -150px;</span><br><span class="line">  height: 20px;</span><br><span class="line">  margin-top: -10px;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;child&quot;&gt;</span><br><span class="line">    文字</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让一个背景图居中，并且让它自适应屏幕</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: url(&quot;wallhaven-w-min.jpg&quot;) no-repeat center center ;</span><br><span class="line">background-size: cover;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="2-水平居中"><a href="#2-水平居中" class="headerlink" title="2. 水平居中"></a>2. 水平居中</h3><ol>
+<li><p>块级元素水平居中</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">margin-left:auto;</span><br><span class="line">margin-right:auto;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内联元素水平居中，给它们的父元素加上</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-align:center;</span><br></pre></td></tr></table></figure>
+<p> 若不是内联元素想让它居中，可加display:inline-block，加了之后一般还要加下面这句，不然可能会有bug（下面可能会空出一行）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vertical-align: top;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>让导航栏横过来，并在同一行里均匀分布<br>给ul加css</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ul&#123;</span><br><span class="line">  display:flex;  </span><br><span class="line">  justyfy-content:space-between;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 去掉li的<code>float:left</code><br> 去掉ul的<code>clearfix</code></p>
+</li>
+</ol>
+<h1 id="7-选择器的优先级"><a href="#7-选择器的优先级" class="headerlink" title="7. 选择器的优先级"></a>7. 选择器的优先级</h1><ol>
+<li>id比class优先级高</li>
+<li>同样优先级，写在后面的会覆盖前面</li>
+<li>a:hover和a的优先级一样，所以加hover样式的时候，hover要写在下面。不然会被覆盖</li>
+<li>color: red !important 优先级最高</li>
+</ol>
+<h1 id="8-BFC"><a href="#8-BFC" class="headerlink" title="8. BFC"></a>8. BFC</h1><p>块格式化上下文（Block Formatting Context），<strong>面试的时候举例说明</strong></p>
+<h3 id="1-功能一（bfc用来包住儿子元素）"><a href="#1-功能一（bfc用来包住儿子元素）" class="headerlink" title="1. 功能一（bfc用来包住儿子元素）"></a>1. 功能一（bfc用来包住儿子元素）</h3><ol>
+<li>父亲若是以下七种情况，则是bfc（可以包住它的儿子）<ul>
+<li>浮动元素（float:left或right）</li>
+<li>绝对定位</li>
+<li>内联块（display: inline-block）</li>
+<li>表格（display: table-cell 或 display: table-caption 或 ）</li>
+<li>overflow的值不是visible（如overflow:hidden）</li>
+<li>display: flow-root（css新规则，专为bfc而生）</li>
+</ul>
+</li>
+</ol>
+<p><strong>举例1</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.father&#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 600px;</span><br><span class="line">  border: 4px solid red;</span><br><span class="line">  overflow: hidden</span><br><span class="line">&#125;</span><br><span class="line">.son&#123;</span><br><span class="line">  border: 4px solid green;</span><br><span class="line">  float: left;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;son&quot;&gt;2&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>答1：<strong>bfc的overflow: hidden可清除浮动（但平常清除浮动用clearfix即可）</strong><br>答2：<strong>父亲的overflow: hidden取消父亲儿子的margin-top合并</strong>，若父亲没加overflow:hidden，儿子的margin-top同时也会给父亲（平常若不想用bfc，给父亲加一个padding-top: 0.1px，也可以达到这个效果）</p>
+<ol>
+<li>父亲里的儿子没有float的话，儿子之间的上下margin会合并</li>
+<li>父亲会包住儿子，但如果儿子里面有孙子且儿子是bfc的话，父亲是不会管孙子的</li>
+</ol>
+<h3 id="2-功能二（让浮动的兄弟之间划清界限）"><a href="#2-功能二（让浮动的兄弟之间划清界限）" class="headerlink" title="2. 功能二（让浮动的兄弟之间划清界限）"></a>2. 功能二（让浮动的兄弟之间划清界限）</h3><p>float+div做左右自适应布局，如果不加bfc，兄弟会重合（因为有float）</p>
+<p><strong>举例2</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.brother1&#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 600px;</span><br><span class="line">  border: 4px solid red;</span><br><span class="line">  float: left;</span><br><span class="line">  margin-right: 20px;</span><br><span class="line"> &#125;</span><br><span class="line">.brother2&#123;</span><br><span class="line">  height: 600px;</span><br><span class="line">  border: 4px solid green;     </span><br><span class="line">  display: flow-root</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;brother1&quot;&gt;1&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;brother2&quot;&gt;2&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这个功能可以用flex布局实现，bfc被淘汰了！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">.brother1&#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 600px;</span><br><span class="line">  border: 4px solid red;</span><br><span class="line">  margin-right: 20px;</span><br><span class="line"> &#125;</span><br><span class="line">.brother2&#123;</span><br><span class="line">  height: 600px;</span><br><span class="line">  border: 4px solid green;     </span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">body&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;brother1&quot;&gt;1&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;brother2&quot;&gt;2&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="9-如何清除浮动"><a href="#9-如何清除浮动" class="headerlink" title="9. 如何清除浮动"></a>9. 如何清除浮动</h1><ol>
+<li>bfc的overflow: hidden</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">  content: &apos;&apos;;</span><br><span class="line">  clear: both;</span><br><span class="line">  display: block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//若要兼容IE</span><br><span class="line">.clearfix&#123;</span><br><span class="line">  zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="10-父亲儿子margin合并"><a href="#10-父亲儿子margin合并" class="headerlink" title="10. 父亲儿子margin合并"></a>10. 父亲儿子margin合并</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">    .child&#123;</span><br><span class="line">      height: 100px;</span><br><span class="line">      border: 1px solid red;</span><br><span class="line">      margin-top: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">    .parent&#123;</span><br><span class="line">      width: 100%;</span><br><span class="line">      background: green;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>这样儿子的margin-top也会给到父亲，把父亲挤下来，但只要在父亲里加：</p>
+<ul>
+<li><code>border-top: 0.1px solid green;</code></li>
+<li><code>display: table;</code></li>
+<li><code>display: flex;</code>（不加width的话会把width变成0）</li>
+<li><code>display: inline-block</code>（不加width的话会把width变成0）</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/28/canvas入门/" rel="next" title="canvas入门">
+                <i class="fa fa-chevron-left"></i> canvas入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/05/DOM面试/" rel="prev" title="DOM面试">
+                DOM面试 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table Des Matières
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Ensemble
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Pengyize</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">articles</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-盒模型"><span class="nav-number">1.</span> <span class="nav-text">1. 盒模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-如何理解HTML语义化"><span class="nav-number">2.</span> <span class="nav-text">2. 如何理解HTML语义化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-meta-viewport"><span class="nav-number">3.</span> <span class="nav-text">3. meta:viewport</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-复习canvas项目"><span class="nav-number">4.</span> <span class="nav-text">4. 复习canvas项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-css-Reset和normalize-css区别"><span class="nav-number">5.</span> <span class="nav-text">5. css Reset和normalize.css区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-css居中"><span class="nav-number">6.</span> <span class="nav-text">6. css居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-垂直居中"><span class="nav-number">6.0.1.</span> <span class="nav-text">1. 垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-水平居中"><span class="nav-number">6.0.2.</span> <span class="nav-text">2. 水平居中</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-选择器的优先级"><span class="nav-number">7.</span> <span class="nav-text">7. 选择器的优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-BFC"><span class="nav-number">8.</span> <span class="nav-text">8. BFC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-功能一（bfc用来包住儿子元素）"><span class="nav-number">8.0.1.</span> <span class="nav-text">1. 功能一（bfc用来包住儿子元素）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-功能二（让浮动的兄弟之间划清界限）"><span class="nav-number">8.0.2.</span> <span class="nav-text">2. 功能二（让浮动的兄弟之间划清界限）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-如何清除浮动"><span class="nav-number">9.</span> <span class="nav-text">9. 如何清除浮动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-父亲儿子margin合并"><span class="nav-number">10.</span> <span class="nav-text">10. 父亲儿子margin合并</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pengyize</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

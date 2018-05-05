@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 数据类型 number string boolean symbol null undefine object  2. promise怎么用 生成promise 123456789function()&amp;#123;  return new Promise(function(resolve,reject)&amp;#123;    if(成功)&amp;#123;      resolve()    &amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS面试">
+<meta property="og:url" content="http://yoursite.com/2018/05/05/JS面试/index.html">
+<meta property="og:site_name" content="My Block">
+<meta property="og:description" content="1. 数据类型 number string boolean symbol null undefine object  2. promise怎么用 生成promise 123456789function()&amp;#123;  return new Promise(function(resolve,reject)&amp;#123;    if(成功)&amp;#123;      resolve()    &amp;#125;">
+<meta property="og:updated_time" content="2018-05-05T13:51:23.850Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS面试">
+<meta name="twitter:description" content="1. 数据类型 number string boolean symbol null undefine object  2. promise怎么用 生成promise 123456789function()&amp;#123;  return new Promise(function(resolve,reject)&amp;#123;    if(成功)&amp;#123;      resolve()    &amp;#125;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/05/JS面试/"/>
+
+
+
+
+
+  <title>JS面试 | My Block</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Block</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Accueil
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/JS面试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS面试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-05T21:51:07+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1. 数据类型"></a>1. 数据类型</h1><ul>
+<li>number</li>
+<li>string</li>
+<li>boolean</li>
+<li>symbol</li>
+<li>null</li>
+<li>undefine</li>
+<li>object</li>
+</ul>
+<h1 id="2-promise怎么用"><a href="#2-promise怎么用" class="headerlink" title="2. promise怎么用"></a>2. promise怎么用</h1><ul>
+<li><p>生成promise</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function()&#123;</span><br><span class="line">  return new Promise(function(resolve,reject)&#123;</span><br><span class="line">    if(成功)&#123;</span><br><span class="line">      resolve()</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      reject()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>then</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(...).then(成功函数,失败函数)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>then是链式的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(...).then(成功函数1,失败函数1).then(成功函数2,失败函数2)</span><br><span class="line">//ajax返回404，失败函数1执行，成功函数2执行</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="3-手写ajax"><a href="#3-手写ajax" class="headerlink" title="3. 手写ajax"></a>3. 手写ajax</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let request = new XMLHttpRequest();</span><br><span class="line">request.open(&apos;POST&apos;,&apos;/xxx&apos;);</span><br><span class="line">request.onreadystatechange = ()=&gt;&#123;</span><br><span class="line">  if(request.readyState === 4 &amp;&amp; request.status === 200)&#123;</span><br><span class="line">    var string = request.responseText;</span><br><span class="line">    var value = JSON.parse(string);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">request.send(&apos;a=1&amp;b=2&apos;);</span><br></pre></td></tr></table></figure>
+<h1 id="4-手写闭包"><a href="#4-手写闭包" class="headerlink" title="4. 手写闭包"></a>4. 手写闭包</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function createAdder()&#123;</span><br><span class="line">  let n=1;</span><br><span class="line">  return function()&#123;</span><br><span class="line">    n+=1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let adder = createAdder();</span><br><span class="line">adder()  //n===2</span><br><span class="line">adder()  //n===3</span><br><span class="line">console.log(n)  //n is nor defined</span><br></pre></td></tr></table></figure>
+<h1 id="5-this是什么"><a href="#5-this是什么" class="headerlink" title="5. this是什么"></a>5. this是什么</h1><ol>
+<li>fn()里面的this正常模式下是Window</li>
+<li>fn()里面的this严格模式下是undefined</li>
+<li>a.b.c.fn()里面的this就是a.b.c</li>
+<li>new F()里面的this就是F()对象</li>
+<li>() =&gt; {console.log(this)}里面的this就是外面的this</li>
+</ol>
+<h1 id="6-立即执行函数"><a href="#6-立即执行函数" class="headerlink" title="6. 立即执行函数"></a>6. 立即执行函数</h1><p><code>!function(){}()</code><br>作用是创造一个函数作用域，防止污染全局变量<br><strong>es6新语法可以代替立即执行函数</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  let name = &apos;p&apos;  //用let声明变量即可</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="7-async-await语法"><a href="#7-async-await语法" class="headerlink" title="7. async/await语法"></a>7. async/await语法</h1><p>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function returnPromise()&#123;</span><br><span class="line">  return new Promise(function(resolve,reject)&#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">      resolve(&apos;参数1&apos;)</span><br><span class="line">    &#125;,1000)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">returnPromise().then((result)=&gt;&#123;</span><br><span class="line">   //这个result === &apos;参数1&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">let result = await returnPromise();</span><br><span class="line">//这个result === &apos;参数1&apos;</span><br></pre></td></tr></table></figure></p>
+<p>await可以把异步代码变成同步代码，若Promise运行结果是reject，可用try()catch捕捉到。<br>加个await就可以等当前异步代码执行完再执行下面的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function 煮面()&#123;</span><br><span class="line">  水=加水() </span><br><span class="line">  if(面===false)&#123;  </span><br><span class="line">    面 = 去超市买面() //异步操作</span><br><span class="line">  &#125;</span><br><span class="line">  阳春面 = 开火(水，面)</span><br><span class="line">  吃面(阳春面)</span><br><span class="line">&#125;</span><br><span class="line">//这样的结果你只能喝白开水</span><br><span class="line">//但是加上await 就不同了</span><br><span class="line"></span><br><span class="line">async function 煮面()&#123;</span><br><span class="line">  水=加水()</span><br><span class="line">  if(面===false)&#123; </span><br><span class="line">    面 = await 去超市买面() //异步操作</span><br><span class="line">  &#125;</span><br><span class="line">  阳春面 = 开火(水，面)</span><br><span class="line">  吃面(阳春面)</span><br><span class="line">&#125;</span><br><span class="line">//用了await 就可以等面回来以后再执行以下语句</span><br></pre></td></tr></table></figure></p>
+<h1 id="8-深拷贝"><a href="#8-深拷贝" class="headerlink" title="8. 深拷贝"></a>8. 深拷贝</h1><ol>
+<li>用JSON深拷贝<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = &#123;...&#125;</span><br><span class="line">let b = JSON.parse(JSON.stringify(a))</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>但这个方法不支持函数、引用、undefined、正则…</p>
+<ol>
+<li>递归拷贝<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var china = &#123;</span><br><span class="line">  nation : &apos;中国&apos;,</span><br><span class="line">  birthplaces:[&apos;北京&apos;,&apos;上海&apos;,&apos;广州&apos;],</span><br><span class="line">  skincolr :&apos;yellow&apos;,</span><br><span class="line">  friends:[&apos;sk&apos;,&apos;ls&apos;]</span><br><span class="line">&#125;</span><br><span class="line">//深复制，要想达到深复制就需要用递归</span><br><span class="line">function deepCopy(o,c)&#123;</span><br><span class="line">  var c = c || &#123;&#125;</span><br><span class="line">  for(var i in o)&#123;</span><br><span class="line">    if(typeof o[i] === &apos;object&apos;)&#123;  //要考虑深复制问题了</span><br><span class="line">      if(o[i].constructor === Array)&#123;</span><br><span class="line">      //这是数组</span><br><span class="line">        c[i] =[]</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">      //这是对象</span><br><span class="line">        c[i] = &#123;&#125;</span><br><span class="line">      &#125;</span><br><span class="line">      deepCopy(o[i],c[i])</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      c[i] = o[i]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return c</span><br><span class="line">&#125;</span><br><span class="line">var result = &#123;name:&apos;result&apos;&#125;</span><br><span class="line">result = deepCopy(china,result)</span><br><span class="line">console.dir(result)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="9-数组去重"><a href="#9-数组去重" class="headerlink" title="9. 数组去重"></a>9. 数组去重</h1><ol>
+<li><p>ES5</p>
+<ul>
+<li><p>方法一（计数排序的逻辑）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.distinct = function ()&#123;</span><br><span class="line"> var arr = this,</span><br><span class="line">  i,</span><br><span class="line">  obj = &#123;&#125;,</span><br><span class="line">  result = [],</span><br><span class="line"> for(i = 0; i&lt; arr.length; i++)&#123;</span><br><span class="line">  if(!obj[arr[i]])&#123; //如果能查找到，证明数组元素重复了</span><br><span class="line">   obj[arr[i]] = 1;</span><br><span class="line">   result.push(arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> return result;</span><br><span class="line">&#125;;</span><br><span class="line">var a = [1,2,3,4,5,6,5,3,2,4,56,4,1,2,1,1,1,1,1,1,];</span><br><span class="line">var b = a.distinct();</span><br><span class="line">console.log(b.toString());     //1,2,3,4,5,6,56</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二：（递归）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.distinct = function ()&#123;</span><br><span class="line"> var arr = this,</span><br><span class="line"> len = arr.length;</span><br><span class="line"> arr.sort(function(a,b)&#123;  //对数组进行排序才能方便比较</span><br><span class="line">   return a - b;</span><br><span class="line"> &#125;)</span><br><span class="line"> function loop(index)&#123;</span><br><span class="line">   if(index &gt;= 1)&#123;</span><br><span class="line">     if(arr[index] === arr[index-1])&#123;</span><br><span class="line">     arr.splice(index,1);</span><br><span class="line">   &#125;</span><br><span class="line">   loop(index - 1);  //递归</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> loop(len-1);  //调用loop函数</span><br><span class="line"> return arr;</span><br><span class="line">&#125;;</span><br><span class="line">var a = [1,2,3,4,5,6,5,3,2,4,56,4,1,2,1,1,1,1,1,1,56,45,56];</span><br><span class="line">var b = a.distinct();</span><br><span class="line">console.log(b.toString());  //1,2,3,4,5,6,45,56</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>方法一比较好</p>
+<ol>
+<li>ES6<br>set数据结构 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function dedupe(array)&#123;</span><br><span class="line"> return Array.from(new Set(array));</span><br><span class="line">&#125;</span><br><span class="line">dedupe([1,1,2,3]) //[1,2,3]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="10-用正则实现string-trim"><a href="#10-用正则实现string-trim" class="headerlink" title="10. 用正则实现string.trim()"></a>10. 用正则实现string.trim()</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function trim(string)&#123;</span><br><span class="line">  return string.replace(/^\s+|\s+$/g,&apos;&apos;) </span><br><span class="line">  //^\s+表示开头有一个或多个空格，|表示或，\s+$表示结尾</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="11-什么是原型"><a href="#11-什么是原型" class="headerlink" title="11. 什么是原型"></a>11. 什么是原型</h1><p>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//一个数组</span><br><span class="line">let a = [1,2,3]</span><br><span class="line">//a只有4个key:0,1,2,length</span><br><span class="line">a.push(4)  //[1,2,3,4]</span><br></pre></td></tr></table></figure></p>
+<p>push方法哪来的？原型里的，数组是一个对象，每个对象都有一个隐藏的属性<code>__proto__</code>，而数组的隐藏属性指向数组的原型<code>Array.prototype</code>，push方法就存在这里面，可直接引用（还有pop,slice,splice）</p>
+<h1 id="12-class（类）"><a href="#12-class（类）" class="headerlink" title="12. class（类）"></a>12. class（类）</h1><ol>
+<li>类声明不会提升</li>
+<li><p>举例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Rectangle &#123;</span><br><span class="line">    // constructor</span><br><span class="line">    constructor(height, width) &#123;</span><br><span class="line">        this.height = height;</span><br><span class="line">        this.width = width;</span><br><span class="line">    &#125;</span><br><span class="line">    // Getter</span><br><span class="line">    get area() &#123;</span><br><span class="line">        return this.calcArea()</span><br><span class="line">    &#125;</span><br><span class="line">    // Method</span><br><span class="line">    calcArea() &#123;</span><br><span class="line">        return this.height * this.width;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">const square = new Rectangle(10, 10);</span><br><span class="line"></span><br><span class="line">console.log(square.area);</span><br><span class="line">// 100</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>extends（继承）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123; </span><br><span class="line">  constructor(name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  speak() &#123;</span><br><span class="line">    console.log(this.name + &apos; makes a noise.&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Dog extends Animal &#123;</span><br><span class="line">  speak() &#123;</span><br><span class="line">    console.log(this.name + &apos; barks.&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var d = new Dog(&apos;Mitzie&apos;);</span><br><span class="line">d.speak();  // &apos;Mitzie barks.&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="13-JS如何实现继承"><a href="#13-JS如何实现继承" class="headerlink" title="13. JS如何实现继承"></a>13. JS如何实现继承</h1><ol>
+<li>extends<br>见上面的extends</li>
+<li>原型链<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function Animal()&#123;</span><br><span class="line">  this.body = &apos;肉体&apos;  //自身属性</span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype.move = function()&#123;&#125;  </span><br><span class="line"></span><br><span class="line">function Human(name)&#123;</span><br><span class="line">  Animal.apply(this,arguments)  //继承Animal的自身属性</span><br><span class="line">  this.name = name</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//下面这三句继承Animal的原型属性</span><br><span class="line">let f = function()&#123;&#125;</span><br><span class="line">f.prototype = Animal.prototype</span><br><span class="line">Human.prototype = new f()</span><br><span class="line"></span><br><span class="line">Human.prototype.useTools = function()&#123;&#125;  </span><br><span class="line">//Human自己的原型属性</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/05/DOM面试/" rel="next" title="DOM面试">
+                <i class="fa fa-chevron-left"></i> DOM面试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/05/HTTP面试/" rel="prev" title="HTTP面试">
+                HTTP面试 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table Des Matières
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Ensemble
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Pengyize</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">articles</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-数据类型"><span class="nav-number">1.</span> <span class="nav-text">1. 数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-promise怎么用"><span class="nav-number">2.</span> <span class="nav-text">2. promise怎么用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-手写ajax"><span class="nav-number">3.</span> <span class="nav-text">3. 手写ajax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-手写闭包"><span class="nav-number">4.</span> <span class="nav-text">4. 手写闭包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-this是什么"><span class="nav-number">5.</span> <span class="nav-text">5. this是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-立即执行函数"><span class="nav-number">6.</span> <span class="nav-text">6. 立即执行函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-async-await语法"><span class="nav-number">7.</span> <span class="nav-text">7. async/await语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-深拷贝"><span class="nav-number">8.</span> <span class="nav-text">8. 深拷贝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-数组去重"><span class="nav-number">9.</span> <span class="nav-text">9. 数组去重</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-用正则实现string-trim"><span class="nav-number">10.</span> <span class="nav-text">10. 用正则实现string.trim()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-什么是原型"><span class="nav-number">11.</span> <span class="nav-text">11. 什么是原型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-class（类）"><span class="nav-number">12.</span> <span class="nav-text">12. class（类）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-JS如何实现继承"><span class="nav-number">13.</span> <span class="nav-text">13. JS如何实现继承</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Pengyize</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
