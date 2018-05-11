@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -214,6 +214,131 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/JS深拷贝和浅拷贝/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/JS深拷贝和浅拷贝/" itemprop="url">JS深拷贝和浅拷贝</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:12:09+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 1;        //        a === 1</span><br><span class="line">b = a;            //        b === 1</span><br><span class="line">b = 2;            //        b === 2,a === 1</span><br></pre></td></tr></table></figure>
+<p>这就是深拷贝，意思是拷贝之后，改变其中一个值的同时并不改变另一个值。</p>
+<p>除了object以外的数据类型，赋值都是深拷贝</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;</span><br><span class="line">    name: &apos; pyz&apos;</span><br><span class="line">&#125;</span><br><span class="line">b=a;</span><br><span class="line">b.name = &apos;jpj&apos;        //        这时a和b都改成了jpj</span><br></pre></td></tr></table></figure>
+<p>这就是浅拷贝，赋值时只能把地址赋过去，并没把heap内存里的东西赋给b。</p>
+<p>未完待续……</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +382,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T14:06:01+08:00">
                 2018-03-21
@@ -389,7 +514,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T13:50:03+08:00">
                 2018-03-21
@@ -558,7 +683,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:51:15+08:00">
                 2018-03-12
@@ -690,7 +815,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:50:24+08:00">
                 2018-03-12
@@ -819,7 +944,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-12T13:49:40+08:00">
                 2018-03-12
@@ -959,7 +1084,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-09T22:22:28+08:00">
                 2018-03-09
@@ -1155,7 +1280,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:58+08:00">
                 2018-03-06
@@ -1302,7 +1427,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-06T08:36:09+08:00">
                 2018-03-06
@@ -1445,7 +1570,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-04T14:38:58+08:00">
                 2018-03-04
@@ -1548,196 +1673,6 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/HTTP入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/02/HTTP入门/" itemprop="url">HTTP入门</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posté le</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-02T16:47:09+08:00">
-                2018-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-HTTP-HyperText-Transfer-Protocol"><a href="#1-HTTP-HyperText-Transfer-Protocol" class="headerlink" title="1. HTTP(HyperText Transfer Protocol)"></a>1. HTTP(HyperText Transfer Protocol)</h3><p>http是超文本传输协议，它教客户端如何请求、服务器如何响应。</p>
-<h3 id="2-状态码（背下来）"><a href="#2-状态码（背下来）" class="headerlink" title="2. 状态码（背下来）"></a>2. 状态码（背下来）</h3><p>是服务器对浏览器说的话：</p>
-<p>200 通常的成功 OK</p>
-<p>204 成功处理请求，但不会刷新页面</p>
-<blockquote>
-<p>表示服务器接收到的请求已经处理完毕，但浏览器页面不会刷新</p>
-</blockquote>
-<p>301 永久重定向 Moved Permanently</p>
-<blockquote>
-<p>请求的网页已永久移动到新位置，永久性重定向</p>
-</blockquote>
-<p>302 Found</p>
-<blockquote>
-<p>HTTP/1.0就有的，临时性重定向，POST方法的重定向在未询问用户的情况下就会变成GET</p>
-</blockquote>
-<p>303 和 307</p>
-<blockquote>
-<p>这两个是HTTP/1.1新加的，都是临时重定向，303和302一样，POST重定向为GET。<br>307不同的是，把POST转为GET的。</p>
-</blockquote>
-<p>304 Not Modified</p>
-<blockquote>
-<p>表示自从上次请求后，网页未被修改过 </p>
-</blockquote>
-<p>400 Bad Request</p>
-<blockquote>
-<p>客户端中存在语法错误。</p>
-</blockquote>
-<p>401 Unauthorized</p>
-<blockquote>
-<p>用户未授权，需要用户验证。</p>
-</blockquote>
-<p>403 Forbidden</p>
-<blockquote>
-<p>服务器已经理解请求，但拒绝执行</p>
-</blockquote>
-<p>404 Not Found</p>
-<blockquote>
-<p>服务器找不到请求的网页。</p>
-</blockquote>
-<p>500 Internal Server Error</p>
-<blockquote>
-<p>服务器遇到错误，无法完成请求。</p>
-</blockquote>
-<p>503 Service Unavailable</p>
-<blockquote>
-<p>由于临时的服务器维护或者过载，暂时无法处理请求</p>
-</blockquote>
-<p><strong>背下来</strong></p>
-<h3 id="3-请求的格式（背下来）"><a href="#3-请求的格式（背下来）" class="headerlink" title="3. 请求的格式（背下来）"></a>3. 请求的格式（背下来）</h3><ol>
-<li><p>GET请求<br>GET / HTTP/1.1<br>Host: baidu.com<br>Accept: text/html<br>（断行）</p>
-</li>
-<li><p>POST请求<br>POST /login HTTP/1.1<br>Host: baidu.com<br>Accept: application/json<br>Content-Type: application/x-www-form-urlencoded<br>Content-Length: …</p>
-<p>username=pyz&amp;password=123（第四部分服务器返回的是字符串）</p>
-</li>
-</ol>
-<p><strong>请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！</strong></p>
-<h3 id="4-响应的格式"><a href="#4-响应的格式" class="headerlink" title="4.响应的格式"></a>4.响应的格式</h3><ol>
-<li><p>GET的响应<br>HTTP/1.1 200 OK<br>Content-Length: …<br>Content-Type: text/html或application/x-JavaScript; charset=utf-8<br>（断行）      =&gt; 这是第三部分<br>&lt;!DOCTYPE html&gt;<br><html>…</html>（第四部分服务器返回的是字符串）</p>
-</li>
-<li><p>POST<br>若密码错了<br>HTTP/1.1 401 Unauthorized（若成功了就是200 OK）<br>Content-Type: application/json<br>Content-Length: …</p>
-<p>{‘’error”}</p>
-</li>
-</ol>
-<h3 id="5-如何查看响应和请求"><a href="#5-如何查看响应和请求" class="headerlink" title="5. 如何查看响应和请求"></a>5. 如何查看响应和请求</h3><ol>
-<li>打开Network</li>
-<li>刷新网址</li>
-<li>选中第一个响应</li>
-<li>查看Headers里的Response Headers点view source可以看到响应的前两部分，Request Headers点view source可以看到请求</li>
-<li>查看Response你可以看到响应的第四部分</li>
-</ol>
-<h3 id="6-DNS-Domain-Name-System"><a href="#6-DNS-Domain-Name-System" class="headerlink" title="6. DNS(Domain Name System)"></a>6. DNS(Domain Name System)</h3><p>DNS即是通过域名找IP地址<br>有两个命令：<br><code>nslookup www.baidu.com</code><br><code>ping www.baidu.com</code><br>输入这两个命令都会返回baidu的IP地址<img src="/images/nslookup.png" alt="nslookup">Server你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近几台服务器的IP）。<br>可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给你假IP）<br>修改hosts文件，mac终端：<code>vi ~/etc/hosts</code><br>在里面添加一行<br>123.123.123 baidu.com<br>保存退出，再ping baidu.com，返回的就会是123.123.123了，这样就绕过了DNS</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1788,8 +1723,8 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
-                  <span class="site-state-item-name">articles</span>
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -1839,7 +1774,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -1847,7 +1782,7 @@ print(a[&apos;i&apos;]); //会出现undefined，因为a对象里并没有i这个
 
 
 
-  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 

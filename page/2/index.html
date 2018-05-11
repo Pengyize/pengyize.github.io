@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Startseite
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -214,6 +214,156 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/23/session、localStorage入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Pengyize">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Block">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/23/session、localStorage入门/" itemprop="url">session、localStorage入门</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-23T00:37:08+08:00">
+                2018-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-cookie和session的区别"><a href="#1-cookie和session的区别" class="headerlink" title="1. cookie和session的区别"></a>1. cookie和session的区别</h1><h3 id="1-cookie"><a href="#1-cookie" class="headerlink" title="1. cookie"></a>1. cookie</h3><ul>
+<li>cookie是由服务器发送给浏览器的响应头里的<code>Set-Cookie:</code>的值构成的。</li>
+<li>cookie保存在客户端，并且每次都随着请求发送给server。</li>
+<li>没有session之前，cookie里保存的是用户信息，由于任何人可以读写，不安全<h3 id="2-session"><a href="#2-session" class="headerlink" title="2. session"></a>2. session</h3></li>
+<li>session是依附于cookie而存在的</li>
+<li>有了session，服务器将用户的信息保存在服务器中的session表里，然后赋予相应的信息一个sessionID，于是将响应头里的<code>Set-Cookie</code>的值改为sessionID</li>
+<li>浏览器请求时带上cookie，服务器就通过cookie里的sessionID查找session表里对应的信息</li>
+<li>这样暴露给其他人的就只有sessionID，很安全。<h1 id="2-localStorage"><a href="#2-localStorage" class="headerlink" title="2. localStorage"></a>2. localStorage</h1></li>
+</ul>
+<ol>
+<li><ul>
+<li>与cookie不同，请求的时候浏览器不会带上localStorage<ul>
+<li>而且每个域名localStorage最大存储量5Mb左右，cookie只有4k左右</li>
+<li>而且localStorage理论上不会过期，除非清理缓存</li>
+<li>所以持续化存东西的时候用localStorage</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>session是服务器上的hash，localStorage是浏览器上的hash，localStorage里存的东西保存在本地。</li>
+<li>只有相同域名的网页才能互相读取localStorage。</li>
+<li><p><strong>API:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(&apos;a&apos;,1);</span><br><span class="line">localStorage.getItem(&apos;a&apos;);    //1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用来记录有没有提示过用户等信息，不能用来记录密码之类的</p>
+</li>
+</ol>
+<h1 id="3-sessionStorage"><a href="#3-sessionStorage" class="headerlink" title="3.  sessionStorage"></a>3.  sessionStorage</h1><ol>
+<li>sessionStorage和session没有关系</li>
+<li>sessionStorage和localStorage的1、2、3点是一样的，区别是关掉浏览器后sessionStorage就会被清除</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -257,7 +407,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-22T00:01:54+08:00">
                 2018-04-22
@@ -395,7 +545,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-18T09:32:07+08:00">
                 2018-04-18
@@ -529,7 +679,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T21:10:20+08:00">
                 2018-04-13
@@ -652,7 +802,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T17:58:04+08:00">
                 2018-04-13
@@ -780,7 +930,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-11T21:41:44+08:00">
                 2018-04-11
@@ -940,7 +1090,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-10T16:14:42+08:00">
                 2018-04-10
@@ -1073,7 +1223,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-09T14:38:54+08:00">
                 2018-04-09
@@ -1217,7 +1367,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T13:46:23+08:00">
                 2018-04-07
@@ -1385,7 +1535,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T12:55:51+08:00">
                 2018-04-07
@@ -1493,161 +1643,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/07/到页面加载显示完成，这个过程中都发生了什么？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Pengyize">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Block">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/07/到页面加载显示完成，这个过程中都发生了什么？/" itemprop="url">到页面加载显示完成，这个过程中都发生了什么？</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posté le</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-07T10:29:48+08:00">
-                2018-04-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-浏览器查找域名对应的-IP-地址："><a href="#1-浏览器查找域名对应的-IP-地址：" class="headerlink" title="1. 浏览器查找域名对应的 IP 地址："></a>1. 浏览器查找域名对应的 IP 地址：</h1><p>通过DNS查询到相应的IP地址，相当于你的路由问电信公司，于是电信公司返回对应的IP地址。<br><strong>补充说明：</strong></p>
-<ul>
-<li>你若修改了hosts文件，可自己指定域名的IP，绕过DNS。</li>
-<li>URL和域名是两个概念：例如，xiedaimala.com是这个网站的域名，根据这个域名找到写代码啦的服务器，xiedaimala.com/courses 是URL，根据这个URL定位到写代码啦的课程表。</li>
-<li>IP 地址与域名不是一一对应的关系：可以把多个提供相同服务的服务器 IP 设置为同一个域名，但在同一时刻一个域名只能解析出一个 IP地址；同时，一个 IP 地址可以绑定多个域名，数量不限；</li>
-</ul>
-<h1 id="2-浏览器和服务器建立连接——三次握手（采用TCP协议）"><a href="#2-浏览器和服务器建立连接——三次握手（采用TCP协议）" class="headerlink" title="2. 浏览器和服务器建立连接——三次握手（采用TCP协议）"></a>2. 浏览器和服务器建立连接——三次握手（采用TCP协议）</h1><ul>
-<li>浏览器说：服务器我要连接你了，可以吗</li>
-<li>服务器说：好的，连接吧</li>
-<li>浏览器说：好的，那我连接了<br>连接成功！</li>
-</ul>
-<h1 id="3-网页的请求与显示"><a href="#3-网页的请求与显示" class="headerlink" title="3. 网页的请求与显示"></a>3. 网页的请求与显示</h1><ol>
-<li>浏览器向服务器发送请求的第一部分</li>
-<li>浏览器向服务器发送请求头（第二部分），若是post请求还会发送请求体（第四部分）</li>
-<li>服务器应答，发送响应的第一部分</li>
-<li>服务器发送响应的响应头信息</li>
-<li>服务器发送以Content-type描述的格式的数据</li>
-<li>在浏览器还没有完全接收 HTML 文件时便开始渲染、显示网页</li>
-<li>在执行 HTML 中代码时，根据需要，浏览器会继续请求图片、CSS、JavsScript等文件，过程同请求 HTML </li>
-</ol>
-<h1 id="4-断开连接——四次握手"><a href="#4-断开连接——四次握手" class="headerlink" title="4. 断开连接——四次握手"></a>4. 断开连接——四次握手</h1><ul>
-<li><p>主机向服务器发送一个断开连接的请求（不早了，我该走了）；</p>
-</li>
-<li><p>服务器接到请求后发送确认收到请求的信号（知道了）；</p>
-</li>
-<li><p>服务器向主机发送断开通知（我也该走了）；</p>
-</li>
-<li><p>主机接到断开通知后断开连接并反馈一个确认信号（嗯，好的），服务器收到确认信号后断开连接；</p>
-</li>
-</ul>
-<p><strong>补充说明：</strong></p>
-<ul>
-<li>为什么服务器在接到断开请求时不立即同意断开：当服务器收到断开连接的请求时，可能仍然有数据未发送完毕，所以服务器先发送确认信号，等所有数据发送完毕后再同意断开。</li>
-<li>第四次握手后，主机发送确认信号后并没有立即断开连接，而是等待了 2 个报文传送周期，原因是：如果第四次握手的确认信息丢失，服务器将会重新发送第三次握手的断开连接的信号，而服务器发觉丢包与重新发送的断开连接到达主机的时间正好为 2 个报文传输周期。</li>
-</ul>
-<p>未完待续…</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1698,8 +1693,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
-                  <span class="site-state-item-name">articles</span>
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>
             
@@ -1749,7 +1744,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -1757,7 +1752,7 @@
 
 
 
-  <div class="theme-info">Thème &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
